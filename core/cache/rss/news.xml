@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>News</title>
+        <link>http://127.0.0.1/index.php</link>
+        <description></description>
+        <lastBuildDate>Fri, 11 Dec 2009 23:48:57 -0800</lastBuildDate>
+        <language>en-us</language>
+        <item>
+            <title>Website Milestone 2</title>
+            <link>http://127.0.0.1/index.php?n=forum&amp;sub=viewtopic&amp;tid=2&amp;p=1#post2</link>
+            <guid>http://127.0.0.1/index.php?n=forum&amp;sub=viewtopic&amp;tid=2&amp;p=1#post2</guid>
+            <pubDate>Wed, 09 Dec 2009 19:10:48 -0800</pubDate>
+            <description>Posted by Myristin: 
+The website has reached milestone 2! Many new features are established On the site.  &lt;br /&gt;
+&lt;br /&gt;
+Features include:&lt;br /&gt;
+-New Working Armory&lt;br /&gt;
+-Implemented A Working Online Playermap&lt;br /&gt;
+-New character Transfer System (v1)&lt;br /&gt;
+-Some new Admin Tools&lt;br /&gt;
+</description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,45 @@
+== Solving Login problems ==
+
+
+'''Solution 1: regenerate your dynamic site configuration'''[[BR]]
+Blank out the following in config/config.xml:
+
+{{{
+    <!-- Dynamic done by site. Dont touch this. -->
+    <temp>
+        <site_href>/</site_href>
+        <site_domain>www.mydomain.com</site_domain>
+        <email_href>www.mydomain.com</email_href>
+        <base_href>http://www.mydomain.com/</base_href>
+        <template_href>/templates/offlike/</template_href>
+    </temp>
+}}}
+
+to look like this:
+
+{{{
+    <!-- Dynamic done by site. Dont touch this. -->
+    <temp>
+        <site_href></site_href>
+        <site_domain></site_domain>
+        <email_href></email_href>
+        <base_href></base_href>
+        <template_href></template_href>
+    </temp>
+}}}
+
+Then browse to the site, so !MangosWeb automatically fills these settings in config.xml. After doing this, your login problems may be solved. If not, proceed to the next solution:
+
+'''Solution 2: turn your referer header on'''[[BR]]
+The problem could be caused by a dependency on the 'referer' header in MangosWeb. What happens is that !MangosWeb tries to redirect you to your previous page after logging in (the page you came from when clicking the login button). To do this, it uses the 'referer' header which is sent during every request by the browser. This referer header contains the address of the page you came from to the current page.
+
+Now you can imagine that some sites use this header to gather information about your browsing behaviour. This is why some browser security/privacy tools change the default browser settings by turning of this referer header. This is something you won't notice in most occasions, however when you encounter a site that depends on it (such as MangosWeb) it causes strange problems like these.
+
+To resolve this issue you can try to identify the security/privacy/tweaking product you are using that may be responsible for turning of this referer header. If you have identified this product, you should try turning the referer header back on, or uninstall the product.
+
+If this doesn't help or you're not able to identify the product possibly responsible for turning the referer header off, please continue to the next solution:
+
+'''Solution 3: Delete account keys'''[[BR]]
+Sometimes the website (according to reports on the mangosproject.org forum) doesn't alwasy delete the account key issued at login which is contained in the account_keys table in realmd database. The website basically thinks you are logged in already and will not let you login again. To solve this problem, you can try deleting the keys for people that are having trouble logging in
+
+Note: this seems to be a bigger issue with Firefox than with Internet Explorer.

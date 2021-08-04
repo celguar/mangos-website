@@ -1,0 +1,29 @@
+1. If you wish to remove the community box on the frontpage, its done so by edditing this
+file "templates/TEMPLATE NAME/frontpage/frontpage.index.php". Delete the following code
+on the bottom of the document:
+
+
+<div id="container-community">
+<div class="phatlootbox-top">
+<h2 class="community">
+<span class="hide">General</span>
+</h2>
+<span class="phatlootbox-visual comm"></span>
+</div>
+<div class="phatlootbox-wrapper">
+<div style="background: url(<?php echo $currtmp; ?>/images/phatlootbox-top-parchment.jpg) repeat-y top right; height: 7px; width: 456px; margin-left: 6px; font-size: 1px;"></div>
+<div class="community-cnt"><font size="-1"><?php echo $lang['comm_header1'];?></font>
+<br /><br /><font size="-1">
+<a href="http://www.worldofwarcraft.com">World Of Warcraft</a><br />
+<a href="http://thottbot.com/">Thottbot</a><br />
+<a href="http://www.wowhead.com/">Wowhead</a><br />
+<a href="http://www.wowwiki.com/Portal:Main">WoW Wiki</a><br /><br />
+<?php echo $lang['comm_header2'];?>
+</font></div>
+<div class="phatlootbox-bottom">
+</div>
+</div>
+</div>
+
+2. To edit what it says, open your lanuage file "/lang/en.english.php", and edit
+"comm_header1" and "comm_header2".

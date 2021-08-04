@@ -1,0 +1,24 @@
+If you are having troubles with the vote system, trust me, you arent/werent the only one ever. Here are some
+cause/effect/fixes for a few things ive learned while helping you guys all out.
+
+1. Errors
+
+ A. Telnet connection problem: A connection attempt failed because the connected party did not properly respond 
+after a period of time, or established connection failed because connected host has failed to respond.
+
+	Solution: Make sure your realm is online. Also make sure your server is accepting Remote Access requests. 
+ This is checked by opening your server config, and finding ("RA.enable" and "RA.IP" and "RA.port")
+
+ B. Telnet connection problem: -Not enough privileges.
+
+ 	Solution: This states that your current account doesnt have a high enough level to make the requested command
+ happen. Make sure the account level is higher then the RA.minLevel. If using Trinity, make sure that the account
+ has admin access on all realms... go ->realmd->account_access. make sure under realmId, it says "-1"
+
+ C. Telnet connection problem: -No such user.
+
+	solution: If using mangos, make sure the username is in ALL CAPS, in the config, aswell as the database.
+ Also, trying changing config.xml -> vote_system -> vote_ra -> your realm -> revision. from 1 to 0, or vise versa.
+
+2. When all else fails, check you ra_commands.log from your server directory. It will always say what the error was.
+If you are still having issues, then post them here: http://code.google.com/p/mwenhanced/issues/list

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="main.swf" swftitle="minimap_outland">
+		<ITEM id="w0" text="Netherstorm"/>
+		<ITEM id="w1" text="Blades Edge Mountains"/>
+		<ITEM id="w2" text="Zangarmarsh"/>
+		<ITEM id="w3" text="Hellfire Peninsula"/>
+		<ITEM id="w4" text="Nagrand"/>
+		<ITEM id="w5" text="Terokkar Forest"/>
+		<ITEM id="w6" text="Shadowmoon Valley"/>
+
+		<ITEM id="k0" text="Teldrassil"/>
+		<ITEM id="k1" text="Bloodmyst Isle"/>
+		<ITEM id="k2" text="Azuremyst Isle"/>
+		<ITEM id="k3" text="Moonglade"/>
+		<ITEM id="k4" text="Darkshore"/>
+		<ITEM id="k5" text="Felwood"/>
+		<ITEM id="k6" text="Darnassus"/>
+		<ITEM id="k7" text="Winterspring"/>
+		<ITEM id="k8" text="Ashenvale"/>
+		<ITEM id="k9" text="Azshara"/>
+		<ITEM id="k10" text="Stonetalon Mountains"/>
+		<ITEM id="k11" text="The Barrens"/>
+		<ITEM id="k12" text="Durotar"/>
+		<ITEM id="k13" text="Desolace"/>
+		<ITEM id="k14" text="Mulgore"/>
+		<ITEM id="k15" text="Dustwallow Marsh"/>
+		<ITEM id="k16" text="Feralas"/>
+		<ITEM id="k17" text="Thousand Needles"/>
+		<ITEM id="k18" text="Silithus"/>
+		<ITEM id="k19" text="UnGoro Crater"/>
+		<ITEM id="k20" text="Tanaris"/>
+
+		<ITEM id="d0" text="Eversong Woods"/>
+		<ITEM id="d1" text="Ghostlands"/>
+		<ITEM id="d2" text="31"/>
+		<ITEM id="d3" text="Tirisfal Glades"/>
+		<ITEM id="d4" text="Western Plaguelands"/>
+		<ITEM id="d5" text="Eastern Plaguelands"/>
+		<ITEM id="d6" text="Silverpine Forest"/>
+		<ITEM id="d7" text="Alterac Mountains"/>
+		<ITEM id="d8" text="Hillsbrad Foothills"/>
+		<ITEM id="d9" text="The Hinterlands"/>
+		<ITEM id="d10" text="Arathi Highlands"/>
+		<ITEM id="d11" text="Silvermon City"/>
+		<ITEM id="d12" text="Wetlands"/>
+		<ITEM id="d13" text="Stormwind City"/>
+		<ITEM id="d14" text="Dun Morogh"/>
+		<ITEM id="d15" text="Loch Modan"/>
+		<ITEM id="d16" text="Undercity"/>
+		<ITEM id="d17" text="Searing Gorge"/>
+		<ITEM id="d18" text="Badlands"/>
+		<ITEM id="d19" text="Burning Steppes"/>
+		<ITEM id="d20" text="Ironforge"/>
+		<ITEM id="d21" text="Elwynn Forest"/>
+		<ITEM id="d22" text="Redridge Mountains"/>
+		<ITEM id="d23" text="Westfall"/>
+		<ITEM id="d24" text="Duskwood"/>
+		<ITEM id="d25" text="Deadwind Pass"/>
+		<ITEM id="d26" text="Swamp of Sorrows"/>
+		<ITEM id="d27" text="Stranglethorn Vale"/>
+		<ITEM id="d28" text="Blasted Lands"/>
+	</FILE>
+</CHANNEL>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="move_horde.swf" swftitle="move_horde">
+		<ITEM id="m0" text="Stair of Destiny"/>
+		<ITEM id="m1" text="Orgrimmar"/>
+		<ITEM id="m2" text="Ratchet"/>
+		<ITEM id="m3" text="Feathermoon Stronghold"/>
+		<ITEM id="m4" text="Feralas"/>
+		<ITEM id="m5" text="Silvermoon"/>
+		<ITEM id="m6" text="Undercity"/>
+		<ITEM id="m7" text="Gromgol"/>
+		<ITEM id="m8" text="Dark Portal"/>
+		<ITEM id="m9" text="Booty Bay"/>
+	</FILE>
+</CHANNEL>

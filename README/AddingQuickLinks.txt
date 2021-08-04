@@ -1,0 +1,42 @@
+== Adding links to the Quick Links Menu On the right side of the page in Mangosweb ==
+
+In this tutorial we will add your Website's Myspace page to the Account Menu.
+
+'''Step 1'''
+
+	You need to decide on a link name and the location that link will point to
+
+	i.e. Link name = Myspace
+   	     Location = www.myspace.com/yourmyspacepage
+
+'''Step 2'''
+
+	Open /lang/en.English.lang with your favorite editor 
+	(this step needs to be repeated for each language you are supporting)
+
+	Type this line into the file    |=|MS :=: Myspace
+	(you will see how the others are formatted, also try to put it at the top or bottom so its easy to find later if necessary)
+
+	The MS is the pointer you will need to match up later and the Myspace is what will actually show in the menu
+
+'''Step 3'''
+	
+	open /templates/offlike/body_right.php with your favorite editor
+
+	Add links following this example:
+
+<li class="e">
+<a href="<?php echo mw_url('account', 'register'); ?>"><?php echo $lang['quicklink1']; ?></a>
+</li>
+<li>
+<a href="<?php echo mw_url('server', 'realmstatus'); ?>"><?php echo $lang['quicklink3']; ?></a>
+</li>
+
+So your would look like this:
+
+li class="e">
+<a href="www.myspace.come/yourmyspacepage" /> <?php echo $lang['myspace']; ?></a>
+</li>
+<li>
+<a href="" /></a>
+</li>

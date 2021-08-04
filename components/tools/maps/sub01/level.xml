@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="level.swf" swftitle="level">
+		<ITEM id="m0" text="Netherstorm"/>
+		<ITEM id="m1" text="Blades Edge Mountains"/>
+		<ITEM id="m2" text="Zangarmarsh"/>
+		<ITEM id="m3" text="Hellfire Peninsula"/>
+		<ITEM id="m4" text="Nagrand"/>
+		<ITEM id="m5" text="Terokkar Forest"/>
+		<ITEM id="m6" text="Shadowmoon Valley"/>
+
+		<ITEM id="l0" text="Teldrassil"/>
+		<ITEM id="l1" text="Bloodmyst Isle"/>
+		<ITEM id="l2" text="Azuremyst Isle"/>
+		<ITEM id="l3" text="Darkshore"/>
+		<ITEM id="l4" text="Moonglade"/>
+		<ITEM id="l5" text="Felwood"/>
+		<ITEM id="l6" text="Winterspring"/>
+		<ITEM id="l7" text="Ashenvale"/>
+		<ITEM id="l8" text="Azshara"/>
+		<ITEM id="l9" text="Stonetalon Mountains"/>
+		<ITEM id="l10" text="The Barrens"/>
+		<ITEM id="l11" text="Durotar"/>
+		<ITEM id="l12" text="Desolace"/>
+		<ITEM id="l13" text="Mulgore"/>
+		<ITEM id="l14" text="Dustwallow Marsh"/>
+		<ITEM id="l15" text="Feralas"/>
+		<ITEM id="l16" text="Thousand Needles"/>
+		<ITEM id="l17" text="Silithus"/>
+		<ITEM id="l18" text="UnGoro Crater"/>
+		<ITEM id="l19" text="Tanaris"/>
+
+		<ITEM id="n0" text="Eversong Woods"/>
+		<ITEM id="n1" text="Ghostlands"/>
+		<ITEM id="n2" text="Tirisfal Glades"/>
+		<ITEM id="n3" text="Western Plaguelands"/>
+		<ITEM id="n4" text="Eastern Plaguelands"/>
+		<ITEM id="n5" text="Silverpine Forest"/>
+		<ITEM id="n6" text="Alterac Mountains"/>
+		<ITEM id="n7" text="Hillsbrad Foothills"/>
+		<ITEM id="n8" text="The Hinterlands"/>
+		<ITEM id="n9" text="Arathi Highlands"/>
+		<ITEM id="n10" text="The Wetlands"/>
+		<ITEM id="n11" text="Dun Morogh"/>
+		<ITEM id="n12" text="Loch Modan"/>
+		<ITEM id="n13" text="Searing Gorge"/>
+		<ITEM id="n14" text="Badlands"/>
+		<ITEM id="n15" text="Burning Steppes"/>
+		<ITEM id="n16" text="Elwynn Forest"/>
+		<ITEM id="n17" text="Redridge Mountains"/>
+		<ITEM id="n18" text="Westfall"/>
+		<ITEM id="n19" text="Duskwood"/>
+		<ITEM id="n20" text="Deadwind Pass"/>
+		<ITEM id="n21" text="Swamp of Sorrows"/>
+		<ITEM id="n22" text="Stranglethorn Vale"/>
+		<ITEM id="n23" text="The Blasted Lands"/>
+	</FILE>
+
+
+</CHANNEL>

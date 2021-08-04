@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="outlandnagrand.swf" swftitle="׶">
+		<ITEM id="a1" text="Telaar">
+<![CDATA[<font color="#81a408"><b>Telaar (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Quartermaster, Metalsmith, Blacksmithing Supplies, General Supplies, Reagents & Poisons, Trade Goods, Cooking Supplier, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Aeris Landing">
+<![CDATA[<font color="#81a408"><b>Aeris Landing (Neutral zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="The Ring of Blood">
+<![CDATA[<font color="#81a408"><b>The Ring of Blood (Neutral zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Nesingwary Safari">
+<![CDATA[<font color="#81a408"><b>Nesingwary Safari (Neutral zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="The Ring of Trials">
+<![CDATA[<font color="#81a408"><b>The Ring of Trials (Neutral zone)</b></font><br/><font color="#797c58">Arena Organizer, Arena Master</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Garadar">
+<![CDATA[<font color="#81a408"><b>Garadar (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Quartermaster, General Supplies, Reagents & Poisons, Metalsmith, Blacksmithing Supplies, Trade Goods, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Halaa">
+<![CDATA[<font color="#81a408"><b>Halaa (Outdoor PvP)</b></font><br/><font color="#797c58">Quartermaster, Ammunition, Food & Drink Vendor, Blade Merchant</font>]]>
+		</ITEM>
+	</FILE>
+
+
+		<FILE filename="outlandshattrath.swf" swftitle="Shattrath City">
+		<ITEM id="a1" text="Shattrath City">
+<![CDATA[<font color="#81a408"><b>Shattrath City</b></font><br/><font color="#797c58">1. Aldor Gem Merchant; 2. Jewelcrafting; 3. Alchemy Lab; 4. Alchemist; 5. Bank of the Aldor; 6. Mailbox of the Aldor; 7. First Aid Trainer; 8. Alliance Battlemasters; 9. World's End Tavern; 10. Flight Master; 11. Blacksmithing; 12. Mailbox of the Aldor; 13. Aldor Innkeeper; 14.Aldor Stable Master; 15. Horde Battlemasters & Arena Master; 16. Mailbox of The Scryers; 17. Bank of the Scryers; 18. Skinning; 19. Leatherworking; 20. Cooking; 21. Mana Loom; 22. Scryer's Stable; 23. Mailbox of Scryers Inn; 24. Scryers Inn; 25. Scryer Gem Merchant; 26. Enchanting</font>]]>
+		</ITEM>
+	</FILE>
+
+
+		<FILE filename="outlandshadowmoon.swf" swftitle="Shadowmoon Valley">
+		<ITEM id="a1" text="Shadowmoon Valley">
+<![CDATA[<font color="#81a408"><b>Shadowmoon Valley (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Grand Master Blacksmith, Riding Instructor, Food & Drink Vendor, General Supplies, Trade Goods, Blacksmithing Supplies, Wind Rider Vendor, Weaponsmith, Bowyer & Gunsmith, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Altar of Sha`tar">
+<![CDATA[<font color="#81a408"><b>Altar of Sha`tar (The Aldor zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, General Supplies, Blacksmithing Supplies, Leatherworking Supplies, Food & Drink Vendor, Weaponsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Sanctum of the Stars">
+<![CDATA[<font color="#81a408"><b>Sanctum of the Stars (The Scryers zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, General Supplies, Blacksmithing Supplies, Armor Merchant, Tailoring Supplies, Food & Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Oronok`s Farm">
+<![CDATA[<font color="#81a408"><b>Oronok`s Farm (Neutral zone)</b></font><br/><font color="#797c58">General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Wildhammer Stronghold">
+<![CDATA[<font color="#81a408"><b>Wildhammer Stronghold (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Riding Instructor, Cooking Supplier, Cooking Trainer, General Supplies, Armorer, Hammersmith, Forge, Anvil, Trade Goods, Gryphon Rider Vendor </font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="The Black Temple">
+<![CDATA[<font color="#81a408"><b>The Black Temple (Dungeon)</b></font><br/><font color="#797c58">25 player limit<br/>Level 70<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Halaa">
+<![CDATA[<font color="#81a408"><b>Halaa (Outdoor PvP)</b></font><br/><font color="#797c58">Quartermaster, Ammunition, Food & Drink Vendor, Blade Merchant</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="outlandzangarmarsh.swf" swftitle="Zangarmarsh">
+		<ITEM id="a1" text="Sporeggar">
+<![CDATA[<font color="#81a408"><b>Sporeggar (Neutral zone)</b></font><br/><font color="#797c58">Sporeggar Quartermaster (You must attain Friendly reputation with the Sporeggar to repair.)</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Zabra`jin">
+<![CDATA[<font color="#81a408"><b>Zabra`jin (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Reagent Vendor, Forge, Anvil, Grand Master Engineer, Trade Goods, Fishing Trainer, Item Repair</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Orebor Harborage">
+<![CDATA[<font color="#81a408"><b>Orebor Harborage (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Armor Merchant, Tailoring Supplies, Cooking Supplies, Poison Supplier</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Telredor">
+<![CDATA[<font color="#81a408"><b>Telredor (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Grand Master Engineer, Armorer, Reagent Vendor, Alchemy Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Cenarion Refuge">
+<![CDATA[<font color="#81a408"><b>Cenarion Refuge (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Moonwell, Cooking Supplier, Fish Merchant & Supplies, Cenarion Expedition Quartermaster, General Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Swamprat Post">
+<![CDATA[<font color="#81a408"><b>Swamprat Post (Horde zone)</b></font><br/><font color="#797c58">Flight Master, Reagent Vendor, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Coilfang Resevoir">
+<![CDATA[<font color="#81a408"><b>Coilfang Resevoir (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">The Slave Pens</font><br/>5 player limit<br/>Level: 62-64<br/>Heroic: Requires Cenarion Expedition -- Revered<br/><font color="#c49609">The Underbog</font><br/>5 player limit<br/>Level: 63-65<br/>Heroic: Requires Cenarion Expedition -- Revered<br/><font color="#c49609">The Steamvault</font><br/>5 player limit<br/>Level: 70-72<br/>Heroic: Requires Cenarion Expedition -- Revered<br/><font color="#c49609">Serpentshrine Cavern</font><br/>25 player limit<br/>Level 70<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="outlandhellfire.swf" swftitle="Hellfire Peninsula">
+		<ITEM id="a1" text="Dark Portal">
+<![CDATA[<font color="#81a408"><b>Dark Portal (Neutral zone)</b></font><br/><font color="#797c58">Flight Master</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Honor Hold">
+<![CDATA[<font color="#81a408"><b>Honor Hold (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Grand Master Jewelcrafter, Skinning Trainer, Grand Master Tailor, Herbalism Trainer, Grand Master Alchemist, Grand Master Engineer, Grand Master Blacksmith, Mining Trainer, Quartermaster, Gem Vendor, Food Merchant, Reagent Vendor, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Thrallmar">
+<![CDATA[<font color="#81a408"><b>Thrallmar (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Grand Master Jewelcrafter, Skinning Trainer, Grand Master Tailor, Herbalism Trainer, Grand Master Alchemist, Grand Master Engineer, Grand Master Blacksmith, Mining Trainer, Quartermaster, Gem Vendor, Food Merchant, Reagent Vendor, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Temple of Telhamat">
+<![CDATA[<font color="#81a408"><b>Temple of Telhamat (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Medic, Food & Drink Vendor, Reagent Vendor, Weaponsmith, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Falcon Watch">
+<![CDATA[<font color="#81a408"><b>Falcon Watch (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Medic, Food & Drink Vendor, Reagent Vendor, Weaponsmith, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Cenarion Post">
+<![CDATA[<font color="#81a408"><b>Cenarion Post (Neutral zone)</b></font><br/><font color="#797c58">General Quest NPC</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Hellfire Citadel">
+<![CDATA[<font color="#81a408"><b>Hellfire Citadel (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">Hellfire Ramparts</font><br/>5 player limit<br/>Level 60-62<br/>Heroic: Requires Honor Hold, Thrallmar -- Revered<br/><font color="#c49609">Blood Furnace</font><br/>5 player limit<br/>Level 61-63<br/>Heroic: Requires Honor Hold, Thrallmar -- Revered<br/><font color="#c49609">Shattered Halls</font><br/>5 player limit<br/>Level 70-72<br/>Heroic: Requires Honor Hold, Thrallmar -- Revered<br/><font color="#c49609">Magtheridon's Lair</font><br/>25 player limit<br/>Level 70<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="outlandBladesedge.swf" swftitle="Blade`s Edge Mountains">
+		<ITEM id="a1" text="Sylvanaar">
+<![CDATA[<font color="#81a408"><b>Sylvanaar (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Moonwell, General Supplies, Weaponsmith, Trade Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Toshley`s Station">
+<![CDATA[<font color="#81a408"><b>Toshley`s Station (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Engineering Supplies, Trade Goods, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Ruuan Weald">
+<![CDATA[<font color="#81a408"><b>Ruuan Weald (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Moonwell, General Supplies, Weaponsmith, Trade Goods, Food & Drink Vendor, Reagent Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Gruul`s Lair">
+<![CDATA[<font color="#81a408"><b>Gruul`s Lair (Dungeon)</b></font><br/><font color="#797c58">25 player limit<br/>Level 70<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Thunderlord Stronghold">
+<![CDATA[<font color="#81a408"><b>Thunderlord Stronghold (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Trade Goods, Fruit and Fungus, First Aid Trainer, Fishmonger, Throwing Weapons & Ammunition, General Supplies, Potions, Axesmith, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Mok`Nathal Village">
+<![CDATA[<font color="#81a408"><b>Mok`Nathal Village (Horde zone)</b></font><br/><font color="#797c58">Inn, Flight Master, Stable Master, Grand Master Leatherworker, Leatherworking Supplies, Trade Goods, General Supplies, Smashing Weapons</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="outlandterokkar.swf" swftitle="Terokkar Forest">
+		<ITEM id="a1" text="Shattrath City">
+<![CDATA[<font color="#81a408"><b>Shattrath City (Sanctuary)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Stonebreaker Hold">
+<![CDATA[<font color="#81a408"><b>Stonebreaker Hold (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Trade Goods, Bowyer, General Supplies, Forge, Anvil, Spirit Shard rewards</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Allerian Stronghold">
+<![CDATA[<font color="#81a408"><b>Allerian Stronghold (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Trade Goods, General Goods, Bag Merchant, Blacksmithing Supplies, Rations, Anvil, Forge, Spirit Shard rewards</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Refugee Caravan">
+<![CDATA[<font color="#81a408"><b>Refugee Caravan (Neutral zone)</b></font><br/><font color="#797c58">General Supplies, Trade Supplies, Food & Drink Vendor, Tinker</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Sha`tari Base Camp">
+<![CDATA[<font color="#81a408"><b>Sha`tari Base Camp (Neutral zone)</b></font><br/><font color="#797c58">First Aid Trainer, Blacksmithing Supplier</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Auchindoun">
+<![CDATA[<font color="#81a408"><b>Auchindoun (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">Mana Tombs</font><br/>5 player limit<br/>Level 64-66<br/>Heroic: Requires Lower City -- Revered<br/><font color="#c49609">Auchenai Crypts</font><br/>5 player limit<br/>Level 65-67<br/>Heroic: Requires Lower City -- Revered<br/><font color="#c49609">Sethekk Halls</font><br/>5 player limit<br/>Level 67-69<br/>Heroic: Requires Lower City -- Revered<br/><font color="#c49609">Shadow Labyrinth</font><br/>5 player limit<br/>Level 70-72<br/>Heroic: Requires Lower City -- Revered<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="outlandnetherstorm.swf" swftitle="Netherstorm">
+		<ITEM id="a1" text="Area 52">
+<![CDATA[<font color="#81a408"><b>Area 52 (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Grand Master Engineer, B.O.O.M. Master Mixologist, Arena Master, Trade Goods, Transportation Engineer, Food & Drink Vendor, General Supplies, Banker, Engineering Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Eco-Dome Midrealm">
+<![CDATA[<font color="#81a408"><b>Eco-Dome Midrealm (Neutral zone)</b></font><br/><font color="#797c58">General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="The Stormspire">
+<![CDATA[<font color="#81a408"><b>The Stormspire (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Grand Master Enchanter, Grand Master Jewelcrafter, Spare Parts, Exotic Weapons, Gems and Jewelcrafting, Enchanting Supplies, Trade Goods, Arcane Goods, Exotic Creatures, General Supplies, Potent Potables, Consortium Quartermaster, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Cosmowrench">
+<![CDATA[<font color="#81a408"><b>Cosmowrench (Neutral zone)</b></font><br/><font color="#797c58">Flight Master, Reagents and Poisons, Weaponsmith, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Protectorate Watch Post">
+<![CDATA[<font color="#81a408"><b>Protectorate Watch Post (Neutral zone)</b></font><br/><font color="#797c58">General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Kirin`Var Village">
+<![CDATA[<font color="#81a408"><b>Kirin`Var Village (Neutral zone)</b></font><br/><font color="#797c58">Blacksmithing Supplier</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Tempest Keep">
+<![CDATA[<font color="#81a408"><b>Tempest Keep (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">The Mechanar</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Botanica</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Arcatraz</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Eye</font><br/>25 player limit<br/>Level 70<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+
+
+
+
+
+
+	<FILE filename="kalimdarnassus.swf" swftitle="Darnassus">
+		<ITEM id="a1" text="Darnassus">
+<![CDATA[<font color="#81a408"><b>Darnassus</b></font><br/><font color="#797c58">1. Rogue Trainer; 2. Druid Trainer; 3. Stable Master; 4. Hunter Trainer; 5. First Aid Trainer; 6. Enchanting Trainer; 7. Inn; 8. Cooking Trainer; 9. Alchemy Trainer; 10. Skinning Trainer; 11. Leatherworking Trainer; 12. Tailoring Trainer; 13. Guild Master; 14. Hippogryph Master; 15. Bank; 16. Battle Master; 17. Warrior Trainer; 18. Weapon Master; 19. Auction House; 20. Fishing Trainer; 21. Herbalism Trainer; 22. Priest Trainer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimmoonglade.swf" swftitle="Moonglade">
+		<ITEM id="a1" text="Flight Master">
+<![CDATA[<font color="#81a408"><b>Flight Master (Alliance zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Flight Master">
+<![CDATA[<font color="#81a408"><b>Flight Master (Horde zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Nighthaven">
+<![CDATA[<font color="#81a408"><b>Nighthaven (Neutral zone)</b></font><br/><font color="#797c58">Flight Master (Druid Only)<br/>Food & Drink Vendor, Cloth & Leather Armor Merchant, Trade Goods, Speciality Dress Maker, Tailoring Supplies, Weaponsmith, Bowyer, General Goods</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimStonetalon.swf" swftitle="Stonetalon Mountains">
+		<ITEM id="a1" text="Stonetalon Peak">
+<![CDATA[<font color="#81a408"><b>Stonetalon Peak (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Cloth Armor Merchant, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Sun Rock Retreat">
+<![CDATA[<font color="#81a408"><b>Sun Rock Retreat (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Arcane Goods, General Supplies, Butcher, Trade Goods, Bowyer, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Malaka`jin">
+<![CDATA[<font color="#81a408"><b>Malaka`jin (Horde zone)</b></font><br/><font color="#797c58">Butcher</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimDurotar.swf" swftitle="Durotar">
+		<ITEM id="a1" text="Sen`jin Village">
+<![CDATA[<font color="#81a408"><b>Sen'jin Village (Horde zone)</b></font><br/><font color="#797c58">Raptor Riding Trainer, Mage Trainer, Herbalism Trainer, Journeyman Alchemist, Butcher, Trade Goods, Fishing Supplier, General Supplies, Weaponsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Valley of Trials">
+<![CDATA[<font color="#81a408"><b>Valley of Trials (Horde zone)</b></font><br/><font color="#797c58">Warrior Trainer, Hunter Trainer, Mage Trainers, Shaman Trainer, Rogue Trainer, Warlock Trainers, Demon Trainer, Priest Trainer, Butcher, General Supplies, Weaponsmith, Armorer & Shieldcrafter, Cloth & Leather Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Razor Hill">
+<![CDATA[<font color="#81a408"><b>Razor Hill (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Warrior Trainer, Shaman Trainer, Priest Trainer, Rogue Trainer, Hunter Trainer, Warlock Trainers, Demon Trainer, First Aid Trainer, Pet Trainer, Journeyman Engineer, Mining Trainer, Journeyman Blacksmith, Weaponsmith, Armorer & Shieldcrafter, Bowyer, Trade Goods, General Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Airport">
+<![CDATA[<font color="#81a408"><b>Zeppelin (Horde zone)</b></font><br/><font color="#797c58">Zeppelin route to reach Tirisfal Glades, Grom'gol Base Camp</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Orgrimmar">
+<![CDATA[<font color="#81a408"><b>Orgrimmar</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Kirin`Var Village">
+<![CDATA[<font color="#81a408"><b>Kirin`Var Village (Neutral zone)</b></font><br/><font color="#797c58">Blacksmithing Supplier</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Tempest Keep">
+<![CDATA[<font color="#81a408"><b>Tempest Keep (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">The Mechanar</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Botanica</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Arcatraz</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Eye</font><br/>25 player limit<br/>Level 70<br/>Ư̻: 25 ݴ , 7 ͼ ð, ǳ  ʿ<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimDustwallow.swf" swftitle="Dustwallow Marsh">
+		<ITEM id="a1" text="Brackenwall Village">
+<![CDATA[<font color="#81a408"><b>Brackenwall Village (Horde zone)</b></font><br/><font color="#797c58">Flight Master, Weaponsmith, Tailoring Supplies, Bowyer, Armorer, Potions, Scrolls and Reagents, Butcher</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Theramore Isle">
+<![CDATA[<font color="#81a408"><b>Theramore Isle (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Warrior Trainer, Paladin Trainer, Trauma Surgeon, Herbalism Trainer, Expert Alchemist, Master Tailor, Bartender, Food Merchant, Weapons and Armor Merchant, Gunsmith, Bowyer, General Supplies, Trade Goods, Armorer & Shieldcrafter, Weaponsmith, Horse Breeder, Alchemy Supplies<br/>Sailing route to Menethil in Eastern Kingdoms</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Onyxia`s Lair">
+<![CDATA[<font color="#81a408"><b>Onyxia`s Lair (Dungeon)</b></font><br/><font color="#797c58">40 player limit<br/>Level 60<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimMulgore.swf" swftitle="Mulgore">
+		<ITEM id="a1" text="Camp Narache">
+<![CDATA[<font color="#81a408"><b>Camp Narache (Horde zone)</b></font><br/><font color="#797c58">Warrior Trainer, Hunter Trainer, Druid Trainer, Shaman Trainer, Baker, Armorer & Shieldcrafter, Weaponsmith, Leather Armor Merchant, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Bloodhoof Village">
+<![CDATA[<font color="#81a408"><b>Bloodhoof Village (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Warrior Trainer, Shaman Trainer, Druid Trainer, Hunter Trainer, Pet Trainer, Fishing Trainer, Skinning Trainer, Cooking Trainer, Journeyman Leatherworker, First Aid Trainer, Kodo Riding Instructor, Kodo Mounts, Baker, General Supplies, Gunsmith, Weaponsmith, Leather Armor Merchant, Armorer & Shieldcrafter, Trade Goods, Fish Merchant & Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Red Rocks">
+<![CDATA[<font color="#81a408"><b>Red Rocks (Horde zone)</b></font><br/><font color="#797c58">Journeyman Engineer (Neutral zone)</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Thunder Bluff">
+<![CDATA[<font color="#81a408"><b>Thunder Bluff (Horde zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimThousand.swf" swftitle="Thousand Needles">
+		<ITEM id="a1" text="Whitereach Post">
+<![CDATA[<font color="#81a408"><b>Whitereach Post (Horde zone)</b></font><br/><font color="#797c58">Food & Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Freewind Post">
+<![CDATA[<font color="#81a408"><b>Freewind Post (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, General Supplies, Trade Goods, Butcher, Reagent Vendor, Gunsmith & Bowyer</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Mirage Raceway">
+<![CDATA[<font color="#81a408"><b>Mirage Raceway (Neutral zone)</b></font><br/><font color="#797c58">Engineering Supplies, Ice Cream Vendor, Gunsmith, Drink Vendor</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimTheBarrens.swf" swftitle="The Barrens">
+		<ITEM id="a1" text="Warsong Gulch">
+<![CDATA[<font color="#81a408"><b>Warsong Gulch (Horde zone)</b></font><br/><font color="#797c58">Warsong Supply Officer, Smokywood Pastures, The battlemaster</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="The Crossroads">
+<![CDATA[<font color="#81a408"><b>The Crossroads (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Expert Blacksmith, Journeyman Tailor, Tailoring Supplies, Baker, Reagents and Herbs, Trade Goods, General Supplies, Bag Merchant, Cloth Armor Merchant, Weaponsmith, Leather & Mail Armor Merchant, Bowyer & Gunsmith, Blacksmithing Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Ratchet">
+<![CDATA[<font color="#81a408"><b>Ratchet (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Weaponsmith, Bank, Stable Master, Warlock Trainers, Demon Trainer, Journeyman Engineer, Master Goblin Engineer, Fisherman, Engineering Supplies, Weaponsmith, Armorer & Shieldcrafter, Cloth & Leather Armor Merchant, General Supplies, Trade Goods, Forge, Anvil<br/>Sailing route to Booty Bay in Eastern Kingdoms</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Camp Taurajo">
+<![CDATA[<font color="#81a408"><b>Camp Taurajo (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Expert Tailor, Expert Leatherworker, Skinning Trainer, Leather Armor Merchant, Tailoring Supplies, Butcher, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Wailing Caverns">
+<![CDATA[<font color="#81a408"><b>Wailing Caverns (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 15-28<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Razorfen Kraul">
+<![CDATA[<font color="#81a408"><b>Razorfen Kraul (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 24-40<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Razorfen Downs">
+<![CDATA[<font color="#81a408"><b>Razorfen Downs (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 33-47<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimSilithus.swf" swftitle="Silithus">
+		<ITEM id="a1" text="Valor`s Rest">
+<![CDATA[<font color="#81a408"><b>Valor's Rest (Neutral zone)</b></font><br/><font color="#797c58">Leatherworking Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Cenarion Hold">
+<![CDATA[<font color="#81a408"><b>Cenarion Hold (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Moonwell, Blacksmith, Trade Goods, Enchanting Supplies, Reagent Vendor,  Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Ahn`Qiraj">
+<![CDATA[<font color="#81a408"><b>Ahn`Qiraj (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">Ruins of Ahn'Qiraj</font><br/>20 player limit<br/>Level 60<br/><font color="#c49609">Temple of Ahn'Qiraj</font><br/>40 player limit<br/>Level 60<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimThunderBluff.swf" swftitle="Thunder Bluff">
+		<ITEM id="a1" text="Thunder Bluff">
+<![CDATA[<font color="#81a408"><b>Thunder Bluff</b></font><br/><font color="#797c58">1. Shaman Trainer; 2. First Aid Trainer; 3. Priest Trainer; 4. Mage Trainer; 5. Druid Trainer; 6. Alchemy Trainer; 7. Enchanting Trainer; 8 .Herbalism Trainer; 9.Skinning Trainer; 10. Tailoring Trainer; 11. Leatherworking Trainer; 12. Fishing Trainer; 13. Auction House; 14. Wind Rider Master; 15. Cooking Trainer; 16. Mining Trainer; 17. Blacksmithing Trainer; 18. Guild Master; 19. Weapon Master; 20. Stable Master; 21. Mailbox; 22. Bank; 23. Inn; 24. Battle Master; 25. Warrior Trainer; 26. Hunter Trainer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimAzshara.swf" swftitle="Azshara">
+		<ITEM id="a1" text="Talrendis Point">
+<![CDATA[<font color="#81a408"><b>Talrendis Point (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Bowyer</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Valormok">
+<![CDATA[<font color="#81a408"><b>Valormok (Horde zone)</b></font><br/><font color="#797c58">Flight Master, Weaponsmith, Food & Drink Vendor</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimFelwood.swf" swftitle="Felwood">
+		<ITEM id="a1" text="Emerald Sanctuary">
+<![CDATA[<font color="#81a408"><b>Emerald Sanctuary (Neutral zone)</b></font><br/><font color="#797c58">Flight Master</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Bloodvenom Post">
+<![CDATA[<font color="#81a408"><b>Bloodvenom Post (Horde zone)</b></font><br/><font color="#797c58">Flight Master, Weaponsmith, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Talonbranch Glade ">
+<![CDATA[<font color="#81a408"><b>Talonbranch Glade (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Hunter Trainer, Pet Trainer, Druid Trainer, General Supplies, Weaponsmith</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimDarkshore.swf" swftitle="Darkshore">
+		<ITEM id="a1" text="Auberdine">
+<![CDATA[<font color="#81a408"><b>Auberdine (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Journeyman Engineer, Journeyman Tailor, Journeyman Blacksmith, Mining Trainer, Moonwell, Food & Drink Vendor, Drink Vendor, Fish Merchant, Baker, General Supplies, Weaponsmith, Leather Armor Merchant, Armorer & Shieldcrafter, Tailoring Supplies, Cloth Armor Merchant, Trade Goods, Blacksmithing Supplies, Mining Supplier, Forge, Anvil <br/>Sailing route to Menethil Harbor in Eastern Kingdoms<br/>Sailing route to Teldrassil or Azuremyst Isle</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Grove of the Ancients">
+<![CDATA[<font color="#81a408"><b>Grove of the Ancients (Alliance zone)</b></font><br/><font color="#797c58">Trade Goods, Food & Drink Vendor</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimExodar.swf" swftitle="The Exodar">
+		<ITEM id="a1" text="The Exodar">
+<![CDATA[<font color="#81a408"><b>The Exodar</b></font><br/><font color="#797c58">1. Fishing Trainer; 2. First Aid Trainer; 3. Jewelcrafting; 4. Cooking Trainer; 5. Stable Master; 6. Inn; 7. Arena Battlemaster; 8. Shaman Trainer; 9. Enchanting Trainer; 10. Bank; 11. Mailbox; 12. Battle Master; 13. Alchemy Trainer; 14. Herbalism Trainer; 15. Priest Trainer; 16. Mage Trainer; 17. Auction House; 18. Wyvern Master; 19. Guild Master; 20. Tailoring Trainer; 21. Skinning Trainer; 22. Leatherworking Trainer; 23. Paladin Trainer; 24. Hunter Trainer; 25. Warrior Trainer; 26. Weapon Master; 27. Engineering Trainer; 28. Mining Trainer; 29. Blacksmithing Trainer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimWinterspring.swf" swftitle="Winterspring">
+		<ITEM id="a1" text="Everlook">
+<![CDATA[<font color="#81a408"><b>Everlook (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Bank, Neutral Auction House, Engineering Supplies, Alchemy Supplies, Food & Drink Vendor, Mining Supplier, Heavy Armor Merchant, Cloth & Leather Armor Merchant, Weaponsmith & Gunsmith, Trade Goods, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Starfall Village">
+<![CDATA[<font color="#81a408"><b>Starfall Village (Alliance zone)</b></font><br/><font color="#797c58">Trade Goods, General Supplies, Food & Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Darkwhisper Gorge">
+<![CDATA[<font color="#81a408"><b>Darkwhisper Gorge (Neutral zone)</b></font><br/><font color="#797c58">Exotic Reagent Merchant</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimOrgrimmar.swf" swftitle="Orgrimmar">
+		<ITEM id="a1" text="Orgrimmar">
+<![CDATA[<font color="#81a408"><b>Orgrimmar</b></font><br/><font color="#797c58">1. Hunter Trainer; 2. Stable Master; 3. Weapon Master; 4. Blacksmithing Trainer; 5. Fishing Trainer; 6. Mining Trainer; 7. Engineering Trainer; 8. Battle Master; 9. Warrior Trainer; 10. Paladin Trainer; 11. Shaman Trainer; 12. Alchemy Trainer; 13. Enchanting Trainer; 14. Herbalism Trainer; 15. Skinning Trainer; 16. Leatherworker Trainer; 17. Tailoring Trainer; 18. Cooking Trainer; 19 .Warlock Trainer; 20. Rogue Trainer; 21. The Officers" Lounge; 22. Wind Rider Master; 23. Auction House; 24. Guild Master; 25. Bank; 26. Mailbox; 27. Inn; 28. First Aid Trainer; 29. Priest Trainer; 30. Mage Trainer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimUngoro.swf" swftitle="Un`Goro Crater">
+		<ITEM id="a1" text="Marshal`s Refuge">
+<![CDATA[<font color="#81a408"><b>Marshal's Refuge (Neutral zone)</b></font><br/><font color="#797c58">Flight Master, Weaponsmith, General Goods</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimDesolace.swf" swftitle="Desolace">
+		<ITEM id="a1" text="Shadowprey Village">
+<![CDATA[<font color="#81a408"><b>Shadowprey Village (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Skinning Trainer, Trade Supplies, Fisherman, Fishing Supplier, Cooking Supplier, Axesmith, General Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Ghost Walker Post">
+<![CDATA[<font color="#81a408"><b>Ghost Walker Post (Horde zone)</b></font><br/><font color="#797c58">Expert Leatherworker, Superior Hammersmith, Food & Drink Vendor, Trade Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Maraudon">
+<![CDATA[<font color="#81a408"><b>Maraudon (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 40-58<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Nijel`s Point">
+<![CDATA[<font color="#81a408"><b>Nijel`s Point (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Moonwell, Food & Drink Vendor, General Supplies,  Mail Armor Merchant</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimAshenvale.swf" swftitle="Ashenvale">
+		<ITEM id="a1" text="Blackfathom Deeps">
+<![CDATA[<font color="#81a408"><b>Blackfathom Deeps (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 20-35<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Zoram`gar Outpost">
+<![CDATA[<font color="#81a408"><b>Zoram`gar Outpost (Horde zone)</b></font><br/><font color="#797c58">Flight Master, Fisherman, Fish Merchant & Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Astranaar">
+<![CDATA[<font color="#81a408"><b>Astranaar (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Expert Leatherworker, Reagent Vendor, Cloth Armor Merchant, Leather Armor Merchant, Leatherworking Supplies, Shady Goods, Food & Drink Vendor, Baker, Weaponsmith, General Supplies, Trade Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Silverwind Refuge">
+<![CDATA[<font color="#81a408"><b>Silverwind Refuge (Alliance zone)</b></font><br/><font color="#797c58">Hunter Trainer, Pet Trainer, Skinning Trainer, Expert Alchemist, Herbalism Trainer, Alchemy Supplies, Trade Goods, Bowyer, Butcher</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Splintertree Post">
+<![CDATA[<font color="#81a408"><b>Splintertree Post (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Heavy Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Warsong Gulch">
+<![CDATA[<font color="#81a408"><b>Warsong Gulch (Alliance zone)</b></font><br/><font color="#797c58">Silverwing Supply Officer, Smokywood Pastures, Warsong Gulch Battle Master</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Forest Song">
+<![CDATA[<font color="#81a408"><b>Forest Song (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Weaponsmith</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimTanaris.swf" swftitle="Tanaris">
+		<ITEM id="a1" text="Gadgetzan">
+<![CDATA[<font color="#81a408"><b>Gadgetzan (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Arena Master, Bank, Neutral Auction House, Master Engineer, Butcher, Master Goblin Engineer, The Mithril Order, Mining Trainer, Blacksmithing Supplies, Gunsmith, Superior Armorsmith, Tailoring Supplies, Alchemy Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Steamwheedle Port">
+<![CDATA[<font color="#81a408"><b>Steamwheedle Port (Neutral zone)</b></font><br/><font color="#797c58">Fisherman, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Zul`Farrak">
+<![CDATA[<font color="#81a408"><b>Zul`Farrak (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 43-54<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Caverns of Time">
+<![CDATA[<font color="#81a408"><b>Caverns of Time (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">Old Hillsbrad Foothills</font><br/>5 player limit<br/>Level 66-68<br/>Heroic: Requires Keepers of Time -- Revered<br/><font color="#c49609">Black Morass</font><br/>5 player limit<br/>Level 69-72<br/>Heroic: Requires Keepers of Time -- Revered<br/><font color="#c49609">Mount Hyjal</font><br/>25 player limit<br/>Level 70<br/><font color="#c49609"></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimTeldrassi.swf" swftitle="Teldrassil">
+		<ITEM id="a1" text="Shadowglen">
+<![CDATA[<font color="#81a408"><b>Shadowglen (Alliance zone)</b></font><br/><font color="#797c58">Druid Trainer, Hunter Trainer, Priest Trainer, Rogue Trainer, Warrior Trainer, Armorer & Shieldcrafter, Weaponsmith, Leather Armor Merchant, Food & Drink Vendor, Bowyer, Cloth Armor Merchant, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Dolanaar">
+<![CDATA[<font color="#81a408"><b>Dolanaar (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Hunter Trainer, Pet Trainer, Druid Trainer, Priest Trainer, Rogue Trainer, Warrior Trainer, First Aid Trainer, Cooking Trainer, Cooking Supplier, Herbalism Trainer, Journeyman Alchemist, Bowyer, Armorer & Shieldcrafter, Weaponsmith, Leather Armor Merchant, Cloth Armor Merchant, Moonwell, Food & Drink Vendor, General Supplies, Trade Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Teldrassil">
+<![CDATA[<font color="#81a408"><b>Teldrassil (Alliance zone)</b></font><br/><font color="#797c58">Skinning Trainer, Journeyman Leatherworker</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Darnassus">
+<![CDATA[<font color="#81a408"><b>Darnassus (Alliance zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Rut`theran Village">
+<![CDATA[<font color="#81a408"><b>Rut`theran Village (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Fisherman, Fishing Supplier<br/>Sailing route to Auberdine in Kalimdor</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimFeralas.swf" swftitle="Feralas">
+		<ITEM id="a1" text="Thalanaar">
+<![CDATA[<font color="#81a408"><b>Thalanaar (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Moonwell, Tribal Leatherworking Trainer, Tailoring Supplies, Leather Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="The Twin Colossals">
+<![CDATA[<font color="#81a408"><b>The Twin Colossals</b></font><br/><font color="#797c58">Parachute Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="The Forgotten Coast">
+<![CDATA[<font color="#81a408"><b>The Forgotten Coast (Neutral zone)</b></font><br/><font color="#797c58">Sailing route to Feathermoon Stronghold (Alliance zone)</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Feathermoon Stronghold">
+<![CDATA[<font color="#81a408"><b>Feathermoon Stronghold (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Expert Enchanter, Master Alchemist, Fishing Trainer, Trade Supplies, Leatherworking Supplies, Reagent Vendor, Food & Drink Vendor, Cloth Armor Merchant, General Supplies, Fish Merchant, Fishing Supplier, Alchemy Supplies<br/>Sailing route to the Forgotten Coast (Alliance zone)</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Dire Maul">
+<![CDATA[<font color="#81a408"><b>Dire Maul (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 54-61<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Camp Mojache">
+<![CDATA[<font color="#81a408"><b>Camp Mojache (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Druid Trainer, Master Leatherworking Trainer, Skinning Trainer, Herbalism Trainer, Leatherworking Supplies, Trade Goods, Leather Armor Merchant, Reagent Vendor, Alchemy Supplies, Food & Drink Vendor, Gunsmith & Bowyer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimBloodmyst.swf" swftitle="Bloodmyst Isle">
+		<ITEM id="a1" text="Kessel`s Crossing">
+<![CDATA[<font color="#81a408"><b>Kessel's Crossing (Alliance zone)</b></font><br/><font color="#797c58">Food & Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Blood Watch">
+<![CDATA[<font color="#81a408"><b>Blood Watch (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Flight Master, Mining Trainer, First Aid Trainer, Herbalism Trainer, Bowyer, Trade Goods, General Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="The Bloodwash">
+<![CDATA[<font color="#81a408"><b>The Bloodwash (Alliance zone)</b></font><br/><font color="#797c58">General & Trade Goods</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="kalimAzuremyst.swf" swftitle="Azuremyst Isle">
+		<ITEM id="a1" text="Crash Site">
+<![CDATA[<font color="#81a408"><b>Crash Site (Alliance zone)</b></font><br/><font color="#797c58">Priest Trainer, Paladin Trainer, Mage Trainers, Shaman Trainer, Warrior Trainer, Hunter Trainer, Weaponsmith, General Supplies, Cloth & Leather Armor Merchant, Armorer</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Azure Watch">
+<![CDATA[<font color="#81a408"><b>Azure Watch (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Warrior Trainer, Paladin Trainer, Mage Trainers, Shaman Trainer, Priest Trainer, Hunter Trainer, Pet Trainer, Journeyman Engineer, Herbalism Trainer, Journeyman Alchemist, First Aid Trainer, General Supplies, Trade Goods, Fishing Trainer & Supplies (Allience, Ammen Ford), Mining Trainer, Cloth & Leather Armor Merchant, Weapons and Armor Merchant, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Odesyus` Landing">
+<![CDATA[<font color="#81a408"><b>Odesyus` Landing (Alliance zone)</b></font><br/><font color="#797c58">Journeyman Blacksmith, Blacksmithing Supplies, General Supplies, Cooking Trainer and Supplies, Journeyman Tailor, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Valaar`s Berth">
+<![CDATA[<font color="#81a408"><b>Valaar`s Berth (Alliance zone)</b></font><br/><font color="#797c58">Druid Trainer<br/>Sailing route to Darkshore</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Stillpine Hold">
+<![CDATA[<font color="#81a408"><b>Stillpine Hold (Alliance zone)</b></font><br/><font color="#797c58">Skinning Trainer, Journeyman Leatherworker, General Supplies, Trade Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="The Exodar">
+<![CDATA[<font color="#81a408"><b>The Exodar (Alliance zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+
+
+	<FILE filename="eastStranglethorn.swf" swftitle="Stranglethorn Vale">
+		<ITEM id="a1" text="Rebel Camp">
+<![CDATA[<font color="#81a408"><b>Rebel Camp (Alliance zone)</b></font><br/><font color="#797c58">General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Nesingwary`s Expedition">
+<![CDATA[<font color="#81a408"><b>Nesingwary`s Expedition</b></font><br/><font color="#797c58">Superior Axecrafter</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Yojamba Isle">
+<![CDATA[<font color="#81a408"><b>Yojamba Isle (Neutral zone)</b></font><br/><font color="#797c58">Zul`Gurub Quest<br/>Zandalar Tribe Vendors</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Stranglethorn Vale">
+<![CDATA[<font color="#81a408"><b>Stranglethorn Vale (Neutral zone)</b></font><br/><font color="#797c58">Artisan Blacksmith of the Mithril Order (General quest NPC)</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Grom`gol Base Camp (Horde zone)">
+<![CDATA[<font color="#81a408"><b>Grom`gol Base Camp (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Airport, Hunter Trainer, Pet Trainer, Herbalism Trainer, Superior Cook, Expert Leatherworker, General Supplies, Food & Drink Vendor, Trade Goods, Superior Weaponsmith, Superior Armorer, Cloth & Leather Armor Merchant, Forge, Anvil<br/>Zeppelin route to reach Tirisfal Glades</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Wild Shore">
+<![CDATA[<font color="#81a408"><b>Wild Shore (Neutral zone)</b></font><br/><font color="#797c58">Tailoring Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Booty Bay">
+<![CDATA[<font color="#81a408"><b>Booty Bay (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Neutral Auction House, Bank, Fishing Trainer, Chief Engineer, Cook, Master Blacksmith, Expert Tailor, Expert Alchemist, Alchemy Supplies, Blade Merchant, Food & Drink Vendor, Cloth Armor and Accessories, Leatherworking Supplies, Tailoring Supplies, Blacksmithing Supplies, Pirate Supplies, Superior Bowyer, Engineering Supplies, Macecrafter, Superior Weaponsmith, Fish Merchant, Fish Merchant & Supplies, Superior Armorer, Forge, Anvil<br/>Sailing route to Ratchet</font>]]>
+		</ITEM>
+
+		<ITEM id="a8" text="Zul`Gurub">
+<![CDATA[<font color="#81a408"><b>Zul`Gurub (Dungeon)</b></font><br/><font color="#797c58">20 player limit<br/>Level 60<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastDuskwood.swf" swftitle="Duskwood">
+		<ITEM id="a1" text="Darkshire">
+<![CDATA[<font color="#81a408"><b>Darkshire (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Expert Engineer, Mining Trainer, General Supplies, Bartender, Trade Goods, Bowyer, Expert Blacksmith, Armorer, Weaponsmith, Mushroom Seller, Reagent Vendor, Tailoring Supplies, Engineering and Mining Supplies, Shady Goods, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Raven Hill">
+<![CDATA[<font color="#81a408"><b>Raven Hill (Neutral zone)</b></font><br/><font color="#797c58">Alchemy Supplies</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastDunMorogh.swf" swftitle="Dun Morogh">
+		<ITEM id="a1" text="Gol`Bolar Quarry">
+<![CDATA[<font color="#81a408"><b>Gol'Bolar Quarry (Alliance zone)</b></font><br/><font color="#797c58">Cooking Trainer, Mining Trainer, Weapon Merchant, Food & Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Amberstill Ranch">
+<![CDATA[<font color="#81a408"><b>Amberstill Ranch (Alliance zone)</b></font><br/><font color="#797c58">Ram Riding Trainer, Ram Breeder, Dwarven Weaponsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Steelgrill`s Depot">
+<![CDATA[<font color="#81a408"><b>Steelgrill`s Depot (Alliance zone)</b></font><br/><font color="#797c58">Mechanostrider Pilot, Mechanostrider Merchant, Mining Trainer, Journeyman Engineer, Engineering Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Kharanos">
+<![CDATA[<font color="#81a408"><b>Kharanos (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Paladin Trainer, Mage Trainers, Priest Trainer, Warrior Trainer, Rogue Trainer, Warlock Trainers, Demon Trainer, Hunter Trainer, Pet Trainer, Cooking Trainer, Journeyman Blacksmith, General Supplies, Trade Goods, Trade Goods, Weaponsmith, Cloth & Leather Armor Merchant, Armorer, Blacksmithing Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Dun Morogh">
+<![CDATA[<font color="#81a408"><b>Dun Morogh (Alliance zone)</b></font><br/><font color="#797c58">Gunsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Brewnall Village">
+<![CDATA[<font color="#81a408"><b>Brewnall Village (Alliance zone)</b></font><br/><font color="#797c58">Leather Armor Merchant, Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Gnomeregan">
+<![CDATA[<font color="#81a408"><b>Gnomeregan (Dungeon)</b></font><br/><font color="#797c58"><font color="#797c58">5 player limit<br/>Level 24-40<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a8" text="Coldridge Valley">
+<![CDATA[<font color="#81a408"><b>Coldridge Valley (Alliance zone)</b></font><br/><font color="#797c58">Paladin Trainer, Mage Trainers, Hunter Trainer, Priest Trainer, Warrior Trainer, Rogue Trainer, Warlock Trainers, Demon Trainer, General Supplies, Cloth & Leather Armor Merchant, Armorer, Weaponsmith, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a9" text="Ironforge">
+<![CDATA[<font color="#81a408"><b>Ironforge (Alliance zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastHinterlands.swf" swftitle="The Hinterlands">
+		<ITEM id="a1" text="Revantusk Village">
+<![CDATA[<font color="#81a408"><b>Revantusk Village (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Blacksmithing Supplies, Ammunition Vendor, Reagent Vendor, Cooking Supplier, Fishing Supplier, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Wildhammer Keep">
+<![CDATA[<font color="#81a408"><b>Wildhammer Keep (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Master Leatherworking Trainer, Leatherworking Supplies, Bartender, Blacksmithing Supplier</font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+	<FILE filename="eastEasternPlaguelands.swf" swftitle="Eastern Plaguelands">
+		<ITEM id="a1" text="Light`s Hope Chapel">
+<![CDATA[<font color="#81a408"><b>Light`s Hope Chapel (Neutral zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Argent Quartermaster, Blacksmithing Supplier (You must also attain Friendly reputation with the Argent to repair.), Trade Goods, Anvil, Forge</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Stratholme">
+<![CDATA[<font color="#81a408"><b>Stratholme (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 56-61<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Naxxramas">
+<![CDATA[<font color="#81a408"><b>Naxxramas (Dungeon)</b></font><br/><font color="#797c58">40 player limit<br/>Level 60<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+	<FILE filename="eastLochModan.swf" swftitle="Loch Modan">
+		<ITEM id="a1" text="The Loch">
+<![CDATA[<font color="#81a408"><b>The Loch (Alliance zone)</b></font><br/><font color="#797c58">Fishing Trainer, Fishing Supplier</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Algaz Station">
+<![CDATA[<font color="#81a408"><b>Algaz Station (Alliance zone)</b></font><br/><font color="#797c58">Armorer</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Stonewrought Dam">
+<![CDATA[<font color="#81a408"><b>Stonewrought Dam (Alliance zone)</b></font><br/><font color="#797c58">Macecrafter, Journeyman Engineer</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="The Farstrider Lodge">
+<![CDATA[<font color="#81a408"><b>The Farstrider Lodge (Alliance zone)</b></font><br/><font color="#797c58">Hunter Trainer, Pet Trainer, General Supplies, Leather Armor Merchant, Gunsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Ironband`s Excavation Site">
+<![CDATA[<font color="#81a408"><b>Ironband`s Excavation Site (Alliance zone)</b></font><br/><font color="#797c58">Cloth Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Thelsamar">
+<![CDATA[<font color="#81a408"><b>Thelsamar (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Mining Trainer, Herbalism Trainer, Journeyman Alchemist, Traveling Merchant, Metalsmith, General Supplies, Tailoring Supplies, Mining Supplier, Forge, Anvil</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastBurningSteppes.swf" swftitle="Burning Steppes">
+		<ITEM id="a1" text="Morgan`s Vigil">
+<![CDATA[<font color="#81a408"><b>Morgan`s Vigil (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Weaponsmith, Food & Drink Vendor</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Flame Crest">
+<![CDATA[<font color="#81a408"><b>Flame Crest (Horde zone)</b></font><br/><font color="#797c58">Flight Master, Food & Drink Vendor</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastRedridgeMountains.swf" swftitle="Redridge Mountains">
+		<ITEM id="a1" text="Lakeshire">
+<![CDATA[<font color="#81a408"><b>Lakeshire (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Herbalism Trainer, Cooking Trainer, Fishing Trainer, Ammunition Vendor, Food & Drink Vendor, Butcher, Cooking Supplier, Tailoring Supplies, Gunsmith, Shady Goods, Shield Crafter, Armorer, Mining and Smithing Supplies, Trade Goods, General Supplies, Fish Merchant & Supplies, Fruit Seller, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Redridge Mountains">
+<![CDATA[<font color="#81a408"><b>Redridge Mountains (Alliance zone)</b></font><br/><font color="#797c58">Skinning Trainer, Leatherworking Supplies, Leather Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Render`s Valley">
+<![CDATA[<font color="#81a408"><b>Render`s Valley (Alliance zone)</b></font><br/><font color="#797c58">Specialist Tailoring Supplies</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastWestfall.swf" swftitle="Westfall">
+		<ITEM id="a1" text="Saldean`s Farm">
+<![CDATA[<font color="#81a408"><b>Saldean`s Farm (Alliance zone)</b></font><br/><font color="#797c58">Baker</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Sentinel Hill">
+<![CDATA[<font color="#81a408"><b>Sentinel Hill (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Trade Goods, Baker, Bowyer, Quartermaster</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="The Deadmines">
+<![CDATA[<font color="#81a408"><b>The Deadmines (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 15-28<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastWesternPlaguelands.swf" swftitle="Western Plaguelands">
+		<ITEM id="a1" text="Scholomance">
+<![CDATA[<font color="#81a408"><b>Scholomance (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 56-61<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Chillwind Camp">
+<![CDATA[<font color="#81a408"><b>Chillwind Camp (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, Argent Quartermaster, Food & Drink Vendor, Bowyer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastStormwind.swf" swftitle="Stormwind City">
+		<ITEM id="a1" text="Stormwind City">
+<![CDATA[<font color="#81a408"><b>Stormwind City</b></font><br/><font color="#797c58">1. Engineering Trainer; 2.Mining Trainer; 3. Blacksmithing Trainer; 4. Deeprun Tram; 5. Stable Master; 6. Hunter Trainer; 7. Battle Masters; 8. First Aid Trainer; 9. Paladin Trainer; 10. Priest Trainer; 11. Cooking Trainer; 12. Leatherworking Trainer; 13. Skinning Trainer; 14. Warrior Trainer; 15. The Officers" Lounge; 16. Rogue Trainer; 17. Druid Trainer; 18. Warlock Trainer; 19. Mage Trainer; 20. Alchemy Trainer; 21. Herbalism Trainer; 22. Tailoring Trainer; 23. Enchanting Trainer; 24. Fishing Trainer; 25. Auction House; 26. Weapon Master; 27. Inn; 28. Mailbox; 29. Bank; 30. Guild Master; 31. Gryphon Master; 32. Shaman Trainer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastSwamp.swf" swftitle="Swamp of Sorrows">
+		<ITEM id="a1" text="Stonard">
+<![CDATA[<font color="#81a408"><b>Stonard (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Master Alchemist, Warlock Trainers, Demon Trainer, Warrior Trainer, Shaman Trainer, Hunter Trainer, Pet Trainer, Trade Goods, Alchemy Supplies, Food & Drink Vendor, Blacksmithing Supplies, Weaponsmith, Cloth & Leather Armor Merchant, Heavy Armor Merchant, Arcane Goods, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="The Harborage">
+<![CDATA[<font color="#81a408"><b>The Harborage</b></font><br/><font color="#797c58">Superior Leatherworker</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Temple of Atal`Hakkar">
+<![CDATA[<font color="#81a408"><b>Temple of Atal`Hakkar (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 44-60<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastSilvermoon.swf" swftitle="Silvermoon City">
+		<ITEM id="a1" text="Silvermoon City">
+<![CDATA[<font color="#81a408"><b>Silvermoon City</b></font><br/><font color="#797c58">1. Mage Trainer; 2. Priest Trainer; 3. Alchemy Trainer; 4.Herbalism Trainer; 5. Enchanting Trainer; 6. Hunter Trainer; 7. Stable Master; 8. Engineering Trainer; 9. Warlock Trainer; 10. Blacksmithing Trainer; 11. Mining Trainer; 12. Weapon Master; 13. Paladin Trainer; 14. Battle Master; 15. The Eastern Bank; 16 .Mana Loom; 17. Tailoring Trainer; 18. The Western Auction House; 19. Druid Trainer; 20. Rogue Trainer; 21 .Mailbox; 22. Inn; 23. The Eastern Auction House; 24. Cooking Trainer; 25. Wayfarer's Rest; 26. The Western Bank; 27. Fishing Trainer; 28. First Aid Trainer; 29. Guild Master; 30. Skinning Trainer; 31. Leatherworking Trainer; 32.Jewelcrafting Trainer; 33. Bat Handler</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastArathi.swf" swftitle="Arathi Highlands">
+		<ITEM id="a1" text="Refuge Pointe">
+<![CDATA[<font color="#81a408"><b>Refuge Pointe (Alliance zone)</b></font><br/><font color="#797c58">Flight Master, League of Arathor Supply Officer, Arathi Basin Battlemaster, Smokywood Pastures, Alchemy Supplies, Trade Goods, General Supplies, Superior Macecrafter, Butcher, Leatherworking Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Stromgarde">
+<![CDATA[<font color="#81a408"><b>Stromgarde (Alliance zone)</b></font><br/><font color="#797c58">Expert First Aid - Under Wraps, Manual: Heavy Silk Bandage and Manual: Mageweave Bandage</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Master Elemental Leatherworker">
+<![CDATA[<font color="#81a408"><b>Master Elemental Leatherworker (Horde zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Faldir`s Cove">
+<![CDATA[<font color="#81a408"><b>Faldir`s Cove (Neutral zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Hammerfall">
+<![CDATA[<font color="#81a408"><b>Hammerfall (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Defilers Supply Officer, Arathi Basin Battlemaster, Smokywood Pastures, Superior Cook, Butcher, General Supplies, Trade Goods, Leatherworking Supplies, Bowyer, Trauma Surgeon, Tailoring Supplies, Forge, Anvil</font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+	<FILE filename="eastIronforge.swf" swftitle="Ironforge">
+		<ITEM id="a1" text="Ironforge">
+<![CDATA[<font color="#81a408"><b>Ironforge</b></font><br/><font color="#797c58">1. Priest Trainer; 2. Mage Trainer; 3. Paladin Trainer; 4. Fishing Trainer; 5. Warlock Trainer; 6. Rogue Trainer; 7. Skinning Trainer; 8. Leatherworking Trainer; 9. Tailoring Trainer; 10. Mining Trainer; 11. Shaman Trainer; 12. Cooking Trainer; 13. Blacksmithing Trainer; 14. Gryphon Master; 15. Enchanting Trainer; 16. Engineering Trainer; 17. First Aid Trainer; 18. Herbalism Trainer; 19. Alchemy Trainer; 20. Deeprun Tram; 21. Inn; 22. Mailbox; 23. Bank; 24. Auction House; 25. Guild Master; 26. Weapon Master; 27. Stable Master; 28. Hunter Trainer; 29. Warrior Trainer; 30. Battle Master</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastAlterac.swf" swftitle="Alterac Mountains">
+		<ITEM id="a1" text="Alterac Valley">
+<![CDATA[<font color="#81a408"><b>Alterac Valley (Alliance zone)</b></font><br/><font color="#797c58">Stormpike Quartermaster, Smokywood Pastures, Alterac Valley Battlemaster</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Ruins of Alterac">
+<![CDATA[<font color="#81a408"><b>Ruins of Alterac (Neutral zone)</b></font><br/><font color="#797c58">Alchemy Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Alterac Valley">
+<![CDATA[<font color="#81a408"><b>Alterac Valley (Horde zone)</b></font><br/><font color="#797c58">Frostwolf Quartermaster, Smokywood Pastures, Alterac Valley Battlemaster</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Ravenholdt Manor">
+<![CDATA[<font color="#81a408"><b>Ravenholdt Manor (Neutral zone)</b></font><br/><font color="#797c58">Speciality Engineer, Shady Goods</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastUndercity.swf" swftitle="Undercity">
+		<ITEM id="a1" text="Undercity">
+<![CDATA[<font color="#81a408"><b>Undercity</b></font><br/><font color="#797c58">1. Warrior Trainer; 2. Priest Trainer; 3. Warlock Trainer; 4. Mage Trainer; 5. Blacksmithing Trainer; 6. Tailoring Trainer; 7. Weapon Master; 8. Mining Trainer; 9. Auction House; 10. Inn; 11. Stable Master; 12. Mailbox; 13. Cooking Trainer; 14. Bank; 15. Guild Master; 16. Fishing Trainer; 17. Herbalism Trainer; 18.Enchanting Trainer; 19.Bat Handler; 20. Enchanting Trainer; 20. Leatherworking Trainer; 21. Skinning Trainer; 22. First Aid Trainer; 23. Alchemy Trainer; 24. Engineering Trainer; 25. Rogue Trainer; 26. Battle Master; 27. Paladin Trainer</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastElwynn.swf" swftitle="Elwynn Forest">
+		<ITEM id="a1" text="Northshire">
+<![CDATA[<font color="#81a408"><b>Northshire (Alliance zone)</b></font><br/><font color="#797c58">Rogue Trainer, Warlock Trainers, Demon Trainer, Priest Trainer, Mage Trainers, Warrior Trainer, Paladin Trainer, General Supplies, Armorer & Shieldcrafter, Cloth & Leather Armor Merchant, Weaponsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Goldshire">
+<![CDATA[<font color="#81a408"><b>Goldshire (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, First Aid Trainer, Cooking Trainer, Paladin Trainer, Warrior Trainer, Rogue Trainer, Mage Trainers, Priest Trainer, Warlock Trainers, Demon Trainer, , Journeyman Blacksmith, General Supplies, Bartender, Butcher, Trade Goods, Armorer & Shieldcrafter, Weaponsmith, Cloth Armor Merchant, Anvil, Forge</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Goldshire">
+<![CDATA[<font color="#81a408"><b>Goldshire (Alliance zone)</b></font><br/><font color="#797c58">Journeyman Leatherworker, Skinning Trainer, Fishing Trainer</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Elwynn Forest">
+<![CDATA[<font color="#81a408"><b>Elwynn Forest (Alliance zone)</b></font><br/><font color="#797c58">Journeyman Alchemist, Herbalism Trainer</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Tower of Azora">
+<![CDATA[<font color="#81a408"><b>Tower of Azora (Alliance zone)</b></font><br/><font color="#797c58">Artisan Enchanter, Arcane Goods, Cloth Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Eastvale Logging Camp">
+<![CDATA[<font color="#81a408"><b>Eastvale Logging Camp (Alliance zone)</b></font><br/><font color="#797c58">Horse Breeder, New Horse Riding Trainer, Journeyman Tailor, Lumberjack, Bowyer, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Westbrook Garrison">
+<![CDATA[<font color="#81a408"><b>Westbrook Garrison (Alliance zone)</b></font><br/><font color="#797c58">Master Weaponsmith, Armorer & Shieldcrafter, Leather Armor Merchant, Morale Officer<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a8" text="Stormwind City">
+<![CDATA[<font color="#81a408"><b>Stormwind City (Alliance zone)</b></font><br/><font color="#797c58"><br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastEversong.swf" swftitle="Eversong Woods">
+		<ITEM id="a1" text="Sunstrider Isle">
+<![CDATA[<font color="#81a408"><b>Sunstrider Isle (Horde zone)</b></font><br/><font color="#797c58">Rogue Trainer, Hunter Trainer, Priest Trainer, Paladin Trainer, Mage Trainers, Warlock Trainers, Demon Trainer, Armorer, Weaponsmith, Cloth & Leather Armor Merchant, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Ruins of Silvermoon">
+<![CDATA[<font color="#81a408"><b>Ruins of Silvermoon (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Hunter Trainer, Pet Trainer, Paladin Trainer, Rogue Trainer, Warlock Trainers, Demon Trainer, First Aid Trainer, Journeyman Jewelcrafter, Cheese Vendor, Heavy Armor Merchant, Weaponsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Silvermoon City">
+<![CDATA[<font color="#81a408"><b>Silvermoon City (Horde zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="North Sanctum">
+<![CDATA[<font color="#81a408"><b>North Sanctum</b></font><br/><font color="#797c58">Bag Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Farstrider Retreat">
+<![CDATA[<font color="#81a408"><b>Farstrider Retreat</b></font><br/><font color="#797c58">Journeyman Blacksmith, Food & Drink Vendor, Bowyer, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Thuron`s Livery">
+<![CDATA[<font color="#81a408"><b>Thuron`s Livery</b></font><br/><font color="#797c58">Hawkstrider Breeder, Riding Instructor</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Fairbreeze Village">
+<![CDATA[<font color="#81a408"><b>Fairbreeze Village</b></font><br/><font color="#797c58"><font color="#797c58">Mailbox, Inn, Trade Goods, General Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a8" text="Saltheril`s Haven">
+<![CDATA[<font color="#81a408"><b>Saltheril`s Haven</b></font><br/><font color="#797c58"><font color="#797c58">Journeyman Enchanter, Journeyman Alchemist, Herbalism Trainer</font>]]>
+		</ITEM>
+
+		<ITEM id="a9" text="Sunsail Anchorage">
+<![CDATA[<font color="#81a408"><b>Sunsail Anchorage</b></font><br/><font color="#797c58"><font color="#797c58">Drink Vendor</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastGhostlands.swf" swftitle="Ghostlands">
+		<ITEM id="a1" text="Tranquillien">
+<![CDATA[<font color="#81a408"><b>Tranquillien (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Cooking Trainer and Supplies, Blacksmithing Supplies, Trade Goods, Tranquillien Provisioner, Shady Goods, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Farstrider Enclave">
+<![CDATA[<font color="#81a408"><b>Farstrider Enclave (Horde zone)</b></font><br/><font color="#797c58">Food & Drink Vendor, Bowyer</font>]]>
+		</ITEM>
+</FILE>
+
+
+	<FILE filename="eastSilverpine.swf" swftitle="Silverpine Forest">
+		<ITEM id="a1" text="The Sepulcher">
+<![CDATA[<font color="#81a408"><b>The Sepulcher (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Journeyman Blacksmith, Mining Trainer, Shady Goods, Trade Goods, Armorer, General Supplies, Mushroom Seller, Leather Armor Merchant, Cloth Armor Merchant, Bowyer</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Shadowfang Keep">
+<![CDATA[<font color="#81a408"><b>Shadowfang Keep (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 18-32<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="The Greymane Wall">
+<![CDATA[<font color="#81a408"><b>The Greymane Wall (Neutral zone)</b></font><br/><font color="#797c58">Weaponsmith</font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+	<FILE filename="eastSearingGorge.swf" swftitle="Searing Gorge">
+		<ITEM id="a1" text="Thorium Point">
+<![CDATA[<font color="#81a408"><b>Thorium Point (Neutral zone)</b></font><br/><font color="#797c58">Gryphon Master, Wind Rider Master, General & Blacksmithing Supplier, Forge, Anvil</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Searing Gorge">
+<![CDATA[<font color="#81a408"><b>Searing Gorge (Neutral zone)</b></font><br/><font color="#797c58">Mail Armor Merchant</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Master Elemental Leatherworker">
+<![CDATA[<font color="#81a408"><b>Master Elemental Leatherworker (Alliance)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Blackrock Mountain">
+<![CDATA[<font color="#81a408"><b>Blackrock Mountain (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">Blackrock Depths</font><br/>5 player limit<br/>Level 48-60<br/><font color="#c49609">Blackrock Spire</font><br/>10 player limit<br/>Level 52-61<br/><font color="#c49609">Blackwing Lair</font><br/>40 player limit<br/>Level 60<br/><font color="#c49609">Molten Core</font><br/>40 player limit<br/>Level 60<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastWetlands.swf" swftitle="Wetlands">
+		<ITEM id="a1" text="Menethil Harbor">
+<![CDATA[<font color="#81a408"><b>Menethil Harbor (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Herbalism Trainer, First Aid Trainer, Fishing Trainer, Trade Goods, Bartender, Shady Goods, Fish Merchant & Supplies, Ammunition Vendor, Bowyer, Weaponsmith, Armorer, Gunsmith, General Supplies, Engineering Supplies, Reagent Vendor, Alchemy Supplies, Tailoring Supplies, Forge, Anvil <br/>Sailing route to Dustwallow Marsh or Auberdine</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Sundown Marsh">
+<![CDATA[<font color="#81a408"><b>Sundown Marsh (Alliance zone)</b></font><br/><font color="#797c58">Engineering Supplies, Speciality Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Wetlands">
+<![CDATA[<font color="#81a408"><b>Wetlands (Neutral zone)</b></font><br/><font color="#797c58">Alchemy Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Dun Modr">
+<![CDATA[<font color="#81a408"><b>Dun Modr (Neutral zone)</b></font><br/><font color="#797c58">Special Goods Dealer (Dark Iron Entrepreneur)</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastBlastedLands.swf" swftitle="Blasted Lands">
+		<ITEM id="a1" text="Nethergarde Keep">
+<![CDATA[<font color="#81a408"><b>Nethergarde Keep (Alliance zone)</b></font><br/><font color="#797c58">Mailbox, Flight Master, Food & Drink Vendor, Armorer, Alchemy Supplies</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Dark Portal">
+<![CDATA[<font color="#81a408"><b>Dark Portal (Neutral zone)</b></font><br/><font color="#797c58">Requires Level 58</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastDeadwindPass.swf" swftitle="Deadwind Pass">
+		<ITEM id="a1" text="Karazhan">
+<![CDATA[<font color="#81a408"><b>Karazhan (Dungeon)</b></font><br/><font color="#797c58">10 player limit<br/>Level 70<br/></font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastTirisfal.swf" swftitle="Tirisfal Glades">
+		<ITEM id="a1" text="Deathknell">
+<![CDATA[<font color="#81a408"><b>Deathknell (Horde zone)</b></font><br/><font color="#797c58">Warlock Trainers, Demon Trainer, Mage Trainers, Priest Trainer, Rogue Trainer, Warrior Trainer,  Apprentice Armorer, Weaponsmith, Cloth & Leather Armor Merchant, General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Brill">
+<![CDATA[<font color="#81a408"><b>Brill (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Stable Master, Riding Instructor, Undead Horse Merchant, Warrior Trainer, Mage Trainers, Warlock Trainers, Demon Trainer, Priest Trainer, Rogue Trainer, First Aid Trainer, Journeyman Enchanter, Journeyman Tailor (Derelict Manor), Apprentice Herbalist, Journeyman Alchemist, Cloth Armor Merchant, General Supplies, Trade Goods, Weaponsmith, Apprentice Armorer, Leather Armor Merchant, Mushroom Seller</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Undercity">
+<![CDATA[<font color="#81a408"><b>Undercity (Horde zone)</b></font><br/><font color="#797c58"></font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="The Bulwark">
+<![CDATA[<font color="#81a408"><b>The Bulwark (Horde zone)</b></font><br/><font color="#797c58">Leatherworking Supplies, Argent Quartermaster</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Airport">
+<![CDATA[<font color="#81a408"><b>Zeppelin (Horde zone)</b></font><br/><font color="#797c58">Skinning Trainer, Journeyman Leatherworker <br/> Zeppelin route to reach Orgrimmar, Grom'gol Base Camp</font>]]>
+		</ITEM>
+	</FILE>
+
+
+
+	<FILE filename="eastBadlands.swf" swftitle="Badlands">
+		<ITEM id="a1" text="Uldaman">
+<![CDATA[<font color="#81a408"><b>Uldaman (Dungeon)</b></font><br/><font color="#797c58">5 player limit<br/>Level 35-52<br/></font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Valley of Fangs">
+<![CDATA[<font color="#81a408"><b>Valley of Fangs (Neutral zone)</b></font><br/><font color="#797c58">Blacksmithing Supplies, Forge</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Kargath">
+<![CDATA[<font color="#81a408"><b>Kargath (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Pet Trainer, General Supplies, Weaponsmith & Armorcrafter, Forge, Anvil</font>]]>
+		</ITEM>
+	</FILE>
+
+
+	<FILE filename="eastHillsbrad.swf" swftitle="Hillsbrad Foothills">
+		<ITEM id="a1" text="Tarren Mill">
+<![CDATA[<font color="#81a408"><b>Tarren Mill (Horde zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Expert Alchemist, Herbalism Trainer, Master Tailor, Cook, Tailoring Supplies, General Supplies, Trade Goods, Weaponsmith, Mushroom Seller</font>]]>
+		</ITEM>
+
+		<ITEM id="a2" text="Southshore">
+<![CDATA[<font color="#81a408"><b>Southshore (Alliance zone)</b></font><br/><font color="#797c58">Inn, Mailbox, Flight Master, Stable Master, Fishing Trainer, Bartender, Shady Goods, Fishing Supplier, Fish Merchant, Butcher, Trade Goods, General Supplies, Superior Armorsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a3" text="Ravenholdt Manor">
+<![CDATA[<font color="#81a408"><b>Ravenholdt Manor (Neutral zone)</b></font><br/><font color="#797c58">Speciality Engineer, Shady Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a4" text="Cosmowrench">
+<![CDATA[<font color="#81a408"><b>Cosmowrench (Neutral zone)</b></font><br/><font color="#797c58">Flight Master, Reagents and Poisons, Weaponsmith</font>]]>
+		</ITEM>
+
+		<ITEM id="a5" text="Protectorate Watch Post">
+<![CDATA[<font color="#81a408"><b>Protectorate Watch Post (Neutral zone)</b></font><br/><font color="#797c58">General Goods</font>]]>
+		</ITEM>
+
+		<ITEM id="a6" text="Kirin`Var Village">
+<![CDATA[<font color="#81a408"><b>Kirin`Var Village (Neutral zone)</b></font><br/><font color="#797c58">Blacksmithing Supplier</font>]]>
+		</ITEM>
+
+		<ITEM id="a7" text="Tempest Keep">
+<![CDATA[<font color="#81a408"><b>Tempest Keep (Dungeon)</b></font><br/><font color="#797c58"><font color="#c49609">The Mechanar</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Botanica</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Arcatraz</font><br/>5 player limit<br/>Level 70<br/>Heroic: Requires The Sha'tar -- Revered<br/><font color="#c49609">The Eye</font><br/>25 player limit<br/>Level 70<br/>Ư̻: 25 ݴ , 7 ͼ ð, ǳ  ʿ<br/></font>]]>
+		</ITEM>
+	</FILE>
+</CHANNEL>

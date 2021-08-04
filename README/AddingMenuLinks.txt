@@ -1,0 +1,59 @@
+== Adding links to the left hand menu under Mangosweb ==
+
+In this tutorial we will add your Website's Myspace page to the Account Menu.
+
+'''Step 1'''
+
+	You need to decide on a link name and the location that link will point to
+
+	i.e. Link name = Myspace
+   	     Location = www.myspace.com/yourmyspacepage
+
+'''Step 2'''
+
+	Open /lang/en.English.lang with your favorite editor 
+	(this step needs to be repeated for each language you are supporting)
+
+	Type this line into the file    |=|MS :=: Myspace
+	(you will see how the others are formatted, also try to put it at the top or bottom so its easy to find later if necessary)
+
+	The MS is the pointer you will need to match up later and the Myspace is what will actually show in the menu
+
+'''Step 3'''
+
+	Open /core/default_components.php with your favorite editor 
+
+	On this page you will see all the menus and how they are formatted
+
+	Decide which menu you want your link to fall under and goto that section
+
+	For our purposes we will use the account menu
+
+	Under 2-menuAccount you will see 5 arrays, we are adding the sixth here
+
+	at the bottom of the fifth array you will see:
+{{{
+	    ),
+	  ),
+	  '3-menuGameGuide' => 
+}}}
+	We are adding our link between the first and second ),
+
+	It will now look like this
+{{{
+	    ),
+	    6 =>
+	    array (
+	      0 => 'MS',
+ 	      1 => 'www.myspace.com/yourmyspacepage',
+	      2 => '',
+	    ),
+	  ),
+	  '3-menuGameGuide' => 
+}}}
+	The 0 index in the array is the pointer from the language page you added earlier. It will goto the MS pointer and retrieve Myspace
+	The 1 index in the array is the destination you want the link to take you to
+
+'''Step 4'''
+
+	Close and save all of your changes and you are ready to go! Congratulations!

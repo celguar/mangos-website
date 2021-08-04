@@ -1,0 +1,23 @@
+Updated for patch 3.3.2 by wilson212
+
+The character copy system is a unique feature that allows admins to set up special accounts, and create max level 
+characters, which users can copy as a reward (much like the "public test realm feature"). As of right now, the 
+only way to charge users for this system is by spending vote points, but who says you cant charge money for that??
+
+There are future plans to add a feature where users can spend real money for these "points", which allows them to
+use the character rename system, character re-customization, character copy system, and buy the vote rewards.
+
+To set this feature up:
+
+1. create 2 new accounts, 1 for alliance, and 1 for horde characters.
+2. on these accounts, go ahead and create a level 80 character with full tier gear.
+3. go in the config ->"mangosweb folder/config/config.xml" -> look for ->  <character_copy_config> 
+(around line 260).
+4. It should already be enabled, all you have to do is edit how many points it costs users to copy a character, 
+and the account numbers to the 2 accounts that you just made.
+5. Now go to your site, login, and click "copy character" under account.
+6. You should see the level 80 character you created, along with any other characters on that account, listed.
+
+to copy a character to your personal account, click the "copy character" button. The character will be copied to
+your account, along with whats in his/her bags, and the armor that character is wearing. The realm is decided by 
+which realm you currently have selected.

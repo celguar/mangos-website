@@ -1,0 +1,26 @@
+MaNGOS Blizzlike Armory (MBA)
+
+Blizzlike armory for people using MaNGOS.
+The Armory is written in PHP script. Works with PHP5.
+Now it supports 2.4.3, 3.0.9, 3.1.3 and 3.2.2.
+Supported languages: English, German, Russian and French.
+
+SVN: http://svn.assembla.com/svn/mangos_blizzlike_armory/
+Log: http://trac.assembla.com/mangos_blizzlike_armory/log
+Timeline: http://trac.assembla.com/mangos_blizzlike_armory/timeline
+
+Official project forum: https://mangos.osh.nu/forums/index.php?showforum=40
+
+Topic in MaNGOS forums - http://getmangos.com/community/showthread.php?t=3867
+Topic in UDB forums - http://udbforums.org/index.php?topic=9866.0
+Topic in Russian MaNGOS forums - http://getmangos.org/forum/showthread.php?t=18574
+Topic in Bulgarian MaNGOS forums - http://mangosproject-bg.org/forum/index.php?showtopic=1430
+
+MBA Project Leader - SUPERGADGET
+German Translation - Klark20
+Russian Translation - Binom
+French Translation - Gigelf and polymorf
+
+History:
+Continuation of this armory: https://blizzmwf.svn.sourceforge.net/svnroot/blizzmwf/ARMORY/
+Rev. 171 there with small modifications is our Rev. 1 in MBA.

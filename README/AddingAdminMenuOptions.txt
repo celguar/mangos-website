@@ -1,0 +1,2 @@
+All admin panel links are added/removed/modified through the 
+"/templates/offlike/admin/admin.index.php"

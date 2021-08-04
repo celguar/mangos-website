@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="move_alliance.swf" swftitle="move_alliance">
+		<ITEM id="m0" text="Stair of Destiny"/>
+		<ITEM id="m1" text="Ruttheran Village"/>
+		<ITEM id="m2" text="Exodar"/>
+		<ITEM id="m3" text="Auberdine"/>
+		<ITEM id="m4" text="Ratchet"/>
+		<ITEM id="m5" text="Feathermoon Stronghold"/>
+		<ITEM id="m6" text="Feralas"/>
+		<ITEM id="m7" text="Theramore Isle"/>
+		<ITEM id="m8" text="Menethil Harbor"/>
+		<ITEM id="m9" text="Dark Portal"/>
+		<ITEM id="m10" text="Booty Bay"/>
+	</FILE>
+</CHANNEL>

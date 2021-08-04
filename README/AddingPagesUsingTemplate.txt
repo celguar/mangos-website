@@ -1,0 +1,65 @@
+For those wondering how to add new pages and still make it look like it fits into the website
+This is the tutorial.
+
+First you need to decide if its going to be an admin only page, an account page, or a community/
+Server page.
+
+For this example we are going to use the characters tools page that i created myself:
+
+*You need to add 2 new pages, one for the template, and the other for the website core.
+
+1.Core (script) File
+-The Core file will always go in the "Components" folder.
+-For an admin page, we are going to put the core file in this directory "components/admin".
+-We are going to name the file "admin.chartransfer.php".
+-For a server file, we would put the core file in this directory "components/server". The file
+would be named in this format "server.YOURPAGENAME.php"
+
+2.Template File
+-The template file will always got in the "/templates/offlike/(admin)or(server)or
+whatever kind of file you want. This example we will use the "admin" folder.
+-For the Template file, you name it exactly as the core file you name earlier
+(admin.chartransfer.php).
+-If its a server page, you would put it in "/templates/offlike/server'. You would
+name this file like this "server.YOURPAGENAME.php"
+
+3.Next we have to add your new page to the main.php file so the website knows where and 
+how to redirect your page. This is only done on the core side.
+-to add your new page go "components/admin/main.php" or components/server/main.php etc.
+
+Heres what you add to add your page:
+
+'(YOURFILENAME, example:chartransfer)' => array(
+        'g_is_admin',                            // g_ option require for view (require user to be admin(3)? Superadmin(4)? user(1)?
+							Leave blank for guests)
+        'chartransfer',                          // loc name (key) (Text for language file (/lang/en.english.php))
+        'index.php?n=admin&sub=chartransfer',    // Link to  (server file would be like this 'index.php?n=server&sub=YOURFILENAME)
+        '', // main menu name/id ('' - not show) (leave blank)
+        0 // show in context menu (1-yes,0-no)          [4]
+
+-just follow the examples of the other pages.
+
+4.What do you put in the two different files????
+A)
+
+-for the core file, it will always have this on the top:
+
+<?php
+if(INCLUDED!==true)exit;
+// ==================== //
+$pathway_info[] = array('title'=>'YOUR PAGE TITLE', 'link'=>'index.php?n=admin&sub=YOURPAGENAME (for the example ->chartransfer)');
+// ==================== //
+?>
+
+-This file contain all your functions and scripts.
+-The core file also contains all the files you need to include.
+
+B)
+-for the template file, it will always contain this on top:
+
+<br />
+<?php builddiv_start(1, "YOUR FILE TITLE") ?>
+<br />
+
+-From here on out, its all straight php and html coding. What you type in you template file,
+displays on the screen. 

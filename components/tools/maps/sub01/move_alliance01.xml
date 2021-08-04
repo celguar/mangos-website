@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="move_alliance.swf" swftitle="move_alliance">
+		<ITEM id="m0" text="Stormspire"/>
+		<ITEM id="m1" text="Cosmowrench"/>
+		<ITEM id="m2" text="Area 52"/>
+		<ITEM id="m3" text="Evergrove"/>
+		<ITEM id="m4" text="Toshleys Station"/>
+		<ITEM id="m5" text="Sylvanaar"/>
+		<ITEM id="m6" text="Stair of Destiny"/>
+		<ITEM id="m7" text="Shatter Point"/>
+		<ITEM id="m8" text="Honor Hold"/>
+		<ITEM id="m9" text="Temple of Telhamat"/>
+		<ITEM id="m10" text="Telredor"/>
+		<ITEM id="m11" text="Orebor Harborage"/>
+		<ITEM id="m12" text="Altar of the Shatar"/>
+		<ITEM id="m13" text="Sanctum of the Stars"/>
+		<ITEM id="m14" text="Wildhammer Stronghold"/>
+		<ITEM id="m15" text="Allerian Stronghold"/>
+		<ITEM id="m16" text="Shattrath"/>
+		<ITEM id="m17" text="Telaar"/>
+
+		<ITEM id="l0" text="Ruttheran Village"/>
+		<ITEM id="l1" text="Blood Watch"/>
+		<ITEM id="l2" text="Exodar"/>
+		<ITEM id="l3" text="Auberdine"/>
+		<ITEM id="l4" text="Talonbranch Glade"/>
+		<ITEM id="l5" text="Moonglade"/>
+		<ITEM id="l6" text="Everlook"/>
+		<ITEM id="l7" text="Stonetalon Peak"/>
+		<ITEM id="l8" text="Astranaar"/>
+		<ITEM id="l9" text="Emerald Sanctuary"/>
+		<ITEM id="l10" text="Forest Song"/>
+		<ITEM id="l11" text="Talrendis Point"/>
+		<ITEM id="l12" text="Nijels Point"/>
+		<ITEM id="l13" text="Ratchet"/>
+		<ITEM id="l14" text="Feathermoon Stronghold"/>
+		<ITEM id="l15" text="Thalanaar"/>
+		<ITEM id="l16" text="Theramore Isle"/>
+		<ITEM id="l17" text="Cenarion Hold"/>
+		<ITEM id="l18" text="Marshals Refuge"/>
+		<ITEM id="l19" text="Gadgetzan"/>
+
+		<ITEM id="n1" text="Lights Hope Chapel"/>
+		<ITEM id="n2" text="Chillwind Camp"/>
+		<ITEM id="n3" text="Aerie Peak"/>
+		<ITEM id="n4" text="Southshore"/>
+		<ITEM id="n5" text="Refuge Pointe"/>
+		<ITEM id="n6" text="Menethil Harbor"/>
+		<ITEM id="n7" text="Ironforge"/>
+		<ITEM id="n8" text="Thelsamar"/>
+		<ITEM id="n9" text="Thorium Point"/>
+		<ITEM id="n10" text="Morgans Vigil"/>
+		<ITEM id="n11" text="Stormwind"/>
+		<ITEM id="n12" text="Lakeshire"/>
+		<ITEM id="n13" text="Sentinel Hill"/>
+		<ITEM id="n14" text="Darkshire"/>
+		<ITEM id="n15" text="Nethergarde Keep"/>
+		<ITEM id="n16" text="Booty Bay"/>
+	</FILE>
+</CHANNEL>

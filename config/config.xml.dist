@@ -1,0 +1,302 @@
+<?xml version="1.0" standalone="yes"?>
+<configs>
+   <!--
+       This is a XML config file. You can change the values of the elements.
+       as you can see comments is marked with < ! - - Comment - - >
+   -->
+
+
+    <!-- Here you can modify general Config information. -->
+    <generic>
+        <template>offlike</template>                   <!-- DONT CHANGE THIS! -->
+		<default_template>WotLK</default_template>     <!-- Website default template [NOTE] you should list this template first under <templates> -->
+        <default_lang>en</default_lang>                <!--Default lang .Don't change -->
+        <lang>en</lang>                                <!--Site Default lang -->
+        <available_languages>cz,de,en,fr,id,nl,no,ro,ru,sp</available_languages>
+        <copyright>All Images and Logos are copyright 2010 Blizzard Entertainment</copyright>  <!-- Copyright Information for the footer of page -->
+        <display_banner_flash>1</display_banner_flash>                       <!--Do you want to display Flash Banners?  |  1=yes 0=Show normal picture  -->
+        <use_archaeic_dbinfo_format>0</use_archaeic_dbinfo_format>           <!--Leave this as 0 unless you are converting from Modded MaNGOS Web -->
+        <use_alternate_mangosdb_port>0</use_alternate_mangosdb_port>         <!--If non-zero, use this port for connection to MaNGOS world database, NOT info in realmlist table -->
+        <use_local_ip_port_test>0</use_local_ip_port_test>                   <!--If 1, will use IP 127.0.0.1 for port tests    -->
+        <account_key_retain_length>1209600</account_key_retain_length>       <!--Retains account key cookie info for 14 days -->
+        <cache_expiretime>0</cache_expiretime>                 <!-- Cache expiretime. 0 = DISABLE cache system. 200 secconds is default   -->
+        <use_purepass_table>0</use_purepass_table>             <!-- Here you can enable use of pure-password saving.  It is not recommended unless you feel
+                                                                    your database will NEVER be hacked into.To enable, install the extra .sqlThen set $config['use_purepass_table'] to 1   -->
+        <change_template>1</change_template>                   <!-- Is users allowed to change template?  -->
+        <images_per_page>5</images_per_page>                     <!--Here you may set the number of images displayed per page in the gallery. Default: 5  -->
+
+       <!-- You can change these for now, until some online admin for this implented -->
+        <site_register>1</site_register>                    <!-- Allow people to register? -->
+        <change_email>1</change_email>                      <!-- Allow your users to change there emails? 1=yes 0=no -->
+        <change_pass>1</change_pass>                        <!-- Allow your users to change there passwords? 1=yes 0=no -->
+        <debuginfo>0</debuginfo>					  	    <!-- For the most part, you dont need to touch this -->
+        <onlinelist_on>1</onlinelist_on>   				    <!-- Display who's online? -->                       
+        <req_reg_act>0</req_reg_act>                        <!-- Require users to activate there account before allowing to log in? Must have SMTP setup! -->
+        <req_reg_key>0</req_reg_key>                        <!-- Require users to have an account key before being able to create an account? -->
+		<req_reg_invite>0</req_reg_invite>                  <!-- Require users to be invited to your server, before being able to create an account? -->
+        <banner_display>1</banner_display>					<!-- Best to just leave at 1 -->
+        <max_accounts_per_ip>0</max_accounts_per_ip>        <!-- How many accounts are users allowed to create per IP address? 0 = unlimited -->
+        <max_attachs_size>10485760</max_attachs_size>		<!-- Attachment maximum size -->
+        <posts_per_page>12</posts_per_page>					<!-- Forum posts per page -->
+        <topics_per_page>16</topics_per_page>				<!-- Forum Topics per page -->
+        <ts_display>1</ts_display>                          <!-- Show teamspeak? -->
+        <users_per_page>40</users_per_page>                 <!-- Shows how many users online per page -->
+		<ahitems_per_page>100</ahitems_per_page>            <!-- Shows how many items per page in the Auction House page -->
+        <allowed_attachs>jpg|gif|png|rar|zip|doc|txt|pdf|chm|torrent</allowed_attachs>
+        <attachs_path>images/attachs/</attachs_path>		<!-- Not recomended to change. Where attaches are stored on your website -->
+        <avatar_path>images/avatars/</avatar_path>			<!-- Not recomended to change. Where avatars are stored on your website -->
+        <smiles_path>images/smiles/</smiles_path> 			<!-- Not recomended to change. Where smilies are stored on your website -->
+        <default_component>frontpage</default_component>	<!-- Dont touch unless you know what you are doing!! -->
+        <max_avatar_file>102400</max_avatar_file>			<!-- Max avatar file size -->
+        <max_avatar_size>64x64</max_avatar_size>			<!-- Max avatar dimension size -->
+        <site_cookie>MangosWeb</site_cookie>				<!-- Site cookie name -->
+        <site_email>wilson.steven10@gmail.com</site_email>	<!-- Site email -->
+        <site_encoding>utf-8</site_encoding>				<!-- Encoding. Not recomended to change -->
+        <site_title>Mangos Web Enhanced</site_title>		<!-- Website title -->
+        <smtp_adress/>							<!-- SMTP address, Must be enabled for account key enabling -->
+        <smtp_password/>						<!-- SMTP password -->
+        <smtp_username/>						<!-- SMTP username -->
+        <ts_ip>your.teamspeakserver.com</ts_ip>				<!-- Teamspeak server IP address -->
+        <ts_port_udp>8767</ts_port_udp>						<!-- Teamspeak Port -->
+    </generic>
+
+    <generic_values>
+        <!--Configuration for Realm-->
+        <realm_info>
+            <default_realm_id>1</default_realm_id> <!-- Default REALMID. This will be displayed as default all places.  -->
+            <multirealm>0</multirealm>             <!-- Multiple realms? -->
+        </realm_info>
+
+        <!--Configuration for news section.-->
+        <news>
+            <items_per_page>10</items_per_page>  <!-- News-Output items limit -->
+            <defaultOpen>3</defaultOpen>     	 <!-- First N+1 items that are "opened" by default.-->
+        </news>
+
+        <!--Configuration for forum's-->
+        <forum>
+            <news_forum_id>1</news_forum_id>    <!-- forum id for "news" -->
+            <bugs_forum_id>5</bugs_forum_id>    <!-- forum id for "bugtracker"  -->
+            <ql4_forum_id>6</ql4_forum_id>      <!-- forum id for FAQ Forum/Quicklink4 in right menu -->
+
+            <!-- If you want to use external forums ( example Phpbb , you must configure these values)  -->
+            <externalforum>0</externalforum>    <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
+            <frame_forum>0</frame_forum>        <!-- 1 = Use Frame to external forum     |    0 = Redirect to external forum    -->
+            <forum_external_link>LINK HERE</forum_external_link>    <!-- Url of external forum -->
+
+            <!-- If you want to use external bugs tracker ( example sourceforge.net , you must configure these values)  -->
+            <externalbugstracker>0</externalbugstracker>  <!-- 1 = Use external forum     |    0 = Dont use external Bugs Tracker   -->
+            <frame_bugstracker>0</frame_bugstracker>      <!-- 1 = Use Frame to external forum     |    0 = Redirect to external Bugs Tracker -->
+            <bugstracker_external_link>LINK HERE</bugstracker_external_link> <!-- Url of external Bugs Tracker   -->
+
+            <!-- Do you want to use external FAQ site? ( example forum topic) -->
+            <faqsite_external_use>0</faqsite_external_use>
+            <faqsite_external_link>0</faqsite_external_link>       
+			<!-- Url of external FAQ site - leave blank for internal forum -->
+        </forum>
+
+        <account_registrer>
+            <enable_image_verfication>0</enable_image_verfication>  <!--  1 = Enable , 0 = Disable. .. Image activation, ( User must answer an image that gets created !/core/cache/randimg/ must have write permessions!!)-->
+            <secret_questions_input>1</secret_questions_input>      <!-- Do you want to let the user have secret questions? -->
+        </account_registrer>
+    </generic_values>
+	
+	<!-- Secret questions for account creation / password recovery -->
+    <secret_questions>
+        <question>What is your mother's maiden name?</question>
+        <question>What street did you grow up on?</question>
+        <question>What is the name of your first pet?</question>
+        <question>What is your favorite color?</question>
+        <question>What is your father's maiden name?</question>
+    </secret_questions>
+	
+	<!--
+    *  Here you can configure If you want the vote banner to be displayed on your main page.
+    *  PS: Comment/Uncomment for this links to work.
+    -->
+    <votelinks><vote/></votelinks>
+	
+	<!-- Here you can enable the "Chat" feature -->
+	<chat>
+		<enable>1</enable> <!-- 1=Enable 0=Disable -->
+	</chat>
+
+	<!-- Here you can enable the "Vote System" feature -->
+	<vote_system>
+		<enable>1</enable> <!-- 1=Enable 0=Disable -->
+		<max_points_per_day>-1</max_points_per_day> <!-- how many vote points per day can one earn? // [-1] = number of voting sites -->
+		<use_online_check>1</use_online_check>  <!-- Check to see if vote sites are online? ([1] = enable [0] = disable) If enabled, it will slow down the vote page loading times alittle -->
+	</vote_system>
+	
+	<!-- this is where you admins have control over which features in the "character tools" page, that users are allowed to use -->
+	<character_tools>
+		<rename>1</rename>                                <!-- Allow users to rename their characters via the "character tools" screen? 1=enable, 0=disable -->
+		<re_customization>1</re_customization>            <!-- Allow users to re-customize their characters via the "character tools" screen -->
+		<race_changer>1</race_changer>					  <!-- Allow users to use the race changer function via "character tools" screen -->
+		<faction_change>1</faction_change>				  <!-- Allow users to change factions via the "character tools" screen (race changer must be enabled) -->
+		<rename_points>5</rename_points>                  <!-- how many vote points are users charged to rename there characters? -->
+		<customization_points>14</customization_points>   <!-- how many vote points are users charged to re-customize there characters? -->
+		<faction_points>30</faction_points>				  <!-- how many vote points are users charged to change race/faction on there characters? -->
+	</character_tools>
+
+    <!--
+    * This is specified if you want to show the block that show information about your server rates.
+    * Change the id_1 if your realm ha another id than 1. Then set mangos_world_conf to the MaNGOS
+    * world CONFIG file location. Best to just copy it and replace the one provided at "./config/"
+    -->
+    <mangos_conf_external>
+        <!-- Where ID of realm = between the tags.-->
+        <id_1>
+            <mangos_world_conf>./config/mangosd.conf</mangos_world_conf>
+        </id_1>
+    </mangos_conf_external>
+
+    <!--
+     In this Config array you can configure what components on the site you want to show. Its formed in many section
+     You type 0 or 1   -  1 means that you will show content.
+     -->
+    <components>
+
+        <right_section>
+            <quicklinks>1</quicklinks>					 <!-- Display quicklinks -->
+            <users_on_homepage>0</users_on_homepage>     <!--since "Users On Web Server" is currently under Server Information, requires server_information set to 1 also  -->
+            <server_information>1</server_information>
+            <server_rates>0</server_rates>
+            <media>1</media>                             <!--screenshot of the day  -->
+            <newbguide>1</newbguide>                     <!--new comer's guid -->
+            <hitcounter>0</hitcounter>					 <!-- Hit counter -->
+        </right_section>
+
+        <!--specify which parts show under server_information -->
+        <server_information>
+            <realm_status>1</realm_status>			<!-- Display realm status? -->
+            <server_ip>1</server_ip>				<!-- Server's IP address -->
+            <type>1</type>							<!-- Server type ex: PVP -->
+            <language>1</language>					<!-- Server language -->
+            <population>1</population>				<!-- Server population -->
+            <accounts>1</accounts>					<!-- Number of accounts -->
+            <active_accounts>1</active_accounts>    <!--accounts active in last 2 weeks  -->
+            <characters>1</characters>				<!-- Number of characters -->
+            <online>1</online>						<!-- Currently online -->
+            <more_info>1</more_info>				<!-- Show server rates and such -->
+        </server_information>
+
+		<!--Specify which links appear under each section -->
+        <left_section>
+		
+            <!--Community  -->
+            <Teamspeak>1</Teamspeak>
+            <donate>1</donate>
+			<vote>1</vote>
+			<chat>1</chat>
+
+            <!--Workshop  -->
+            <Realms_status>1</Realms_status>
+            <Players_online>1</Players_online>
+            <Honor>1</Honor>
+            <Playermap>1</Playermap>                     <!--Enable or disable playermap page  -->
+            <Characters>1</Characters>
+            <Userlist>1</Userlist>
+            <Statistic>1</Statistic>
+            <ah_system>1</ah_system>                     <!--Auction House page  -->
+            <Armory>1</Armory>
+
+            <!--Media -->
+            <Screenshots>1</Screenshots>
+			<Screenshotsize>2</Screenshotsize>		<!--This is in mb so 0.2 is 200k -->
+            <Wallpapers>1</Wallpapers>
+            <Upload_Wallpaper>0</Upload_Wallpaper>
+            <Upload_Screenshot>0</Upload_Screenshot>
+
+            <!--Support  -->
+            <Commands>1</Commands>
+            <Bug_tracker>1</Bug_tracker>
+            <In_Game_Support>1</In_Game_Support>
+            <Online_GMs>0</Online_GMs>
+
+            <!--Game Guide -->
+            <How_to_play>1</How_to_play>
+			<Interactive_world_atlas>1</Interactive_world_atlas>	<!-- Display link to Interactive Atlas -->
+			<Armor_sets>1</Armor_sets>								<!-- Display link to Armor Sets -->
+			<wow_bc>1</wow_bc> 										<!-- Display link to WoW Burning Crusade info -->
+			<wow_wrath>1</wow_wrath>								<!-- Display link to WoW WoTLK info -->
+			<wow_cata>1</wow_cata>									<!-- Display link to WoW Catacylsm info -->
+
+            <!--Account -->
+            <Activate_account>1</Activate_account>	   <!-- Should be 0 unless you require accounts to be activated before use -->
+            <Character_copy>1</Character_copy>         <!-- Display Link to Character Copy Menu  -->
+            <retrieve_pass>1</retrieve_pass>           <!-- Where users fill in secret questions to retrieve their pass. -->
+			<Character_tools>1</Character_tools>       <!-- Display characters tools? -->
+        </left_section>
+
+    </components>
+
+    <!--
+     In this section you can configure the menu 'Character copy'.
+     You have 2 things to configure: What account the horde characters is on and  what account the alliance characters is on.
+    -->
+    <character_copy_config>
+		<!-- Enable the character copy system? -->
+		<enable>1</enable>
+		
+		<!-- How many vote points does it cost to copy a character -->
+		<points>50</points>
+		
+        <!-- On what realm ID's should the character copy system work ? You can add sevral realms in this onbject.  -->
+        <work_on_realms>
+            <realm>1</realm>
+        </work_on_realms>
+
+        <!-- Id's of horde and alliance account ( Find in realm.account table ->[guid] ) . THESE MUST BE SET OR !NOTHING! WILL WORK!!!!   -->
+        <accounts>
+            <horde/>
+            <alliance/>
+        </accounts>
+
+        <general>
+            <Player_Start_Money>0</Player_Start_Money>    <!-- How much gold should player start with ? ( Broken )-->
+            <Player_Start_Level>1</Player_Start_Level>    <!-- What level should the player start with ? ( Broken ) -->
+        </general>
+    </character_copy_config>
+
+    <!--
+     Here you can configure the donation administration.
+    -->
+    <donation>
+        <!-- Your paypal email ( Paypal username ) -->
+        <PayPal_Email>wilson.steven10@yahoo.com</PayPal_Email>
+
+        <!-- Default PayPal lang. Just keep it like this.  -->
+        <paypallang>EN</paypallang>
+    </donation>
+	
+    <!--
+    Here you can enable MaNGOS core syncronizations.
+    Forexample view of logs by web.
+    TO USE THIS FUNCTION MANGOS PROGRAM MUST BE ON THE _SAME_ MACHINE AS THIS SITE!
+    -->
+    <core_work>
+        <!-- First, do you want to enable this functions?  -->
+        <enable>1</enable>
+
+        <!-- Fill out the paths to your files.  -->
+        <path>
+            <gmlog/>
+        </path>
+    </core_work>
+
+    <!-- A list of templates available. More templates are available to download at code.google.com/p/mwenhanced -->
+    <templates>
+        <template>WotLK</template>
+		<template>Burning_Crusade</template>
+    </templates>
+
+    <!-- Dynamic done by site. Dont touch this. -->
+    <temp>
+        <site_href></site_href>
+        <site_domain></site_domain>
+        <email_href></email_href>
+        <base_href></base_href>
+    </temp>
+
+</configs>

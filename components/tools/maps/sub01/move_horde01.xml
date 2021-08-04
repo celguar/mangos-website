@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHANNEL>
+	<FILE filename="move_horde.swf" swftitle="move_horde">
+		<ITEM id="m0" text="Stormspire"/>
+		<ITEM id="m1" text="Evergrove"/>
+		<ITEM id="m2" text="Area 52"/>
+		<ITEM id="m3" text="Cosmowrench"/>
+		<ITEM id="m4" text="Thunderlord Stronghold"/>
+		<ITEM id="m5" text="MokNathal Village"/>
+		<ITEM id="m6" text="Zabrajin"/>
+		<ITEM id="m7" text="Swamprat Post"/>
+		<ITEM id="m8" text="Falcon Watch"/>
+		<ITEM id="m9" text="Thrallmar"/>
+		<ITEM id="m10" text="Stair of Destiny"/>
+		<ITEM id="m11" text="Garadar"/>
+		<ITEM id="m12" text="Shattrath"/>
+		<ITEM id="m13" text="Spinebreaker Post"/>
+		<ITEM id="m14" text="Stonebreaker Hold"/>
+		<ITEM id="m15" text="Shadowmoon Village"/>
+		<ITEM id="m16" text="Altar of the Shatar"/>
+		<ITEM id="m17" text="Sanctum of the Stars"/>
+
+		<ITEM id="l0" text="Moonglade"/>
+		<ITEM id="l1" text="Everlook"/>
+		<ITEM id="l2" text="Bloodvenom Post"/>
+		<ITEM id="l3" text="Zoramgar Outpost"/>
+		<ITEM id="l4" text="Emerald Sanctuary"/>
+		<ITEM id="l5" text="Splintertree Post"/>
+		<ITEM id="l6" text="Valormok"/>
+		<ITEM id="l7" text="Sun Rock Retreat"/>
+		<ITEM id="l8" text="Orgrimmar"/>
+		<ITEM id="l9" text="Shadowprey Village"/>
+		<ITEM id="l10" text="Thunder Bluff"/>
+		<ITEM id="l11" text="Crossroads"/>
+		<ITEM id="l12" text="Ratchet"/>
+		<ITEM id="l13" text="Camp Taurajo"/>
+		<ITEM id="l14" text="Camp Mojache"/>
+		<ITEM id="l15" text="Brackenwall Village"/>
+		<ITEM id="l16" text="Freewind Post"/>
+		<ITEM id="l17" text="Cenarion Hold"/>
+		<ITEM id="l18" text="Marshals Refuge"/>
+		<ITEM id="l19" text="Gadgetzan"/>
+
+		<ITEM id="n0" text="Silvermoon"/>
+		<ITEM id="n1" text="Tranquillien"/>
+		<ITEM id="n2" text="Undercity"/>
+		<ITEM id="n3" text="Lights Hope Chapel"/>
+		<ITEM id="n4" text="The Sepulcher"/>
+		<ITEM id="n5" text="Tarren Mill"/>
+		<ITEM id="n6" text="Hammerfall"/>
+		<ITEM id="n7" text="Revantusk Village"/>
+		<ITEM id="n8" text="Thorium Point"/>
+		<ITEM id="n9" text="Kargath"/>
+		<ITEM id="n10" text="Flame Crest"/>
+		<ITEM id="n11" text="Stonard"/>
+		<ITEM id="n12" text="Gromgol"/>
+		<ITEM id="n13" text="Booty Bay"/>
+	</FILE>
+</CHANNEL>

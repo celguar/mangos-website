@@ -1,0 +1,15 @@
+For those of you running multiple realms, it may get alittle confusing to configure the website
+to feature all realms. So i decided to write a tutorial on how to do it:
+
+1.Open your config.xml, and scroll down to <multirealm>...Change the 0 to a 1.
+
+2.Next, go to the website. Go into the admin panel, and select "Realms" under Site Managment.
+
+3.In the empty fields below, enter you realm information. When you get to the Dbinfo column, enter
+in this format: "mysql username;mysql password;mysql port;mysql IP address;world database name;character database name".
+DONT FORGET the semi colon between each field.
+
+4.Click create new realm... A window will pop up asking if your sure, click yes.
+
+5.And boom, you should have it. Please note that all your realms must use the same "realmd"
+database in order for it to work!

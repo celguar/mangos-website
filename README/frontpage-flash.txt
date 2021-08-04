@@ -1,0 +1,9 @@
+With the flash player on the front page, you have the option to load directly from the 
+worldfowarcraft.com website, or used pre-saved ones within the flash folder. In order to 
+switch between the online flashplayer(from wow.com) or offline flashplayer, you must rename
+a couple files.
+
+To use the flash directly from world of warcraft.com:
+-rename the file "online_frontpage.index.php" to "frontpage.index.php" (/templates/offlike/frontpage/)
+make sure to name the current "frontpage.index.php" to something else.
+-reverse process to use offline flashplayer.

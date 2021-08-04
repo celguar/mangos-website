@@ -1,0 +1,5 @@
+to view the flash offline, replace the current code in "frontpage.index.php" with this:
+
+<div id="flashcontainer">
+<embed type="application/x-shockwave-flash" src="./flash/loader2.swf" id="flashbanner" name="flashbanner" quality="high" wmode="transparent" base="./flash/<?php echo $GLOBALS['user_cur_lang']; ?>" flashvars="xmlname=news.xmls" height="340" width="500">
+</div>
