@@ -8,7 +8,7 @@ CREATE TABLE `acc_creation_captcha` (
   `filename` varchar(200) NOT NULL DEFAULT '',
   `key` varchar(200) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of acc_creation_captcha
@@ -95,7 +95,7 @@ CREATE TABLE `account_keys` (
   `key` varchar(40) CHARACTER SET utf8 DEFAULT NULL,
   `assign_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of account_keys
@@ -114,137 +114,10 @@ CREATE TABLE `donations_template` (
   `itemset` varchar(1000) NOT NULL,
   `realm` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of donations_template
--- ----------------------------
-
--- ----------------------------
--- Table structure for `f_attachs`
--- ----------------------------
-DROP TABLE IF EXISTS `f_attachs`;
-CREATE TABLE `f_attachs` (
-  `attach_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `attach_file` varchar(255) CHARACTER SET cp1251 NOT NULL,
-  `attach_location` varchar(255) CHARACTER SET cp1251 NOT NULL,
-  `attach_hits` int(10) NOT NULL DEFAULT '0',
-  `attach_date` int(10) NOT NULL,
-  `attach_tid` int(10) unsigned NOT NULL DEFAULT '0',
-  `attach_member_id` int(8) unsigned NOT NULL,
-  `attach_filesize` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`attach_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of f_attachs
--- ----------------------------
-
--- ----------------------------
--- Table structure for `f_categories`
--- ----------------------------
-DROP TABLE IF EXISTS `f_categories`;
-CREATE TABLE `f_categories` (
-  `cat_id` smallint(5) NOT NULL AUTO_INCREMENT,
-  `cat_name` varchar(255) NOT NULL DEFAULT 'New Category',
-  `cat_disp_position` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`cat_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of f_categories
--- ----------------------------
-
--- ----------------------------
--- Table structure for `f_forums`
--- ----------------------------
-DROP TABLE IF EXISTS `f_forums`;
-CREATE TABLE `f_forums` (
-  `forum_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `forum_name` varchar(255) NOT NULL DEFAULT 'New forum',
-  `forum_desc` varchar(255) DEFAULT NULL,
-  `redirect_url` varchar(200) DEFAULT NULL,
-  `moderators` varchar(255) DEFAULT NULL,
-  `num_topics` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `num_posts` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `last_topic_id` int(10) unsigned DEFAULT NULL,
-  `disp_position` smallint(6) NOT NULL DEFAULT '0',
-  `quick_reply` tinyint(1) NOT NULL DEFAULT '0',
-  `closed` tinyint(1) NOT NULL DEFAULT '0',
-  `hidden` tinyint(1) NOT NULL DEFAULT '0',
-  `cat_id` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`forum_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of f_forums
--- ----------------------------
-
--- ----------------------------
--- Table structure for `f_markread`
--- ----------------------------
-DROP TABLE IF EXISTS `f_markread`;
-CREATE TABLE `f_markread` (
-  `marker_member_id` int(8) unsigned NOT NULL DEFAULT '0',
-  `marker_forum_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `marker_last_update` int(10) unsigned NOT NULL DEFAULT '0',
-  `marker_unread` smallint(5) NOT NULL DEFAULT '0',
-  `marker_topics_read` text NOT NULL,
-  `marker_last_cleared` int(10) unsigned NOT NULL DEFAULT '0',
-  UNIQUE KEY `marker_forum_id` (`marker_forum_id`,`marker_member_id`),
-  KEY `marker_member_id` (`marker_member_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of f_markread
--- ----------------------------
-
--- ----------------------------
--- Table structure for `f_posts`
--- ----------------------------
-DROP TABLE IF EXISTS `f_posts`;
-CREATE TABLE `f_posts` (
-  `post_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `poster` varchar(12) NOT NULL,
-  `poster_id` int(8) unsigned NOT NULL DEFAULT '0',
-  `poster_ip` varchar(15) DEFAULT NULL,
-  `poster_character_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `posted` int(10) unsigned NOT NULL DEFAULT '0',
-  `edited` int(10) unsigned DEFAULT NULL,
-  `edited_by` varchar(30) DEFAULT NULL,
-  `topic_id` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of f_posts
--- ----------------------------
-
--- ----------------------------
--- Table structure for `f_topics`
--- ----------------------------
-DROP TABLE IF EXISTS `f_topics`;
-CREATE TABLE `f_topics` (
-  `topic_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `topic_poster` varchar(12) NOT NULL,
-  `topic_poster_id` int(8) unsigned NOT NULL,
-  `topic_name` varchar(255) NOT NULL,
-  `topic_posted` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_post` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_post_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_poster` varchar(200) DEFAULT NULL,
-  `num_views` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `num_replies` mediumint(8) unsigned NOT NULL DEFAULT '1',
-  `closed` tinyint(1) NOT NULL DEFAULT '0',
-  `sticky` tinyint(1) NOT NULL DEFAULT '0',
-  `redirect_url` varchar(200) DEFAULT NULL,
-  `forum_id` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`topic_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of f_topics
 -- ----------------------------
 
 -- ----------------------------
@@ -259,7 +132,7 @@ CREATE TABLE `gallery` (
   `date` date NOT NULL,
   `cat` varchar(255) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=cp1251 ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of gallery
@@ -314,7 +187,7 @@ CREATE TABLE `paypal_cart_info` (
   `quantity` char(3) NOT NULL DEFAULT '',
   `invoice` varchar(255) NOT NULL DEFAULT '',
   `custom` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of paypal_cart_info
@@ -355,7 +228,7 @@ CREATE TABLE `paypal_payment_info` (
   `country` varchar(20) NOT NULL DEFAULT '',
   `datecreation` date NOT NULL DEFAULT '0000-00-00',
   `item_given` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of paypal_payment_info
@@ -388,7 +261,7 @@ CREATE TABLE `paypal_subscription_info` (
   `payment_txn_id` varchar(50) NOT NULL DEFAULT '',
   `subscriber_emailaddress` varchar(255) NOT NULL DEFAULT '',
   `datecreation` date NOT NULL DEFAULT '0000-00-00'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of paypal_subscription_info
@@ -458,14 +331,6 @@ CREATE TABLE `voting_points` (
   `points_spent` bigint(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of voting_points
--- ----------------------------
-
--- ----------------------------
--- Table structure for `voting_rewards`
--- ----------------------------
 DROP TABLE IF EXISTS `voting_rewards`;
 CREATE TABLE `voting_rewards` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
@@ -476,15 +341,7 @@ CREATE TABLE `voting_rewards` (
   `reward_text` varchar(255) NOT NULL,
   `realmid` decimal(10,0) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of voting_rewards
--- ----------------------------
-
--- ----------------------------
--- Table structure for `voting_sites`
--- ----------------------------
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 DROP TABLE IF EXISTS `voting_sites`;
 CREATE TABLE `voting_sites` (
   `id` int(11) unsigned NOT NULL DEFAULT '0',
@@ -493,47 +350,175 @@ CREATE TABLE `voting_sites` (
   `image_url` varchar(255) NOT NULL,
   `points` decimal(10,0) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of voting_sites
--- ----------------------------
-
-
--- ----------------------------
--- Table structure for `world_entrys`
--- ----------------------------
-DROP TABLE IF EXISTS `world_entrys`;
-CREATE TABLE `world_entrys` (
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `world_entries`;
+CREATE TABLE `world_entries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `db_name` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `db_name` varchar(255) NOT NULL,
   `last_inc` int(20) NOT NULL,
   `last_id` int(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+INSERT INTO `world_entries` VALUES ('1', 'character', '0', '0');
+INSERT INTO `world_entries` VALUES ('2', 'item_instance', '0', '0');
+INSERT INTO `world_entries` VALUES ('3', 'mail', '0', '0');
+DROP TABLE IF EXISTS web_donations;
+DROP TABLE IF EXISTS web_misc;
+DROP TABLE IF EXISTS forum_accounts;
+DROP TABLE IF EXISTS forum_pm;
+DROP TABLE IF EXISTS forums;
+DROP TABLE IF EXISTS forum_views;
+DROP TABLE IF EXISTS forum_reports;
+DROP TABLE IF EXISTS forum_topics;
+DROP TABLE IF EXISTS forum_posts;
+DROP TABLE IF EXISTS forum_rel_account_polls;
+DROP TABLE IF EXISTS forum_rel_topics_polls;
+DROP TABLE IF EXISTS forum_smiles;
+DROP TABLE IF EXISTS realm_settings;
+                        
+CREATE TABLE `web_misc` (
+												`id_misc` int(11) NOT NULL auto_increment,
+												`title` varchar(100) default NULL,
+												`text` varchar(200) default NULL,
+												`urls` text default NULL,
+												`image` varchar(200) default NULL,
+												PRIMARY KEY  (`id_misc`)
+                      ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+                      
+CREATE TABLE `forum_smiles` (
+												`id_smile` varchar(7) NOT NULL ,
+                                                `path` varchar(255) NOT NULL ,
+												PRIMARY KEY  (`id_smile`)
+												) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `web_donations` (
+												`id_donation` int(10) unsigned NOT NULL auto_increment,
+												`id_account` int(10) unsigned NOT NULL,
+												`value` varchar(45) NOT NULL default '0',
+												`date` date NOT NULL default '0000-00-00',
+												`hide` TINYINT(1) NOT NULL default '0',
+												PRIMARY KEY  (`id_donation`,`id_account`)
+												) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of world_entrys
--- ----------------------------
-INSERT INTO `world_entrys` VALUES ('1', 'character', '0', '0');
-INSERT INTO `world_entrys` VALUES ('2', 'item_instance', '0', '0');
-INSERT INTO `world_entrys` VALUES ('3', 'mail', '0', '0');
-
--- ----------------------------
--- Insert account data from "account" table
--- ----------------------------
-INSERT INTO `account_extend` (`account_id`) SELECT account.id FROM account;
-
---
--- Add dbinfo to realmlist table
--- Very important that this is in the end, along with ADD ALTERS. Because if
--- file gets applied again, it gets an error here.
---
-
-ALTER TABLE `realmlist` 
-ADD `dbinfo` VARCHAR( 355 ) NOT NULL default 'username;password;3306;127.0.0.1;DBWorld;DBCharacter' COMMENT 'Database info to THIS row',
-ADD `ra_address` VARCHAR( 25 ) NOT NULL default '127.0.0.1',
-ADD `ra_port` int(5) NOT NULL default '3443',
-ADD `ra_user` VARCHAR( 355 ) NOT NULL default 'username',
-ADD `ra_pass` VARCHAR( 355 ) NOT NULL default 'password';
-
+CREATE TABLE `forum_accounts` (
+												`id_account` int(10) unsigned NOT NULL default '0',
+												`location` varchar(2) NOT NULL default '00',
+												`showlocation` tinyint(1) unsigned NOT NULL default '0',
+												`bday` date NOT NULL default '0000-00-00',
+												`showbday` tinyint(1) unsigned NOT NULL default '0',
+												`signature` text ,
+												`gmt` varchar(6) NOT NULL default '0:00',
+												`webpage` varchar(200) default NULL,
+												`fname` varchar(50) default NULL,
+												`lname` varchar(50) default NULL,
+												`passask` varchar(200) default NULL,
+												`passans` varchar(200) default NULL,
+												`city` varchar(50) default NULL,
+												`aim` varchar(200) default NULL,
+												`msn` varchar(200) default NULL,
+												`yahoo` varchar(200) default NULL,
+												`skype` varchar(200) default NULL,
+												`icq` varchar(200) default NULL,
+												`enablepm` tinyint(1) unsigned NOT NULL default '0',
+												`enableemail` tinyint(1) unsigned NOT NULL default '0',
+												`template` varchar(50) default NULL,
+												`avatar` varchar(50) NOT NULL default 'nochar',
+												`lastlogin` datetime NOT NULL default '0000-00-00 00:00:00',
+												`displayname` varchar(25) NOT NULL,
+												`activation` varchar(32) default NULL,
+												`ismvp` tinyint(1) unsigned NOT NULL default '0',
+												`gender` tinyint(1) unsigned NOT NULL default '0',
+												PRIMARY KEY  (`id_account`)
+                      ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_reports` (
+												`id_report` int(10) unsigned NOT NULL auto_increment,
+												`id_account` int(10) unsigned NOT NULL default '0',
+												`id_post` int(10) unsigned NOT NULL default '0',
+												`reason` varchar(255) NOT NULL,
+												PRIMARY KEY  (`id_report`)
+												) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_pm` (
+												`id_pm` int(10) unsigned NOT NULL auto_increment,
+												`id_account_to` int(10) unsigned NOT NULL,
+												`message` text ,
+												`date` date NOT NULL default '0000-00-00',
+												`hour` time NOT NULL default '00:00:00',
+												`isread` tinyint(1) unsigned NOT NULL default '0',
+												`id_account_from` int(10) unsigned NOT NULL default '0',
+												`subject` varchar(100) default NULL,
+												`isdeleted` int(10) unsigned NOT NULL default '0',
+												`issignature` tinyint(1) unsigned NOT NULL default '1',
+												`isbbcode` tinyint(1) unsigned NOT NULL default '1',
+												PRIMARY KEY  (`id_pm`,`id_account_to`,`id_account_from`,`isdeleted`)
+												) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_posts` (
+												`id_post` int(10) unsigned NOT NULL auto_increment,
+												`id_topic` int(10) unsigned NOT NULL,
+												`text` text ,
+												`isbbcode` tinyint(1) unsigned NOT NULL default '0',
+												`issignature` tinyint(1) unsigned NOT NULL default '0',
+												`id_account` int(10) unsigned NOT NULL,
+												`date` date NOT NULL default '0000-00-00',
+												`hour` time NOT NULL default '00:00:00',
+												`isreply` tinyint(1) unsigned NOT NULL default '1',
+												`id_account_edit` int(10) unsigned NOT NULL default '0',
+												`date_edit` date NOT NULL default '0000-00-00',
+												`hour_edit` time NOT NULL default '00:00:00',
+												PRIMARY KEY  (`id_post`,`id_topic`,`id_account`)
+												) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_topics` (
+												`id_topic` int(10) unsigned NOT NULL auto_increment,
+												`viewlevel` varchar(2) NOT NULL default '-1',
+												`postlevel` varchar(2) NOT NULL default '0',
+												`title` varchar(200) default NULL,
+												`image` varchar(40) default NULL,
+												`views` int(10) unsigned NOT NULL default '0',
+												`issticked` tinyint(1) unsigned NOT NULL default '0',
+												`category` tinyint(1) unsigned NOT NULL default '0',
+												`id_forum_moved` int(10) unsigned NOT NULL default '0',
+												`poll_question` varchar(45) default NULL,
+												`poll_lasts` tinyint(3) unsigned NOT NULL default '0',
+												`poll_stamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
+												`id_forum` int(10) unsigned NOT NULL default '0',
+												PRIMARY KEY  (`id_topic`,`id_forum_moved`,`id_forum`)
+												) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+CREATE TABLE `forums` (
+												`id_forum` int(10) unsigned NOT NULL auto_increment,
+												`title` varchar(45) NOT NULL,
+												`description` varchar(255) NOT NULL,
+												`group` tinyint(2) unsigned NOT NULL default '0',
+												`image` varchar(50) NOT NULL default 'bullet.gif',
+												`viewlevel` varchar(2) NOT NULL default '-1',
+												`postlevel` varchar(2) NOT NULL default '0',
+												`ordenation` int(10) unsigned NOT NULL default '0',
+												`categorized` tinyint(1) unsigned NOT NULL default '0',
+												PRIMARY KEY  (`id_forum`)
+												) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_rel_account_polls` (
+												`id_poll` int(10) unsigned NOT NULL,
+												`id_account` int(10) unsigned NOT NULL,
+												PRIMARY KEY USING BTREE (`id_poll`,`id_account`)
+												) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_rel_topics_polls` (
+												`id_poll` int(10) unsigned NOT NULL auto_increment,
+												`id_topic` int(10) unsigned NOT NULL,
+												`name` varchar(45) NOT NULL,
+												PRIMARY KEY  (`id_poll`)
+												) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+CREATE TABLE `forum_views` (
+												`id_topic` int(10) unsigned NOT NULL auto_increment,
+												`id_account` varchar(45) collate latin1_general_ci NOT NULL,
+												`time` datetime NOT NULL default '0000-00-00 00:00:00',
+												PRIMARY KEY  (`id_topic`,`id_account`)
+												) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+CREATE TABLE `realm_settings` (
+												`id_realm` int(10) unsigned NOT NULL,
+												`dbuser` varchar(25) NOT NULL,
+												`dbpass` varchar(25) NOT NULL,
+												`dbhost` varchar(25) NOT NULL,
+												`dbport` varchar(5) NOT NULL,
+												`dbname` varchar(25) NOT NULL,
+                        `chardbname` varchar(25) NOT NULL,
+												`uptime` datetime NOT NULL default '0000-00-00 00:00:00',
+												PRIMARY KEY  (`id_realm`)
+												) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+               
