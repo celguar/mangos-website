@@ -31,7 +31,7 @@
  * Parsing code is partially grabbed from PEAR DB class,
  * initial author: Tomas V.V.Cox <cox@idecnet.com>.
  * 
- * Ñontains 3 classes:
+ * ï¿½ontains 3 classes:
  * - DbSimple_Generic: database factory class
  * - DbSimple_Generic_Database: common database methods
  * - DbSimple_Generic_Blob: common BLOB support
@@ -106,11 +106,12 @@ class DbSimple_Generic
                     require_once($path);
                 } else {
                     trigger_error("Error loading database driver: no file $file in include_path; no file $base in $dir", E_USER_ERROR);
-                    return null;
+                    $no_return = null;
+                    return $no_return;
                 }
             }
         }
-        $object =& new $class($parsed);
+        $object = new $class($parsed);
         if (isset($parsed['ident_prefix'])) {
             $object->setIdentPrefix($parsed['ident_prefix']);
         }
@@ -130,7 +131,7 @@ class DbSimple_Generic
                     fclose($fp);
                     unlink($testFile);                
                     require_once 'Cache' . '/Lite.php'; // "." -> no phpEclipse notice
-                    $t =& new Cache_Lite(array('cacheDir' => $dir.'/', 'lifeTime' => null, 'automaticSerialization' => true));
+                    $t = new Cache_Lite(array('cacheDir' => $dir.'/', 'lifeTime' => null, 'automaticSerialization' => true));
                     $object->_cacher =& $t;
                     break;
                 }
@@ -966,7 +967,7 @@ class DbSimple_Generic_Database extends DbSimple_Generic_LastError
                     $tmp = array();
                     $current[] =& $tmp;
                     $current =& $tmp;
-                    unset($tmp); // we use ætmp, because don't know the value of auto-index
+                    unset($tmp); // we use ï¿½tmp, because don't know the value of auto-index
                 }
             }
             $current = $row; // save the row in last dimension

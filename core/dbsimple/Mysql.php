@@ -33,26 +33,25 @@ class DbSimple_Mysql extends DbSimple_Generic_Database
     function DbSimple_Mysql($dsn)
     {
         $p = DbSimple_Generic::parseDSN($dsn);
-        if (!is_callable('mysql_connect')) {
-            return $this->_setLastError("-1", "MySQL extension is not loaded", "mysql_connect");
+        if (!is_callable('mysqli_connect')) {
+            return $this->_setLastError("-1", "MySQL extension is not loaded", "mysqli_connect");
         }
-        $ok = $this->link = @mysql_connect(
-            $p['host'] . (empty($p['port'])? "" : ":".$p['port']),
+        $ok = $this->link = @mysqli_connect(
+            $p['host'] . (empty($p['port']) ? "" : ":".$p['port']),
             $p['user'],
-            $p['pass'],
-            true
+            $p['pass']
         );
         $this->_resetLastError();
-        if (!$ok) return $this->_setDbError('mysql_connect()');
-        $ok = @mysql_select_db(preg_replace('{^/}s', '', $p['path']), $this->link);
-        if (!$ok) return $this->_setDbError('mysql_select_db()');
+        if (!$ok) return $this->_setDbError('mysqli_connect()');
+        $ok = @mysqli_select_db($this->link, preg_replace('{^/}s', '', $p['path']));
+        if (!$ok) return $this->_setDbError('mysqli_select_db()');
     }
 
 
     function _performEscape($s, $isIdent=false)
     {
         if (!$isIdent) {
-            return "'" . mysql_real_escape_string($s, $this->link) . "'";
+            return "'" . mysqli_real_escape_string($this->link, $s) . "'";
         } else {
             return "`" . str_replace('`', '``', $s) . "`";
         }
@@ -67,7 +66,7 @@ class DbSimple_Mysql extends DbSimple_Generic_Database
 
     function& _performNewBlob($blobid=null)
     {
-        $obj =& new DbSimple_Mysql_Blob($this, $blobid);
+        $obj = new DbSimple_Mysql_Blob($this, $blobid);
         return $obj;
     }
 
@@ -75,9 +74,9 @@ class DbSimple_Mysql extends DbSimple_Generic_Database
     function _performGetBlobFieldNames($result)
     {
         $blobFields = array();
-        for ($i=mysql_num_fields($result)-1; $i>=0; $i--) {
-            $type = mysql_field_type($result, $i); 
-            if (strpos($type, "BLOB") !== false) $blobFields[] = mysql_field_name($result, $i);
+        for ($i=mysqli_num_fields($result)-1; $i>=0; $i--) {
+            $type = mysqli_field_type($result, $i);
+            if (strpos($type, "BLOB") !== false) $blobFields[] = mysqli_field_name($result, $i);
         }
         return $blobFields;
     }
@@ -153,15 +152,15 @@ class DbSimple_Mysql extends DbSimple_Generic_Database
     {
         $this->_lastQuery = $queryMain;
         $this->_expandPlaceholders($queryMain, false);
-        $result = @mysql_query($queryMain[0], $this->link);
+        $result = @mysqli_query($this->link, $queryMain[0]);
         if ($result === false) return $this->_setDbError($queryMain[0]);
         if (!is_resource($result)) {
             if (preg_match('/^\s* INSERT \s+/six', $queryMain[0])) {
                 // INSERT queries return generated ID.
-                return @mysql_insert_id($this->link);
+                return @mysqli_insert_id($this->link);
             }
             // Non-SELECT queries return number of affected rows, SELECT - resource.
-            return @mysql_affected_rows($this->link);
+            return @mysqli_affected_rows($this->link);
         }
         return $result;
     }
@@ -169,8 +168,8 @@ class DbSimple_Mysql extends DbSimple_Generic_Database
     
     function _performFetch($result)
     {
-        $row = @mysql_fetch_assoc($result);
-        if (mysql_error()) return $this->_setDbError($this->_lastQuery);
+        $row = @mysqli_fetch_assoc($result);
+        if (mysqli_error()) return $this->_setDbError($this->_lastQuery);
         if ($row === false) return null;        
         return $row;
     }
@@ -178,13 +177,13 @@ class DbSimple_Mysql extends DbSimple_Generic_Database
     
     function _setDbError($query)
     {
-        return $this->_setLastError(mysql_errno(), mysql_error(), $query);
+        return $this->_setLastError(mysqli_errno($this->link), mysqli_error($this->link), $query);
     }
     
     
     function _calcFoundRowsAvailable()
     {
-        $ok = version_compare(mysql_get_server_info($this->link), '4.0') >= 0;
+        $ok = version_compare(mysqli_get_server_info($this->link), '4.0') >= 0;
         return $ok;
     }
 }
