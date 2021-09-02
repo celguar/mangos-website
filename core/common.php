@@ -44,11 +44,15 @@ $realm_timezone_def = array(
 
 function escape_string($string)
 {
+    global $DB;
+
     if (get_magic_quotes_gpc()) {
         $string = stripslashes($string);
     }
 
-    return mysql_real_escape_string($string);
+    return $DB->escape($string);
+
+    //return mysqli_real_escape_string($string);
 }
 
 // quote smart function to do MySQL Escaping properly //
@@ -63,7 +67,7 @@ function quote_smart($value)
         if( $value == '' ) {
             $value = 'NULL';
         } if( !is_numeric($value) || $value[0] == '0' ) {
-            $value = "'".mysql_real_escape_string($value)."'";
+            $value = "'".mysqli_real_escape_string($value)."'";
         }
         return $value;
     }
@@ -91,7 +95,7 @@ function sha_password($user,$pass){
 function check_for_symbols($string, $space_check = 0){
     //$space_check=1 means space is not allowed
     $len=strlen($string);
-    $allowed_chars="abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ0123456789";
+    $allowed_chars="abcdefghijklmnopqrstuvwxyzï¿½ï¿½ï¿½ABCDEFGHIJKLMNOPQRSTUVWXYZï¿½ï¿½ï¿½0123456789";
     if(!$space_check) {
         $allowed_chars .= " ";
     }
@@ -136,7 +140,7 @@ function get_banned($account_id,$returncont){
  */
 function add_pictureletter($text){
     $letter = substr($text, 0, 1);
-    $imageletter = strtr(strtolower($letter),"ŠŒšœŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİßàáâãäåæçèéêëìíîïğñòóôõöøùúûüıÿ",
+    $imageletter = strtr(strtolower($letter),"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
                                              "sozsozyyuaaaaaaaceeeeiiiidnoooooouuuuysaaaaaaaceeeeiiiionoooooouuuuyy");
     if (strpos("abcdefghijklmnopqrstuvwxyz", $imageletter) === false)
         return $text;

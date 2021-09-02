@@ -191,19 +191,19 @@ if ( ( int )$MW->getConfig->generic_values->realm_info->multirealm && isset( $_R
 }
 
 // Make an array from `dbinfo` column for the selected realm..
-$mangos_info = $DB->selectCell( "SELECT dbinfo FROM `realmlist` WHERE id=?d", $user['cur_selected_realmd'] ) ;
-$dbinfo_mangos = explode( ';', $mangos_info ) ;
+$dbinfo_mangos = $DB->selectRow( "SELECT * FROM `realm_settings` WHERE id_realm=?d", $user['cur_selected_realmd'] ) ;
+//$dbinfo_mangos = explode( ';', $mangos_info ) ;
 if ( ( int )$MW->getConfig->generic->use_archaeic_dbinfo_format )
 {
 	//alternate config - for users upgrading from Modded MaNGOS Web
 	//DBinfo column:  host;port;username;password;WorldDBname;CharDBname
-	$mangos = array( 'db_type' => 'mysql', 'db_host' => $dbinfo_mangos['0'],
+	$mangos = array( 'db_type' => 'mysql', 'db_host' => $dbinfo_mangos['dbhost'],
 		//ip of db world
-		'db_port' => $dbinfo_mangos['1'], //port
-		'db_username' => $dbinfo_mangos['2'], //world user
-		'db_password' => $dbinfo_mangos['3'], //world password
-		'db_name' => $dbinfo_mangos['4'], //world db name
-		'db_char' => $dbinfo_mangos['5'], //character db name
+		'db_port' => $dbinfo_mangos['dbport'], //port
+		'db_username' => $dbinfo_mangos['dbuser'], //world user
+		'db_password' => $dbinfo_mangos['dbpass'], //world password
+		'db_name' => $dbinfo_mangos['dbname'], //world db name
+		'db_char' => $dbinfo_mangos['chardbname'], //character db name
 		'db_encoding' => 'utf8', // don't change
 		) ;
 } else
@@ -212,15 +212,15 @@ if ( ( int )$MW->getConfig->generic->use_archaeic_dbinfo_format )
 	//DBinfo column:  username;password;port;host;WorldDBname;CharDBname
 	$mangos = array( 'db_type' => 'mysql', 'db_host' => $dbinfo_mangos['3'],
 		//ip of db world
-		'db_port' => $dbinfo_mangos['2'], //port
-		'db_username' => $dbinfo_mangos['0'], //world user
-		'db_password' => $dbinfo_mangos['1'], //world password
-		'db_name' => $dbinfo_mangos['4'], //world db name
-		'db_char' => $dbinfo_mangos['5'], //character db name
+		'db_port' => $dbinfo_mangos['dbport'], //port
+		'db_username' => $dbinfo_mangos['dbuser'], //world user
+		'db_password' => $dbinfo_mangos['dbpass'], //world password
+		'db_name' => $dbinfo_mangos['dbname'], //world db name
+		'db_char' => $dbinfo_mangos['chardbname'], //character db name
 		'db_encoding' => 'utf8', // don't change
 		) ;
 }
-unset( $dbinfo_mangos, $mangos_info ) ; // Free up memory.
+unset( $dbinfo_mangos ) ; // Free up memory.
 
 if ( ( int )$MW->getConfig->generic->use_alternate_mangosdb_port )
 {

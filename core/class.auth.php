@@ -59,7 +59,7 @@ class AUTH {
 
     function setgroup($gid=1) // 1 - guest, 5- banned
     {
-        $guest_g = $this->getgroup($gid);
+        $guest_g = array($this->getgroup($gid));
         $this->user = array_merge($this->user,$guest_g);
     }
 
@@ -288,7 +288,8 @@ class AUTH {
     function onlinelist_update()  // Updates list & delete old
     {
         $GLOBALS['guests_online']=0;
-        $rows  = $this->DB->select("SELECT * FROM `online`");
+        $rows = $this->DB->select("SELECT * FROM `online`");
+        if ($rows->num)
         foreach($rows as $result_row)
         {
             if(time()-$result_row['logged'] <= 60*10)
