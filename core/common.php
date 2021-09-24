@@ -42,6 +42,281 @@ $realm_timezone_def = array(
     29 => 'CN9',
 );
 
+$COUNTRY = array(
+    '00' => 'Other',
+    'AF' => 'Afghanistan',
+    'AL' => 'Albania',
+    'DZ' => 'Algeria',
+    'AS' => 'American Samoa',
+    'AD' => 'Andorra',
+    'AO' => 'Angola',
+    'AI' => 'Anguilla',
+    'AQ' => 'Antarctica',
+    'AG' => 'Antigua and Barbuda',
+    'AR' => 'Argentina',
+    'AM' => 'Armenia',
+    'AW' => 'Aruba',
+    'AU' => 'Australia',
+    'AT' => 'Austria',
+    'AZ' => 'Azerbaijan',
+    'BH' => 'Bahrain',
+    'BD' => 'Bangladesh',
+    'BB' => 'Barbados',
+    'BY' => 'Belarus',
+    'BE' => 'Belgium',
+    'BZ' => 'Belize',
+    'BJ' => 'Benin',
+    'BM' => 'Bermuda',
+    'BT' => 'Bhutan',
+    'BO' => 'Bolivia',
+    'BA' => 'Bosnia and Herzegovina',
+    'BW' => 'Botswana',
+    'BV' => 'Bouvet Island',
+    'BR' => 'Brazil',
+    'IO' => 'British Indian Ocean Territory',
+    'VG' => 'British Virgin Islands',
+    'BN' => 'Brunei Darussalam',
+    'BG' => 'Bulgaria',
+    'BF' => 'Burkina Faso',
+    'MM' => 'Burma',
+    'BI' => 'Burundi',
+    'KH' => 'Cambodia',
+    'CM' => 'Cameroon',
+    'CA' => 'Canada',
+    'CV' => 'Cape Verde',
+    'KY' => 'Cayman Islands',
+    'CF' => 'Central African Republic',
+    'TD' => 'Chad',
+    'CL' => 'Chile',
+    'CN' => 'China',
+    'CX' => 'Christmas Island',
+    'CC' => 'Cocos (Keeling) Islands',
+    'CO' => 'Colombia',
+    'KM' => 'Comoros',
+    'CD' => 'Congo, Democratic Republic of the',
+    'CG' => 'Congo, Republic of the',
+    'CK' => 'Cook Islands',
+    'CR' => 'Costa Rica',
+    'CI' => 'Cote d`Ivoire',
+    'HR' => 'Croatia',
+    'CU' => 'Cuba',
+    'CY' => 'Cyprus',
+    'CZ' => 'Czech Republic',
+    'DK' => 'Denmark',
+    'DJ' => 'Djibouti',
+    'DM' => 'Dominica',
+    'DO' => 'Dominican Republic',
+    'TP' => 'East Timor',
+    'EC' => 'Ecuador',
+    'EG' => 'Egypt',
+    'SV' => 'El Salvador',
+    'GQ' => 'Equatorial Guinea',
+    'ER' => 'Eritrea',
+    'EE' => 'Estonia',
+    'ET' => 'Ethiopia',
+    'FK' => 'Falkland Islands (Islas Malvinas)',
+    'FO' => 'Faroe Islands',
+    'FJ' => 'Fiji',
+    'FI' => 'Finland',
+    'FR' => 'France',
+    'FX' => 'France, Metropolitan',
+    'GF' => 'French Guiana',
+    'PF' => 'French Polynesia',
+    'TF' => 'French Southern and Antarctic Lands',
+    'GA' => 'Gabon',
+    'GE' => 'Georgia',
+    'DE' => 'Germany',
+    'GH' => 'Ghana',
+    'GI' => 'Gibraltar',
+    'GR' => 'Greece',
+    'GL' => 'Greenland',
+    'GD' => 'Grenada',
+    'GP' => 'Guadeloupe',
+    'GU' => 'Guam',
+    'GT' => 'Guatemala',
+    'GG' => 'Guernsey',
+    'GN' => 'Guinea',
+    'GW' => 'Guinea-Bissau',
+    'GY' => 'Guyana',
+    'HT' => 'Haiti',
+    'HM' => 'Heard Island and McDonald Islands',
+    'VA' => 'Holy See (Vatican City)',
+    'HN' => 'Honduras',
+    'HK' => 'Hong Kong (SAR)',
+    'HU' => 'Hungary',
+    'IS' => 'Iceland',
+    'IN' => 'India',
+    'ID' => 'Indonesia',
+    'IR' => 'Iran',
+    'IQ' => 'Iraq',
+    'IE' => 'Ireland',
+    'IL' => 'Israel',
+    'IT' => 'Italy',
+    'JM' => 'Jamaica',
+    'JP' => 'Japan',
+    'JE' => 'Jersey',
+    'JO' => 'Jordan',
+    'KZ' => 'Kazakhstan',
+    'KE' => 'Kenya',
+    'KI' => 'Kiribati',
+    'KP' => 'Korea, North',
+    'KR' => 'Korea,  South',
+    'KW' => 'Kuwait',
+    'KG' => 'Kyrgyzstan',
+    'LA' => 'Laos',
+    'LV' => 'Latvia',
+    'LB' => 'Lebanon',
+    'LS' => 'Lesotho',
+    'LR' => 'Liberia',
+    'LY' => 'Libya',
+    'LI' => 'Liechtenstein',
+    'LT' => 'Lithuania',
+    'LU' => 'Luxembourg',
+    'MO' => 'Macao',
+    'MK' => 'Macedonia, The Former Yugoslav Republic of',
+    'MG' => 'Madagascar',
+    'MW' => 'Malawi',
+    'MY' => 'Malaysia',
+    'MV' => 'Maldives',
+    'ML' => 'Mali',
+    'MT' => 'Malta',
+    'IM' => 'Man, Isle of',
+    'MH' => 'Marshall Islands',
+    'MQ' => 'Martinique',
+    'MR' => 'Mauritania',
+    'MU' => 'Mauritius',
+    'YT' => 'Mayotte',
+    'MX' => 'Mexico',
+    'FM' => 'Micronesia, Federated States of',
+    'MD' => 'Moldova',
+    'MC' => 'Monaco',
+    'MN' => 'Mongolia',
+    'MS' => 'Montserrat',
+    'MA' => 'Morocco',
+    'MZ' => 'Mozambique',
+    'NA' => 'Namibia',
+    'NR' => 'Nauru',
+    'NP' => 'Nepal',
+    'NL' => 'Netherlands',
+    'AN' => 'Netherlands Antilles',
+    'NC' => 'New Caledonia',
+    'NZ' => 'New Zealand',
+    'NI' => 'Nicaragua',
+    'NE' => 'Niger',
+    'NG' => 'Nigeria',
+    'NU' => 'Niue',
+    'NF' => 'Norfolk Island',
+    'MP' => 'Northern Mariana Islands',
+    'NO' => 'Norway',
+    'OM' => 'Oman',
+    'PK' => 'Pakistan',
+    'PW' => 'Palau',
+    'PS' => 'Palestinian Territory, Occupied',
+    'PA' => 'Panama',
+    'PG' => 'Papua New Guinea',
+    'PY' => 'Paraguay',
+    'PE' => 'Peru',
+    'PH' => 'Philippines',
+    'PN' => 'Pitcairn Islands',
+    'PL' => 'Poland',
+    'PT' => 'Portugal',
+    'PR' => 'Puerto Rico',
+    'QA' => 'Qatar',
+    'RE' => 'R�union',
+    'RO' => 'Romania',
+    'RU' => 'Russia',
+    'RW' => 'Rwanda',
+    'SH' => 'Saint Helena',
+    'KN' => 'Saint Kitts and Nevis',
+    'LC' => 'Saint Lucia',
+    'PM' => 'Saint Pierre and Miquelon',
+    'VC' => 'Saint Vincent and the Grenadines',
+    'WS' => 'Samoa',
+    'SM' => 'San Marino',
+    'ST' => 'S�o Tom� and Pr�ncipe',
+    'SA' => 'Saudi Arabia',
+    'SN' => 'Senegal',
+    'SC' => 'Seychelles',
+    'SL' => 'Sierra Leone',
+    'SG' => 'Singapore',
+    'SK' => 'Slovakia',
+    'SI' => 'Slovenia',
+    'SB' => 'Solomon Islands',
+    'SO' => 'Somalia',
+    'ZA' => 'South Africa',
+    'GS' => 'South Georgia and the South Sandwich Islands',
+    'ES' => 'Spain',
+    'LK' => 'Sri Lanka',
+    'SD' => 'Sudan',
+    'SR' => 'Suriname',
+    'SJ' => 'Svalbard',
+    'SZ' => 'Swaziland',
+    'SE' => 'Sweden',
+    'CH' => 'Switzerland',
+    'SY' => 'Syria',
+    'TW' => 'Taiwan',
+    'TJ' => 'Tajikistan',
+    'TZ' => 'Tanzania',
+    'TH' => 'Thailand',
+    'BS' => 'The Bahamas',
+    'GM' => 'The Gambia',
+    'TG' => 'Togo',
+    'TK' => 'Tokelau',
+    'TO' => 'Tonga',
+    'TT' => 'Trinidad and Tobago',
+    'TN' => 'Tunisia',
+    'TR' => 'Turkey',
+    'TM' => 'Turkmenistan',
+    'TC' => 'Turks and Caicos Islands',
+    'TV' => 'Tuvalu',
+    'UG' => 'Uganda',
+    'UA' => 'Ukraine',
+    'AE' => 'United Arab Emirates',
+    'UK' => 'United Kingdom',
+    'US' => 'United States',
+    'UM' => 'United States Minor Outlying Islands',
+    'UY' => 'Uruguay',
+    'UZ' => 'Uzbekistan',
+    'VU' => 'Vanuatu',
+    'VE' => 'Venezuela',
+    'VN' => 'Vietnam',
+    'VI' => 'Virgin Islands',
+    'WF' => 'Wallis and Futuna',
+    'EH' => 'Western Sahara',
+    'YE' => 'Yemen',
+    'YU' => 'Yugoslavia',
+    'ZM' => 'Zambia',
+    'ZW' => 'Zimbabwe'
+);
+
+$GMT = array(
+    -12 => array('-12:00', 'Eniwetok, Kwajalein'),
+    -11 => array('-11:00', 'Midway Island, Samoa'),
+    -10 => array('-10:00', 'Hawaii'),
+    -9 => array('-9:00', 'Alaska'),
+    -8 => array('-8:00', 'Pacific Time (US & Canada)'),
+    -7 => array('-7:00', 'Mountain Time (US & Canada)'),
+    -6 => array('-6:00', 'Central Time (US & Canada), Mexico City'),
+    -5 => array('-5:00', 'Eastern Time (US & Canada), Bogota, Lima'),
+    -4 => array('-4:00', 'Atlantic Time (Canada), Caracas, La Paz'),
+    -3 => array('-3:00', 'Brazil, Buenos Aires, Georgetown'),
+    -2 => array('-2:00', 'Mid-Atlantic'),
+    -1 => array('-1:00', 'Azores, Cape Verde Islands'),
+    0 => array('+0:00', 'Western Europe Time, London, Lisbon, Casablanca'),
+    1 => array('+1:00', 'Brussels, Copenhagen, Madrid, Paris'),
+    2 => array('+2:00', 'Kaliningrad, South Africa'),
+    3 => array('+3:00', 'Baghdad, Riyadh, Moscow, St. Petersburg'),
+    4 => array('+4:00', 'Abu Dhabi, Muscat, Baku, Tbilisi'),
+    5 => array('+5:00', 'Ekaterinburg, Islamabad, Karachi, Tashkent'),
+    6 => array('+6:00', 'Almaty, Dhaka, Colombo'),
+    7 => array('+7:00', 'Bangkok, Hanoi, Jakarta'),
+    8 => array('+8:00', 'Beijing, Perth, Singapore, Hong Kong'),
+    9 => array('+9:00', 'Tokyo, Seoul, Osaka, Sapporo, Yakutsk'),
+    10 => array('+10:00', 'Eastern Australia, Guam, Vladivostok'),
+    11 => array('+11:00', 'Magadan, Solomon Islands, New Caledonia'),
+    12 => array('+12:00', 'Auckland, Wellington, Fiji, Kamchatka')
+);
+
 function escape_string($string)
 {
     global $DB;
@@ -58,6 +333,7 @@ function escape_string($string)
 // quote smart function to do MySQL Escaping properly //
 function quote_smart($value)
 {
+    global $DB;
     if( is_array($value) ) {
         return array_map("quote_smart", $value);
     } else {
@@ -67,7 +343,7 @@ function quote_smart($value)
         if( $value == '' ) {
             $value = 'NULL';
         } if( !is_numeric($value) || $value[0] == '0' ) {
-            $value = "'".mysqli_real_escape_string($value)."'";
+            $value = "'".mysqli_real_escape_string($DB->link, $value)."'";
         }
         return $value;
     }
@@ -108,7 +384,7 @@ function check_for_symbols($string, $space_check = 0){
 function get_banned($account_id,$returncont){
     global $DB;
 
-    $get_last_ip = $DB->selectCell("SELECT last_ip FROM account WHERE id='".$account_id."'");
+    $get_last_ip = $DB->selectCell("SELECT ip FROM account_logons WHERE accountId='".$account_id."'");
     $db_IP = $get_last_ip;
 
     $ip_check = $DB->selectCell("SELECT ip FROM `ip_banned` WHERE ip='".$db_IP."'");
@@ -144,7 +420,7 @@ function add_pictureletter($text){
                                              "sozsozyyuaaaaaaaceeeeiiiidnoooooouuuuysaaaaaaaceeeeiiiionoooooouuuuyy");
     if (strpos("abcdefghijklmnopqrstuvwxyz", $imageletter) === false)
         return $text;
-    $img = '<img src="templates/WotLK/images/letters/'.$imageletter.'.gif" alt="'.$letter.'" align="left"/>';
+    $img = '<img src="templates/vanilla/images/letters/'.$imageletter.'.gif" alt="'.$letter.'" align="left"/>';
     $output = $img . substr($text, 1);
     return $output;
 }
@@ -351,7 +627,7 @@ function strip_if_magic_quotes($value){
 }
 
 function my_preview($text,$userlevel=0){
-    if($userlevel<1){$text = htmlspecialchars($text);if (get_magic_quotes_gpc()){$text = stripslashes($text);} }
+    if($userlevel<1){$text = htmlspecialchars($text);}
     $text = nl2br($text);
     $text = preg_replace("/\\[b\\](.*?)\\[\\/b\\]/s","<b>$1</b>",$text);
     $text = preg_replace("/\\[i\\](.*?)\\[\\/i\\]/s","<i>$1</i>",$text);
@@ -406,7 +682,7 @@ function my_previewreverse($text){
 
 function check_url_reverse($url){
     $url = stripslashes($url);
-    if(eregi('attach',$url) && eregi('attid',$url)){
+    if(preg_match('attach',$url) && preg_match('attid',$url)){
         $result = preg_replace("/<a href=\"[^\\'\"]*attid=(\\d+)[^\\'\"]*\" target=\"_blank\">.*?<\\/a>/s","[attach=$1]",$url);
     }else{
         $result = preg_replace("/<a href=\"([^'\"<>]+)\" target=\"_blank\">(.*?)<\\/a>/s","[url=$1]$2[/url]",$url);
@@ -516,11 +792,11 @@ function default_paginate($num_pages, $cur_page, $link_to){
 function matchAccountKey($id, $key) {
     clearOldAccountKeys();
     global $DB;
-    $count = $DB->selectcell("SELECT count(*) FROM `account_keys` where id = ?", $id);
+    $count = $DB->selectcell("SELECT count(*) FROM `website_account_keys` where id = ?", $id);
     if($count == 0) {
         return false;
     }
-    $account_key = $DB->selectcell("SELECT `key` FROM `account_keys` where id = ?", $id);
+    $account_key = $DB->selectcell("SELECT `key` FROM `website_account_keys` where id = ?", $id);
     if($key == $account_key) {
         return true;
     }
@@ -540,7 +816,7 @@ function clearOldAccountKeys() {
 
     $expire_time = time() - $cookie_expire_time;
 
-    $DB->query("DELETE FROM `account_keys` WHERE `assign_time` < ?", $expire_time);
+    $DB->query("DELETE FROM `website_account_keys` WHERE `assign_time` < ?", $expire_time);
 }
 
 function addOrUpdateAccountKeys($id, $key) {
@@ -548,24 +824,24 @@ function addOrUpdateAccountKeys($id, $key) {
 
     $current_time = time();
 
-    $count = $DB->selectcell("SELECT count(*) FROM account_keys where id = ?", $id);
+    $count = $DB->selectcell("SELECT count(*) FROM website_account_keys where id = ?", $id);
     if($count == 0) {   //need to INSERT
-        $DB->query("INSERT INTO `account_keys` SET `id` = ?, `key` = ?, `assign_time` = ?", $id, $key, $current_time);
+        $DB->query("INSERT INTO `website_account_keys` SET `id` = ?, `key` = ?, `assign_time` = ?", $id, $key, $current_time);
     }
     else {              //need to UPDATE
-        $DB->query("UPDATE `account_keys` SET `key` = ?, `assign_time` = ? WHERE `id` = ?", $key, $current_time, $id);
+        $DB->query("UPDATE `website_account_keys` SET `key` = ?, `assign_time` = ? WHERE `id` = ?", $key, $current_time, $id);
     }
 }
 
 function removeAccountKeyForUser($id) {
     global $DB;
 
-    $count = $DB->selectcell("SELECT count(*) FROM account_keys where id = ?", $id);
+    $count = $DB->selectcell("SELECT count(*) FROM website_account_keys where id = ?", $id);
     if($count == 0) {
         //do nothing
     }
     else {
-        $DB->query("DELETE FROM `account_keys` WHERE `id` = ?", $id);
+        $DB->query("DELETE FROM `website_account_keys` WHERE `id` = ?", $id);
     }
 }
 
@@ -719,4 +995,320 @@ function mw_url($page, $subpage, $params=null, $encodeentities=true) {
         }
     }
     return $encodeentities ? htmlentities($url) : $url;
+}
+
+function valemail($stremail) {
+
+    if(preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/", $stremail)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+function valdate($strdate, $miny = 0, $maxy = 0) {
+
+    if ($miny== 0) { $miny  = date("Y")-100; }
+    if ($maxy== 0) { $maxy = date("Y")-1; }
+
+    if((strlen($strdate)<10)OR(strlen($strdate)>10)){
+        return false;
+    }
+    else{
+
+        if((substr_count($strdate,"/"))<>2){
+            return false;
+        }
+        else{
+            $pos=strpos($strdate,"/");
+            $date=substr($strdate,0,($pos));
+            $result=preg_match("^[0-9]+$",$date,$trashed);
+            if(!($result)){return false;}
+            else{
+                if(($date<=0)OR($date>31)){return false;}
+            }
+            $month=substr($strdate,($pos+1),($pos));
+            if(($month<=0)OR($month>12)){return false;}
+            else{
+                $result=preg_match("^[0-9]+$",$month,$trashed);
+                if(!($result)){return false;}
+            }
+            $year=substr($strdate,($pos+4),strlen($strdate));
+            $result=preg_match("^[0-9]+$",$year,$trashed);
+            if(!($result)){return false;}
+            else{
+                if(($year<$miny)OR($year>$maxy)){return false;}
+            }
+        }
+    }
+    return true;
+}
+
+function alphanum($sstr, $num=true, $alpha=true, $extra="") {
+
+    $exp="/^[";
+    if ($alpha==true) { $exp.="a-zA-Z"; }
+    if ($num==true) { $exp.="0-9"; }
+    $exp.=$extra;
+    $exp.="]{".strlen($sstr).",".strlen($sstr)."}$/";
+
+    return preg_match($exp,$sstr);
+
+}
+
+function bbcode($str, $entities=true, $null=true, $isbb=true, $issmile=true) {
+
+    if ($entities) $str = htmlentities($str);
+    if ($null) $str = nl2br($str);
+
+    if ($isbb==true) {
+        $simple_search = array(
+            //By Me TAGS
+            '/\[indent\=([1-3])\](.*?)\[\/indent\]/is',
+            '/\[community\](.*?)\[\/community\]/is',
+            '/\[youtube\](.*?)youtube\.com\/watch\?v\=(.*?)\[\/youtube\]/is',
+            //added line break
+            '/\[hr\]/is',
+            '/\[b\](.*?)\[\/b\]/is',
+            '/\[i\](.*?)\[\/i\]/is',
+            '/\[u\](.*?)\[\/u\]/is',
+            // added nofollow to prevent spam
+            '/\[anchor\=(.*?)\](.*?)\[\/anchor\]/is',
+            '/\[url\=(.*?)\](.*?)\[\/url\]/is',
+            '/\[url\](.*?)\[\/url\]/is',
+            '/\[left\](.*?)\[\/left\]/is',
+            '/\[right\](.*?)\[\/right\]/is',
+            '/\[center\](.*?)\[\/center\]/is',
+            //added alt attribute for validation
+            '/\[img\](.*?)\[\/img\]/is',
+            '/\[email\=(.*?)\](.*?)\[\/email\]/is',
+            '/\[email\](.*?)\[\/email\]/is',
+            '/\[font\=(.*?)\](.*?)\[\/font\]/is',
+            '/\[size\=(.*?)\](.*?)\[\/size\]/is',
+            '/\[color\=(.*?)\](.*?)\[\/color\]/is',
+            //added textarea for code presentation
+            '/\[codearea\](.*?)\[\/codearea\]/is',
+            //added pre class for code presentation
+            '/\[code\](.*?)\[\/code\]/is',
+            //added paragraph
+            '/\[p\](.*?)\[\/p\]/is',
+            '/\[quote\](.*?)\[\/quote\]/is',
+            //By Me REPS
+            '/\%SITENAME\%/is',
+            '/\%USERNAME\%/is',
+        );
+        $simple_replace = array(
+            //By Me
+            '<div style="margin: -5px 0 -5px ${1}cm">$2</div>',
+            '<div class="community-watch">$1</div>',
+            '<embed type="application/x-shockwave-flash" wmode="transparent" width="425" height="366" src="http://www.youtube.com/v/$2"></embed>',
+            //added line break
+            '<hr>',
+            '<strong>$1</strong>',
+            '<em>$1</em>',
+            '<u>$1</u>',
+            // added nofollow to prevent spam
+            '<a name="$1">$2</a>',
+            '<a href="$1">$2</a>',
+            '<a href="$1">$1</a>',
+            '<div style="text-align: left;">$1</div>',
+            '<div style="text-align: right;">$1</div>',
+            '<div style="text-align: center;">$1</div>',
+            //added alt attribute for validation
+            '<img src="$1" border=0>',
+            '<a href="mailto:$1" target="_blank">$2</a>',
+            '<a href="mailto:$1" target="_blank">$1</a>',
+            '<span style="font-family: $1;">$2</span>',
+            '<span style="font-size: $1;">$2</span>',
+            '<span style="color: $1;">$2</span>',
+            //added textarea for code presentation
+            '<textarea class="code_container" rows="30" cols="70">$1</textarea>',
+            //added pre class for code presentation
+            '<blockquote><small><hr color="#9e9e9e" noshade="noshade" size="1"><small class="white">Code:</small><br><div style="overflow: auto; background-color: #666666; color: #FFFFFF; width: 100%; max-height: 300px; height: expression(this.scrollHeight > 300 ? 300 : true); white-space: nowrap;"><pre class="code">$1</pre></div><hr color="#9e9e9e" noshade="noshade" size="1"></small></blockquote>',
+            //added paragraph
+            '<p>$1</p>',
+            '<blockquote><small><hr color="#9e9e9e" noshade="noshade" size="1"><small class="white">Quote:</small><br>$1<hr color="#9e9e9e" noshade="noshade" size="1"></small></blockquote>',
+            //By Me REPS
+            $GLOBALS['SETTING']['WEB_SITE_NAME'],
+            $_SESSION['nickname'],
+        );
+
+        // Do simple BBCode's
+
+        $str = preg_replace ($simple_search, $simple_replace, $str);
+
+        //Listing
+        preg_match_all ("/\[list\](.*?)\[\*\](.*?)\[\/list\]/si", $str, $match);
+        for ($j=0;$j<=count($match[0]);$j++) {
+            for ($i=0;$i<=substr_count($match[0][$j], '[*]');$i++) {
+                $str = preg_replace ("/\[list\](.*?)\[\*\](.*?)\[\/list\]/si", "[list]$1</li><li>$2[/list]", $str);
+            }
+        }
+        $str = preg_replace ("/\[list\](.*?)\[\/list\]/si", "<ul><li>$1</li></ul>", $str);
+
+        preg_match_all ("/\[list=([aAiI1])\](.*?)\[\*\](.*?)\[\/list\]/si", $str, $match);
+        for ($j=0;$j<=count($match[0]);$j++) {
+            for ($i=0;$i<=substr_count($match[0][$j], '[*]');$i++) {
+                $str = preg_replace ("/\[list\=([aAiI1])\](.*?)\[\*\](.*?)\[\/list\]/si", "[list=$1]$2</li><li>$3[/list]", $str);
+            }
+        }
+        $str = preg_replace ("/\[list=([aAiI1])\](.*?)\[\/list\]/si", "<ol type=$1><li>$2</li></ol>", $str);
+    }
+
+    if ($issmile==true) {
+        /*
+        //Smiles
+        $querysm=mysql_query('SELECT * FROM `forum_smiles`', $GLOBALS['realm_db']);
+        while ($row = mysql_fetch_array($querysm)) {
+            $key[] = '/'.preg_quote($row['id_smile']).'/';
+            $value[] = '<img src="'.$row['path'].'">';
+        }
+        $str = preg_replace ($key, $value, $str);
+        */
+    }
+
+    return $str;
+}
+
+function bbcode_toolbar($inputname) {
+
+    $getbyid=explode('.',$inputname);
+    $getbyid=$getbyid[count($getbyid)-1];
+
+    ?>
+    <script language=javascript src="new-hp/js/quick_reply.js"></script>
+    <table cellpadding=0 cellspacing=0 width=225>
+        <style>
+            img.mousing:link, img.mousing:visited {
+                background-color: transparent;
+            }
+            img.mousing:hover {
+                background-color: orange;
+            }
+            img.mousing:active {
+                background-color: darkorange;
+            }
+        </style>
+        <tr>
+            <td><img class="mousing" src="new-hp/images/bbcode/bold.gif" id=ed_bold onclick="edInsertTag(<? echo $inputname; ?>, 0);" value="B" alt="Bold"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/italic.gif" id=ed_italic onclick="edInsertTag(<? echo $inputname; ?>, 1);" value="I" alt="Italic"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/underline.gif" id=ed_underline onclick="edInsertTag(<? echo $inputname; ?>, 2);" value="U" alt="Underline"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/left.gif" id=ed_left onclick="edInsertTag(<? echo $inputname; ?>, 3);" value="B" alt="Left"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/center.gif" id=ed_center onclick="edInsertTag(<? echo $inputname; ?>, 4);" value="I" alt="Center"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/right.gif" id=ed_right onclick="edInsertTag(<? echo $inputname; ?>, 5);" value="U" alt="Right"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/link.gif" id=ed_link onclick="edInsertLink(<? echo $inputname; ?>, 2);" value="Link" alt="Link"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/image.gif" id=ed_img onclick="edInsertImage(<? echo $inputname; ?>);" value="Image" alt="Image"></td>
+            <td><img class="mousing" src="new-hp/images/bbcode/quote.gif" id=ed_quote onclick="edInsertTag(<? echo $inputname; ?>, 8);" value="Quote" alt="Quote"></td>
+        </tr>
+    </table>
+    <?php
+}
+
+function cleanCA($sstr) {
+
+    if ($sstr=="") {
+
+        unset($_SESSION['CA_key']);
+
+        unset($_SESSION['CA_u']);
+        unset($_SESSION['CA_p']);
+        unset($_SESSION['CA_ask']);
+        unset($_SESSION['CA_ans']);
+        unset($_SESSION['CA_tbc']);
+
+        unset($_SESSION['CA_fname']);
+        unset($_SESSION['CA_lname']);
+        unset($_SESSION['CA_city']);
+        unset($_SESSION['CA_lo']);
+        unset($_SESSION['CA_em']);
+        unset($_SESSION['CA_shem']);
+        unset($_SESSION['CA_bd']);
+        unset($_SESSION['CA_shbd']);
+        unset($_SESSION['CA_gmt']);
+        unset($_SESSION['CA_shpm']);
+        unset($_SESSION['CA_msn']);
+        unset($_SESSION['CA_icq']);
+        unset($_SESSION['CA_aim']);
+        unset($_SESSION['CA_yahoo']);
+        unset($_SESSION['CA_skype']);
+        unset($_SESSION['CA_sig']);
+        unset($_SESSION['CA_avtrd']);
+        unset($_SESSION['CA_weburl']);
+        unset($_SESSION['CA_accountset']);
+        unset($_SESSION['CA_userset']);
+        unset($_SESSION['CA_valcode']);
+        unset($_SESSION['CA_skin']);
+        unset($_SESSION['CA_nick']);
+
+    }
+}
+
+function calculateSRP6Verifier($username, $password, $salt)
+{
+    // algorithm constants
+    $g = gmp_init(7);
+    $N = gmp_init('894B645E89E1535BBDAD5B8B290650530801B18EBFBF5E8FAB3C82872A3E9BB7', 16);
+
+    // calculate first hash
+    $h1 = sha1(strtoupper($username . ':' . $password), TRUE);
+
+    // calculate second hash
+    $h2 = sha1(strrev($salt) . $h1, TRUE);  // From haukw
+    //if(get_config('server_core') == 5)
+    //{
+    //    $h2 = sha1(strrev($salt) . $h1, TRUE);  // From haukw
+    //} else {
+    //    $h2 = sha1($salt . $h1, TRUE);
+    //}
+
+    // convert to integer (little-endian)
+    $h2 = gmp_import($h2, 1, GMP_LSW_FIRST);
+
+    // g^h2 mod N
+    $verifier = gmp_powm($g, $h2, $N);
+
+    // convert back to a byte array (little-endian)
+    $verifier = gmp_export($verifier, 1, GMP_LSW_FIRST);
+
+    // pad to 32 bytes, remember that zeros go on the end in little-endian!
+    $verifier = str_pad($verifier, 32, chr(0), STR_PAD_RIGHT);
+
+    // done!
+    return strrev($verifier);  // From haukw
+    //if(get_config('server_core') == 5)
+    //{
+    //    return strrev($verifier);  // From haukw
+    //} else {
+    //    return $verifier;
+    //}
+}
+
+// Returns SRP6 parameters to register this username/password combination with
+function getRegistrationData($username, $password)
+{
+    // generate a random salt
+    $salt = random_bytes(32);
+
+    // calculate verifier using this salt
+    $verifier = calculateSRP6Verifier($username, $password, $salt);
+
+    // done - this is what you put in the account table!
+    $salt = strtoupper(bin2hex($salt));         	// From haukw
+    $verifier = strtoupper(bin2hex($verifier));     // From haukw
+    //if(get_config('server_core') == 5)
+    //{
+    //    $salt = strtoupper(bin2hex($salt));         	// From haukw
+    //    $verifier = strtoupper(bin2hex($verifier));     // From haukw
+    //}
+
+    return array($salt, $verifier);
+}
+
+//From TrinityCore/AOWOW
+function verifySRP6($user, $pass, $salt, $verifier)
+{
+    $verified = calculateSRP6Verifier($user, $pass, hex2bin($salt));
+    $verified = strtoupper(bin2hex($verified));
+    return $verifier === $verified;
 }

@@ -1,41 +1,42 @@
 <?php
-/*
-    POMM  v1.3
-    Player Online Map for MangOs
-
-    Show online players position on map. Update without refresh.
-    Show tooltip with location, race, class and level of player.
-    Show realm status.
-
-    16.09.2006      http://pomm.da.ru/
-
-    Created by mirage666 (c) (mailto:mirage666@pisem.net icq# 152263154)
-    2006-2009 Modified by killdozer.
-*/
-
-
 require_once("func.php");
 
-
-require_once("../../config/playermap_config.php");
+require_once("config/playermap_config.php");
 require_once 'libs/data_lib.php';
 
 
-$realm_id = intval( $_COOKIE['cur_selected_realmd'] );
+//$realm_idd = intval($_GET['realm']);
+//$realm_setting = file_get_contents("expansion.spp");
+if (file_exists("../../vanilla.spp")) {
+		$realm_id = 1;
+	}
+
+if (file_exists("../../tbc.spp")) {
+		$realm_id = 2;
+	}
+
+if (file_exists("../../wotlk.spp")) {
+		$realm_id = 3;
+	}
+//$realm_id = realm_setting; // Set the realm_id
+//print_r($realm_setting);
+//print_r($realm_id);
 $server_arr = $server;
 
-if (isset($_COOKIE["lang"]))
-{
-  $lang = $_COOKIE["lang"];
-  if (!file_exists("map_".$lang.".php") && !file_exists("zone_names_".$lang.".php"))
+if (isset($_COOKIE["lang"])) {
+    $lang = "en";
+    if (!file_exists("map_".$lang.".php") && !file_exists("zone_names_".$lang.".php")) {
+        $lang = $language;
+    }
+} else {
     $lang = $language;
 }
-else
-  $lang = $language;
+
 
 $database_encoding = $site_encoding;
 
 $server = $server_arr[$realm_id]["addr"];
+//print_r($server);
 $port = $server_arr[$realm_id]["game_port"];
 
 $host = $characters_db[$realm_id]["addr"];
@@ -69,9 +70,16 @@ $show_time = $map_show_time;
 // points located on these maps(do not modify it)
 $maps_for_points = "0,1,530,571,609";
 
-$img_base = "img/map/";
+if($realm_id == 1){
+	$img_base = "img/map_vanilla/";
+}
+if($realm_id == 2){
+	$img_base = "img/map_tbc/";
+}
+if($realm_id == 3){
+	$img_base = "img/map_wotlk/";
+}
+//$img_base = "img/map/";
 $img_base2 = "img/c_icons/";
 
 $PLAYER_FLAGS       = CHAR_DATA_OFFSET_FLAGS;
-
-?>

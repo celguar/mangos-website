@@ -24,11 +24,12 @@ class Captcha
 	var $ttf_folder="core/cache/font/";
 
 	var $chars_image_activate = 6;
-	var $lx= 230;
+	var $lx= 293;
 	var $ly= 70;
-	var $minsize= 23;
-	var $maxsize= 30;
+	var $minsize= 25;
+	var $maxsize= 40;
 	var $noise= 0;  //number of chars in background
+    var $random_bg = 0;
 	var $maxrotation= 20;
 	var $ttf_range= array();
 	var $privkey;
@@ -37,6 +38,7 @@ class Captcha
 
 	function delold()
 	{
+	    global $DB;
 		$handle=opendir($this->tmpfolder);
 		while ($file = readdir ($handle))
 		{
@@ -46,7 +48,7 @@ class Captcha
 				{
 					unlink($this->tmpfolder.$file);
 					$qry="DELETE FROM acc_creation_captcha WHERE filename='".$this->tmpfolder.$file."'";
-					mysql_query($qry);
+					$DB->query($qry);
 //					echo "<p>$qry</p>";
 				}
 			}
@@ -111,13 +113,21 @@ class Captcha
 	{
 		
 		$this->generate_private();
-		$image = imagecreatetruecolor($this->lx,$this->ly);
-		// Set Backgroundcolor
-		$randcol['r'] = "255";
-    $randcol['b'] = "255";
-    $randcol['g'] = "255";
-    $back =  imagecolorallocate($image, $randcol['r'], $randcol['g'], $randcol['b']);
-		ImageFilledRectangle($image,0,0,$this->lx,$this->ly,$back);
+        if ($this->random_bg == 0)
+        {
+            $image = imagecreatetruecolor($this->lx,$this->ly);
+            // Set Backgroundcolor
+            $randcol['r'] = "255";
+            $randcol['b'] = "255";
+            $randcol['g'] = "255";
+            $back =  imagecolorallocate($image, $randcol['r'], $randcol['g'], $randcol['b']);
+            ImageFilledRectangle($image,0,0,$this->lx,$this->ly,$back);
+        }
+        else
+        {
+            $image = imagecreatefromjpeg("images/rndimages/rndimg".rand(0,4).".jpg");
+        }
+
 		// fill with noise or grid
 		if($this->noise > 0)
 		{
@@ -138,7 +148,8 @@ class Captcha
 				$color	= imagecolorallocate($image, $randcol['r'], $randcol['g'], $randcol['b']);
 				srand((double)microtime()*1000000);
 				$text	= $this->random_char();
-				ImageTTFText($image, $size, $angle, $x, $y, $color, $this->random_ttf(), $text);
+				//ImageTTFText($image, $size, $angle, $x, $y, $color, $this->random_ttf(), $text);
+                imagestring($image, 20, $x, $y, $text, $color);
 			}
 		}
 		else
@@ -166,14 +177,18 @@ class Captcha
 			srand((double)microtime()*1000000);
 			$size	= intval(rand($this->minsize, $this->maxsize));
 			srand((double)microtime()*1000000);
-			$y		= intval(rand((int)($size * 1.5), (int)($this->ly - ($size / 7))));
+			$y		= intval(rand((int)($size), (int)($this->ly - ($size))));
 			$randcol=$this->random_color(0, 127);
 			$color	=  imagecolorallocate($image, $randcol['r'], $randcol['g'], $randcol['b']);
 			$randcol=$this->random_color(0, 127);
 			$shadow = imagecolorallocate($image, $randcol['r'] + 127, $randcol['g'] + 127, $randcol['b'] + 127);
 			$TTF_file=$this->random_ttf();
-			ImageTTFText($image, $size, $angle, $x + (int)($size / 15), $y, $shadow, $TTF_file, $text);
-			ImageTTFText($image, $size, $angle, $x, $y - (int)($size / 15), $color, $TTF_file, $text);
+			//ImageTTFText($image, $size, $angle, $x + (int)($size / 15), $y, $shadow, $TTF_file, $text);
+			//ImageTTFText($image, $size, $angle, $x, $y - (int)($size / 15), $color, $TTF_file, $text);
+            //$x = rand(100,150);
+            //$y = rand(15,35);
+            imagestring($image, 12, $x + (int)($size / 15), $y, $text, $shadow);
+            imagestring($image, 12, $x, $y - (int)($size / 15), $text, $color);
 			$x += (int)($size + ($this->minsize / 5));
 		}
 	

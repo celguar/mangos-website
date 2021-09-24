@@ -2,7 +2,7 @@
 if(INCLUDED!==true)exit;
 // ==================== //
 $pathway_info[] = array('title'=>$lang['players_online'],'link'=>'');
-if (isset($_GET["pid"])) {$pid = $_GET["pid"];} else {$pid = 1;}
+if (isset($_GET["p"])) {$pid = $_GET["p"];} else {$pid = 1;}
 $limit = (int)$MW->getConfig->generic->users_per_page;
 $limitstart = ($pid - 1) * $limit;
 // ==================== //
@@ -45,6 +45,8 @@ $limitstart = ($pid - 1) * $limit;
         $res_info[$cc]["pos"] = $res_pos;
         $res_info[$cc]["guid"]=$result['guid'];
     }
+//$pnum = ceil($cc/$items_per_pages);
+//$pages_str = default_paginate($pnum, $pid, "index.php?n=server&sub=chars&char=".$_GET['char']);
     unset($query); // Free up memory.
     unset($MANG);
 

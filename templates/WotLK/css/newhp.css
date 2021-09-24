@@ -381,7 +381,7 @@ a.scroll:hover { background: #fff9b6; }
   .news-expand .news-item dl dd ul li { padding: 0; margin: 0; width: 465px; background: url('../images/blog-content-bot.jpg') no-repeat 0 100%; display: table; }
   .news-expand .posted-date { font: 10px georgia, "times new roman", times, serif; font-weight: normal; }
   .news-collapse .posted-date, .news-collapsealt .posted-date { display: none; }
-  .blog-post { display: block; padding: 20px; font: 12px/19px "trebuchet ms", "times new roman", times, serif; }
+  .blog-post { display: block; padding: 30px; font: 12px/19px "trebuchet ms", "times new roman", times, serif; }
   .blog-post p { margin-bottom: 0px; }
   .blog-post q { color: #642208; width: 90%; margin: 10px 10px; display: block; font-family: georgia, "times new roman", times, serif; font-style: italic; }
   .blog-post a, .blog-post a:link, .blog-post a:active, .blog-post a:visited { color: #0069b3; text-decoration: underline; font-weight: normal;  }

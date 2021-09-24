@@ -232,7 +232,8 @@ function build_pathway(){
     global $lang;
     global $pathway_info;
     global $title_str,$pathway_str;
-    $path_c = count($pathway_info);
+    $path_info2 = array($pathway_info);
+    $path_c = count($path_info2);
     $pathway_info[$path_c-1]['link'] = '';
     $pathway_str = '';
     if(empty($_REQUEST['n']) || !is_array($pathway_info))$pathway_str .= ' <b><u>'.$lang['mainpage'].'</u></b>';

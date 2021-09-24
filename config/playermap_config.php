@@ -5,8 +5,8 @@ $db_type          = 'MySQL';
 
 $realm_db['addr']     = '127.0.0.1:3306';         // SQL server IP:port this realmd located on
 $realm_db['user']     = 'root';                   // SQL server login this realmd located on
-$realm_db['pass']     = 'ascent';                      // SQL server pass this realmd located on
-$realm_db['name']     = 'realmd';                 // realmd DB name
+$realm_db['pass']     = '123456';                      // SQL server pass this realmd located on
+$realm_db['name']     = 'classicrealmd';                 // realmd DB name
 $realm_db['encoding'] = 'utf8';                   // SQL connection encoding
 
 //==== For each realm, you must have $world_db and $characters_db and $server filled in, label each with the realm id: ex: $world_db[REALMID]['addr'] === //

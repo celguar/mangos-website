@@ -1,5 +1,5 @@
 <?php
-$zones = Array(
+$zones = array(
 1 => 'Dun Morogh',
 2 => 'Longshore',
 3 => 'Badlands',
@@ -2265,4 +2265,3 @@ $zones = Array(
 4688 => 'claytonio test area',
 4692 => 'Quel`Delar`s Rest'
 );
-?>

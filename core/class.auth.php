@@ -29,8 +29,8 @@ class AUTH {
             if($cookie['user_id'] < 1)return false;
             $res = $this->DB->selectRow("
                 SELECT * FROM account
-                LEFT JOIN account_extend ON account.id=account_extend.account_id
-                LEFT JOIN account_groups ON account_extend.g_id=account_groups.g_id
+                LEFT JOIN website_accounts ON account.id=website_accounts.account_id
+                LEFT JOIN website_account_groups ON website_accounts.g_id=website_account_groups.g_id
                 WHERE id = ?d", $cookie['user_id']);
             if(get_banned($res['id'], 1)== TRUE){
                 $this->setgroup();
@@ -72,13 +72,13 @@ class AUTH {
             output_message('alert','You did not provide your username');
             $success = 0;
         }
-        if (empty($params['sha_pass_hash'])){
+        if (empty($params['password'])){
             output_message('alert','You did not provide your password');
             $success = 0;
         }
         $res = $this->DB->selectRow("
-            SELECT `id`,`username`,`sha_pass_hash`,`locked` FROM `account`
-            WHERE `username` = ?", $params['username']);
+            SELECT `id`,`username`,`s`,`v`,`locked` FROM `account`
+            WHERE `username` = ?", strtoupper($params['username']));
 		$res2 = $this->DB->selectCell("SELECT gmlevel WHERE id= ?", $res['id']);
         if($res['id'] < 1){$success = 0;output_message('alert','Bad username');}
         if(get_banned($res[id], 1)== TRUE){
@@ -90,7 +90,7 @@ class AUTH {
             $success = 0;
         }
         if($success!=1) return false;
-        if( strtoupper($res['sha_pass_hash']) == strtoupper($params['sha_pass_hash'])){
+        if(verifySRP6($params['username'], $params['password'], $res['s'], $res['v'])){
             $this->user['id'] = $res['id'];
             $this->user['name'] = $res['username'];
             $this->user['level'] = $res2;
@@ -123,7 +123,7 @@ class AUTH {
 
     function check_pm()
     {
-        $result = $this->DB->selectCell("SELECT count(*) FROM pms WHERE owner_id=? AND showed=0",$this->user['id']);
+        $result = $this->DB->selectCell("SELECT count(*) FROM website_pms WHERE owner_id=? AND showed=0",$this->user['id']);
         return $result;
     }
     /*
@@ -145,19 +145,31 @@ class AUTH {
             output_message('alert','You did not provide your username');
             $success = 0;
         }
-        if(empty($params['sha_pass_hash']) || $params['sha_pass_hash']!=$params['sha_pass_hash2']){
-            output_message('alert','You did not provide your password or confirm pass');
-            $success = 0;
-        }
+        //if(empty($params['sha_pass_hash']) || $params['sha_pass_hash']!=$params['sha_pass_hash2']){
+        //    output_message('alert','You did not provide your password or confirm pass');
+        //    $success = 0;
+        //}
         if(empty($params['email'])){
             output_message('alert','You did not provide your email');
             $success = 0;
         }
 
         if($success!=1) return false;
-        unset($params['sha_pass_hash2']);
+        //unset($params['sha_pass_hash2']);
         $password = $params['password'];
         unset($params['password']);
+
+        // SRP6 support
+        list($salt, $verifier) = getRegistrationData(strtoupper($params['username']), $password);
+        unset($params['sha_pass_hash']);
+        $params['s'] = $salt;
+        $params['v'] = $verifier;
+
+        if ($params['expansion'] == '32')
+            $params['expansion'] = '2';
+        elseif ($params['expansion'] != '0')
+            $params['expansion'] = '1';
+
 		//$params['sha_pass_hash'] = strtoup($this->gethash($params['password']));
         //$params['sha_pass_hash'] = $this->gethash($params['password']);
         if((int)$MW->getConfig->generic->req_reg_act){
@@ -166,11 +178,17 @@ class AUTH {
             if($acc_id = $this->DB->query("INSERT INTO account SET ?a",$params)){
                 // If we dont want to insert special stuff in account_extend...
                 if ($account_extend == NULL){
-                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
+                    $this->DB->query("INSERT INTO website_accounts SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
                 }
                 else {
+                    $account_extend['account_id'] = $acc_id;
+                    $account_extend['registration_ip'] = $_SERVER['REMOTE_ADDR'];
+                    $account_extend['activation_code'] = $tmp_act_key;
+                    $account_extend['theme'] = $params['expansion'];
+
+                    $this->DB->query("INSERT INTO website_accounts SET ?a", $account_extend);
 //                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1='".mysql_real_escape_string($account_extend['secretq1'])."',secreta1='".mysql_real_escape_string($account_extend['secreta1'])."',secretq2='".mysql_real_escape_string($account_extend['secretq2'])."',secreta2='".mysql_real_escape_string($account_extend['secreta2'])."'",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
-                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1=?s, secreta1=?s, secretq2=?s, secreta2=?s",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key,$account_extend['secretq1'], $account_extend['secreta1'], $account_extend['secretq2'], $account_extend['secreta2']);
+                    //$this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1=?s, secreta1=?s, secretq2=?s, secreta2=?s",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key,$account_extend['secretq1'], $account_extend['secreta1']);
                 }
                 if((int)$MW->getConfig->generic->use_purepass_table) $this->DB->query("INSERT INTO account_pass SET id=?d, username=?, password=?, email=?",$acc_id,$params['username'],$password,$params['email']);
                 $act_link = (string)$MW->getConfig->temp->base_href.'index.php?n=account&sub=activate&id='.$acc_id.'&key='.$tmp_act_key;
@@ -187,10 +205,15 @@ class AUTH {
         }else{
             if($acc_id = $this->DB->query("INSERT INTO account SET ?a",$params)){
                 if ($account_extend == false){
-                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
+                    $this->DB->query("INSERT INTO website_accounts SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
                 }else{
+                    $test_acc[account_id] = $acc_id;
+                    $account_extend['account_id'] = $acc_id;
+                    $account_extend['registration_ip'] = $_SERVER['REMOTE_ADDR'];
+                    $account_extend['theme'] = $params['expansion'];
+                    $this->DB->query("INSERT INTO website_accounts SET ?a", $account_extend);
 //                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1='".$account_extend['secretq1']."',secreta1='".$account_extend['secreta1']."',secretq2='".$account_extend['secretq2']."',secreta2='".$account_extend['secreta2']."'",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
-                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1=?s, secreta1=?s, secretq2=?s, secreta2=?s",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key,$account_extend['secretq1'], $account_extend['secreta1'], $account_extend['secretq2'], $account_extend['secreta2']);
+                    //$this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1=?s, secreta1=?s, secretq2=?s, secreta2=?s",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key,$account_extend['secretq1'], $account_extend['secreta1'], $account_extend['secretq2'], $account_extend['secreta2']);
                 }
                 if((int)$MW->getConfig->generic->use_purepass_table)
                     $this->DB->query("INSERT INTO account_pass SET id=?d, username=?, password=?, email=?",$acc_id,$params['username'],$password,$params['email']);
@@ -227,7 +250,7 @@ class AUTH {
         return false; // key is not valid
     }
     function isvalidactkey($key){
-        $res = $this->DB->selectCell("SELECT account_id FROM account_extend WHERE activation_code=?",$key);
+        $res = $this->DB->selectCell("SELECT account_id FROM website_accounts WHERE activation_code=?",$key);
         if($res > 0) return $res; // key is valid
         return false; // key is not valid
     }
@@ -250,18 +273,18 @@ class AUTH {
         return $keys;
     }
     function delete_key($key){
-        $this->DB->query("DELETE FROM site_regkeys WHERE `key`=?",$key);
+        $this->DB->query("DELETE FROM website_regkeys WHERE `key`=?",$key);
     }
     function getprofile($acct_id=false){
         $res = $this->DB->selectRow("
             SELECT * FROM account
-            LEFT JOIN account_extend ON account.id=account_extend.account_id
-            LEFT JOIN account_groups ON account_extend.g_id=account_groups.g_id
+            LEFT JOIN account_extend ON account.id=website_accounts.account_id
+            LEFT JOIN account_groups ON website_accounts.g_id=website_account_groups.g_id
             WHERE id=?d",$acct_id);
         return RemoveXSS($res);
     }
     function getgroup($g_id=false){
-        $res = $this->DB->selectRow("SELECT * FROM account_groups WHERE g_id=?d",$g_id);
+        $res = $this->DB->selectRow("SELECT * FROM website_account_groups WHERE g_id=?d",$g_id);
         return $res;
     }
     function parsesettings($str){

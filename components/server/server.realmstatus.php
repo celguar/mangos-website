@@ -13,7 +13,8 @@ foreach($items as $i => $result)
         $result['address'] = "127.0.0.1";
     }
     /*Extra: Add because realms is not going to be affected by anything*/
-    $dbinfo_mangos = explode(';', $result['dbinfo']);  // username;password;port;host;DBName
+    //$dbinfo_mangos = explode(';', $result['dbinfo']);  // username;password;port;host;DBName
+    $dbinfo_mangos = $DB->selectRow( "SELECT * FROM `realm_settings` WHERE id_realm=?d", $result['id'] ) ;
     if((int)$MW->getConfig->generic->use_archaeic_dbinfo_format) {
         //alternate config - for users upgrading from Modded MaNGOS Web
 	//DBinfo column:  host;port;username;password;WorldDBname;CharDBname
@@ -33,12 +34,12 @@ foreach($items as $i => $result)
 	//DBinfo column:  username;password;port;host;WorldDBname;CharDBname
         $mangosALL = array(
             'db_type'     => 'mysql',
-            'db_host'     => $dbinfo_mangos['3'], //ip of db world
-            'db_port'     => $dbinfo_mangos['2'], //port
-            'db_username' => $dbinfo_mangos['0'], //world user
-            'db_password' => $dbinfo_mangos['1'], //world password
-            'db_name'     => $dbinfo_mangos['4'], //world db name
-            'db_char'     => $dbinfo_mangos['5'], //character db name
+            'db_host'     => $dbinfo_mangos['dbhost'], //ip of db world
+            'db_port'     => $dbinfo_mangos['dbport'], //port
+            'db_username' => $dbinfo_mangos['dbuser'], //world user
+            'db_password' => $dbinfo_mangos['dbpass'], //world password
+            'db_name'     => $dbinfo_mangos['dbname'], //world db name
+            'db_char'     => $dbinfo_mangos['chardbname'], //character db name
             'db_encoding' => 'utf8',              // don't change
         );
     }

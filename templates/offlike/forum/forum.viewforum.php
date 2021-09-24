@@ -15,8 +15,8 @@ else
 {
 ?>
 <style media="screen" title="currentStyle" type="text/css">
-    @import "<?php echo $currtmp; ?>/css/master.css";
     @import "<?php echo $currtmp; ?>/css/forums.css";
+    @import "<?php echo $currtmp; ?>/css/master.css";
 .Style1 {
 	color: #666666;
 	font-weight: bold;

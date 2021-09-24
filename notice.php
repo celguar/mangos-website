@@ -12,7 +12,7 @@ $site_name = "";
 		<meta http-equiv="Expires" content="-1" />
 		<meta http-equiv="Cache-Control" content="no-cache" />
 		<style type="text/css" title="currentStyle" media="screen">
-			@import "templates/WotLK/css/notice.css";
+			@import "templates/vanilla/css/notice.css";
 			body 
 			{
 				color: #FFF;

@@ -26,9 +26,10 @@ $servers = array();
 $multirealms = $DB->select("SELECT * FROM `realmlist` ORDER BY id ASC");
 foreach ($multirealms as $realmnow_arr){
     if((int)$MW->getConfig->components->right_section->server_information){
-        $data = $DB->selectRow("SELECT address, port, timezone, icon, name, dbinfo FROM realmlist WHERE id = ? LIMIT 1", $realmnow_arr['id']);
+        $data = $DB->selectRow("SELECT address, port, timezone, icon, name FROM realmlist WHERE id = ? LIMIT 1", $realmnow_arr['id']);
 
-        $realm_data_explode = explode(';', $data['dbinfo']);
+        //$realm_data_explode = explode(';', $data['dbinfo']);
+        $realm_data = $DB->selectRow( "SELECT * FROM `website_realm_settings` WHERE id_realm=?d", $realmnow_arr['id'] ) ;
 
         $mangosALL = array();
         if((int)$MW->getConfig->generic->use_archaeic_dbinfo_format){
@@ -36,12 +37,12 @@ foreach ($multirealms as $realmnow_arr){
             //DBinfo column:  host;port;username;password;WorldDBname;CharDBname
             $mangosALL = array(
                 'db_type' => 'mysql',
-                'db_host' => $realm_data_explode['0'],  //ip of db world
-                'db_port' => $realm_data_explode['1'], //port
-                'db_username' => $realm_data_explode['2'], //world user
-                'db_password' => $realm_data_explode['3'], //world password
-                'db_name' => $realm_data_explode['4'],  //world db name
-                'db_char' => $realm_data_explode['5'], //character db name
+                'db_host' => $realm_data['dbhost'],  //ip of db world
+                'db_port' => $realm_data['dbport'], //port
+                'db_username' => $realm_data['dbuser'], //world user
+                'db_password' => $realm_data['dbpass'], //world password
+                'db_name' => $realm_data['dbname'],  //world db name
+                'db_char' => $realm_data['chardbname'], //character db name
                 'db_encoding' => 'utf8'
             );
         }else{
@@ -49,12 +50,12 @@ foreach ($multirealms as $realmnow_arr){
             //DBinfo column:  username;password;port;host;WorldDBname;CharDBname
             $mangosALL = array(
                 'db_type' => 'mysql',
-                'db_host' => $realm_data_explode['3'],  //ip of db world
-                'db_port' => $realm_data_explode['2'], //port
-                'db_username' => $realm_data_explode['0'], //world user
-                'db_password' => $realm_data_explode['1'], //world password
-                'db_name' => $realm_data_explode['4'],  //world db name
-                'db_char' => $realm_data_explode['5'], //character db name
+                'db_host' => $realm_data['dbhost'],  //ip of db world
+                'db_port' => $realm_data['dbport'], //port
+                'db_username' => $realm_data['dbuser'], //world user
+                'db_password' => $realm_data['dbpass'], //world password
+                'db_name' => $realm_data['dbname'],  //world db name
+                'db_char' => $realm_data['chardbname'], //character db name
                 'db_encoding' => 'utf8'
             );
         }

@@ -1,4 +1,4 @@
-<img src="<?php echo $currtmp; ?>/images/realmstatus_header-left.jpg" border="0" width="50%" height="135" /><img src="<?php echo $currtmp; ?>/images/realmstatus_background.jpg" border="0" width="50%" height="135" />
+<img src="<?php echo $currtmp; ?>/images/realmstatus_header-left.jpg" border="0" width="55%" height="135" /><img src="<?php echo $currtmp; ?>/images/realmstatus_background.jpg" border="0" width="45%" height="135" />
 <br />
 <?php builddiv_start(0) ?>
 <?php

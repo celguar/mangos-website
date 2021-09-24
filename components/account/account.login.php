@@ -5,8 +5,8 @@ $pathway_info[] = array('title'=>$lang['login'],'link'=>'');
 // ==================== //
 if($_REQUEST['action']=='login'){
   $login = $_REQUEST['login'];
-  $pass = sha_password($login,$_REQUEST['pass']);
-  if($auth->login(array('username'=>$login,'sha_pass_hash'=>$pass)))
+  $pass = $_REQUEST['pass'];
+  if($auth->login(array('username'=>$login,'password'=>$pass)))
   {
     redirect($_SERVER['HTTP_REFERER'],1);
   }

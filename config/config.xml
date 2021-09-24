@@ -10,31 +10,33 @@
     *  Here you can modify general Config information.
     -->
     <generic>
+        <expansion>0</expansion>
         <template>offlike</template>                   <!-- DONT CHANGE THIS! -->
-		<default_template>WotLK</default_template>     <!-- Website default template [NOTE] you should list this template first under <templates> -->
+		<default_template>tbc</default_template>     <!-- Website default template [NOTE] you should list this template first under <templates> -->
         <default_lang>en</default_lang>                <!--Default lang .Don't change -->
         <lang>en</lang>                                <!--Site Default lang -->
         <available_languages>cz,de,en,fr,id,nl,no,ro,ru,sp</available_languages>
         <copyright>All Images and Logos are copyright 2010 Blizzard Entertainment</copyright>  <!-- Copyright Information for the footer of page -->
-        <display_banner_flash>1</display_banner_flash>                       <!--Do you want to display Flash Banners?  |  1=yes 0=Show normal picture  -->
+        <display_banner_flash>0</display_banner_flash>                       <!--Do you want to display Flash Banners?  |  1=yes 0=Show normal picture  -->
         <use_archaeic_dbinfo_format>0</use_archaeic_dbinfo_format>           <!--Leave this as 0 unless you are converting from Modded MaNGOS Web -->
         <use_alternate_mangosdb_port>0</use_alternate_mangosdb_port>         <!--If non-zero, use this port for connection to MaNGOS world database, NOT info in realmlist table -->
-        <use_local_ip_port_test>0</use_local_ip_port_test>                   <!--If 1, will use IP 127.0.0.1 for port tests    -->
+        <use_local_ip_port_test>1</use_local_ip_port_test>                   <!--If 1, will use IP 127.0.0.1 for port tests    -->
         <account_key_retain_length>1209600</account_key_retain_length>       <!--Retains account key cookie info for 14 days -->
         <cache_expiretime>0</cache_expiretime>                 <!-- Cache expiretime. 0 = DISABLE cache system. 200 secconds is default   -->
         <use_purepass_table>0</use_purepass_table>             <!-- Here you can enable use of pure-password saving.  It is not recommended unless you feel
                                                                     your database will NEVER be hacked into.To enable, install the extra .sqlThen set $config['use_purepass_table'] to 1   -->
-        <change_template>1</change_template>                   <!-- Is users allowed to change template?  -->
+        <show_login_top_menu>0</show_login_top_menu>
+        <change_template>0</change_template>                   <!-- Is users allowed to change template?  -->
 
         <results_per_page>10</results_per_page>                  <!-- Here you may set the number of results displayed per page in the armory. Default: 50 -->
         <images_per_page>5</images_per_page>                     <!--Here you may set the number of images displayed per page in the gallery. Default: 5  -->
 
        <!-- You can change these for now, until some online admin for this implented -->
-        <change_email>1</change_email>                            <!-- Allow your users to change there emails? 1=yes 0=no -->
-        <change_pass>1</change_pass>                              <!-- Allow your users to change there passwords? 1=yes 0=no -->
-		<user_character_rename>1</user_character_rename>          <!-- Allow your users to change there character's names via account managment? 1=yes 0=no -->
+        <change_email>0</change_email>                            <!-- Allow your users to change there emails? 1=yes 0=no -->
+        <change_pass>0</change_pass>                              <!-- Allow your users to change there passwords? 1=yes 0=no -->
+		<user_character_rename>0</user_character_rename>          <!-- Allow your users to change there character's names via account managment? 1=yes 0=no -->
         <debuginfo>0</debuginfo>
-        <onlinelist_on>1</onlinelist_on>                          
+        <onlinelist_on>1</onlinelist_on>
         <req_reg_act>0</req_reg_act>                              <!-- Require users to activate there account before alowing to log in? Must have SMTP setup! -->
         <req_reg_key>0</req_reg_key>                              <!-- Require users to have an account key before being able to create an account? -->
 		<req_reg_invite>0</req_reg_invite>                        <!-- Require users to be invited to your server, before being able to create an account? -->
@@ -49,7 +51,7 @@
         <posts_per_star5>500</posts_per_star5>
         <site_register>1</site_register>                          <!-- Allow people to register? -->
         <topics_per_page>16</topics_per_page>
-        <ts_display>1</ts_display>                                <!-- Show teamspeak? -->
+        <ts_display>0</ts_display>                                <!-- Show teamspeak? -->
         <users_per_page>40</users_per_page>                       <!-- Shows how many users online per page -->
 		<ahitems_per_page>100</ahitems_per_page>                  <!-- Shows how many items per page in the Auction House page -->
         <allowed_attachs>jpg|gif|png|rar|zip|doc|txt|pdf|chm|torrent</allowed_attachs>
@@ -59,9 +61,9 @@
         <max_avatar_file>102400</max_avatar_file>
         <max_avatar_size>64x64</max_avatar_size>
         <site_cookie>mangosWeb</site_cookie>
-        <site_email>wilson.steven10@gmail.com</site_email>
+        <site_email>spp@gmail.com</site_email>
         <site_encoding>utf-8</site_encoding>
-        <site_title>MangosWeb Enhanced</site_title>
+        <site_title>World of Warcraft</site_title>
         <smiles_path>images/smiles/</smiles_path>
         <smtp_adress/>
         <smtp_password/>
@@ -75,15 +77,15 @@
     *  Here you can configure If you want the vote banner to be displayed on your main page.
     *  PS: Comment/Uncomment for this links to work.
     -->
-    <votelinks>
+    <!--<votelinks>
 		<vote/>
     </votelinks>
 	
 	<vote_system>
-		<enable>1</enable> <!-- 1=Enable 0=Disable -->
-		<max_points_per_day>-1</max_points_per_day> <!-- how many vote points per day can one earn? // [-1] = number of voting sites -->
-		<mangos_revision>1</mangos_revision> <!-- if using mangos version below 8886, change this to a 1, trinity users, should be 1 -->
-		<!-- Here is where you enter the Remote Access information for your server. [Note] only edit the address, port, username, and password -->
+		<enable>0</enable> &lt;!&ndash; 1=Enable 0=Disable &ndash;&gt;
+		<max_points_per_day>-1</max_points_per_day> &lt;!&ndash; how many vote points per day can one earn? // [-1] = number of voting sites &ndash;&gt;
+		<mangos_revision>1</mangos_revision> &lt;!&ndash; if using mangos version below 8886, change this to a 1, trinity users, should be 1 &ndash;&gt;
+		&lt;!&ndash; Here is where you enter the Remote Access information for your server. [Note] only edit the address, port, username, and password &ndash;&gt;
 		<vote_ra> 
 			<id_1>
 				<address>127.0.0.1</address>
@@ -92,13 +94,13 @@
 				<password>password</password>
 			</id_1>
 		</vote_ra>	
-	</vote_system>
+	</vote_system>-->
 	
 		<!--
 		Here you can enable the "Chat" feature
 	-->
 	<chat>
-		<enable>1</enable> <!-- 1=Enable 0=Disable -->
+		<enable>0</enable> <!-- 1=Enable 0=Disable -->
 	</chat>
   
     <secret_questions>
@@ -130,14 +132,14 @@
             <ql4_forum_id>6</ql4_forum_id>               <!-- forum id for FAQ Forum/Quicklink4 in right menu -->
 
             <!-- If you want to use external forums ( example Phpbb , you must configure these values)  -->
-            <externalforum>0</externalforum>              <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
+            <externalforum>1</externalforum>              <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
             <frame_forum>0</frame_forum>                <!-- 1 = Use Frame to external forum     |    0 = Redirect to external forum    -->
-            <forum_external_link>LINK HERE</forum_external_link>        <!-- Url of external forum -->
+            <forum_external_link>https://singleplayerproject.com/viewtopic.php?f=4&amp;t=373</forum_external_link>        <!-- Url of external forum -->
 
             <!-- If you want to use external bugs tracker ( example sourceforge.net , you must configure these values)  -->
-            <externalbugstracker>0</externalbugstracker>       <!-- 1 = Use external forum     |    0 = Dont use external Bugs Tracker   -->
+            <externalbugstracker>1</externalbugstracker>       <!-- 1 = Use external forum     |    0 = Dont use external Bugs Tracker   -->
             <frame_bugstracker>0</frame_bugstracker>         <!-- 1 = Use Frame to external forum     |    0 = Redirect to external Bugs Tracker -->
-            <bugstracker_external_link>LINK HERE</bugstracker_external_link> <!-- Url of external Bugs Tracker   -->
+            <bugstracker_external_link>https://github.com/celguar/mangosbot-bots/issues</bugstracker_external_link> <!-- Url of external Bugs Tracker   -->
 
             <!-- Do you want to use external FAQ site? ( example forum topic) -->
             <faqsite_external_use>0</faqsite_external_use>
@@ -146,7 +148,7 @@
         </forum>
 
         <account_registrer>
-            <enable_image_verfication>0</enable_image_verfication>  <!--  1 = Enable , 0 = Disable. .. Image activation, ( User must answer an image that gets created !/core/cache/randimg/ must have write permessions!!)-->
+            <enable_image_verfication>1</enable_image_verfication>  <!--  1 = Enable , 0 = Disable. .. Image activation, ( User must answer an image that gets created !/core/cache/randimg/ must have write permessions!!)-->
             <secret_questions_input>1</secret_questions_input>  <!-- Do you want to let the user have secret questions? -->
         </account_registrer>
     </generic_values>
@@ -187,8 +189,8 @@
             <users_on_homepage>0</users_on_homepage>     <!--since "Users On Web Server" is currently under Server Information, requires server_information set to 1 also  -->
             <server_information>1</server_information>
             <server_rates>0</server_rates>
-            <media>1</media>                             <!--screenshot of the day  -->
-            <newbguide>1</newbguide>                     <!--new comer's guid -->
+            <media>0</media>                             <!--screenshot of the day  -->
+            <newbguide>0</newbguide>                     <!--new comer's guid -->
             <hitcounter>0</hitcounter>
         </right_section>
 
@@ -203,16 +205,18 @@
             <active_accounts>1</active_accounts>         <!--accounts active in last 2 weeks  -->
             <characters>1</characters>
             <online>1</online>
-            <more_info>1</more_info>
+            <more_info>0</more_info>
         </server_information>
 
 		<!--Specify which links appear under each section -->
         <left_section>
             <!--Community  -->
-            <Teamspeak>1</Teamspeak>
-            <donate>1</donate>
-			<vote>1</vote>
-			<chat>1</chat>
+            <SppDiscord>1</SppDiscord>
+            <BotsDiscord>1</BotsDiscord>
+            <Teamspeak>0</Teamspeak>
+            <donate>0</donate>
+			<vote>0</vote>
+			<chat>0</chat>
 
             <!--Workshop  -->
             <Realms_status>1</Realms_status>
@@ -220,37 +224,37 @@
             <Honor>1</Honor>
             <Playermap>1</Playermap>                     <!--Enable or disable playermap page  -->
             <Characters>1</Characters>
-            <Userlist>1</Userlist>
+            <Userlist>0</Userlist>
             <Statistic>1</Statistic>
-            <ah_system>1</ah_system>                     <!--Auction House page  -->
+            <ah_system>0</ah_system>                     <!--Auction House page  -->
             <talents>1</talents>
             <Armory>1</Armory>
 
             <!--Media -->
-            <Screenshots>1</Screenshots>
-			<Screenshotsize>2</Screenshotsize>		<!--This is in mb so 0.2 is 200k -->
-            <Wallpapers>1</Wallpapers>
+            <Screenshots>0</Screenshots>
+			<Screenshotsize>0</Screenshotsize>		<!--This is in mb so 0.2 is 200k -->
+            <Wallpapers>0</Wallpapers>
             <Upload_Wallpaper>0</Upload_Wallpaper>
             <Upload_Screenshot>0</Upload_Screenshot>
 
             <!--Support  -->
             <Commands>1</Commands>
             <Bug_tracker>1</Bug_tracker>
-            <In_Game_Support>1</In_Game_Support>
+            <In_Game_Support>0</In_Game_Support>
             <Online_GMs>0</Online_GMs>
 
             <!--Game Guide -->
             <How_to_play>1</How_to_play>
-			<Interactive_world_atlas>1</Interactive_world_atlas>	<!-- Display link to Interactive Atlas -->
-			<Armor_sets>1</Armor_sets>								<!-- Display link to Armor Sets -->
-			<wow_bc>1</wow_bc> 										<!-- Display link to WoW Burning Crusade info -->
-			<wow_wrath>1</wow_wrath>								<!-- Display link to WoW WoTLK info -->
-			<wow_cata>1</wow_cata>									<!-- Display link to WoW Catacylsm info -->
+			<Interactive_world_atlas>0</Interactive_world_atlas>	<!-- Display link to Interactive Atlas -->
+			<Armor_sets>0</Armor_sets>								<!-- Display link to Armor Sets -->
+			<wow_bc>0</wow_bc> 										<!-- Display link to WoW Burning Crusade info -->
+			<wow_wrath>0</wow_wrath>								<!-- Display link to WoW WoTLK info -->
+			<wow_cata>0</wow_cata>									<!-- Display link to WoW Catacylsm info -->
 
             <!--Account -->
-            <Activate_account>1</Activate_account>
+            <Activate_account>0</Activate_account>
             <Character_copy>0</Character_copy>         <!-- This requires extra install of SQL and more config.  See the own config file Character copy system  -->
-            <retrieve_pass>1</retrieve_pass>           <!-- Where users fill in secret questions to retrieve their pass. -->
+            <retrieve_pass>0</retrieve_pass>           <!-- Where users fill in secret questions to retrieve their pass. -->
         </left_section>
 
     </components>
@@ -283,7 +287,7 @@
     -->
     <donation>
         <!-- Your paypal email ( Paypal username ) -->
-        <PayPal_Email>wilson.steven10@yahoo.com</PayPal_Email>
+        <PayPal_Email>spp@spp.com</PayPal_Email>
 
         <!-- Default PayPal lang. Just keep it like this.  -->
         <paypallang>EN</paypallang>
@@ -296,7 +300,7 @@
     -->
     <core_work>
         <!-- First, do you want to enable this functions?  -->
-        <enable>1</enable>
+        <enable>0</enable>
 
         <!-- Fill out the paths to your files.  -->
         <path>
@@ -307,16 +311,17 @@
     <!-- A list of templates aviable.
      -->
     <templates>
-        <template>WotLK</template>
-		<template>Burning_Crusade</template>
+        <template>vanilla</template>
+		<template>tbc</template>
+        <template>wotlk</template>
     </templates>
 
     <!-- Dynamic done by site. Dont touch this. -->
     <temp>
-        <site_href>/mangosweb/</site_href>
+        <site_href>/</site_href>
         <site_domain>127.0.0.1</site_domain>
         <email_href>127.0.0.1</email_href>
-        <base_href>http://127.0.0.1/mangosweb/</base_href>
+        <base_href>http://127.0.0.1/</base_href>
     </temp>
 
 

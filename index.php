@@ -25,9 +25,14 @@
 
 // Current Revision
 $rev = "56";
+session_start();
 
 // Set error reporting to only a few things.
+ini_set('error_reporting', E_ERROR ^ E_NOTICE ^ E_WARNING);
 error_reporting( E_ERROR | E_PARSE | E_WARNING ) ;
+ini_set('log_errors',TRUE);
+ini_set('html_errors',FALSE);
+//ini_set('error_log','core/logs/error_log.txt');
 ini_set( 'display_errors', '0' ) ;
 // Define INCLUDED so that we can check other pages if they are included by this file
 define( 'INCLUDED', true ) ;
@@ -126,7 +131,7 @@ if ( $user['id'] == -1 )
 	$currtmp = "templates/".( string ) $MW->getConfig->generic->default_template ;
 } else
 {
-	$currtmp = $DB->selectCell( "SELECT theme FROM `account_extend` WHERE account_id=?d",
+	$currtmp = $DB->selectCell( "SELECT theme FROM `website_accounts` WHERE account_id=?d",
 		$user['id'] ) ;
 	foreach ( $MW->getConfig->templates->template as $template )
 	{
@@ -191,14 +196,15 @@ if ( ( int )$MW->getConfig->generic_values->realm_info->multirealm && isset( $_R
 }
 
 // Make an array from `dbinfo` column for the selected realm..
-$dbinfo_mangos = $DB->selectRow( "SELECT * FROM `realm_settings` WHERE id_realm=?d", $user['cur_selected_realmd'] ) ;
+$dbinfo_mangos = $DB->selectRow( "SELECT * FROM `website_realm_settings` WHERE id_realm=?d", $user['cur_selected_realmd'] ) ;
 //$dbinfo_mangos = explode( ';', $mangos_info ) ;
 if ( ( int )$MW->getConfig->generic->use_archaeic_dbinfo_format )
 {
 	//alternate config - for users upgrading from Modded MaNGOS Web
 	//DBinfo column:  host;port;username;password;WorldDBname;CharDBname
-	$mangos = array( 'db_type' => 'mysql', 'db_host' => $dbinfo_mangos['dbhost'],
-		//ip of db world
+	$mangos = array(
+		'db_type' => 'mysql',
+		'db_host' => $dbinfo_mangos['dbhost'], //ip of db world
 		'db_port' => $dbinfo_mangos['dbport'], //port
 		'db_username' => $dbinfo_mangos['dbuser'], //world user
 		'db_password' => $dbinfo_mangos['dbpass'], //world password
@@ -210,7 +216,7 @@ if ( ( int )$MW->getConfig->generic->use_archaeic_dbinfo_format )
 {
 	//normal config, as outlined in how-to
 	//DBinfo column:  username;password;port;host;WorldDBname;CharDBname
-	$mangos = array( 'db_type' => 'mysql', 'db_host' => $dbinfo_mangos['3'],
+	$mangos = array( 'db_type' => 'mysql', 'db_host' => $dbinfo_mangos['dbhost'],
 		//ip of db world
 		'db_port' => $dbinfo_mangos['dbport'], //port
 		'db_username' => $dbinfo_mangos['dbuser'], //world user
@@ -220,6 +226,9 @@ if ( ( int )$MW->getConfig->generic->use_archaeic_dbinfo_format )
 		'db_encoding' => 'utf8', // don't change
 		) ;
 }
+// read template
+if ($dbinfo_mangos["template"])
+	$currtmp = "templates/".( string ) $dbinfo_mangos["template"] ;
 unset( $dbinfo_mangos ) ; // Free up memory.
 
 if ( ( int )$MW->getConfig->generic->use_alternate_mangosdb_port )
@@ -264,7 +273,7 @@ if ( isset( $user['id'] ) && $user['id'] > 0 )
 		{
 			if ( $character['guid'] == $_COOKIE['cur_selected_character'] )
 			{
-				$DB->query( 'UPDATE account_extend SET character_id=?d,character_name=? WHERE account_id=?d',
+				$DB->query( 'UPDATE website_accounts SET character_id=?d,character_name=? WHERE account_id=?d',
 					$character['guid'], $character['name'], $user['id'] ) ;
 			}
 		}

@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS `acc_creation_captcha`;
 CREATE TABLE `acc_creation_captcha` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(200) NOT NULL DEFAULT '',
-  `key` varchar(200) NOT NULL DEFAULT '',
+  `filekey` varchar(200) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

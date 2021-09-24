@@ -88,7 +88,7 @@ var armory_link = '<?php echo (string)$MW->getConfig->temp->base_href; echo "arm
         </tr>
         <tr>
         <td bgcolor="#A5A5A5" width="1"><img src="<?php echo $currtmp; ?>/images/pixel.gif" width="1" height="1" alt="" /></td>
-        <td valign="top" class="trans_div"><div id="tooltiptext"></div></td> 
+        <td valign="top" class="trans_div"><div id="tooltiptext"></div></td>
         <td bgcolor="#A5A5A5" width="1"><img src="<?php echo $currtmp; ?>/images/pixel.gif" width="1" height="1" alt="" /></td>
         </tr>
         <tr>
@@ -115,18 +115,18 @@ echo $GLOBALS['redirect'];
 ?>
     <div style="background: url(<?php echo $currtmp; ?>/images/page-bg-top.jpg) repeat-x 0 0; height: 88px; position: relative; width: 100%; "></div>
     <center>
-      <table border="0" cellpadding="0" cellspacing="0">
+      <table align="center" border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td>
             <div id="hp">
-              <div class="top-nav-container">
+              <div class="top-nav-container" <?php if (!(int)$MW->getConfig->generic->show_login_top_menu){?> <?php } ?>>
                 <div id="loginbox">
                   <div class="loginboxleft"></div>
                   <div class="loginboxbg">
                     <form action="<?php echo mw_url('account', 'login'); ?>" method="post">
 <?php
 $accountid = $user['id'];
-$resulttest = mysql_query("SELECT count(*) FROM " . $MW->getDbInfo['db_name'] . ".pms WHERE owner_id=$accountid AND showed=0");
+$resulttest = $DB->select("SELECT count(*) FROM " . $MW->getDbInfo['db_name'] . ".website_pms WHERE owner_id='".$accountid."' AND showed=0");
 if($user['id']>0):
     $userpm_num = $auth->check_pm();
 ?>
@@ -255,7 +255,7 @@ endif;
                                                       <div id="content">
                                                         <div id="content-left">
                                                           <div id="content-right">
-                                                            <div style="padding-right:10px; margin-left:11px;" id="compcont"> 
+                                                            <div style="padding-right:-15px; margin:-15px;" id="compcont">
                                                             <div style="clear:both;display:block;position:relative;width:100%;margin-top:-4px;">
                                                             <!-- Pathway -->
                                                             <?php if(isset($_GET['n'])){ ?><div class="redbannerbg"><div class="redbannerleft"></div><div class="redbannerlabel"><?php echo $pathway_str;?></div><div class="redbannerright"></div></div><?php } ?>

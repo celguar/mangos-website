@@ -21,11 +21,11 @@ if ($banner):
 </div>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <?php else: ?>
-    <img src="<?php echo $currtmp; ?>/images/banner1.jpg" alt="" width="500"/><br/>
+    <img style="margin-top: -55px;margin-bottom: 30px;" src="<?php echo $currtmp; ?>/images/banner_top.png" alt="" width="470"/><br/>
 <?php endif; ?>
 </div>
 <div class="module-container" <?php if ($banner==1) echo 'style="position: relative;"';?>>
-<?php foreach($alltopics as $postanum => $topic){ 
+<?php foreach($alltopics as $postnum => $topic){
     $postnum++;
     if($hl=='alt')$hl='';else $hl='alt';
 ?>                                                              
@@ -101,38 +101,35 @@ unset($alltopics, $hl, $postnum);
       <a href="<?php echo mw_url('forum', 'viewforum', array('fid'=>(int)$MW->getConfig->generic_values->forum->news_forum_id)); ?>"><span><?php echo $lang['news_archives'];?></span></a>
     </div>
     </div>
-<div id="container-community">
+<!--<div id="container-community">
 <div class="phatlootbox-top">
 <h2 class="community">
 <span class="hide">General</span>
 </h2>
+    <iframe style="margin-top:10px;margin-left: 5px;position: absolute" src="https://discord.com/widget?id=836244549751668807&theme=dark" width="458" height="220" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 <span class="phatlootbox-visual comm"></span>
 </div>
 <div class="phatlootbox-wrapper">
-<div style="background: url(<?php echo $currtmp; ?>/images/phatlootbox-top-parchment.jpg) repeat-y top right; height: 7px; width: 456px; margin-left: 6px; font-size: 1px;"></div>
-<div class="community-cnt"><font size="-1"><?php echo $lang['comm_header1'];?></font>
-<br /><br /><font size="-1"><center>
-<a href="http://thottbot.com/"><img src="<?php echo $currtmp; ?>/images/thottbot.png" width="100" height="75" longdesc="http://thottbot.com/" /></a><a href="http://www.wowhead.com/"><img src="<?php echo $currtmp; ?>/images/wowhead.png" width="120" height="78" /></a></a><a href="http://www.wowwiki.com/Portal:Main"><img src="<?php echo $currtmp; ?>/images/wowwiki.png" width="152" height="35" /></a><a href="http://www.wowhead.com/"></a></center>
-<br /><?php echo $lang['comm_header2'];?>
-</font></div>
+<div style="background: url(<?php /*echo $currtmp; */?>/images/phatlootbox-top-parchment.jpg) repeat-y top right; height: 7px; width: 456px; margin-left: 6px; font-size: 1px;"></div>
+<div class="community-cnt" style="height: 200px;visibility: hidden;"></div>
 <div class="phatlootbox-bottom">
 </div>
 </div>
-</div>
-<div id="container-community">
+</div>-->
+<!--<div id="container-community">
 		<div class="phatlootbox-top2">
 			<div align="center">
 				<div align="center" style="position:relative; top:-16px; left:-100px">
-					<img src="<?php echo $currtmp; ?>/images/chains-long.gif" />
+					<img src="<?php /*echo $currtmp; */?>/images/chains-long.gif" />
 				</div>
 				<div align="center" style="position:relative; top:-32px; left:100px">
-					<img src="<?php echo $currtmp; ?>/images/chains-long.gif" />
+					<img src="<?php /*echo $currtmp; */?>/images/chains-long.gif" />
 				</div>
 				<div style="position:relative; top:-38px; left:0px">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="postContainerPlain"	>
 						<tr>
-							<td width="50%"><div align="center" style="position:relative; top:1px; left:0px;"><a href="./index.php?n=forum"><img src="<?php echo $currtmp; ?>/images/box-support.gif" width="226" height="93" /></a></div></td>
-							<td width="50%"><div align="center"><a href="./index.php?n=forum"><img src="<?php echo $currtmp; ?>/images/box-jobs.gif" width="226" height="93" /></a></div></td>
+							<td width="50%"><div align="center" style="position:relative; top:1px; left:0px;"><a href="./index.php?n=forum"><img src="<?php /*echo $currtmp; */?>/images/box-support.gif" width="226" height="93" /></a></div></td>
+							<td width="50%"><div align="center"><a href="./index.php?n=forum"><img src="<?php /*echo $currtmp; */?>/images/box-jobs.gif" width="226" height="93" /></a></div></td>
 						</tr>
 					</table>
 				</div>

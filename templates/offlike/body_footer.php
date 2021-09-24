@@ -13,7 +13,7 @@
                                                     </div>
                                                   </td>
 <?php if(empty($_GET['n'])||$_GET['n']=="frontpage"): ?>
-                                                  <td valign="top">
+                                                  <td valign="top" style="padding-left: 21px;padding-top: 5px;">
 <?php include(dirname(__FILE__).'/body_right.php'); ?>
                                                   </td>
 <?php endif; ?>
@@ -60,7 +60,7 @@
                               </div>
                             </div>
                             <div style="position: relative; z-index: 10;">
-                              <img style="position: absolute; top: -445px; left: -243px;" alt="statue" src="./templates/WotLK/images/statue.png"/></div>
+                              <img style="position: absolute; top: -445px; left: -243px;" alt="statue" src="./templates/vanilla/images/statue.png"/></div>
                           </div>
                         </div>
                       </td>

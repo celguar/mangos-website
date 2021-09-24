@@ -22,7 +22,7 @@ if(!check_port_status($realm_info_new['address'], $realm_info_new['port'])===tru
     output_message('alert','Realm <b>'.$realm_info_new['name'].'</b> is offline <img src="images/downarrow2.gif" border="0" align="top">');
 }
 
-// array´s
+// arrayï¿½s
 $query1 = array();
 
 //===== Filter ==========//
@@ -52,15 +52,15 @@ foreach ($query1 as $result1) {
     $cc1++;
     $res_pos=$MANG->get_zone_name($result1['zone']);
 
-    $char_gender = dechex($result1['gender']);
-    $char_gender = str_pad($char_gender,8, 0, STR_PAD_LEFT);
+    //$char_gender = $result1['gender'];
+    //$char_gender = str_pad($char_gender,8, 0, STR_PAD_LEFT);
     
     $item_res[$cc1]["number"] = $cc1;
     $item_res[$cc1]["name"] = $result1['name'];
     $item_res[$cc1]["res_color"] = $res_color;
     $item_res[$cc1]["race"] = $result1['race'];
     $item_res[$cc1]["class"] = $result1['class'];
-    $item_res[$cc1]["gender"] = $char_gender{3};
+    $item_res[$cc1]["gender"] = $result1['gender'];
     $item_res[$cc1]["level"] = $result1['level'];
     $item_res[$cc1]["pos"] = $res_pos;
     $item_res[$cc1]["guid"]=$result1['guid'];

@@ -272,6 +272,7 @@
 |=|forum_general :=: General Discussion
 |=|forum_help :=: Support Forums
 |=|forum_index :=: Index
+|=|spp_forum :=: SPP Forum
 |=|forum_nav :=: Forum Navigation
 |=|forum_news :=: Current News
 |=|forum_support :=: Forum Support
@@ -709,6 +710,8 @@
 |=|Tauren :=: Tauren
 |=|tbc :=: TBC
 |=|teamspeak :=: Teamspeak
+|=|spp_discord :=: SPP Discord
+|=|bots_discord :=: Mangosbot Discord
 |=|text :=: Text
 |=|theme :=: Theme
 |=|thrown :=: Thrown

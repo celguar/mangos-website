@@ -1,11 +1,15 @@
 <?php
 $realmd = array(
 'db_type'         => 'mysql',
-'db_host'         => 'localhost',
-'db_port'         => '3306',
+'db_host'         => '127.0.0.1',
+'db_port'         => '3310',
 'db_username'     => 'root',
-'db_password'     => 'ascent',
-'db_name'         => 'realmd',
+'db_password'     => '123456',
+'db_name'         => 'classicrealmd',
 'db_encoding'     => 'utf8',
 );
+if (file_exists("tbc.spp"))
+    $realmd["db_name"] = 'tbcrealmd';
+if (file_exists("wotlk.spp"))
+    $realmd["db_name"] = 'wotlkrealmd';
 ?>

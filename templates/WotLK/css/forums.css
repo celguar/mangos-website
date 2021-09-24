@@ -44,16 +44,8 @@ table.threadtable { background: #000000; }
 #searchbackground .right { display: table-cell; background: url('../images/search-bg-tile-right.jpg') repeat-y 100% 0; padding: 20px 5px 5px 5px; min-height: 240px; height: 100%; }
 .post-success { display: table; height: 200px; width: 300px; margin: 0 auto; padding: 40px 10px; text-align: left; clear: left; }
 #main { background: url('../images/forum-bg.jpg') repeat-y; }
-#main-top { background: none; }
-#main-top div { background: none; }
-#main-top div div { background: none; }
-#main-content-wrapper { background: none; }
-#main-content { background: none; }
-#main-bottom { background: none; }
-#main-bottom div { background: none; }
-#main-bottom div div { background: none; }
-#content {width: 756px; margin-left: -38px;}
-  
+#content {width: 677px;}
+
 /*\ post topic / reply \*/
 /*_________________________________________________________________________*/
 
@@ -122,7 +114,7 @@ li.sig-desc { padding: 5px 0 0 0; }
 .message-top { background: url('../images/post-message-box-top.gif') no-repeat 0 0; display: table; height: 310px; }
 .plain { background: url('../images/options-message-box-top.gif') no-repeat 0 0; height: 160px; }
 
-  
+
 /*\ account options page \*/
 /*_________________________________________________________________________*/
 
@@ -181,12 +173,12 @@ li.sig-desc { padding: 5px 0 0 0; }
 .login-options { width: 300px; margin: 21px 0 0 0; padding-left: 25px; color: #878787; }
 .forgot-password { width: 150px; float: right; position: relative; top: -52px; right: 70px; color: #878787; }
 
-  
+
 /*\ login area \*/
 /*_________________________________________________________________________*/
 
 .login-header-container {  margin: 0; padding: 0; }
-#login { float: right; background: url('../images/login-bg.gif') repeat-y; width: 225px; margin: 0; padding: 0; }	
+#login { float: right; background: url('../images/login-bg.gif') repeat-y; width: 225px; margin: 0; padding: 0; }
 #login div.top { position: relative; background: url('../images/login-top.gif') no-repeat; width: 225px; height: 18px; }
 #login div.textfields { padding: 10px 3px 0 0; margin: 0 0 0 17px; height: 59px; }
 #login div.textfields ul.hdr { list-style: none; margin: 0; padding: 0; }
@@ -196,10 +188,10 @@ li.sig-desc { padding: 5px 0 0 0; }
 #login div.textfields ul li { float: left; }
 #loginbuttons  { clear: right; float: right; background: url('../images/login-bot-tile.gif') repeat-x; width: 225px; height: 42px; margin: 0; padding: 0; }
 #loginbuttons ul { list-style: none; margin: 0; padding: 0; }
-#loginbuttons ul li.left { float: left; margin: 0; width: 13px; height: 42px; background: url('../images/login-bot-left.gif') no-repeat; }					
+#loginbuttons ul li.left { float: left; margin: 0; width: 13px; height: 42px; background: url('../images/login-bot-left.gif') no-repeat; }
 #loginbuttons ul li.login { float: left; margin: 0; width: 97px; }
-#loginbuttons ul li.mid { float: left; margin: 0; width: 8px; height: 42px; background: url('../images/login-bot-mid.gif') no-repeat; }						
-#loginbuttons ul li.help { float: left; margin: 0; width: 98px; } 
+#loginbuttons ul li.mid { float: left; margin: 0; width: 8px; height: 42px; background: url('../images/login-bot-mid.gif') no-repeat; }
+#loginbuttons ul li.help { float: left; margin: 0; width: 98px; }
 #loginbuttons ul li.right { float: left; margin: 0; width: 8px; background: url('../images/login-bot-right.gif') no-repeat; }
 
 
@@ -209,7 +201,7 @@ li.sig-desc { padding: 5px 0 0 0; }
 #user { float: right; width: 225px; height: 101px; background: url('../images/login-bg.gif') repeat-y; }
 #user div.top { position: relative; width: 225px; height: 18px; background: url('../images/login-top.gif') no-repeat; }
 #user div.body { float: right; width: 124px; height: 83px; }
-#user ul { list-style: none; margin: 3px 0 0 0; padding: 0; }  
+#user ul { list-style: none; margin: 3px 0 0 0; padding: 0; }
 #user ul li { float: left; }
 #user ul li.gateway { float: left; width: 44px; }
 #user ul li.account { line-height: 1.8em; }
@@ -232,8 +224,8 @@ li.sig-desc { padding: 5px 0 0 0; }
 #logoutbuttons ul li.left { float: left; margin: 0; width: 13px; height: 42px; background: url('../images/login-bot-left.gif') no-repeat; }
 #logoutbuttons ul li.mid { float: left; margin: 0; width: 8px; height: 42px; background: url('../images/login-bot-mid.gif') no-repeat; }
 #logoutbuttons ul li.right { float: left; margin: 0; width: 8px; background: url('../images/login-bot-right.gif') no-repeat; }
-	
-	
+
+
 /*\ forum selector \*/
 /*_________________________________________________________________________*/
 
@@ -246,7 +238,7 @@ li.sig-desc { padding: 5px 0 0 0; }
 #forumhead li.title { height: 18px; padding: 8px 0 0 5px; }
 #forumhead li.sel { margin: 0; padding: 0; }
 #forumhead li.sel span { visibility: hidden; }
-  
+
 
 /*\ forum quick search \*/
 /*_________________________________________________________________________*/
@@ -367,7 +359,7 @@ td.idbliz11 { background: url('../images/avatar-shadow-blizz-bg.gif') no-repeat 
 td.message11 { background: url('../images/post-msg-top-left.gif') no-repeat top left; }
 .postdisplay div.postingcontainer11 { background: #1b1b1b url('../images/post-tile-top.gif') repeat-x top;  }
 /*#hideinfo11 { display: none; visibility: hidden; }*/
-  
+
 /*\ post message row color 2 \*/
 /*_________________________________________________________________________*/
 
@@ -378,7 +370,7 @@ td.idbliz21 { background: url('../images/avatar-shadow-blizz-bg2.gif') no-repeat
 td.message21 { background: url('../images/post-msg-top-left2.gif') no-repeat top left; }
 .postdisplay div.postingcontainer21 { background: #313131 url('../images/post-tile-top2.gif') repeat-x top; }
 
-  
+
 /*\ icon page \*/
 /*_________________________________________________________________________*/
 
@@ -387,7 +379,7 @@ td.message21 { background: url('../images/post-msg-top-left2.gif') no-repeat top
 .horde { background: url('../images/horde-bg.jpg') no-repeat center; }
 div.icon { display: block; float: left; background: black; }
 div.end { float: right; padding: 1px 0 0 0; background: black; }
-.rows td { font-family: arial, helvetica, sans-serif; padding: 2px; font-size: 9pt; vertical-align: middle; }	
+.rows td { font-family: arial, helvetica, sans-serif; padding: 2px; font-size: 9pt; vertical-align: middle; }
 .pinfo { display: table; background: transparent url('../images/pinfo-tile.gif') repeat-y 3px 0; width: 191px; margin: 0 auto; padding: 8px 0 0 0; }
 .pinfobackground { display: table; width: 167px; height: auto; margin: 0 auto; background: url('../images/back.png') repeat 0 0; }
 .pinfobottom { display: table; position: relative; margin: 0 auto; background: url('../images/pinfo-bot.gif') no-repeat bottom; height: 15px; width: 191px; }
@@ -473,6 +465,6 @@ td.na6 { text-align: left; vertical-align: bottom;}
 /*_________________________________________________________________________*/
 
 @media all and (min-width: 0px) {
-#typemsg { padding: 0; text-align: center; margin: 0 auto; margin-top: 10px; margin-bottom: 23px; width: 623px; }
-.post-button-right ul li { display: inline-table; }
+    #typemsg { padding: 0; text-align: center; margin: 0 auto; margin-top: 10px; margin-bottom: 23px; width: 623px; }
+    .post-button-right ul li { display: inline-table; }
 } /* endif */

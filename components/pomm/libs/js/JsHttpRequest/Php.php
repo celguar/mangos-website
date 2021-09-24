@@ -9,15 +9,12 @@
  * version 2.1 of the License, or (at your option) any later version.
  * See http://www.gnu.org/copyleft/lesser.html
  *
- * Do not remove this comment if you want to use the script!
- * Не удаляйте данный комментарий, если вы хотите использовать скрипт!
  *
  * This backend library also supports POST requests additionally to GET.
  *
  * @author Dmitry Koterov
  * @version 3.35
  */
-
 class Subsys_JsHttpRequest_Php
 {
   var $SCRIPT_ENCODING = "windows-1251";
@@ -34,8 +31,7 @@ class Subsys_JsHttpRequest_Php
    * to script output buffer. As a result - script will always return
    * correct JavaScript code, even in case of fatal errors.
    */
-  function Subsys_JsHttpRequest_Php($enc)
-  {
+  public function __construct($enc) {
     // QUERY_STRING is in form: PHPSESSID=<sid>&a=aaa&b=bbb&<id>
     // where <id> is request ID, <sid> - session ID (if present),
     // PHPSESSID - session parameter name (by default = "PHPSESSID").
@@ -66,8 +62,7 @@ class Subsys_JsHttpRequest_Php
     // Check if headers are already sent (see Content-Type library usage).
     // If true - generate debug message and exit.
     $file = $line = null;
-    if (headers_sent($file, $line))
-    {
+    if (headers_sent($file, $line)) {
       trigger_error(
         "HTTP headers are already sent" . ($line !== null? " in $file on line $line" : "") . ". "
           . "Possibly you have extra spaces (or newlines) before first line of the script or any library. "

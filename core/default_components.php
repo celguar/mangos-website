@@ -130,7 +130,7 @@ $mainnav_links = array (
     1 => 
     array (
       0 => 'honor',
-      1 => mw_url('server', 'honor'),
+      1 => 'armory/index.php?searchType=honor', //mw_url('server', 'honor'),
       2 => '',
     ),
     2 => 
@@ -201,11 +201,11 @@ $mainnav_links = array (
   array (
     0 => 
     array (
-      0 => 'forum_index',
+      0 => 'spp_forum',
       1 => 'index.php?n=forum',
       2 => '',
     ),
-	1 => 
+	/*1 =>
     array (
       0 => 'forum_general',
       1 => 'index.php?n=forum&sub=viewforum&fid=7',
@@ -216,7 +216,7 @@ $mainnav_links = array (
       0 => 'forum_help',
       1 => 'index.php?n=forum&sub=viewforum&fid=10',
       2 => '',
-    ),
+    ),*/
   ),
 '7-menuCommunity' =>
   array ( 
@@ -242,6 +242,16 @@ $mainnav_links = array (
       1 => mw_url('community', 'chat'),
       2 => '',
    ),
+      array (
+          0 => 'spp_discord',
+          1 => 'https://discord.gg/TpxqWWT',
+          2 => '',
+      ),
+      array (
+          0 => 'bots_discord',
+          1 => 'https://discord.gg/867uD7nKCS',
+          2 => '',
+      ),
   ),	 	   
 
   '8-menuSupport' => 

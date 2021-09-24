@@ -18,7 +18,8 @@
 		<tr>
             <td class="rankingHeader" align="center" colspan="6" nowrap="nowrap"><?php echo $lang['page']; ?>:&nbsp;
 			<?php
-			for ($pnum = 1; $pnum <= $numofpgs; $pnum++) {
+            echo default_paginate($numofpgs, $pid, "index.php?n=server&sub=playersonline&p=");
+			/*for ($pnum = 1; $pnum <= $numofpgs; $pnum++) {
 			if (isset($_GET["pid"])) {
 			if ($_GET["pid"] == $pnum) {
 			echo '['.$pnum.']&nbsp;';
@@ -31,7 +32,7 @@
 			if ($pnum == 1) {echo '['.$pnum.']&nbsp;';}
 			else {echo '<a href="index.php?n=server&sub=playersonline&pid='.$pnum.'">'.$pnum.'</a>&nbsp;';}
 			}
-			}
+			}*/
 			?>
 			</td>
         </tr>
@@ -57,23 +58,10 @@
 <?php if ($numofpgs > 1) { ?> 
 		<tr>
             <td class="rankingHeader" align="center" colspan="6" nowrap="nowrap"><?php echo $lang['page']; ?>:&nbsp;
-			<?php
-			for ($pnum = 1; $pnum <= $numofpgs; $pnum++) {
-			if (isset($_GET["pid"])) {
-			if ($_GET["pid"] == $pnum) {
-			echo '['.$pnum.']&nbsp;';
-			}
-			else {
-			echo '<a href="index.php?n=server&sub=playersonline&pid='.$pnum.'">'.$pnum.'</a>&nbsp;';
-			}
-			}
-			else {
-			if ($pnum == 1) {echo '['.$pnum.']&nbsp;';}
-			else {echo '<a href="index.php?n=server&sub=playersonline&pid='.$pnum.'">'.$pnum.'</a>&nbsp;';}
-			}
-			}
-			?>
-			</td>
+                <?php
+                echo default_paginate($numofpgs, $pid, "index.php?n=server&sub=playersonline&p=");
+                ?>
+            </td>
         </tr>
 		<?php } ?>
     </tbody>
