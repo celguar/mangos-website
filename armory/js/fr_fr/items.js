@@ -1,0 +1,90 @@
+var itemName = "Nom";
+var itemLevel = "Niv. obj.";
+var requiredLevel = "Niv. req.";
+var source = "Source";
+var relevance = "Pertinence";
+
+var inventoryType = "Emplacement";
+
+var slot = "Emplacement";
+var requiredSkill = "Compétence requise";
+var containerSlots = "Emplacements";
+var weaponStats = "Carac. d’arme";
+var dps = "Dps";
+var minDamage = "Dgts. min.";
+var maxDamage = "Dgts. max.";
+var speed = "Vitesse";
+var baseStats = "Bonus carac. de base";
+var strength = "Force";
+var agility = "Agilité";
+var stamina = "Endurance";
+var intellect = "Intelligence";
+var spirit = "Esprit";
+var physical = "Bonus de combat physique";
+var attackPower = "Puissance d’attaque";
+var feralAttackPower = "Puissance d’attaque bestiale";
+var critRating = "Score de critique";
+var hitRating = "Score de toucher";
+var hasteRating = "Score de hâte";
+var expertiseRating = "Score d'expertise";
+var spell = "Bonus de sorts";
+var spellPower = "Puissance des sorts";
+var spellCritRating = "Score de critique des sorts";
+var spellHitRating = "Score de toucher des sorts";
+var spellHasteRating = "Haste Rating";
+var spellManaRegen = "Régénération de mana";
+var spellHasteRating = "Score de hâte des sorts";
+var spellDamageArcane = "Dégâts de type Arcane";
+var spellDamageHoly = "Dégâts de type Sacré";
+var spellDamageShadow = "Dégâts de type Ombre";
+var spellDamageNature = "Dégâts de type Nature";
+var spellDamageFrost = "Dégâts de type Givre";
+var spellDamageFire = "Dégâts de type Feu";
+var defense = "Bonus de défense";
+var armor = "Armure";
+var blockRating = "Score de blocage";
+var blockValue = "Valeur de blocage";
+var defenseRating = "Score de défense";
+var dodgeRating = "Score d’esquive";
+var parryRating = "Score de parade";
+var resilience = "Résilience";
+var healthRegen = "Régénération de vie";
+var resistances = "Bonus de résistance";
+var resistArcane = "Résistance aux arcanes";
+var resistShadow = "Résistance à l’Ombre";
+var resistNature = "Résistance à la Nature";
+var resistFrost = "Résistance au Givre";
+var resistFire = "Résistance au Feu";
+var general = "Général";
+var bindsPickedUp = "Lié quand ramassé";
+var bindsEquip = "Lié quand équipé";
+var bindsWhenUsed = "Lié quand utilisé";
+var requiresProfession = "Requiert métier";
+var unique = "Unique";
+var uniqueEquipped = "Unique-Équipé";
+var metaSockets = "Méta-châsses";
+var normalSockets = "Châsses";
+var ignoreArmor = "Ignorer l’armure";
+
+var Cloth = "Tissu";
+var Plate = "Plaques";
+var Mail = "Mailles";
+var Leather = "Cuir";
+
+var type = "Type";
+
+var hasSpellEffect = "A un effet de sort";
+
+var textDungeon = "Donjon&#160;:";
+var textBoss = "Boss&#160;:";
+var textDropRate = "Chances de butin&#160;:";
+
+var textDR0 = "Aucune";
+var textDR1 = "Extrêmement basse (1% - 2%)";
+var textDR2 = "Très basse (3% - 14%)";
+var textDR3 = "Basse (15% - 24%)";
+var textDR4 = "Moyenne (25% - 50%)";
+var textDR5 = "Haute (51% - 99%)";
+var textDR6 = "Garantie (100%)";
+
+var constantTruncate = 50;

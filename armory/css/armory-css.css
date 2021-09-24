@@ -1,0 +1,71 @@
+image {
+border: none;
+}
+
+/* -- Tooltip  -- */
+.tooltip-content {
+background: #0C1227;
+padding: 3px;
+font-family: Tahoma, Arial, Helvetica, Sans-Serif;
+}
+
+.profile-tooltip-header {
+font-weight: bold;
+color: #FFF;
+font-size: 12px;
+}
+.profile-tooltip-description {
+color: #FFD200;
+font-size: 12px;
+}
+
+/* --- Character Search CSS --- */
+/* Shared by Guild List */
+.reg{
+border: 0;
+font-weight: bold;
+background-color: rgb(4, 13, 26);
+color: rgb(255, 172, 4);
+}
+.csearch-results-header {
+font-weight: bold;
+color: #333;
+font-size: 16px;
+font-family: Georgia, "Times New Roman", Arial, Helvetica;
+letter-spacing: 0px;
+}
+.csearch-results-info {
+margin-left: 50px;
+color: #000;
+font-size: 16px;
+font-weight: bold;
+font-family: Georgia, "Times New Roman", Arial, Helvetica;
+}
+
+/* - Faction - */
+/* Horde */
+.profile-header-portrait-img-horde {
+border: 2px solid #930000;
+padding: 0px;
+}
+.profile-header-portrait-img-horde:hover {
+border: 2px solid #E65B00;
+}
+/* Alliance */
+.profile-header-portrait-img-alliance {
+border: 2px solid #000093;
+padding: 0px;
+}
+.profile-header-portrait-img-alliance:hover {
+border: 2px solid #005BE6;
+}
+
+/* -- Others -- */
+
+.hidden {
+display: none;
+}
+
+.visible {
+display: inline;
+}

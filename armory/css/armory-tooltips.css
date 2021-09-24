@@ -1,0 +1,30 @@
+/* CSS used in custom tooltip generation */
+.item-tooltip-table {
+color: #FFF;
+padding: 2px;
+}
+.item-righttext {
+text-align: right;
+padding-right: 8px;
+}
+.item-text-name {
+font-size: 10pt;
+}
+.item-text-standard {
+font-size: 8pt;
+padding: 0px;
+}
+/* Item Quality CSS */
+.item-quality-gray { color: #999999; }
+.item-quality-white { color: #FFFFFF; }
+.item-quality-green { color: #26DB13; }
+.item-quality-blue { color: #0341A0; }
+.item-quality-purple { color: #9B13F8; }
+.item-quality-orange { color: #CC6600; }
+.item-quality-gold { color: #E5CC80; }
+.item-quality-red { color:#d80000; }
+.item-greenstat { color: #26DB13; }
+.item-set-name { color: #ffd517;}
+.item-set-item-unacquired { color: #787880; padding-left: 9px; }
+.item-set-item-acquired { color: #E5CC80; padding-left: 9px; }
+.error { color: #FF0000; font-size: 12px }

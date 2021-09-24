@@ -1,0 +1,6 @@
+.mini-search-start-state .team-side 		{ width: 96%; }
+.mini-search-start-state .player-side 		{ width: 96%; }
+.mini-search-start-state .results-side		{ width: 10px; position:relative; left:-15px; }
+.mini-search-start-state .results-header 	{ display:none;}
+.mini-search-start-state .ps 				{ display: none; }
+.mini-search-start-state .right-button 		{ display:none;}

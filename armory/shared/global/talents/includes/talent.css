@@ -1,0 +1,88 @@
+.mySmall 		{ font-family: "Verdana", "Arial", "Helvetica", "Sans-Serif"; color: #ffffff; font-size: 8pt; line-height: 11pt;}
+.mySmallBlack 		{ font-family: "Verdana", "Arial", "Helvetica", "Sans-Serif"; color: #000000; font-size: 8pt; line-height: 11pt;}
+.mySmallWhite 		{ font-family: "Verdana", "Arial", "Helvetica", "Sans-Serif"; color: #ffffff; font-size: 8pt; line-height: 11pt;}
+.talentstable table { font-family:Verdana, Arial, Helvetica, Sans-Serif; font-size: 8pt; line-height: 11pt;}
+	
+		#rankTopStyle { position: absolute;
+			top: 33px;
+			left: 28px;
+			z-index: 100;
+       }	   
+	   
+		#descriptionTopStyle { position: absolute;
+			top: 20px;
+			left: 50px;
+			z-index: 100;
+      }	   	   
+	   
+		#descriptionTopStyleThird { position: absolute;
+			top: 20px;
+			left: -350px;
+			z-index: 100;
+       }	   	   
+
+		#descriptionTopStyleBottom { position: absolute;
+			top: -60px;
+			left: 50px;
+			z-index: 100;
+       }
+	   
+		#descriptionTopStyleThirdBottom { position: absolute;
+			top: -60px;
+			left: -350px;
+			z-index: 100;
+       }	   
+	   
+		#takeUpNoSpace { position: absolute;
+			z-index: 100;
+       }	   	   
+	   
+		#wrapper { position: relative;
+			z-index: 100;
+       }	   
+
+		#talentThumbStyle { position: absolute;
+			top: 0px;
+       }
+
+		#iconOver { position: absolute;
+			top: -2px;
+			left: -2px;
+       }
+	   
+		#wrapper99 { position: relative;
+			z-index: 99;
+       }	   
+
+		#wrapper51 { position: relative;
+			z-index: 51;
+       }	   	   
+
+		#wrapper49 { position: absolute;
+			z-index: 49;
+       }	   	 
+	   
+		#wrapper50 { position: relative;
+			z-index: 50;
+       }	   
+
+
+
+		#tabs { position: absolute;
+			top: -14px;
+			z-index: 30;
+       }	   
+
+		#tabsUp { position: absolute;
+			top: -14px;
+			z-index: 30;
+			}
+	   
+#iconOverParchment{
+position: absolute;
+z-index: 100;
+
+}
+
+	#alignLeft{text-align:left;float:left;color:ffffff;}
+	#alignRight{text-align:right;float:right;color:ffffff;}

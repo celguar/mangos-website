@@ -1,0 +1,90 @@
+var itemName = "Name";
+var itemLevel = "Gegenstandsstufe";
+var requiredLevel = "Erf. Stufe";
+var source = "Quelle";
+var relevance = "Relevanz";
+
+var inventoryType = "Platz";
+
+var slot = "Platz";
+var requiredSkill = "Benötigte Fähigkeit";
+var containerSlots = "Plätze";
+var weaponStats = "Waffenwerte";
+var dps = "DPS";
+var minDamage = "Min. Schaden";
+var maxDamage = "Max. Schaden";
+var speed = "Tempo";
+var baseStats = "Grundwerte";
+var strength = "Stärke";
+var agility = "Beweglichkeit";
+var stamina = "Ausdauer";
+var intellect = "Intelligenz";
+var spirit = "Willenskraft";
+var physical = "Nahkampf";
+var attackPower = "Angriffskraft";
+var feralAttackPower = "Feral-Angriffskraft";
+var critRating = "Kritisch";
+var hitRating = "Trefferwertung";
+var hasteRating = "Tempowertung";
+var expertiseRating = "Waffenkundewertung";
+var spell = "Zauber";
+var spellPower = "Zaubermacht";
+var spellCritRating = "Kritisch";
+var spellHitRating = "Trefferwertung";
+var spellHasteRating = "Haste Rating";
+var spellManaRegen = "Regeneration";
+var spellHasteRating = "Sempowertung";
+var spellDamageArcane = "Arkanschaden";
+var spellDamageHoly = "Heiligschaden";
+var spellDamageShadow = "Schattenschaden";
+var spellDamageNature = "Naturschaden";
+var spellDamageFrost = "Frostschaden";
+var spellDamageFire = "Feuerschaden";
+var defense = "Verteidigung";
+var armor = "Rüstung";
+var blockRating = "Blockwertung";
+var blockValue = "Blocken";
+var defenseRating = "Verteidigungswertung";
+var dodgeRating = "Ausweichen";
+var parryRating = "Parieren";
+var resilience = "Abhärtunge";
+var healthRegen = "Regeneration";
+var resistances = "Widerstände";
+var resistArcane = "Arkanwiderstand";
+var resistShadow = "Schattenwiderstand";
+var resistNature = "Naturwiderstand";
+var resistFrost = "Frostwiderstand";
+var resistFire = "Feuerwiderstand";
+var general = "Allgemein";
+var bindsPickedUp = "Wird beim Aufheben gebunden";
+var bindsEquip = "Wird beim Anlegen gebunden";
+var bindsWhenUsed = "Wird bei Benutzung gebunden";
+var requiresProfession = "Benötigt Beruf";
+var unique = "Einzigartig";
+var uniqueEquipped = "Einzigartig anlegbar";
+var metaSockets = "Metasockel";
+var normalSockets = "Sockel";
+var ignoreArmor = "Rüstung ignorieren";
+
+var Cloth = "Stoff";
+var Plate = "Platte";
+var Mail = "Schwere Rüstung";
+var Leather = "Leder";
+
+var type = "Typ";
+
+var hasSpellEffect = "Hat die Zauberwirkung";
+
+var textDungeon = "Dungeon:";
+var textBoss = "Boss:";
+var textDropRate = "Droprate:";
+
+var textDR0 = "Nie";
+var textDR1 = "Extrem niedrig (1% - 2%)";
+var textDR2 = "Sehr niedrig (3% - 14%)";
+var textDR3 = "Niedrig (15% - 24%)";
+var textDR4 = "Mittel (25% - 50%)";
+var textDR5 = "Hoch (51% - 99%)";
+var textDR6 = "Garantiert (100%)";
+
+var constantTruncate = 50;

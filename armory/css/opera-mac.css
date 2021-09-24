@@ -1,0 +1,8 @@
+@charset "utf-8";
+/*
+World of Warcraft.com Armory Opera CSS Specific
+(c) Blizzard Entertainment 2007. All rights reserved.
+*/
+.profile-banner{top:-10px !important;left:-184px;z-index:9879}
+.profile-banner2{top:-10px !important;left:-214px;z-index:9879}
+td.faqtd{width:60%}

@@ -1,0 +1,91 @@
+var itemName = "Item Name";
+var itemLevel = "Item Lvl";
+var requiredLevel = "Req Lvl";
+var source = "Source";
+var relevance = "Relevance";
+
+var inventoryType = "Type";
+
+var slot = "Slot";
+var requiredSkill = "Required Skill";
+var containerSlots = "Slots";
+var weaponStats = "Weapon Stats";
+var dps = "Dps";
+var minDamage = "Min Dmg";
+var maxDamage = "Max Dmg";
+var speed = "Speed";
+var baseStats = "Base Stat Bonuses";
+var strength = "Strength";
+var agility = "Agility";
+var stamina = "Stamina";
+var intellect = "Intellect";
+var spirit = "Spirit";
+var physical = "Physical Combat Bonuses";
+var attackPower = "Attack Power";
+var feralAttackPower = "Feral Attak Power";
+var critRating = "Crit Rating";
+var hitRating = "Hit Rating";
+var hasteRating = "Haste Rating";
+var expertiseRating = "Expertise Rating";
+var spell = "Spell Bonuses";
+var spellHealing = "Healing";
+var spellDamage = "Spell Dmg";
+var spellCritRating = "Spell Crit Rating";
+var spellHitRating = "Spell Hit Rating";
+var spellHasteRating = "Haste Rating";
+var spellManaRegen = "Mana Regen";
+var spellHasteRating = "Spell Haste Rating";
+var spellDamageArcane = "Arcane Damage";
+var spellDamageHoly = "Holy Damage";
+var spellDamageShadow = "Shadow Damage";
+var spellDamageNature = "Nature Damage";
+var spellDamageFrost = "Frost Damage";
+var spellDamageFire = "Fire Damage";
+var defense = "Defense Bonuses";
+var armor = "Armor";
+var blockRating = "Block Rating";
+var blockValue = "Block Value";
+var defenseRating = "Defense Rating";
+var dodgeRating = "Dodge Rating";
+var parryRating = "Parry Rating";
+var resilience = "Resilience";
+var healthRegen = "Health Regen";
+var resistances = "Resistance Bonuses";
+var resistArcane = "Arcane Resist";
+var resistShadow = "Shadow Resist";
+var resistNature = "Nature Resist";
+var resistFrost = "Frost Resist";
+var resistFire = "Fire Resist";
+var general = "General";
+var bindsPickedUp = "Bind on pickup";
+var bindsEquip = "Bind on equip";
+var bindsWhenUsed = "Bind on use";
+var requiresProfession = "Requires Profession";
+var unique = "Unique";
+var uniqueEquipped = "Unique-Equipped";
+var metaSockets = "Meta Sockets";
+var normalSockets = "Sockets";
+var ignoreArmor = "Ignore Armor";
+
+var Cloth = "Cloth";
+var Plate = "Plate";
+var Mail = "Mail";
+var Leather = "Leather";
+
+var type = "Type";
+
+var hasSpellEffect = "Has Spell Effect";
+
+var textDungeon = "Dungeon:";
+var textBoss = "Boss:";
+var textDropRate = "Drop Rate:";
+
+var textDR0 = "None";
+var textDR1 = "Extremely Low (1% - 2%)";
+var textDR2 = "Very Low (3% - 14%)";
+var textDR3 = "Low (15% - 24%)";
+var textDR4 = "Medium (25% - 50%)";
+var textDR5 = "High (51% - 99%)";
+var textDR6 = "Guaranteed (100%)";
+
+var constantTruncate = 50;
