@@ -477,7 +477,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "accountinfo" && $allow_reg ==
             return true;
         }
     </script>
-    <table cellspacing = "0" cellpadding = "0" border = "0" width = "90%" style="border-left: 1px solid black; border-right: 1px solid black">
+    <table align="center" cellspacing = "0" cellpadding = "0" border = "0" width = "90%" style="border-left: 1px solid black; border-right: 1px solid black">
         <tr>
 
             <td width = "60%" style = "background-image: url('<?php echo $currtmp; ?>/images/frame-left-bg.gif'); background-repeat: repeat-y;" bgcolor = "#E0BC7E">
@@ -895,7 +895,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                                                             <td align=left colspan = "2">
                                                                                 <table border=0 cellspacing=0 cellpadding=2><tr>
                                                                                         <td><select name="lo" style="width: 150;" OnChange="javascript:document.createaccount.cflag.src = '<?php echo $currtmp; ?>/images/flags/' + this.value + '.gif';">
-                                                                                                <?
+                                                                                                <?php
                                                                                                 foreach ($COUNTRY as $key=>$value) {
                                                                                                     echo '<option value="'.$key.'">'.$value.'</option>';
                                                                                                 }

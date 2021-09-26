@@ -4,8 +4,8 @@
 //error_reporting(E_ALL);
 $realms = array(
 // "Realm name" => array(realmd_DB, characters_DB, mangos_DB, armory_DB)
-"Vanilla" => array(1, 1, 1, 1),
-"Burning Crusade" => array(2, 2, 2, 2),
+"Vanilla Realm" => array(1, 1, 1, 1),
+"Burning Crusade Realm" => array(2, 2, 2, 2),
 "Wrath of the Lich King" => array(3, 3, 3, 3),
 );
 // Default Realm Name (use one chosen upper in $realms)

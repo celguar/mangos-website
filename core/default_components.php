@@ -64,7 +64,7 @@ $mainnav_links = array (
     array (
       0 => 'userlist',
       1 => mw_url('account', 'userlist'),
-      2 => '',    
+      2 => 'g_is_supadmin',
     ),
     8 => 
     array (

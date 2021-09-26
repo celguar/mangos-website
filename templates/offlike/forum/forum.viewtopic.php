@@ -164,7 +164,7 @@ onmouseover="ddrivetip('View <?php echo "$post[poster]\'s"; ?> profile','#ffffff
                                                     <div>
                                                     <?php
                                                     // Get posts
-                                                    $posts = $DB->selectCell("SELECT forum_posts FROM `account_extend` WHERE account_id='$post[id]'");
+                                                    $posts = $DB->selectCell("SELECT forum_posts FROM `website_accounts` WHERE account_id='$post[id]'");
                                                     ?>
                                                         <ul class="listinfo" style="clear: both;">
 <?php if (isset($post['guild'])): ?>
@@ -225,7 +225,7 @@ echo "<font color='$post_col'> ".$post['message']."</font>";
 ?>
 <?php if($post['edited']){ ?><p><small><font color="red">[</font><font color="white"> <?php echo $lang['post_editted_by'].' '; echo $post['edited_by'].' &nbsp;'; echo date('d-m-Y H:i:s',$post['edited']);?> </font><font color="red">]<br /></font></small></p><?php } ?>
 																														<?php
-																														$sig = $DB->selectCell("SELECT signature FROM `account_extend` WHERE account_id='$post[id]'");
+																														$sig = $DB->selectCell("SELECT signature FROM `website_accounts` WHERE account_id='$post[id]'");
 																														if ($sig == NULL){
         																										}
 																														else

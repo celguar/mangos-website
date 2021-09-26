@@ -94,8 +94,8 @@ if($_GETVARS['to']=='lastpost'){
 $result = $DB->select("
     SELECT * FROM f_posts
     LEFT JOIN account ON f_posts.poster_id=account.id
-    LEFT JOIN account_extend ON f_posts.poster_id=account_extend.account_id
-    LEFT JOIN account_groups ON account_extend.g_id = account_groups.g_id
+    LEFT JOIN website_accounts ON f_posts.poster_id=website_accounts.account_id
+    LEFT JOIN website_account_groups ON website_accounts.g_id = website_account_groups.g_id
     WHERE topic_id=?d ORDER BY posted LIMIT ?d,?d",$this_topic['topic_id'],$limit_start,$items_per_pages);
 foreach($result as $cur_post)
 {
