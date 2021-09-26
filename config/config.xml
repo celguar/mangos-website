@@ -229,6 +229,8 @@
             <ah_system>0</ah_system>                     <!--Auction House page  -->
             <talents>1</talents>
             <Armory>1</Armory>
+            <Interactive_world_atlas>0</Interactive_world_atlas>	<!-- Display link to Interactive Atlas -->
+            <Armor_sets>0</Armor_sets>								<!-- Display link to Armor Sets -->
 
             <!--Media -->
             <Screenshots>0</Screenshots>
@@ -245,8 +247,6 @@
 
             <!--Game Guide -->
             <How_to_play>1</How_to_play>
-			<Interactive_world_atlas>0</Interactive_world_atlas>	<!-- Display link to Interactive Atlas -->
-			<Armor_sets>0</Armor_sets>								<!-- Display link to Armor Sets -->
 			<wow_bc>0</wow_bc> 										<!-- Display link to WoW Burning Crusade info -->
 			<wow_wrath>0</wow_wrath>								<!-- Display link to WoW WoTLK info -->
 			<wow_cata>0</wow_cata>									<!-- Display link to WoW Catacylsm info -->

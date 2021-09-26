@@ -288,6 +288,7 @@ $lang = array (
   'gallery' => 'Art',
   'GallScreen' => 'Screenshots gallery',
   'GallWalp' => 'Wallpapers gallery',
+  'game_guide' => 'Game Guide',
   'gems' => 'Gems',
   'gender' => 'Gender',
   'general_info' => 'General Information',

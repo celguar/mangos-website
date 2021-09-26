@@ -1,6 +1,5 @@
-<img src="<?php echo $currtmp; ?>/images/realmstatus_header-left.jpg" border="0" width="55%" height="135" /><img src="<?php echo $currtmp; ?>/images/realmstatus_background.jpg" border="0" width="45%" height="135" />
-<br />
-<?php builddiv_start(0) ?>
+
+<?php header_image("realm"); builddiv_start(0) ?>
 <?php
 function parse_time($number) {
 	$time = array();

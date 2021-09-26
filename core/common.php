@@ -1312,3 +1312,351 @@ function verifySRP6($user, $pass, $salt, $verifier)
     $verified = strtoupper(bin2hex($verified));
     return $verifier === $verified;
 }
+
+function subnav($menuname) {
+    global $MW;
+    ?>
+    <!---Subnav----->
+    <script language = "javascript">
+        var pageId = "<?php echo $menuname; ?>";
+    </script>
+    <?php sitemap(); ?>
+    <script type="text/javascript" src="js/navtree-main.js"></script>
+    <script type="text/javascript" src="js/menu132_com.js"></script>
+    <script type="text/javascript" src="js/navtreefunctions.js"></script>
+    <style type="text/css">
+
+        .navigation
+        {
+            font-family:arial,palatino, georgia, verdana, arial, sans-serif;
+            color:#000000;
+            padding:5px;
+            margin-bottom: 4px;
+        }
+
+        .button
+        {
+            color:#FFFFFF;
+            font-size:9px;
+            letter-spacing:-1px;
+        }
+
+        a.nav:link		{
+            font-family: arial,verdana, sans-serif;
+            color: CBA300;
+            font-size: 11px;
+            font-weight:normal;
+        }
+
+        a.nav:visited 	{
+            font-family: arial,verdana, sans-serif;
+            color: CBA300;
+            font-size: 11px;
+            font-weight:normal;
+        }
+
+        a.nav:hover		{
+            font-family: arial,verdana, sans-serif;
+            color: FFFFFF;
+            font-size: 11px;
+            font-weight:normal;
+        }
+
+        a.nav:active 	{
+            font-family: arial,verdana, sans-serif;
+            color: CBA300;
+            font-size: 11px;
+            font-weight:normal;
+        }
+
+    </style>
+    <div class="navigation2">
+        <center>
+            <table cellspacing = "0" cellpadding = "0" border = "0" width = "96%">
+                <tr>
+
+                    <script language = "javascript">
+                        var iconId;
+                        if (result!=1)
+                            document.write('<td width="59" rowspan="3" valign = "top"><a href = "' + Menu2[1] + '"><img src = "templates/offlike/images/subnav/icon_' + Menu2[0].toLowerCase() + '.jpg" width="59" height="65" border = "0"></a></td>');
+                        else
+                            document.write('<td width="59" rowspan="3" valign = "top"><a href = "?"><img src = "templates/offlike/images/subnav/icon_community.jpg" width="59" height="65" border = "0"></a></td>');
+                    </script>
+
+                    <td height="15" background="templates/offlike/images/subnav/nav_top.jpg"></td>
+                    <td width="18" height="65" rowspan="3" style="background-image:url(templates/offlike/images/subnav/nav_right.jpg); background-position:top; background-repeat:no-repeat;"></td>
+                </tr>
+
+                <tr>
+                    <td height="17" background="templates/offlike/images/subnav/nav_middle.jpg" nowrap><div id = "filterMenu"></div></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td width="5" height="33" style="background-image:url(templates/offlike/images/subnav/leftsubnav.jpg); background-position:top; background-repeat:repeat-x;"><img src="templates/vanilla/images/pixel.gif" width="5" height="1"></td>
+
+                                <td height="33" background="templates/offlike/images/subnav/subnav.jpg" width="100%">
+                                    <table width="100%" height="33" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td width="5" height="5" background="templates/offlike/images/subnav/subnav_topleft.gif"></td>
+                                            <td height="5" background="templates/offlike/images/subnav/subnav_top.gif"></td>
+                                            <td width="6" height="5" background="templates/offlike/images/subnav/subnav_topright.gif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="5" height="19" background="templates/offlike/images/subnav/subnav_left.gif"><img src = "templates/vanilla/images/pixel.gif" width = "5"></td>
+
+                                            <td height="19" style="text-align:center;" background="templates/offlike/images/subnav/subnav_bg.gif" valign="middle"><img src="templates/vanilla/images/pixel.gif" width="1" height="1"><small class="button" style="color:#808080; letter-spacing:normal;">
+
+                                                    <script language = "javascript">
+
+                                                        printSubNav2(result);
+
+                                                    </script>
+
+
+                                                </small></td>
+                                            <td width="6" height="19" background="templates/offlike/images/subnav/subnav_right.gif"><img src = "templates/vanilla/images/pixel.gif" width = "6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="5" height="9" background="templates/offlike/images/subnav/subnav_botleft.gif"></td>
+                                            <td height="9" background="templates/offlike/images/subnav/subnav_bot.gif"></td>
+
+                                            <td width="6" height="9" background="templates/offlike/images/subnav/subnav_botright.gif"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+        </center>
+
+    </div>
+    <!---End Subnav----->
+    <?php
+}
+
+function sitemap() {
+    global $MW;
+    ?>
+    <script language = "javascript">
+        var linkClass="subMenuLink";//defines initial css class of the links
+        var menuNumber=1;
+        var agt=navigator.userAgent.toLowerCase(), appVer = navigator.appVersion.toLowerCase(), iePos  = appVer.indexOf('msie'), is_opera = (agt.indexOf("opera") != -1), is_ie   = ((iePos!=-1) && (!is_opera));
+        if(is_ie){
+            var menuBg="";
+            var menuBgIndent="";
+            var underLine="<img src=templates/vanilla/images/bullet-trans-line-blue.gif />";
+            var bulletImg="<img src=templates/vanilla/images/bullet-trans-dot-blue.gif align=left />";
+            var bulletImgIndent="<img src=templates/vanilla/images/bullet-trans-dot-indent.gif align=left />";
+        }else{
+            var menuBg="templates/vanilla/images/bullet-trans-bg-blue.gif";
+            var menuBgIndent="templates/vanilla/images/bullet-trans-indent-bg.gif";
+            var bulletImgIndent="<img src = templates/vanilla/images/pixel.gif width=16 height=1 />";
+            var underLine="";
+            var bulletImg="";
+        }
+        var NoOffFirstLineMenus=2;			// Number of main menu  items
+        // Colorvariables:
+        // Color variables take HTML predefined color names or "#rrggbb" strings
+        //For transparency make colors and border color ""
+        var LowBgColor="#051B38";			// Background color when mouse is not over
+        var HighBgColor="#013A88";			// Background color when mouse is over
+        var FontLowColor="white";			// Font color when mouse is not over
+        var FontHighColor="white";			// Font color when mouse is over
+        var BorderColor="#116EED";			// Border color
+        var BorderWidthMain=0;			// Border width main items
+        var BorderWidthSub=1;			// Border width sub items
+        var BorderBtwnMain=0;			// Border width between elements main items
+        var BorderBtwnSub=0;			// Border width between elements sub items
+        var FontFamily="arial,comic sans ms,technical";	// Font family menu items
+        var FontSize=11;				// Font size menu items
+        var FontBold=0;				// Bold menu items 1 or 0
+        var FontItalic=0;				// Italic menu items 1 or 0
+        var MenuTextCentered="left";		// Item text position left, center or right
+        var MenuCentered="left";			// Menu horizontal position can be: left, center, right
+        var MenuVerticalCentered="top";		// Menu vertical position top, middle,bottom or static
+        var ChildOverlap=.2;			// horizontal overlap child/ parent
+        var ChildVerticalOverlap=.2;			// vertical overlap child/ parent
+        var StartTop=-9;				// Menu offset x coordinate
+        var StartLeft=0;				// Menu offset y coordinate
+        var VerCorrect=0;				// Multiple frames y correction
+        var HorCorrect=0;				// Multiple frames x correction
+        var DistFrmFrameBrdr=0;			// Distance between main menu and frame border
+        if(is_ie)
+            var LeftPaddng=9;				// Left padding
+        else
+            var LeftPaddng=9;				// Left padding
+        var TopPaddng=-1;				// Top padding. If set to -1 text is vertically centered
+        var FirstLineHorizontal=1;			// Number defines to which level the menu must unfold horizontal; 0 is all vertical
+        var MenuFramesVertical=1;			// Frames in cols or rows 1 or 0
+        var DissapearDelay=500;			// delay before menu folds in
+        var UnfoldDelay=0;			// delay before sub unfolds
+        var UnfoldDelay2=200;			// delay before sub builds
+        var TakeOverBgColor=1;			// Menu frame takes over background color subitem frame
+        var FirstLineFrame="space";			// Frame where first level appears
+        var SecLineFrame="space";			// Frame where sub levels appear
+        var DocTargetFrame="space";		// Frame where target documents appear
+        var TargetLoc="filterMenu";				// span id for relative positioning
+        var MenuWrap=1;				// enables/ disables menu wrap 1 or 0
+        var RightToLeft=0;				// enables/ disables right to left unfold 1 or 0
+        var BottomUp=0;				// enables/ disables Bottom up unfold 1 or 0
+        var UnfoldsOnClick=0;			// Level 1 unfolds onclick/ onmouseover
+        var BaseHref="";				// BaseHref lets you specify the root directory for relative links.
+                                        // The script precedes your relative links with BaseHref
+                                        // For instance:
+                                        // when your BaseHref= "http://www.MyDomain/" and a link in the menu is "subdir/MyFile.htm",
+                                        // the script renders to: "http://www.MyDomain/subdir/MyFile.htm"
+                                        // Can also be used when you use images in the textfields of the menu
+                                        // "MenuX=new Array("<img src=\""+BaseHref+"MyImage\">"
+                                        // For testing on your harddisk use syntax like: BaseHref="file:///C|/MyFiles/Homepage/"
+
+
+        var Arrws=['templates/offlike/images/subnav/tri.gif',14,15,'templates/offlike/images/subnav/arrow_right2.gif',18,12,'templates/offlike/images/subnav/arrow_right2.gif',5,10];	// Arrow source, width and height
+
+
+        // Arrow source, width and height.
+        // If arrow images are not needed keep source ""
+
+        var MenuUsesFrames=0;			// MenuUsesFrames is only 0 when Main menu, submenus,
+        // document targets and script are in the same frame.
+        // In all other cases it must be 1
+
+        var RememberStatus=0;			// RememberStatus: When set to 1, menu unfolds to the presetted menu item.
+        // When set to 2 only the relevant main item stays highligthed
+        // The preset is done by setting a variable in the head section of the target document.
+        // 2_2_1 represents the menu item Menu2_2_1=new Array(.......
+
+        var OverFormElements=0;			// Set this to 0 when the menu does not need to cover form elements.
+        var BuildOnDemand=1;			// 1/0 When set to 1 the sub menus are build when the parent is moused over
+        var BgImgLeftOffset=5;			// Only relevant when bg image is used as rollover
+        var ScaleMenu=0;				// 1/0 When set to 0 Menu scales with browser text size setting
+
+        var HooverBold=0;				// 1 or 0
+        var HooverItalic=0;				// 1 or 0
+        var HooverUnderLine=0;			// 1 or 0
+        var HooverTextSize=0;			// 0=off, number is font size difference on hoover
+        var HooverVariant=0;			// 1 or 0
+
+        // Below some pretty useless effects, since only IE6+ supports them
+        // I provided 3 effects: MenuSlide, MenuShadow and MenuOpacity
+        // If you don't need MenuSlide just leave in the line var MenuSlide="";
+        // delete the other MenuSlide statements
+        // In general leave the MenuSlide you need in and delete the others.
+        // Above is also valid for MenuShadow and MenuOpacity
+        // You can also use other effects by specifying another filter for MenuShadow and MenuOpacity.
+        // You can add more filters by concanating the strings
+        var MenuSlide="";
+
+        var MenuShadow="";
+        var MenuShadow="progid:DXImageTransform.Microsoft.DropShadow(color=#000000, offX=2, offY=2, positive=1)";
+        var MenuShadow="progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction=135, strength=3)";
+
+        var MenuOpacity="";
+        var MenuOpacity="progid:DXImageTransform.Microsoft.Alpha(opacity=90)";
+
+        function BeforeStart(){return}
+        function AfterBuild(){return}
+        function BeforeFirstOpen(){return}
+        function AfterCloseAll(){return}
+
+        Menu1=new Array("<?php echo $MW->getConfig->generic->site_title; ?>","?","templates/offlike/images/subnav/button_bg.gif",5,15,110,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_1=new Array(bulletImg+"News"+underLine,"?",menuBg,1,15,110,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_1_1=new Array(bulletImg+"Current News"+underLine,"?n=news.archive",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_2=new Array(bulletImg+"Account"+underLine,"?", menuBg, 0,15,110,"","","","","","",-1,-1,-1,"","");
+
+
+        Menu1_3=new Array(bulletImg+"Game Guide"+underLine,"?",menuBg,3,15,110,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_3_1=new Array(bulletImg+"Introduction"+underLine,"?n=gameguide.introduction",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+        Menu1_3_2=new Array(bulletImg+"Getting Started"+underLine,"?n=gameguide.gettingstarted",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+        Menu1_3_3=new Array(bulletImg+"FAQ"+underLine,"?n=gameguide.faq",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_4=new Array(bulletImg+"Workshop"+underLine,"?",menuBg,2,15,110,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_4_1=new Array(bulletImg+"Events Calendar"+underLine,"?n=workshop.eventscalendar",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+        Menu1_4_2=new Array(bulletImg+"World Map"+underLine,"?n=workshop.worldmap",menuBg,2,15,140,"","","","","","",-1,-1,-1,"","");
+        Menu1_4_2_1=new Array(bulletImg+"Azeroth"+underLine,"?n=workshop.worldmap&m=azeroth",menuBg,0,15,65,"","","","","","",-1,-1,-1,"","");
+        Menu1_4_2_2=new Array(bulletImg+"Outland"+underLine,"?n=workshop.worldmap&m=outland",menuBg,0,15,65,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_5=new Array(bulletImg+"Media"+underLine,"?",menuBg,3,15,110,"","","","","","",-1,-1,-1,"","");
+
+        Menu1_5_1=new Array(bulletImg+"Screenshots"+underLine,"?n=media.screenshots ",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+        Menu1_5_2=new Array(bulletImg+"Wallpapers"+underLine,"?n=media.wallpapers",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+        Menu1_5_3=new Array(bulletImg+"Other Downloads"+underLine,"?n=media.otherdownloads",menuBg,0,15,140,"","","","","","",-1,-1,-1,"","");
+    </script>
+    <?php
+}
+
+function subtitle($tit, $sz='90%') {
+
+    ?>
+    <table border='0' cellpadding='0' cellspacing='0' width='<?php echo $sz; ?>'>
+        <tbody><tr>
+            <td width='24'><img src='templates/offlike/images/headers/subheader/subheader-left-sword.gif' height='20' width='24'></td>
+            <td bgcolor='#05374a' width='100%'><b class='white'><?php echo $tit; ?></b></td>
+            <td width='10'><img src='templates/offlike/images/headers/subheader/subheader-right.gif' height='20' width='10'></td>
+        </tr>
+        <tr>
+            <td  height=10></td>
+        </tr>
+        </tbody></table>
+    <?php
+
+}
+
+function title($tit) {
+
+    ?>
+    <table cellspacing =" 0" cellpadding =" 0" border =" 0" width ="710">
+        <tr>
+            <td width=10>&nbsp;</td>
+            <td width =" 29"><img src ="templates/offlike/images/headers/dateheader/dateheader-left.gif" width =" 31" height =" 38"></td>
+            <td background ="templates/offlike/images/headers/dateheader/dateheader-bg.gif"><h3 class =" titleLight"> <font color=white><?php echo $tit; ?></font> </h3></td>
+            <td width =" 17"><img src ="templates/offlike/images/headers/dateheader/dateheader-right.gif" width =" 17" height =" 38"></td>
+            <td width=10>&nbsp;</td>
+        </tr>
+        <tr>
+            <td  height=3></td>
+        </tr>
+    </table>
+    <?php
+}
+
+function header_image($img) {
+
+    ?>
+    <table style="margin-left:-7px;" cellspacing =" 0" cellpadding =" 0" border =" 0" width ="102%">
+        <tr>
+            <td  width=10></td>
+            <td background="templates/offlike/images/headers/<?php echo $img; ?>bg.jpg" align=left>
+                <div><img src="templates/offlike/images/headers/<?php echo $img; ?>head.jpg"></div>
+            </td>
+            <td  width=10></td>
+        </tr>
+        <tr>
+            <td  height=10></td>
+        </tr>
+    </table>
+    <?php
+}
+
+function header_image_gif($img) {
+?>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%" style="background: url('templates/offlike/images/headers/<?php echo $img; ?>_bg.jpg');">
+        <tbody><tr>
+            <td width="293" height="187"><img src="templates/offlike/images/headers/<?php echo $img; ?>_left.gif" width="293" height="187"><div style="position:relative;"><div style="position:absolute; left:-16px; top:-213px;"><img src="templates/offlike/images/headers/<?php echo $img; ?>_image.gif" width="446" height="213"></div></div>
+            </td>
+            <td width="175" height="187"><img src="templates/offlike/images/headers/<?php echo $img; ?>_right.gif" width="175" height="187" name="C1" usemap="#thaddeus" border="0"></td>
+        </tr>
+        </tbody>
+    </table>
+<?php
+}
