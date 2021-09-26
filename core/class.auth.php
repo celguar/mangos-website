@@ -311,7 +311,7 @@ class AUTH {
     function onlinelist_update()  // Updates list & delete old
     {
         $GLOBALS['guests_online']=0;
-        $rows = $this->DB->select("SELECT * FROM `online`");
+        $rows = $this->DB->select("SELECT * FROM `website_online`");
         if ($rows->num)
         foreach($rows as $result_row)
         {
@@ -325,7 +325,7 @@ class AUTH {
             }
             else
             {
-                $this->DB->query("DELETE FROM `online` WHERE `id`=? LIMIT 1",$result_row['id']);
+                $this->DB->query("DELETE FROM `website_online` WHERE `id`=? LIMIT 1",$result_row['id']);
             }
         }
         //db_query("UPDATE `acm_config` SET `val`='".time()."' WHERE `key`='last_onlinelist_update' LIMIT 1");
@@ -338,21 +338,21 @@ class AUTH {
         global $__SERVER;
 
         $cur_time = time();
-        $result = $this->DB->selectCell("SELECT count(*) FROM `online` WHERE `user_id`=?",$this->user['id']);
+        $result = $this->DB->selectCell("SELECT count(*) FROM `website_online` WHERE `user_id`=?",$this->user['id']);
         if($result>0)
         {
-            $this->DB->query("UPDATE `online` SET `user_ip`=?,`logged`=?,`currenturl`=? WHERE `user_id`=? LIMIT 1",$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI'],$this->user['id']);
+            $this->DB->query("UPDATE `website_online` SET `user_ip`=?,`logged`=?,`currenturl`=? WHERE `user_id`=? LIMIT 1",$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI'],$this->user['id']);
         }
         else
         {
-            $this->DB->query("INSERT INTO `online` (`user_id`,`user_name`,`user_ip`,`logged`,`currenturl`) VALUES (?,?,?,?,?)",$this->user['id'],$this->user['username'],$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI']);
+            $this->DB->query("INSERT INTO `website_online` (`user_id`,`user_name`,`user_ip`,`logged`,`currenturl`) VALUES (?,?,?,?,?)",$this->user['id'],$this->user['username'],$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI']);
         }
     }
 
     function onlinelist_del() // Delete user from list
     {
         global $user;
-        $this->DB->query("DELETE FROM `online` WHERE `user_id`=? LIMIT 1",$this->user['id']);
+        $this->DB->query("DELETE FROM `website_online` WHERE `user_id`=? LIMIT 1",$this->user['id']);
     }
 
     function onlinelist_addguest() // Add or update list with new guest
@@ -361,21 +361,21 @@ class AUTH {
         global $__SERVER;
 
         $cur_time = time();
-        $result = $this->DB->selectCell("SELECT  count(*) FROM `online` WHERE `user_id`='0' AND `user_ip`=?",$this->user['ip']);
+        $result = $this->DB->selectCell("SELECT  count(*) FROM `website_online` WHERE `user_id`='0' AND `user_ip`=?",$this->user['ip']);
         if($result>0)
         {
-            $this->DB->query("UPDATE `online` SET `user_ip`=?,`logged`=?,`currenturl`=? WHERE `user_id`='0' AND `user_ip`=? LIMIT 1",$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI'],$this->user['ip']);
+            $this->DB->query("UPDATE `website_online` SET `user_ip`=?,`logged`=?,`currenturl`=? WHERE `user_id`='0' AND `user_ip`=? LIMIT 1",$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI'],$this->user['ip']);
         }
         else
         {
-            $this->DB->query("INSERT INTO `online` (`user_ip`,`logged`,`currenturl`) VALUES (?,?,?)",$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI']);
+            $this->DB->query("INSERT INTO `website_online` (`user_ip`,`logged`,`currenturl`) VALUES (?,?,?)",$this->user['ip'],$cur_time,$__SERVER['REQUEST_URI']);
         }
     }
 
     function onlinelist_delguest() // Delete guest from list
     {
         global $user;
-        $this->DB->query("DELETE FROM `online` WHERE `user_id`='0' AND `user_ip`=? LIMIT 1",$this->user['ip']);
+        $this->DB->query("DELETE FROM `website_online` WHERE `user_id`='0' AND `user_ip`=? LIMIT 1",$this->user['ip']);
     }
 }
 ?>

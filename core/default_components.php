@@ -22,7 +22,7 @@ $mainnav_links = array (
     array (
       0 => 'account_manage',
       1 => mw_url('account', 'manage'),
-      2 => 'g_view_profile',
+      2 => 'g_is_supadmin',
     ),
     1 => 
     array (
@@ -76,7 +76,7 @@ $mainnav_links = array (
     array (
       0 => 'admin_panel',
       1 => 'index.php?n=admin',
-      2 => 'g_is_admin',    
+      2 => 'g_is_supadmin',
     ),
   ),
   '3-menuGameGuide' => 

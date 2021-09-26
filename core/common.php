@@ -646,7 +646,7 @@ function my_preview($text,$userlevel=0){
     }
     // Blizz quote <small><hr color="#9e9e9e" noshade="noshade" size="1"><small class="white">Q u o t e:</small><br>Text<hr color="#9e9e9e" noshade="noshade" size="1"></small>
     $text = preg_replace("/\\[img\\](.*?)\\[\\/img\\]/s","<img src=\"$1\" align=\"absmiddle\">",$text);
-    $text = preg_replace("/\\[attach=(\\d+)\\]/se","check_attach('\\1')",$text);
+    //$text = preg_replace("/\\[attach=(\\d+)\\]/se","check_attach('\\1')",$text);
     $text = preg_replace("/\\[url=(.*?)\\](.*?)\\[\\/url\\]/s","<a href=\"$1\" target=\"_blank\">$2</a>",$text);
     $text = preg_replace("/\\[size=(.*?)\\](.*?)\\[\\/size\\]/s","<font class='$1'>$2</font>",$text);
     $text = preg_replace("/\\[align=(.*?)\\](.*?)\\[\\/align\\]/s","<p align='$1'>$2</p>",$text);

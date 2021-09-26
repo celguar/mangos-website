@@ -50,8 +50,8 @@ $config = array(
 );
 // Latest News showing on the main page
 $news = array(
-array("Latest News:","This is news one! Change in settings.php!"),
-array("Latest News:","This is news two! Change in settings.php!"),
-array("Latest News:","This is news three! Change in settings.php!")
+array("Latest News:","You can check Honor Ranking for all 3 realms!"),
+array("Latest News:","For stats to appear at character page this character must login after update!"),
+array("Latest News:","Please report any issues in SPP/Bots Discord!")
 );
 ?>
