@@ -9,7 +9,7 @@ $realms = array(
 "Wrath of the Lich King" => array(3, 3, 3, 3),
 );
 // Default Realm Name (use one chosen upper in $realms)
-define("DefaultRealmName", "Vanilla");
+define("DefaultRealmName", "Vanilla Realm");
 $realmd_DB = array(
 // Connection to realmd DBs
 1 => array("127.0.0.1:3310", "root", "123456", "classicrealmd"),
