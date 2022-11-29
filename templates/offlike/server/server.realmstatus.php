@@ -84,7 +84,7 @@ echo $desc;
             </div></td>
             <td width="802" class="serverStatus<?php echo $item['res_color'] ?>"><b style='color: rgb(35, 67, 3);'><?php echo $item['name']; ?></b></td>
             <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><b style='color: rgb(102, 13, 2);'><?php echo $item['type']; ?></b></td>
-            <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><b style='color: rgb(35, 67, 3);'><?php echo $item['pop']." (".population_view($item['pop']).")"; ?></b></td>
+            <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><b style='color: rgb(35, 67, 3);'><?php if($item['uptime'] != 0) {echo $item['pop']." (".population_view($item['pop']).")";} ?></b></td>
         </tr>
 <?php endforeach; ?>
         </tbody>
