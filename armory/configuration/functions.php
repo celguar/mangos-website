@@ -10,12 +10,40 @@ function GetCharacterPortrait($CharacterLevel, $CharacterGender, $CharacterRace,
 	else if($CharacterLevel >= 80)
 		return "wow-80/".$CharacterGender."-".$CharacterRace."-".$CharacterClass.".gif";
 }
+function GetCharacterAchievementPoints($charGuid)
+{
+    $points = 0;
+    $achievIds = "";
+    $query = execute_query("char", "SELECT * FROM `character_achievement` WHERE `guid` = ".$charGuid." ORDER BY `date` DESC", 0);
+    if ($query)
+    {
+        $achievements = array();
+        foreach ($query as $achiev)
+        {
+            $achievements[] = $achiev['achievement'];
+            //echo $achiev['achievement'];
+        }
+        $achievIds = implode(",", $achievements);
+        //echo $achievIds;
+        //print $achievements[0];
+        if (ClIENT == 0) // TODO add tbc
+            $points = execute_query("world", "SELECT SUM(`Points`) FROM `achievement_dbc` WHERE `ID` IN (".$achievIds.")", 2);
+    }
+
+    return $points;
+}
 function GetFaction($CharacterRace)
 {
 	if($CharacterRace == 1 || $CharacterRace == 3 || $CharacterRace == 4 || $CharacterRace == 7 || $CharacterRace == 11)
 		return "alliance";
 	else
 		return "horde";
+}
+function isAlliance($race) {
+    if ($race == 1 || $race == 3 || $race == 4 || $race == 7 || $race == 11) {
+        return true;
+    }
+    return false;
 }
 function GetNameFromDB($Id, $Table)
 {
@@ -29,6 +57,42 @@ function GetNameFromDB($Id, $Table)
 	else
 		return "";
 }
+function GetPlayerSpecId($class, $topTree)
+{
+    switch($class)
+    {
+        case 11:
+        {
+            if ($topTree == 0)
+                return 29;
+            if ($topTree == 1)
+                return 32;
+            if ($topTree == 2)
+                return 31;
+        }
+        case 6:
+        {
+            if ($topTree == 0)
+                return 16;
+            if ($topTree == 1)
+                return 18;
+            if ($topTree == 2)
+                return 19;
+        }
+        default:
+        {
+            if ($class < 6)
+            {
+                return ($class - 1) * 3 + 1 + $topTree;
+            }
+            else
+            {
+                return ($class - 1) * 3 + 2 + $topTree;
+            }
+        }
+    }
+    return 0;
+}
 function GetIcon($Type, $DisplayIconId)
 {
 	if($Type == "item")
@@ -40,6 +104,25 @@ function GetIcon($Type, $DisplayIconId)
 	else
 		return "images/icons/64x64/404.png";
 }
+function PrintItemDropChance($chance)
+{
+    global $lang;
+    $dropChance = " ";
+    if ($chance <= 2)
+        $dropChance .= $lang["textDR1"];
+    else if ($chance < 15)
+        $dropChance .= $lang["textDR2"];
+    else if ($chance < 25)
+        $dropChance .= $lang["textDR3"];
+    else if ($chance < 51)
+        $dropChance .= $lang["textDR4"];
+    else if (chance > 50)
+        $dropChance .= $lang["textDR5"];
+    else
+        $dropChance = "";
+
+    return $dropChance;
+}
 function GetItemSource($item_id, $pvpreward = 0)
 {
 	global $lang;
@@ -47,11 +130,103 @@ function GetItemSource($item_id, $pvpreward = 0)
 	if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `quest_template` WHERE `SrcItemId` = ".$item_id." LIMIT 1", 1))
 		return $lang["quest_item"];
 	else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `npc_vendor` WHERE `item` = ".$item_id." LIMIT 1", 1))
-		return $pvpreward ? $lang["pvp_reward"] : $lang["vendor"];
-	else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `gameobject_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
-		return $lang["chest_drop"];
-	else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
-		return $lang["drop"];
+		return $pvpreward ? $lang["pvp_reward"]." (".$lang["vendor"].")" : $lang["vendor"];
+    else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `npc_vendor_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
+        return $pvpreward ? $lang["pvp_reward"]." (".$lang["vendor"].")" : $lang["vendor"];
+	else if($object = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `gameobject_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 2))
+    {
+        // check Boss Loot
+        if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$object." OR `lootid_1`=".$object." OR `lootid_2`=".$object." OR `lootid_3`=".$object." OR `lootid_4`=".$object." OR `name_id`=".$object." AND `type` = 'object' LIMIT 1", 1))
+        {
+            $instanceId = $instance_loot["instance_id"];
+            $bossname = $instance_loot["name_en_gb"];
+            $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
+            if ($instance_info)
+            {
+                $instance_name = $instance_info["name_en_gb"];
+                $heroic = $instance_info["is_heroic"];
+                $instance_size = $instance_info["partySize"];
+                $expansion = $instance_info["expansion"];
+                $israid = $instance_info["raid"];
+                if ($expansion < 2 || !$israid)
+                    return $bossname . " -" . $instance_name . "";
+                //return $instance_name;
+                return $bossname . " - " . $instance_name . ($heroic ? " (H)" : "");
+            }
+        }
+        return $lang["chest_drop"];
+    }
+	else if($creature = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 2))
+    {
+        // check Boss Loot
+        if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$creature." OR `lootid_1`=".$creature." OR `lootid_2`=".$creature." OR `lootid_3`=".$creature." OR `lootid_4`=".$creature." OR `name_id`=".$creature." AND `type` = 'npc' LIMIT 1", 1))
+        {
+            $instanceId = $instance_loot["instance_id"];
+            $bossname = $instance_loot["name_en_gb"];
+            $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
+            if ($instance_info)
+            {
+                $instance_name = $instance_info["name_en_gb"];
+                $heroic = $instance_info["is_heroic"];
+                $instance_size = $instance_info["partySize"];
+                $expansion = $instance_info["expansion"];
+                $israid = $instance_info["raid"];
+                if ($expansion < 2 || !$israid)
+                    return $bossname . " - " . $instance_name . "";
+                //return $instance_name;
+                return $bossname . " - " . $instance_name . ($heroic ? " (H)" : "". "");
+            }
+        }
+//        else if ($creature_name = execute_query("world", "SELECT `Name` FROM `creature_template` WHERE `entry`=".$creature))
+//        {
+//            if (count($creature_name) == 1)
+//                return $creature_name[0]["Name"];
+//        }
+        return $lang["drop"];
+    }
+    else if($refLoot = execute_query("world", "SELECT SQL_NO_CACHE `entry`, `groupid` FROM `reference_loot_template` WHERE `item` = ".$item_id))
+    {
+        $refLootList = execute_query("world", "SELECT COUNT(*) SQL_NO_CACHE FROM `reference_loot_template` WHERE `entry` = ".$refLoot[0]["entry"]." AND `groupid` = ".$refLoot[0]["groupid"], 2);
+        $dropChance = round(100 / $refLootList);
+        if (count($refLoot) > 1)
+        {
+            return "World Drop " . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+        }
+        $bossId = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `mincountOrRef` = -".$refLoot[0]["entry"]);
+        if ($bossId && (count($bossId) == 1 || count($bossId) == 2))
+        {
+            $creature = $bossId[0]["entry"];
+            if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$creature." OR `lootid_1`=".$creature." OR `lootid_2`=".$creature." OR `lootid_3`=".$creature." OR `lootid_4`=".$creature." OR `name_id`=".$creature." AND `type` = 'npc' LIMIT 1", 1))
+            {
+                $instanceId = $instance_loot["instance_id"];
+                $bossname = $instance_loot["name_en_gb"];
+                $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
+                if ($instance_info)
+                {
+                    $instance_name = $instance_info["name_en_gb"];
+                    $heroic = $instance_info["is_heroic"];
+                    $instance_size = $instance_info["partySize"];
+                    $expansion = $instance_info["expansion"];
+                    $israid = $instance_info["raid"];
+                    if ($expansion < 2 || !$israid)
+                        return /*"bossID: " . $creature . ", refId:" . $refLoot["entry"] . " " . */$bossname . " - " . $instance_name . ($dropChance ? " <span id ='dropRate' class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+                    //return $instance_name;
+                    return $bossname . " - " . $instance_name . ($heroic ? " (H)" : "") . ($dropChance ? " <span id ='dropRate' class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+                }
+            }
+            else if ($creature_name = execute_query("world", "SELECT `Name` FROM `creature_template` WHERE `entry`=".$creature, 2))
+            {
+                return $creature_name;
+            }
+        }
+        else if ($bossId && count($bossId) > 2)
+        {
+            return "World Drop " . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+        }
+        // TODO CHEST NAMES
+        else
+            return "World Drop " . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+    }
 	else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `quest_template` WHERE `RewChoiceItemId1` = ".$item_id." OR `RewChoiceItemId2` = ".$item_id."
 	OR `RewChoiceItemId3` = ".$item_id." OR `RewChoiceItemId4` = ".$item_id." OR `RewChoiceItemId5` = ".$item_id." OR `RewChoiceItemId6` = ".$item_id."
 	OR `RewItemId1` = ".$item_id." OR `RewItemId2` = ".$item_id." OR `RewItemId3` = ".$item_id." OR `RewItemId4` = ".$item_id." LIMIT 1", 1))
@@ -284,10 +459,10 @@ function GetArenaTeamEmblem($teamId = 0) {
 }
 function initialize_realm($realm_force = 0)
 {
-	global $realms, $realmd_DB, $mangosd_DB, $characters_DB, $armory_DB, $DB, $WSDB, $CHDB, $ARDB;
-	if(isset($_SESSION["realm"]))
-		define("REALM_NAME", $_SESSION["realm"]);
-	else if(isset($_GET["realm"]) && isset($realms[$realm_name = stripslashes($_GET["realm"])]))
+	global $realms, $realmd_DB, $mangosd_DB, $characters_DB, $armory_DB, $playerbot_DB, $DB, $WSDB, $CHDB, $ARDB, $PBDB;
+	//if(isset($_SESSION["realm"]))
+	//	define("REALM_NAME", $_SESSION["realm"]);
+	if(isset($_GET["realm"]) && isset($realms[$realm_name = stripslashes($_GET["realm"])]))
 		define("REALM_NAME", $realm_name);
 	else if ($realm_force)
 	    define("REALM_NAME", $realm_force);
@@ -335,6 +510,16 @@ function initialize_realm($realm_force = 0)
         $ARDB->setErrorHandler( 'databaseErrorHandler' ) ;
     if ( $ARDB )
         $ARDB->query( "SET NAMES UTF8;" ) ;
+
+    unset($needed_db);
+    $needed_db = $playerbot_DB[$realms[REALM_NAME][4]];
+    $PBDB = dbsimple_Generic::connect( "mysql://" . $needed_db[1] .
+        ":" . $needed_db[2] . "@" . $needed_db[0] .
+        "/" . $needed_db[3] . "" ) ;
+    if ( $PBDB )
+        $PBDB->setErrorHandler( 'databaseErrorHandler' ) ;
+    if ( $PBDB )
+        $PBDB->query( "SET NAMES UTF8;" ) ;
 
     define("CLIENT", $ARDB->selectCell("SELECT `value` FROM `conf_client` LIMIT 1"));
     define("LANGUAGE", $ARDB->selectCell("SELECT `value` FROM `conf_lang` LIMIT 1"));

@@ -64,13 +64,13 @@ $mainnav_links = array (
     array (
       0 => 'userlist',
       1 => mw_url('account', 'userlist'),
-      2 => 'g_is_supadmin',
+      2 => 'g_is_admin',
     ),
     8 => 
     array (
       0 => 'rules',
       1 => mw_url('server', 'rules'),
-      2 => '',    
+      2 => 'g_is_admin',
     ),
 	9 => 
     array (
@@ -84,23 +84,10 @@ $mainnav_links = array (
     0 => 
     array (
       0 => 'howtoplay',
-      1 => mw_url('server', 'howtoplay'),
+      1 => mw_url('gameguide', 'connect'),
       2 => '',
     ),
-    1 => 
-    array (
-      0 => 'flashmap',
-      1 => './components/tools/maps/flashmap/',
-      2 => '',
-    ),
-    2 => 
-    array (
-      0 => 'armorsets',
-      1 => 'index.php?n=server&sub=armorsets',
-      2 => '',
-    ),
-
-	3 => 
+	3 =>
     array (
       0 => 'bc',
       1 => 'http://www.worldofwarcraft.com/burningcrusade/',
@@ -167,6 +154,18 @@ $mainnav_links = array (
     array (
       0 => 'armory',
       1 => './armory/',
+      2 => '',
+    ),
+    8 =>
+    array (
+      0 => 'flashmap',
+      1 => './components/tools/maps/flashmap/',
+      2 => '',
+    ),
+    9 =>
+    array (
+      0 => 'armorsets',
+      1 => 'index.php?n=server&sub=armorsets',
       2 => '',
     ),
   ),
@@ -295,6 +294,7 @@ $allowed_ext = array (
   8 => 'community',
   9 => 'media',
   10 => 'armory',
+  11 => 'gameguide',
 );
 
 // Main Forum Navigation Link
@@ -386,6 +386,14 @@ if ((int)$MW->getConfig->components->left_section->Armory==0)
 {
     unset($mainnav_links['4-menuInteractive'][7]);
 }
+if ((int)$MW->getConfig->components->left_section->Interactive_world_atlas==0)
+{
+    unset($mainnav_links['4-menuInteractive'][8]);
+}
+if ((int)$MW->getConfig->components->left_section->Armor_sets==0)
+{
+    unset($mainnav_links['4-menuInteractive'][9]);
+}
 
 /*Support*/
 if ((int)$MW->getConfig->components->left_section->Commands==0)
@@ -405,14 +413,6 @@ if ((int)$MW->getConfig->components->left_section->Online_GMs==0)
     unset($mainnav_links['8-menuSupport'][3]);
 }
 /*Game Guide*/
-if ((int)$MW->getConfig->components->left_section->Interactive_world_atlas==0)
-{
-    unset($mainnav_links['3-menuGameGuide'][1]);
-}
-if ((int)$MW->getConfig->components->left_section->Armor_sets==0)
-{
-    unset($mainnav_links['3-menuGameGuide'][2]);
-}
 if ((int)$MW->getConfig->components->left_section->wow_bc==0)
 {
     unset($mainnav_links['3-menuGameGuide'][3]);

@@ -51,13 +51,13 @@
 
 <!-- Screenshot of the day -->
 <?php
-$date_ssotd = $DB->selectCell("SELECT `date` FROM `gallery_ssotd` LIMIT 1");
+$date_ssotd = $DB->selectCell("SELECT `date` FROM `website_gallery_ssotd` LIMIT 1");
 $today_ssotd = date("y.m.d");
 if ($date_ssotd != $today_ssotd) {
-$rand_ssotd = $DB->selectCell("SELECT `img` FROM `gallery` WHERE cat ='screenshot' ORDER BY RAND() LIMIT 1");
-$DB->query("UPDATE gallery_ssotd SET image = '$rand_ssotd', date = '$today_ssotd'");
+$rand_ssotd = $DB->selectCell("SELECT `img` FROM `website_gallery` WHERE cat ='screenshot' ORDER BY RAND() LIMIT 1");
+$DB->query("UPDATE website_gallery_ssotd SET image = '$rand_ssotd', date = '$today_ssotd'");
 }
-$screen_otd = $DB->selectCell("SELECT `img` FROM `gallery` WHERE cat ='screenshot' ORDER BY RAND() LIMIT 1");
+$screen_otd = $DB->selectCell("SELECT `img` FROM `website_gallery` WHERE cat ='screenshot' ORDER BY RAND() LIMIT 1");
 ?>
 <div id="rightbox">
 <h3 style="height: 20px; color: #eff0ef; font-size: 12px; letter-spacing: 1px; font-weight: bold; width: 308px; padding: 1px 0 0 8px; font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;"><?php echo $lang['random_screen']; ?></h3>

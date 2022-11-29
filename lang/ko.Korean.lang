@@ -1,0 +1,827 @@
+|=|accediting :=: 계정 관리
+|=|access_denied :=: ACCESS DENIED! Login to view this information.
+|=|account :=: 계정
+|=|account_activate :=: 계정 활성화
+|=|account_create :=: 새 계정
+|=|account_manage :=: 내 계정
+|=|accountmanage_important :=: 비밀번호 및 이메일 설정.
+|=|accountmanange_intro :=: 계정 관리에 오신 것을 환영합니다. 여기에서 모든 설정을 편집할 수 있습니다. 비밀번호, 이메일, 비밀 질문을 편집하고 캐릭터 이름도 변경할 수 있습니다! 캐릭터 이전은 관리자 또는 GM에게 문의하세요..
+|=|act_succ :=: 활성화에 성공했습니다. 지금 접속할 수 있습니다
+|=|activation :=: 활성
+|=|active_ban :=: 활성화/벤
+|=|add :=: Add
+|=|Addimage :=: 이미지 추가
+|=|admin_forum :=: 포럼
+|=|admin_panel :=: 관리자 페이지
+|=|agility :=: 민첩
+|=|agree :=: 동의
+|=|agreeement_detailschange :=: 귀하는 귀하가 이 계정의 소유자라는데 동의합니다.
+|=|ah_alliance :=: 얼라이언스 경매장
+|=|ah_auctionhouse :=: 경매장
+|=|ah_blackwater :=: 블랙워터 경매장
+|=|ah_buyer :=: 구매자
+|=|ah_buyout :=: 최소 구매 금액
+|=|ah_currentbid :=: 현재 입찰금액
+|=|ah_expired :=: 만료됨
+|=|ah_horde :=: 호드 옥션
+|=|ah_hours :=: 시간
+|=|ah_itemclass :=: 타입
+|=|ah_itemname :=: 아이템
+|=|ah_minutes :=: 분
+|=|ah_quantity :=: 개.
+|=|ah_reset :=: (리셋)
+|=|ah_seconds :=: 초
+|=|ah_seller :=: 판매자
+|=|ah_sortbyquality :=: (등급별 분류)
+|=|ah_time :=: 시간
+|=|alchemy_recipe :=: 연금술 도안
+|=|all :=: 모두
+|=|Alliance :=: 얼라이언스
+|=|allowed_attachs :=: 허용된 첨부 파일 확장자
+|=|allowed_ext :=: 허용된 확장
+|=|ammo :=: 탄약
+|=|ammo_pouch :=: 탄약 주머니
+|=|ar1 :=: Private
+|=|ar10 :=: Lieutenant-Commander
+|=|ar11 :=: Commander
+|=|ar12 :=: Marshal
+|=|ar13 :=: Field Marshal
+|=|ar14 :=: Grand Marshal
+|=|ar2 :=: Corporal
+|=|ar3 :=: Sergeant
+|=|ar4 :=: Master Sergeant
+|=|ar5 :=: Sergeant Major
+|=|ar6 :=: Knight
+|=|ar7 :=: Knight-Lieutenant
+|=|ar8 :=: Knight-Captain
+|=|ar9 :=: Knight-Champion
+|=|arcane_dmg :=: 비전
+|=|are_you_sure :=: 확실하십니까?
+|=|areonline :=: 웹 서버에서 활동 중인 사용자
+|=|armor :=: 방어구
+|=|armorsets :=: 방어구 세트
+|=|armorsets_desc :=: 이 페이지는 플레이어가 던전에서 또는 퀘스트를 완료하여 얻을 수 있는 일부 고급 방어구 세트를 보여줍니다. 신규 및 기존 세트가 이 페이지에 정기적으로 추가되므로 자주 확인하십시오.
+|=|armorsets2 :=: 고급 방어구 세트
+|=|armory :=: 무기고
+|=|arrows :=: 투사체 - 화살
+|=|artifact :=: 아티팩트
+|=|attachs_path :=: 첨부 디렉토리 경로
+|=|author :=: 작성자
+|=|avatar :=: 아바타
+|=|avatar_path :=: 아바타 디렉토리 경로
+|=|axe_1h :=: 도끼 (한손)
+|=|axe_2h :=: 도끼 (양손)
+|=|back :=: 등
+|=|backup :=: 백업
+|=|bad_act_key :=: 잘못된 활성화 키입니다.
+|=|bad_mail :=: 잘못된 이메일 주소
+|=|bad_reg_key :=: 유효한 키를 제공하지 않았습니다.
+|=|bag :=: 가방
+|=|bandage :=: 붕대
+|=|banner_display :=: Banner on or off (0=off, 1=on)
+|=|bc :=: 불타는 성전
+|=|belt :=: 벨트
+|=|block :=: Block
+|=|Bloodelf :=: 블러드 엘프
+|=|boe :=: 착용시 귀속
+|=|book :=: 책
+|=|bop :=: 획득시 귀속
+|=|bou :=: 사용시 귀속
+|=|bow :=: 활
+|=|BS_plans :=: Blacksmithing Plans
+|=|buckler :=: 버클러
+|=|bugs :=: 버그 제보
+|=|bugtracker :=: Notification about bugs
+|=|bullets :=: 투사체 - 탄환
+|=|byj_1 :=: Connecting to the Server
+|=|byj_2 :=: F.A.Q.
+|=|CA_RATING :=: Crit Avoid
+|=|cata :=: 대격변
+|=|categories :=: 카테고리
+|=|change_email :=: Allow users to change e-mail address
+|=|change_email_button :=: Change e-mail address
+|=|change_mail :=: Success! Your email address has been updated.
+|=|change_pass :=: Allow users to change password
+|=|change_pass_short :=: Password is too short.
+|=|change_pass_succ :=: Success! Your password has been updated.
+|=|change_template :=: Allow users to change template (1-yes/0-no)
+|=|change_your_info :=: Change Your Information
+|=|changed_secretq :=: You sucessfully changed your secret questions. Please remember them in-case you lose your password.
+|=|char_manage :=: Character Tools
+|=|characters :=: 캐릭터
+|=|charcreate :=: Copy Character
+|=|charcreate_cannotcreatemorechars :=: You can not create anymore characters!
+|=|charcreate_charcreated :=: your character was created. You can now log in and play on it. Enjoy.
+|=|charcreate_invalidname :=: Error: Name invalid (You have to pick a name for your character). Try again.
+|=|charcreate_loggedin :=: Error: your account is already logged in. Please log out before using this feature.
+|=|charcreate_nameinuse :=: Error: Name invalid (Name already in use). Try again.
+|=|charcreate_nameissymbols :=: The name consists of characters that are not allowed.
+|=|charcreate_tomanychars :=: You have too many characters on your account, please log in and delete a character to be able to create another one at the account management.
+|=|charcreate_underconstruction :=: This class and race is currently being worked on, expect it to be up as soon as possible
+|=|charges :=: Charge(s)
+|=|charname :=: Character Name
+|=|chars :=: 캐릭터
+|=|chartransfer :=: Character tools
+|=|chat :=: Chat
+|=|chat_adminpass :=: Chat Adminpassword
+|=|chat_disable :=: The Website Admin Has Disabled This Feature
+|=|chat_display :=: Chat on or off (0=off 1=on)
+|=|chat_manage :=: 채팅 설정
+|=|chest :=: 상자
+|=|choose_faction :=: 진영 선택
+|=|choose_lang :=: 언어 선택
+|=|choose_realm :=: 렐름 선택
+|=|choose_realmfaction :=: 렐름과 진영을 선택하려면 여기를 클릭하세요
+|=|class :=: 클래스
+|=|classic :=: 클래식 WoW
+|=|close :=: 닫기
+|=|closed :=: 닫기
+|=|cloth :=: 의상
+|=|combat_effect :=: 전투 효과
+|=|comm_header1 :=: 모든 서버 규칙을 준수하는 것을 잊지 마십시오! 다음은 사용할 수 있는 몇 가지 유용한 링크 목록입니다:
+|=|comm_header2 :=: If you have any questions or concerns, Be sure to check out the <a href="./index.php?n=forum">Forums</a><br /> and/or the <a href="./index.php?n=forum&sub=viewforum&fid=6">FAQ Site</a>. If you need to conatact the website admin, Just send a <br />PM by using the "Userlist" option from the navagation menu to the webadmin <br />or any other admin.
+|=|commands :=: 명령어
+|=|commands_manage :=: 명령어 수정
+|=|comment :=: 코멘트
+|=|common :=: 커먼
+|=|components_manage :=: 구성품
+|=|congratulations :=: 축하합니다
+|=|consumable :=: 소모품
+|=|contact :=: 연락
+|=|contact_info :=: 연락처 정보
+|=|context_menu :=: 메뉴
+|=|cooking_recipe :=:요리 도안
+|=|copy_instructions :=: 캐릭터를 복사하려면 복사하려는 캐릭터를 찾아 해당 캐릭터 옆에 있는 빨간색 "캐릭터 복사" 버튼을 클릭하세요.
+|=|copy_page_desc :=: 이 페이지에서 월드 오브 워크래프트 캐릭터를 서버 영역에 복사할 수 있습니다.
+|=|cpass :=: 비밀번호 확인
+|=|create_char :=: 캐릭터 생성
+|=|crossbow :=: 석궁
+|=|CS_RATING :=: 크리티컬 스트라이크
+|=|dagger :=: 단도
+|=|damage :=: 피해
+|=|date :=: 날짜
+|=|date_reg :=: 생성일
+|=|Death_Knight :=: 죽음의 기사
+|=|debuginfo :=: Show debug messages (1-yes/0-no)
+|=|default_component :=: Default component (frontpage)
+|=|DEFENCE_RATING :=: Defence
+|=|delavatar :=: Delete?
+|=|delete :=: delete
+|=|delete_marked :=: Delete marked
+|=|desired_name :=: Desired Name
+|=|devices :=: Devices
+|=|dh_kills :=: Dishonorable Kills
+|=|disagree :=: Disagree
+|=|dochange :=: Change
+|=|doclose :=: Close
+|=|docreate :=: Create
+|=|dodelete :=: Delete
+|=|DODGE_RATING :=: Dodge
+|=|doedit :=: Edit
+|=|donate :=: Donate
+|=|donation_dup_error :=: Dublicate Donation Error!
+|=|donation_not_face_value :=: We discovered that the item you bought costs more than you actually paid. We cannot give you the item, however thanks for the donation. If you think this has come with an error please contact the admin.
+|=|donation_num :=: Donation #
+|=|donation_page_desc :=: Donation information: Donate and get your wanted items. Check our packages below.
+|=|donation_pick_character :=: What character should get this item(s)?
+|=|donewcat :=: Create new category
+|=|donewforum :=: Create new forum
+|=|doopen :=: Open
+|=|doreset :=: Reset
+|=|doretrieve_pass :=: Retrieve password
+|=|dostick :=: Stick
+|=|dounstick :=: Unstick
+|=|doupdate :=: Update
+|=|down :=: Down
+|=|download :=: 다운로드
+|=|download_times :=: 다운로드
+|=|downloads :=: 다운로드
+|=|Dranei :=: 드레나이
+|=|Druid :=: 드루이드
+|=|Dwarf :=: 드워프
+|=|edit :=: edit
+|=|editing :=: Editing
+|=|editor_align :=: Align
+|=|editor_align_center :=: Center
+|=|editor_align_justify :=: Justify
+|=|editor_align_left :=: Left
+|=|editor_align_right :=: Right
+|=|editor_backtoedit :=: Back to editing
+|=|editor_bold :=: Bold
+|=|editor_clear :=: Clear
+|=|editor_code :=: Code
+|=|editor_color :=: Font color
+|=|editor_color_blue :=: Blue
+|=|editor_color_custom :=: Custom
+|=|editor_color_green :=: Green
+|=|editor_color_red :=: Red
+|=|editor_email :=: Email
+|=|editor_image :=: Image
+|=|editor_italic :=: Italic
+|=|editor_link :=: Link
+|=|editor_pagebreak :=: Horizontal line
+|=|editor_preview :=: Preview
+|=|editor_quote :=: Quote
+|=|editor_send :=: Send
+|=|editor_strikethrough :=: Strikethrough
+|=|editor_underline :=: Underline
+|=|editpost :=: Post editing
+|=|edittopic :=: Topic editing
+|=|email :=: Email
+|=|email_retrieve_pass :=: This is your new password: %s | Please, don't forget it in the future (write it down or something).
+|=|email_sent_act :=: An e-mail was sent to the address provided containing an activation key.
+|=|email_sent_keys :=: %d new invitation keys have been sent to your email address.
+|=|email_support :=: Email Support
+|=|emailtext_inv_keys :=: These are your invitation keys: %s You can use them to register more accounts or share with other people.
+|=|ench_formula :=: Enchanting Formula
+|=|enchanting :=: Enchanting
+|=|ENG_Schematic :=: Engineering Schematic
+|=|engineering :=: Engineering
+|=|enter_as :=: You enter as
+|=|enter_name_and_pass :=: Enter your account name and password.
+|=|epic :=: Epic
+|=|ErrorFilename :=: An image with that filename already exists. Please rename your file!
+|=|exotic_1h :=: Exotic (One Handed)
+|=|exotic_2h :=: Exotic (Two Handed)
+|=|exp_select :=: Please select your expansion
+|=|exp_set :=: Your new used expansion is set!
+|=|explosives :=: Explosives
+|=|FA_manual :=: First Aid Manual
+|=|faction :=: 진영
+|=|fail_change_secretq :=: The secret questions were not changed. Please read the information on how secret question answers needs to be formed.
+|=|fail_restore_pass :=: Your details on password restore were not correct.
+|=|faq :=: FAQ
+|=|feet :=: 발
+|=|female :=: 여성
+|=|file :=: File
+|=|files :=: Files
+|=|files_summary :=: Files summary
+|=|Filesizes :=: The size of the file should not exceed
+|=|Filesizew :=: The size of the file should not exceed 4 mb
+|=|Filetype :=: This is not the correct type of file
+|=|finger :=: Finger
+|=|fire_dmg :=: Fire
+|=|fishing_manual :=: Fishing Manual
+|=|fishing_pole :=: Fishing Pole
+|=|fist_weapon :=: Fist Weapon
+|=|flashmap :=: Interactive World Atlas
+|=|forbiden :=: Forbidden
+|=|forgetpass :=: Forgotten your password?
+|=|format :=: Format
+|=|forum_archive :=: 지난 뉴스
+|=|forum_general :=: General Discussion
+|=|forum_help :=: Support Forums
+|=|forum_index :=: Index
+|=|spp_forum :=: SPP 포럼
+|=|forum_nav :=: Forum Navigation
+|=|forum_news :=: 최신 뉴스
+|=|forum_support :=: Forum Support
+|=|forums :=: Forums
+|=|forums_manage :=: Forums
+|=|forums_support :=: Support Forums
+|=|from :=: from
+|=|frost_dmg :=: Frost
+|=|gadgetzan :=: Gadgetzan Times
+|=|galleries :=: Screenshot Galleries
+|=|gallery :=: Art
+|=|GallScreen :=: Screenshots gallery
+|=|GallWalp :=: Wallpapers gallery
+|=|game_guide :=: Game Guide
+|=|gems :=: 보석
+|=|gender :=: 성별
+|=|general_info :=: 기본 정보
+|=|gloves :=: 장갑
+|=|gm_online :=: Online GMs
+|=|gmlevel :=: Level of access
+|=|gmlist :=: 게임 지원
+|=|Gnome :=: 노움
+|=|Goblin :=: 고블린
+|=|guild :=: 길드
+|=|guildname :=: 길드명
+|=|guilds :=: Guilds
+|=|h_kills :=: 명예로운 처치
+|=|HA_RATING :=: Hit Avoid
+|=|HASTE_RATING :=: 가속
+|=|have_secretq :=: Your recovery questions have been SET!
+|=|have_you_forgot_pass :=: Have you forgotten your password?
+|=|head :=: Head
+|=|health :=: 건강
+|=|healthstone :=: HealthStone
+|=|herbs :=: Herbs
+|=|hidden :=:  [hidden]
+|=|hide :=: Hide
+|=|hideemail :=: 이메일을 비공개하시겠습니까?
+|=|hideprofile :=: 프로필을 비공개하시겠습니까?
+|=|high :=: 포화
+|=|HIT_RATING :=: Hit
+|=|hits :=: Website Hits
+|=|holy_dmg :=: 신성
+|=|homepage :=: WWW
+|=|honor :=: 명예
+|=|honor_fighters :=: fighters for each faction.
+|=|honor_ranking :=: Realms PvP Rankings
+|=|honor_top :=: Here you see top
+|=|Horde :=: 호드
+|=|howtoplay :=: 플레이 하는 법
+|=|hr1 :=: Scout
+|=|hr10 :=: Champion
+|=|hr11 :=: Lieutenant General
+|=|hr12 :=: General
+|=|hr13 :=: Warlord
+|=|hr14 :=: High Warlord
+|=|hr2 :=: Grunt
+|=|hr3 :=: Sergeant
+|=|hr4 :=: Senior-Sergeant
+|=|hr5 :=: First-Sergeant
+|=|hr6 :=: Stone Guard
+|=|hr7 :=: Blood Guard
+|=|hr8 :=: Legionnaire
+|=|hr9 :=: Centurion
+|=|Human :=: 인간
+|=|Hunter :=: 사냥꾼
+|=|icq :=: ICQ
+|=|idol :=: Idol
+|=|imap :=: Outland Map
+|=|improves :=: Improves
+|=|inbox :=: Inbox
+|=|intellect :=: Intellect
+|=|intro_account_restore :=: You forgot your password!? When we said "keep it secret, keep it safe" we didn't mean for you to take it this far. For future reference, forgetting your password completely is just a bit too secret to be practical. Well, no worries. We'll try to get it back for you. Start by entering your Account Name into the box below. If you've forgotten your Account Name as well, contact us by the forums or in a PM. Please note that you have to know your 2 account secret questions.
+|=|inventory :=: Inventory
+|=|isonline :=: User active on Web Server
+|=|item_set :=: Item Set
+|=|items :=: Items
+|=|items_could_not_be_sent :=: Could not send any items in mail, contact the admin.
+|=|items_sent :=: Your items have been sent in-game
+|=|JC_formula :=: Jewelcrafting Formula
+|=|key :=: Key
+|=|keys :=: Keys
+|=|kills :=: Kills
+|=|l_delkey :=: Delete key
+|=|l_delkey_id :=: by Id
+|=|l_delkey_name :=: or by Key
+|=|l_desc :=: Desc
+|=|l_name :=: Name
+|=|l_newkeys :=: Enter number of keys desired (1-300)
+|=|l_post1 :=: post
+|=|l_post2 :=: posts
+|=|l_post3 :=: posts
+|=|l_subject :=: Topic name
+|=|l_theme1 :=: topic
+|=|l_theme2 :=: topics
+|=|l_theme3 :=: topics
+|=|l_theme4 :=: topic
+|=|langs_manage :=: Languages
+|=|last_news :=: Latest news
+|=|lastcomment :=: 마지막 댓글
+|=|lastpost :=: 마지막 답변
+|=|lastpostby :=: by
+|=|lastreplyin :=: Last reply in
+|=|leather :=: Leather
+|=|legendary :=: 레전더리
+|=|legs :=: 다리
+|=|level :=: 레벨
+|=|level_cap :=: 레벨 제한
+|=|level_short :=: Lvl
+|=|libram :=: Libram
+|=|lifetime_kills :=: Lifetime Kills
+|=|list_users :=: List of the users
+|=|location :=: 위치
+|=|lockpick :=: Lockpick
+|=|login :=: Login
+|=|logon_message :=: You must login to use this function. If you do not already have an account you can go [createlink] to create an account. However, if you have an account you must [loginlink]
+|=|logon_message_createlink_text :=: here
+|=|logon_message_loginlink_text :=: logon
+|=|logout :=: Logout
+|=|low :=: 적음
+|=|lvl_req :=: 필요 레벨
+|=|LW_pattern :=: Leatherworking Pattern
+|=|mace_1h :=: Mace (One Handed)
+|=|mace_2h :=: Mace (Two Handed)
+|=|Mage :=: 마법사
+|=|mail :=: Mail
+|=|main_hand :=: Main hand
+|=|mainpage :=: Main
+|=|make_acct_classic :=: 확장팩을 사용하지 않는 경우 이 버튼을 클릭하십시오.
+|=|make_acct_tbc :=: 불타는 성전을 사용하는 경우 이 버튼을 클릭하십시오.
+|=|make_acct_wotlk :=:  리치 왕의 분노를 사용 중인 경우 이 버튼을 클릭하세요.
+|=|male :=: 남자
+|=|mana :=: 마나
+|=|mangos_manager :=: Server Manager / GM Tools
+|=|map :=: Map
+|=|mark :=: Mark
+|=|markread :=: Mark as read
+|=|max_accounts_per_ip :=: Max accounts per IP (0-unlimited)
+|=|max_attachs_size :=: Space for attachs per each user
+|=|max_avatar_file :=: Max avatar file size (bytes)
+|=|max_avatar_size :=: Max avatar resolution (WxH px)
+|=|max_file_size :=: Max file size
+|=|maxavatarres :=: Maximum size of picture
+|=|maxavatarsize :=: Maximum size of file
+|=|media :=: Media
+|=|medium :=: Medium
+|=|MELEE_CA_RATING :=: Melee Crit Avoid
+|=|MELEE_CS_RATING :=: Melee Crit
+|=|MELEE_HA_RATING :=: Melee Hit Avoid
+|=|MELEE_HASTE_RATING :=: Melee Haste
+|=|MELEE_HIT_RATING :=: Melee Hit
+|=|messages :=: Messages
+|=|mining :=: Mining
+|=|misc :=: Miscellaneous
+|=|misc_short :=: Misc
+|=|misc_weapon :=: Miscellaneous Weapon
+|=|module_ah :=: Auction House
+|=|more_info :=: more info
+|=|msn :=: MSN
+|=|name :=: 이름
+|=|nature_dmg :=: 자연
+|=|neck :=: 목
+|=|newcomers :=: New to World Of Warcraft?
+|=|newcomers2 :=: Use the links below!
+|=|newemail :=: New e-mail
+|=|newmessage :=: New
+|=|newmessages :=: [New]
+|=|newpass :=: 새 비밀번호
+|=|newpms :=: 새 메세지
+|=|newpost :=: 새 글
+|=|news :=: News
+|=|news_add :=: Add News
+|=|news_archive :=: News archive
+|=|news_archives :=: News Archives
+|=|news_manage :=: Edit News
+|=|news_rss :=: News in RSS format
+|=|newsubject :=: New subject
+|=|newtopic :=: New topic
+|=|next :=: Next
+|=|Nightelf :=: 나이트 엘프
+|=|no :=: No
+|=|no_bind :=: Not Binding
+|=|no_char_create :=: There are no characters to copy. Please define 'Copy Characters' in config file.
+|=|no_char_gal :=: To upload images to the gallery first you have to select a character from the character menu!
+|=|no_donations_found_for :=: No non-delivered item-donations found for username
+|=|no_such_addr :=: No such addressee
+|=|none :=: None
+|=|nonewpost :=: There is no new post
+|=|not_copy_realm_choose_other :=: Please choose another realm, this realm does not have the Copy-To-Another-Realm feature. Choose a realm below:
+|=|not_have_secretq :=: You have not set your secret questions, it's recommended you do this so you can recover your account!
+|=|not_require_loggedin :=: You need to be logged out to use this function.
+|=|not_support_inline_frames :=: Your browser does not support inline frames.
+|=|notreadsubject :=: Subject not read
+|=|notselected :=: Not selected
+|=|now_logged_in :=: You are now logged in.
+|=|off_hand :=: Off hand
+|=|off_misc :=: Off (Misc)
+|=|one_hand :=: One hand
+|=|online :=: are online
+|=|onlinelist_on :=: Switch online list on (1-yes/0-no)
+|=|open :=: Open
+|=|Orc :=: 오크
+|=|order :=: order
+|=|other :=: Other
+|=|other_info :=: Other information
+|=|outbox :=: Outbox
+|=|page :=: Page
+|=|pagegenerated :=: Page generated in
+|=|Paladin :=: Paladin
+|=|PARRY_RATING :=: Parry
+|=|parts :=: Parts
+|=|pass :=: Password
+|=|paste_to_message :=: Add to message
+|=|permanent :=: 영구
+|=|pers_mess :=: PM
+|=|personal_message :=: 개인 쪽지함
+|=|personal_messages :=: 개인 쪽지함
+|=|physical_dmg :=: 물리
+|=|plate :=: 판금
+|=|playermap :=: 지도 보기
+|=|players_all :=: 모든 플레이어
+|=|players_online :=: 접속한 플레이어
+|=|polearm :=: 폴암
+|=|poor :=: Poor
+|=|post_all :=: All
+|=|post_editted_by :=: Post editted by
+|=|post_for :=: For
+|=|post_from :=: 발신
+|=|post_none :=: None
+|=|post_pages :=: pages
+|=|post_read :=: Read
+|=|post_reply :=: Reply
+|=|post_reply_to :=: Reply to
+|=|post_subj :=: 제목
+|=|post_view :=: Reading message
+|=|postclose :=: Forum close
+|=|posted :=: 작성자
+|=|posts_per_page :=: Posts per page (forum)
+|=|posts_per_star1 :=: Min posts for rank 1
+|=|posts_per_star2 :=: Min posts for rank 2
+|=|posts_per_star3 :=: Min posts for rank 3
+|=|posts_per_star4 :=: Min posts for rank 4
+|=|posts_per_star5 :=: Min posts for rank 5
+|=|potion :=: 물약
+|=|presents :=: Presents
+|=|Priest :=: 사제
+|=|profile :=: Profile
+|=|projectile :=: Projectile
+|=|quest :=: 퀘스트
+|=|quest_item :=: 퀘스트 아이템
+|=|quicklink1 :=: 계정 생성
+|=|quicklink2 :=: 계정 관리
+|=|quicklink3 :=: 렐름 상태
+|=|quicklink4 :=: FAQ Site
+|=|quicklink6 :=: 특성
+|=|quicklink7 :=: 게임 명령어
+|=|quicklink8 :=: 플레이어 위치
+|=|quicklinks :=: 즐겨찾기
+|=|quiver :=: Quiver
+|=|quote :=: quote
+|=|race :=: 종족
+|=|random_screen :=: Random Screenshot
+|=|ranged :=: Ranged
+|=|RANGED_CA_RATING :=: Ranged Crit Avoid
+|=|RANGED_CS_RATING :=: Ranged Crit
+|=|RANGED_HA_RATING :=: Ranged Hit Avoid
+|=|RANGED_HASTE_RATING :=: Ranged Haste
+|=|RANGED_HIT_RATING :=: Ranged Hit
+|=|rank :=: 랭크
+|=|rare :=: 레어
+|=|rating :=: 점수
+|=|rating_by :=: Rating by
+|=|readsubject :=: Subject read
+|=|reagent :=: Reagent
+|=|realm_name :=: 렐름명
+|=|realm_status :=: 렐름 상태
+|=|realm_status_forum :=: 렐름 상태 게시판
+|=|realms_manage :=: 렐름
+|=|realms_status :=: 렐름 상태
+|=|realmstatus_desc :=: This page lists all available World of Warcraft Realms as well as the status of each.  A Realm can be listed as either [up] or [down]. Messages related to 렐름 상태 and scheduled maintenance will be posted in the [realm_status_forum]. Let us apologize in advance if your Realm is listed as down. Chances are we're working diligently to bring it back online as quickly as possible.
+|=|recipe :=: 제조법
+|=|recount :=: 토픽/게시물 요약
+|=|redirecting_wait :=: 리디렉션하는 동안 잠시 기다려 주십시오...
+|=|ref_fail :=: 회원가입 실패
+|=|reg_acclimit :=: 해당 IP에 대해 더 이상 계정을 등록할 수 없습니다.
+|=|reg_checkcpass :=: 비밀번호가 일치하지 않습니다
+|=|reg_checkemail :=: 유효한 이메일 주소를 입력하세요
+|=|reg_checkemailex :=: 해당 이메일 주소는 다른 계정에서 사용 중입니다
+|=|reg_checklogin :=: Enter a username between %d and %d characters (latin characters &amp; numbers only)
+|=|reg_checkloginex :=: That username has already been taken
+|=|reg_checkpass :=: Enter a password between %d and %d characters
+|=|reg_key :=: 등록 키
+|=|reg_succ :=: 등록이 완료되었습니다. 지금부터 접속할 수 있습니다.
+|=|register :=: 회원 가입
+|=|regkeys_manage :=: 등록 키
+|=|replies :=: 답변
+|=|reply :=: 댓글
+|=|req_reg_act :=: Require account activation through email (1-yes/0-no)
+|=|req_reg_invite :=: Switch on invitation system/inv keys per acc (like gmail) (0-disabled) | Requires "account activation"&amp;"key for register"
+|=|req_reg_key :=: Require key to register (1-yes/0-no)
+|=|require_loggedin :=: You need to be logged in to use this function.
+|=|res_arcane :=: Arcane Resistance
+|=|res_fire :=: Fire Resistance
+|=|res_frost :=: Frost Resistance
+|=|res_holy :=: Holy Resistance
+|=|res_nature :=: Nature Resistance
+|=|res_shadow :=: Shadow Resistance
+|=|reset :=: Reset
+|=|reset_succ_secretq :=: You just reset your secret questions. Please note that it's recommended that you have secret questions set for your account.
+|=|RESILIENCE_RATING :=: 저항
+|=|restore_pass_ok :=: 귀하의 세부 정보가 변경되었습니다. 아래에서 새 비밀번호를 확인하세요. 비밀번호를 빠르게 변경하는 것이 좋습니다!
+|=|retrieve_pass :=: 비밀번호 복구
+|=|retrieve_pass_fail :=: 잘못된 계정 또는 이메일입니다.
+|=|retrieve_pass_succ :=: 성공! 새로운 비밀번호가 귀하의 이메일 주소로 발송되었습니다.
+|=|reward_instant :=: 보상은 즉시 캐릭터에게 전송됩니다. 아직 보상을 받지 못하셨나요? 걱정하지 마세요. 게임에서 로그아웃했다가 다시 로그인하세요.
+|=|rifle :=: 라이플
+|=|robe :=: 로브
+|=|rod :=: Enchanter\'s Rod
+|=|Rogue :=: 도적
+|=|rs_days :=: 일
+|=|rs_hours :=: 시
+|=|rs_minutes :=: 분
+|=|rs_seconds :=: 초
+|=|rules :=: 서버 규칙
+|=|rules_agreement :=: Rules &amp; Agreement
+|=|rules_desc :=: These are the server rules that you agree to abide by while playing on our servers. Failure to follow these rules may result in you account being banned.
+|=|screen :=: Screenshots
+|=|screenshots :=: Screenshots
+|=|scroll :=: Scroll
+|=|search :=: Search
+|=|secretq :=: 비밀번호 찾기 질문
+|=|secretq_info :=: Requirements for adding secret questions
+|=|secretq_info_bothfields :=: You must fill in both answer and question fields
+|=|secretq_info_mincharacters :=: Answer must be 4 character or more
+|=|secretq_info_nosymbols :=: Answer must not contain symbols
+|=|select_name :=: Select name
+|=|send_pm_to :=: Send a PM to
+|=|server :=: 서버
+|=|serverinfo :=: 서버 정보
+|=|shadow_dmg :=: 어둠
+|=|Shaman :=: 주술사
+|=|shield :=: 방패
+|=|SHIELD_BLOCK_RATING :=: 블럭
+|=|shirt :=: 셔츠
+|=|shoulder :=: 어깨
+|=|show :=: Show
+|=|si_acc :=: 계정
+|=|si_active_acc :=:  (%d Active)
+|=|si_chars :=: 캐릭터
+|=|si_droprate :=: Drop rates
+|=|si_droprate_items_artifact :=: Artifact Items
+|=|si_droprate_items_epic :=: Epic Items
+|=|si_droprate_items_legendary :=: Legendary Items
+|=|si_droprate_items_normal :=: Normal Items
+|=|si_droprate_items_poor :=: Poor Items
+|=|si_droprate_items_rare :=: Rare Items
+|=|si_droprate_items_referenced :=: Referenced Items
+|=|si_droprate_items_uncommon :=: Uncommon Items
+|=|si_droprate_money :=: Money
+|=|si_exprate :=: Experience rates
+|=|si_exprate_explore :=: Explore
+|=|si_exprate_kill :=: Kill
+|=|si_exprate_quest :=: Quest
+|=|si_ip :=: 서버 IP
+|=|si_lang :=: 언어
+|=|si_name :=: 렐름명
+|=|si_on :=: 서버 온
+|=|si_pop :=: 이용자 수
+|=|si_regrate :=: Regeneration rates
+|=|si_regrate_health :=: Health
+|=|si_regrate_mana :=: Mana
+|=|si_restrate :=: Resting Rates
+|=|si_restrate_city :=: City or Tavern
+|=|si_restrate_ingame :=: In Game
+|=|si_restrate_wild :=: In wilderness
+|=|si_skillvalue :=: Skill chance values
+|=|si_skillvalue_green :=: green
+|=|si_skillvalue_grey :=: grey
+|=|si_skillvalue_orange :=: orange
+|=|si_skillvalue_yellow :=: yellow
+|=|si_status :=: 서버 상태
+|=|si_type :=: 타입
+|=|signature :=: 서명
+|=|site_config :=: Site Settings
+|=|site_cookie :=: Site Cookies name
+|=|site_email :=: Site email address ("from")
+|=|site_encoding :=: Site encoding
+|=|site_register :=: Register on or off (0=off, 1=on)
+|=|site_title :=: Site title
+|=|size :=: Size
+|=|size_summary :=: Size summary
+|=|slots :=: Slots
+|=|smiles_path :=: Path to smile's directory
+|=|smtgtosay :=:  Have something to say?
+|=|smtp_adress :=: smtp server
+|=|smtp_password :=: smtp server - password
+|=|smtp_username :=: smtp server - login
+|=|socket_blue :=: Blue Socket
+|=|socket_bonus :=: Socket Bonus
+|=|socket_meta :=: Meta Socket
+|=|socket_red :=: Red Socket
+|=|socket_yellow :=: Yellow Socket
+|=|soul_shards :=: Soul Shards
+|=|soul_stone :=: Soul Stone
+|=|spear :=: Spear
+|=|speed :=: Speed
+|=|SPELL_CA_RATING :=: Spell Crit Avoid
+|=|spell_coh :=: Chance On Hit
+|=|SPELL_CS_RATING :=: Spell Crit
+|=|spell_equip :=: Equip
+|=|SPELL_HA_RATING :=: Spell Hit Avoid
+|=|SPELL_HASTE_RATING :=: Spell Haste
+|=|SPELL_HIT_RATING :=: Spell Hit
+|=|spell_use :=: Use
+|=|spirit :=: Spirit
+|=|ssotd :=: Screenshot of the Day
+|=|staff :=: Staff
+|=|stamina :=: Stamina
+|=|standing :=: Standing
+|=|static_docs :=: Static documents
+|=|statistic :=: 통계
+|=|status :=: Status
+|=|sticky :=: Sticky
+|=|strength :=: Strength
+|=|subject :=: 제목
+|=|sure_q :=: Are you sure?
+|=|sword_1h :=: Sword (One Handed)
+|=|sword_2h :=: Sword (Two Handed)
+|=|tabard :=: Tabard
+|=|tailoring_pattern :=: Tailoring Pattern
+|=|talent_import :=: Import from Blizzard calculator
+|=|talent_index :=: Index of Tree of Talents
+|=|talent_print :=: Printable version
+|=|talent_summary :=: Summary
+|=|talents :=: Talents
+|=|Tauren :=: Tauren
+|=|tbc :=: TBC
+|=|teamspeak :=: Teamspeak
+|=|spp_discord :=: SPP 디스코드
+|=|bots_discord :=: Mangosbot 디스코드
+|=|text :=: Text
+|=|theme :=: Theme
+|=|thrown :=: Thrown
+|=|time :=: 시간
+|=|title :=: 제목
+|=|today_at :=: Today at
+|=|tome :=: Tome
+|=|topic :=: Topic
+|=|topic_created :=: Topic created
+|=|topics_per_page :=: Topics per page (forum)
+|=|Totalingallery :=: Total images in galleries
+|=|totem :=: Totem
+|=|trade_goods :=: Trade Goods
+|=|transfer_nowork :=: In This Revision Of MangosWeb, Character Transfer Is Not Working
+|=|trinket :=: 장신구
+|=|Troll :=: 트롤
+|=|ts_display :=: Teamspeakstatus on or off (0=off, 1=on)
+|=|ts_ip :=: Teamspeak IP Adress
+|=|ts_port_udp :=: Teamspeak UDP Port
+|=|two_hand :=: Two Hand
+|=|type :=: Type
+|=|uncommon :=: Uncommon
+|=|Undead :=: 언데드
+|=|unique :=: Unique
+|=|up :=: Up
+|=|up_banned :=: Reason: Banned
+|=|up_notallowed :=: You are not allowed to upload files!
+|=|upload :=: Upload
+|=|uploadavatar :=: Upload avatar
+|=|uploaddblclk :=: Double click to insert
+|=|Uploaderror :=: Upload file error
+|=|uptime :=: 업타임
+|=|UScreen :=: Upload Screenshot
+|=|user_name :=: User name
+|=|userlist :=: Userlist
+|=|username :=: 계정명
+|=|useronhp :=: Users on Homepage
+|=|users_manage :=: Users
+|=|users_per_page :=: Users per page
+|=|UWallp :=: Upload Wallpaper
+|=|view_profile :=: View profile
+|=|viewcharacter :=: View character
+|=|viewedit_profile :=: View/Edit profile
+|=|viewlogs :=: View logs
+|=|views :=: 조회수
+|=|vote :=: Vote System
+|=|vote_acct :=: Vote Reward System Account Details
+|=|vote_alreadyvoted :=: You have already voted!
+|=|vote_apt :=: Account Points Today:
+|=|vote_balance :=: Current Balance:
+|=|vote_change :=: In order to change your current character, you need to use the 'Character menu' at the top of the page and most likly need to refresh your browser.
+|=|vote_curacct :=: Current Account
+|=|vote_curchar :=: Current Character
+|=|vote_desc :=: Please vote daily to earn our server reputaion help us grow in population!
+|=|vote_desc1 :=: Please vote daily to earn our server reputaion help us grow in population. Voting daily earns you points to spend on in-game goodies!
+|=|vote_hack :=: Players that try to cheat or hack the Vote Reward System will be banned.
+|=|vote_image :=: Vote for this image
+|=|vote_keep :=: Please keep in mind:
+|=|vote_links :=: Vote links
+|=|vote_loggedin :=: Make sure you are logged in the main website before voting. Failure to do so could result in a loss of points!!
+|=|vote_login1 :=: Vote System Login
+|=|vote_login2 :=: Make Sure You Are Logged Into The Mainsite!
+|=|vote_points :=: Vote Points
+|=|vote_reward :=: If the rewards panel isnt showing up, Be sure you have a character selected.
+|=|vote_submit_reward :=: After submitting a reward, look under &quot;current character:&quot; in between the &quot;voting sites&quot; table and &quot;rewards table&quot; for server-side verification that your reward was sent to your character.
+|=|vote_success :=: Voting successful!
+|=|vote_system :=: Vote System
+|=|wallp :=: Wallpapers
+|=|wand :=: Wand
+|=|Warlock :=: 흑마법사
+|=|warn_email :=: Without a valid e-mail address you cannot register! An e-mail will be sent to the address provided containing an activation key.
+|=|Warrior :=: 전사
+|=|weapon :=: 무기
+|=|website_forum_support :=: Website Forum Support
+|=|when :=: When
+|=|where :=: Where
+|=|wherefrom :=: From
+|=|who :=: Who
+|=|whoisonline :=: Who is online
+|=|wotlk :=: WOTLK
+|=|wrath :=: Wrath Of The Lich King
+|=|wrist :=: Wrist
+|=|write :=: Write
+|=|yes :=: Yes
+|=|yesterday_at :=: Yesterday at
+|=|youhavenorights :=: You do not have sufficient rights to view this page!
+|=|choose_site :=: Choose a site to vote in
+|=|voting_sites :=: Voting Sites
+|=|voted :=: Voted
+|=|points :=: Points
+|=|points2 :=: points
+|=|choose :=: Choose
+|=|onlinealt :=: 온라인
+|=|offline :=: 오프
+|=|available_awards :=: Available Awards
+|=|mail_subject :=: From the vote system
+|=|mail_message :=: Thank you for your votes!
+|=|was_given :=: It was given
+|=|to :=: to
+|=|not_voted_yet :=: You have not voted yet
+|=|last_vote :=: Your last vote was before
+|=|voting_period :=: You can vote once every
+|=|hours_per :=: hours per website
+|=|sites_reset_after :=: The 'Voted' ticks will be set to 'No' in
+|=|vote_limit_reached :=: You have reached the daily vote limit for this account.
+|=|vote_tomorrow :=: You can vote tomorrow.
+|=|available_chars :=: Available Characters
+|=|choose_char_for_reward :=: Choose a character for rewarding
+|=|customize_desc1 :=: This is where you have the option to re-customize your character. How this  works is, at next login, you will be prompted to customize your character. You can change
+his/her gender, name, and and his/her looks.
+|=|customize_desc2 :=: Only re-customize 1 character at a time (per login). Multiple customizations will lock your account!
+|=|rename_desc1 :=: If you characters name doesnt change right away, but you recieved a success message, Make sure you <u>DO NOT</u> refresh your screen. Leave the page and come back again.

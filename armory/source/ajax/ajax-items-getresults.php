@@ -9,19 +9,62 @@ else
 		$do_query = 1;
 	else
 		$do_query = 0;
+
+	$isUpgrades = false;
 }
 if($do_query)
 {
+    $doquery_pls_gm = array();
+    if ($_GET["searchType"] == "items")
+    {
+        $doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item_search` WHERE `item_name` LIKE '%".change_whitespace($SearchQuery)."%' AND `mangosdbkey` = ".$realms[REALM_NAME][2]);
+    }
+    else if ($_GET["searchType"] == "upgrades")
+    {
+        $isUpgrades = true;
+        $itemScores = array();
+        $specId = $_GET["specId"];
+        $maxLevel = $_GET["level"];
+        $itemInfo = execute_query("bots", "SELECT `slot`, `scale_".$specId."` as `statvalue` FROM `ai_playerbot_item_info_cache` WHERE `id` = '".$SearchQuery."'", 1);
+        if ($itemInfo)
+        {
+            //echo $itemInfo["slot"];
+            //echo $itemInfo["statvalue"];
+            $itemUpgrades = execute_query("bots", "SELECT `id`, `scale_".$specId."` as `statvalue` FROM `ai_playerbot_item_info_cache` WHERE `scale_".$specId."` > ".$itemInfo["statvalue"]." AND `slot` = '".$itemInfo["slot"]."' AND `minlevel` <= '".$maxLevel."' AND `minlevel` >= '".($maxLevel - round(5 + (80 - $maxLevel) / 10))."' ORDER by `scale_".$specId."` ASC");
+            $itemUpgrades = array_slice($itemUpgrades, 0, 99);
+            //echo count($itemUpgrades);
+            //print $itemUpgrades;
+            $itemUpgradeIdsArray = array();
+            foreach ($itemUpgrades as $item)
+            {
+                $itemUpgradeIdsArray[] = $item["id"];
+                $itemScores[$item["id"]] = $item["statvalue"];
+            }
+            $itemUpgradeIdsArray[] = $SearchQuery;
+            $itemScores[$SearchQuery] = $itemInfo["statvalue"];
+            $itemUpgradeIds = implode(",", $itemUpgradeIdsArray);
+
+            $doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item_search` WHERE `item_id` IN (".$itemUpgradeIds.") AND `mangosdbkey` = ".$realms[REALM_NAME][2]);
+
+            /*foreach ($itemUpgradeIdsArray as $itemId)
+            {
+                $doquery_pls_gm[] = execute_query("armory", "SELECT * FROM `cache_item_search` WHERE `item_id`='".$itemId."' AND `mangosdbkey` = ".$realms[REALM_NAME][2], 1);
+            }*/
+            //print $itemUpgradeIds;
+            //$doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item_search` WHERE `item_id` IN (".$itemUpgradeIds.") AND `mangosdbkey` = ".$realms[REALM_NAME][2]);
+        }
+    }
+    //echo count($doquery_pls_gm);
 	//switchConnection("armory", REALM_NAME);
-	$doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item_search` WHERE `item_name` LIKE '%".change_whitespace($SearchQuery)."%' AND `mangosdbkey` = ".$realms[REALM_NAME][2]);
 	$TotalCachedItems = ($doquery_pls_gm ? count($doquery_pls_gm) : 0);
 	$item_search_cache = array();
 	if ($TotalCachedItems)
     {
         foreach ($doquery_pls_gm as $result_pls_gm)
         {
+            //echo $result_pls_gm["item_id"];
             $item_search_cache[$result_pls_gm["item_id"]] = $result_pls_gm;
-            $Items[] = array($result_pls_gm["item_id"], $result_pls_gm["item_name"], $result_pls_gm["item_level"], $result_pls_gm["item_source"], $result_pls_gm["item_relevance"]);
+            $Items[] = array($result_pls_gm["item_id"], $result_pls_gm["item_name"], $result_pls_gm["item_level"], $result_pls_gm["item_source"], ($isUpgrades ? $itemScores[$result_pls_gm["item_id"]] : $result_pls_gm["item_relevance"]));
         }
     }
 	//while($result_pls_gm = mysql_fetch_assoc($doquery_pls_gm))
@@ -30,10 +73,27 @@ if($do_query)
 	//	$Items[] = array($result_pls_gm["item_id"], $result_pls_gm["item_name"], $result_pls_gm["item_level"], $result_pls_gm["item_source"], $result_pls_gm["item_relevance"]);
 	//}
 	//switchConnection("mangos", REALM_NAME);
-	if($config["locales"])
-		$ItemsQuery = execute_query("world", "SELECT `entry` FROM `locales_item` WHERE `name_loc".$config["locales"]."` LIKE '%".change_whitespace($SearchQuery)."%'");
-	else
-		$ItemsQuery = execute_query("world", "SELECT `entry` FROM `item_template` WHERE `name` LIKE '%".change_whitespace($SearchQuery)."%'");
+    if (!$isUpgrades)
+    {
+        if($config["locales"])
+            $ItemsQuery = execute_query("world", "SELECT `entry` FROM `locales_item` WHERE `name_loc".$config["locales"]."` LIKE '%".change_whitespace($SearchQuery)."%'");
+        else
+            $ItemsQuery = execute_query("world", "SELECT `entry` FROM `item_template` WHERE `name` LIKE '%".change_whitespace($SearchQuery)."%'");
+    }
+    else if ($isUpgrades)
+    {
+        $ItemsQuery = array();
+        if($config["locales"])
+        {
+            foreach ($itemUpgradeIdsArray as $itemId)
+                $ItemsQuery[] = execute_query("world", "SELECT `entry` FROM `locales_item` WHERE `entry`='".$itemId."'", 1);
+        }
+        else
+        {
+            foreach ($itemUpgradeIdsArray as $itemId)
+                $ItemsQuery[] = execute_query("world", "SELECT `entry`, `name` FROM `item_template` WHERE `entry`='".$itemId."'", 1);
+        }
+    }
 	$TotalItems = ($ItemsQuery ? count($ItemsQuery) : 0);
 	if($TotalItems > $TotalCachedItems)
 	{
@@ -42,7 +102,7 @@ if($do_query)
             if(!isset($item_search_cache[$ItemInfo["entry"]]))
             {
                 $item_search_cache[$ItemInfo["entry"]] = cache_item_search($ItemInfo["entry"]);
-                $Items[] = array($ItemInfo["entry"], $item_search_cache[$ItemInfo["entry"]]["item_name"], $item_search_cache[$ItemInfo["entry"]]["item_level"], $item_search_cache[$ItemInfo["entry"]]["item_source"], $item_search_cache[$ItemInfo["entry"]]["item_relevance"]);
+                $Items[] = array($ItemInfo["entry"], $item_search_cache[$ItemInfo["entry"]]["item_name"], $item_search_cache[$ItemInfo["entry"]]["item_level"], $item_search_cache[$ItemInfo["entry"]]["item_source"], ($isUpgrades ? $itemScores[$ItemInfo["entry"]] : $item_search_cache[$ItemInfo["entry"]]["item_relevance"]));
             }
         }
 		//while($ItemInfo = mysql_fetch_assoc($ItemsQuery))
@@ -54,6 +114,14 @@ if($do_query)
 		//	}
 		//}
 	}
+    /*foreach ($Items as $item)
+    {
+        //echo ",".$item[4];
+        $item[4] = $itemScores[$item[0]];
+        //echo ",".$item[4];
+        //echo $item[3];
+        //$Data[3] = $itemScores[$Data["entry"]];
+    }*/
 	unset($item_search_cache);
 	if($TotalItems)
 	{
@@ -105,10 +173,10 @@ if($do_query)
 <p></p>
 </div>
 </td><td style="width: 5%;"></td>
-<td style="width: 35%;"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$PageNo,"&OrderBy=ItemName&OrderSort=",$OrderOppositeSort["ItemName"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["item_name"]," ",$OrderSymbol["ItemName"] ?></a></td>
-<td style="width: 20%;" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$PageNo,"&OrderBy=ItemLevel&OrderSort=",$OrderOppositeSort["ItemLevel"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["item_level"]," ",$OrderSymbol["ItemLevel"] ?></a></td>
-<td style="width: 25%;" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$PageNo,"&OrderBy=Source&OrderSort=",$OrderOppositeSort["Source"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["source"]," ",$OrderSymbol["Source"] ?></a></td>
-<td style="width: 15%;" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$PageNo,"&OrderBy=Relevance&OrderSort=",$OrderOppositeSort["Relevance"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["relevance"]," ",$OrderSymbol["Relevance"] ?></a></td><td align="right">
+<td style="width: 35%;"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,(isset($_GET["searchType"]) ? "&searchType=".urlencode($_GET["searchType"]) : ""),(isset($_GET["specId"]) ? "&specId=".urlencode($_GET["specId"]) : ""),(isset($_GET["level"]) ? "&level=".urlencode($_GET["level"]) : ""),"&page=",$PageNo,"&OrderBy=ItemName&OrderSort=",$OrderOppositeSort["ItemName"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["item_name"]," ",$OrderSymbol["ItemName"] ?></a></td>
+<td style="width: 20%;" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,(isset($_GET["searchType"]) ? "&searchType=".urlencode($_GET["searchType"]) : ""),(isset($_GET["specId"]) ? "&specId=".urlencode($_GET["specId"]) : ""),(isset($_GET["level"]) ? "&level=".urlencode($_GET["level"]) : ""),"&page=",$PageNo,"&OrderBy=ItemLevel&OrderSort=",$OrderOppositeSort["ItemLevel"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["item_level"]," ",$OrderSymbol["ItemLevel"] ?></a></td>
+<td style="width: 25%;" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,(isset($_GET["searchType"]) ? "&searchType=".urlencode($_GET["searchType"]) : ""),(isset($_GET["specId"]) ? "&specId=".urlencode($_GET["specId"]) : ""),(isset($_GET["level"]) ? "&level=".urlencode($_GET["level"]) : ""),"&page=",$PageNo,"&OrderBy=Source&OrderSort=",$OrderOppositeSort["Source"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo $lang["source"]," ",$OrderSymbol["Source"] ?></a></td>
+<td style="width: 15%;" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,(isset($_GET["searchType"]) ? "&searchType=".urlencode($_GET["searchType"]) : ""),(isset($_GET["specId"]) ? "&specId=".urlencode($_GET["specId"]) : ""),(isset($_GET["level"]) ? "&level=".urlencode($_GET["level"]) : ""),"&page=",$PageNo,"&OrderBy=Relevance&OrderSort=",$OrderOppositeSort["Relevance"],"&realm=",addslashes(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')"><?php echo ($isUpgrades ? "Item Score" : $lang["relevance"])," ",$OrderSymbol["Relevance"] ?></a></td><td align="right">
 <div>
 <b></b>
 </div>
@@ -118,7 +186,7 @@ if($do_query)
 		if(!isset($OrderSort))
 		{
 			$TheSortId = 4;
-			$TheSortType = 1;
+			$TheSortType = $isUpgrades ? 0 : 1;
 		}
 		else
 		{
@@ -131,6 +199,14 @@ if($do_query)
 			}
 			$TheSortType = $OrderSort == "DESC" ? 1 : 0;
 		}
+/*foreach ($Items as $item)
+{
+    //echo ",".$item[4];
+    $item[4] = $itemScores[$item[0]];
+    //echo ",".$item[4];
+    //echo $item[3];
+    //$Data[3] = $itemScores[$Data["entry"]];
+}*/
 		$Items = asort2d($Items, $TheSortId, $TheSortType, 4);
 		$Chunks = array_chunk($Items, $config["results_per_page_items"], 1);
 		$Items = $Chunks[($PageNo - 1)];
@@ -143,6 +219,8 @@ if($do_query)
 		$item_cache = array();
 		foreach ($doquery_pls_gm as $result_pls_gm)
             $item_cache[$result_pls_gm["item_id"]] = $result_pls_gm;
+		foreach ($item_cache as $item)
+		    $item["item_relevance"] = $itemScores[$item["item_id"]];
 		//while($result_pls_gm = mysql_fetch_assoc($doquery_pls_gm))
 		//	$item_cache[$result_pls_gm["item_id"]] = $result_pls_gm;
 		//switchConnection("armory", REALM_NAME);
@@ -161,7 +239,7 @@ if($do_query)
 			if(!isset($item_tooltip_cache[$Data[0]]))
 				cache_item_tooltip($Data[0]);
 ?>
-<tr>
+<tr<?php if ($Data[0] == $SearchQuery) {echo " class=\"data2\"";}?>>
 <td>
 <div>
 <p></p>
@@ -171,7 +249,7 @@ if($do_query)
 <td class="<?php echo $OrderSuffix["ItemName"] ?>"><span class="item-icon"><q><a class="rarity<?php echo $item_quality ?>" href="index.php?searchType=iteminfo&item=<?php echo $Data[0],"&realm=",REALM_NAME ?>" onMouseOut="hideTip();" onmouseover="showTip('<?php echo $lang["loading"] ?>'); showTooltip(<?php echo $Data[0],",",$realms[REALM_NAME][2] ?>)"><?php echo $Data[1] ?></a><strong class="rarityShadow<?php echo $item_quality ?>"><?php echo $Data[1] ?></strong></q></span></td>
 <td align="center" class="<?php echo $OrderSuffix["ItemLevel"] ?>"><q><?php echo $Data[2] ?></q></td>
 <td align="center" class="<?php echo $OrderSuffix["Source"] ?>"><q><?php echo $Data[3] ?></q></td>
-<td align="center" class="<?php echo $OrderSuffix["Relevance"] ?>"><q><?php echo $Data[4] ?></q></td>
+<td align="center" class="<?php echo $OrderSuffix["Relevance"] ?>"><q><?php echo ($isUpgrades ? $itemScores[$Data[0]] : $Data[4]) ?></q></td>
 <td align="right">
 <div>
 <b></b>
@@ -187,7 +265,7 @@ if($do_query)
 <span><span class=""><?php echo $lang["page"] ?>&nbsp;</span><span class="bold"><?php echo $PageNo ?></span><span class="">&nbsp;<?php echo $lang["of"] ?>&nbsp;</span><span class=""><?php echo $TotalPages ?></span></span>
 </div>
 <?php
-		echo BuildPageButtons($PageNo, $TotalPages, "?searchQuery=".$SearchQuery."&realm=".addslashes(REALM_NAME), "source/ajax/ajax-items-getresults.php")
+		echo BuildPageButtons($PageNo, $TotalPages, "?searchQuery=".$SearchQuery."&realm=".addslashes(REALM_NAME).(isset($_GET["searchType"]) ? "&searchType=".urlencode($_GET["searchType"]) : "").(isset($_GET["specId"]) ? "&specId=".urlencode($_GET["specId"]) : "").(isset($_GET["level"]) ? "&level=".urlencode($_GET["level"]) : ""), "source/ajax/ajax-items-getresults.php")
 ?>
 </div>
 <?php

@@ -6,6 +6,7 @@ error_reporting( E_ERROR | E_PARSE | E_WARNING ) ;
 ini_set('log_errors',TRUE);
 ini_set('html_errors',FALSE);
 ini_set( 'display_errors', '0' ) ;
+ini_set('error_log','../core/logs/error_log.txt');
 // TEST
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
@@ -24,6 +25,7 @@ $PagesArray = array(
 "guilds" => "guildlist.php",
 "guildinfo" => "guild-info.php",
 "items" => "itemlist.php",
+"upgrades" => "itemlist.php",
 "iteminfo" => "item-info.php",
 "arenateams" => "teamlist.php",
 "teaminfo" => "team-info.php",
@@ -142,7 +144,11 @@ var forum_link = '<?php echo $config["Forum_Link"] ?>';</script>
 <form id="historyStorageForm" method="GET">
 <textarea id="historyStorageField" name="historyStorageField"></textarea>
 </form>
-<script src="js/armory.js" type="text/javascript"></script><script src="js/dhtmlHistory.js" type="text/javascript"></script><script src="js/<?php echo LANGUAGE ?>/strings.js" type="text/javascript"></script>
+<script src="js/armory.js" type="text/javascript"></script>
+<script src="js/paging/items.js" type="text/javascript"></script>
+<script src="js/dhtmlHistory.js" type="text/javascript"></script>
+<script src="js/<?php echo LANGUAGE ?>/strings.js" type="text/javascript"></script>
+<script src="js/<?php echo LANGUAGE ?>/items.js" type="text/javascript"></script>
 <div id="loadingDiv">
 <div id="loadingDivInner">
 <div id="loadingDivAni">
@@ -165,9 +171,9 @@ var forum_link = '<?php echo $config["Forum_Link"] ?>';</script>
 <td width="50%"></td><td>
 <div class="deco">
     <?php
-    if (!isset($_GET["realm"]) || $realms[$_GET["realm"]][0] == 1)
+    if ($realms[REALM_NAME][0] == 1)
         echo "<a class=\"logo\" href=\"index.php\"><span>Mangos Blizzlike Armory</span></a>";
-    else if ($realms[$_GET["realm"]][0] == 2)
+    else if ($realms[REALM_NAME][0] == 2)
         echo "<a class=\"logo-tbc\" href=\"index.php\"><span>Mangos Blizzlike Armory</span></a>";
     else
         echo "<a class=\"logo-wotlk\" href=\"index.php\"><span>Mangos Blizzlike Armory</span></a>";
@@ -200,7 +206,7 @@ else
 	}
 	
 	if (getcookie2("cookieRealm")) {
-		searchRealm = getcookie2("cookieRealm");
+        searchRealm = "<?php echo DefaultRealmName ?>";//searchRealm = getcookie2("cookieRealm");
 	} else {
 		searchRealm = "<?php echo DefaultRealmName ?>";
 	}
@@ -541,6 +547,16 @@ require "source/".$PagesArray[REQUESTED_ACTION];
 	var elemtb3 = document.getElementById("toolBox_three");
 	var elemDoc = document.documentElement;
 
-</script><script src="shared/global/menu/<?php echo LANGUAGE ?>/menutree.js" type="text/javascript"></script><script src="shared/global/menu/menu132_com.js" type="text/javascript"></script><script src="js/<?php echo LANGUAGE ?>/menus.js" type="text/javascript"></script><script src="shared/global/third-party/sarissa/0.9.7.6/sarissa.js" type="text/javascript"></script><script src="shared/global/third-party/sarissa/0.9.7.6/sarissa_dhtml.js" type="text/javascript"></script><script src="js/ajaxtooltip.js" type="text/javascript"></script>
+  <?php
+          $exp = "vanilla";
+  if ($realms[REALM_NAME][0] == 1)
+      $exp = "vanilla";
+  else if ($realms[REALM_NAME][0] == 2)
+      $exp = "tbc";
+  else
+      $exp = "wotlk";
+  ?>
+
+</script><script src="shared/global/menu/<?php echo LANGUAGE ?>/menutree_<?php echo $exp ?>.js" type="text/javascript"></script><script src="shared/global/menu/menu132_com.js" type="text/javascript"></script><script src="js/<?php echo LANGUAGE ?>/menus.js" type="text/javascript"></script><script src="shared/global/third-party/sarissa/0.9.7.6/sarissa.js" type="text/javascript"></script><script src="shared/global/third-party/sarissa/0.9.7.6/sarissa_dhtml.js" type="text/javascript"></script><script src="js/ajaxtooltip.js" type="text/javascript"></script>
 </body>
 </html>

@@ -321,10 +321,14 @@ else
             if($allow_reg === true)
             {
                   $query=$DB->select("SELECT id, username FROM account WHERE LOWER(username)=LOWER('".$_SESSION['CA_u']."')");
-                  $queryb=$DB->select("SELECT id FROM account WHERE LOWER(email)=LOWER('".$_SESSION['CA_em']."')");
+                  if (strlen($_SESSION['CA_em']) > 1)
+                        $queryb=$DB->select("SELECT id FROM account WHERE LOWER(email)=LOWER('".$_SESSION['CA_em']."')");
 
-                  if (!$query and !$queryb and $_SESSION['CA_accountset']!="" and $_SESSION['CA_userset']!="" and $_SESSION['CA_valcode']!="" and !$err_array[1])
+                  if (!$query and ((strlen($_SESSION['CA_em']) > 1 && !$queryb) || strlen($_SESSION['CA_em']) < 1) and $_SESSION['CA_accountset']!="" and /*$_SESSION['CA_userset']!="" and $_SESSION['CA_valcode']!="" and */!$err_array[1])
                   {
+                        if (strlen($_SESSION['CA_nick']) < 1)
+                              $_SESSION['CA_nick'] = $_SESSION['CA_u'];
+
                         if ($auth->register(
                                 array(
                                     'username'=>strtoupper($_SESSION['CA_u']),
@@ -422,7 +426,7 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
       }
 } else if (strstr($_POST['update'],"userinfo")!=false and $_POST['save']=="true") {
 
-      if (strlen($_POST['fname']) < 1 or strlen($_POST['fname']) > 45) {
+      /*if (strlen($_POST['fname']) < 1 or strlen($_POST['fname']) > 45) {
             $err_array[] = "Invalid length on First Name field.<br>";
       } else {
             if (alphanum($_POST['fname'], false) == false) {
@@ -435,14 +439,14 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
             if (alphanum($_POST['lname'], false) == false) {
                   $err_array[] = "Invalid chars on Last Name field.<br>";
             }
-      }
-      if (strlen($_POST['city']) < 1 or strlen($_POST['city']) > 45) {
-            $err_array[] = "Invalid length on City field.<br>";
-      }
-      if (strlen($_POST['lo']) < 1) {
-            $err_array[] = "Invalid selected option on Country field.<br>";
-      }
-      if (strlen($_POST['em']) < 1 or strlen($_POST['em']) > 255) {
+      }*/
+      //if (strlen($_POST['city']) < 1 or strlen($_POST['city']) > 45) {
+      //      $err_array[] = "Invalid length on City field.<br>";
+      //}
+      //if (strlen($_POST['lo']) < 1) {
+      //      $err_array[] = "Invalid selected option on Country field.<br>";
+      //}
+      /*if (strlen($_POST['em']) < 1 or strlen($_POST['em']) > 255) {
             $err_array[] = "Invalid length on E-mail field.<br>";
       } else {
             if (valemail($_POST['em']) == false) {
@@ -453,11 +457,11 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
                         $err_array[] = "E-mail already exists.<br>";
                   }
             }
-      }
-      if (strlen($_POST['nick']) < 3 or strlen($_POST['nick']) > 16) {
-            $err_array[] = "Invalid length on Display Name field.<br>";
+      }*/
+      /*if (strlen($_POST['nick']) < 3 or strlen($_POST['nick']) > 16) {
+            $_POST['nick'] = $_POST['fname'];//$err_array[] = "Invalid length on Display Name field.<br>";
       } else {
-            if (alphanum($_POST['Display Name'], true, true, '_') == false) {
+            if (alphanum($_POST['nick'], true, true, '_') == false) {
                   $err_array[] = "Invalid chars on Display Name field.<br>";
             } else {
                   $query = $DB->selectCell("SELECT display_name FROM website_accounts WHERE LOWER(display_name)=LOWER('" . $_POST['nick'] . "')");
@@ -465,7 +469,7 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
                         $err_array[] = "Display Name already exists.<br>";
                   }
             }
-      }
+      }*/
       if (strlen($_POST['bd']) > 1) {
             if (valdate($_POST['bd']) == false) {
                   $err_array[] = "Invalid date on Birthday field.<br>";
@@ -505,7 +509,7 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
       }
 } else if (strstr($_POST['update'],"accountinfo")!=false and $_POST['save']=="true") {
 
-      if (strlen($_POST['u'])<3 or strlen($_POST['u'])>16) {
+      if (strlen($_POST['u'])<2 or strlen($_POST['u'])>16) {
             $err_array[] = "Invalid length on Account Name field.<br>";
       } else {
             if (alphanum($_POST['u'],true,true,'_')==false) {
@@ -517,7 +521,7 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
                   }
             }
       }
-      if (strlen($_POST['p'])<6 or strlen($_POST['p'])>16) {
+      if (strlen($_POST['p'])<2 or strlen($_POST['p'])>16) {
             $err_array[] = "Invalid length on Account Password field.<br>";
       } else {
             if (alphanum($_POST['p'],true,true,'_')==false) {
@@ -527,18 +531,18 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
                         $err_array[] = "Account and Verification Password fields must match.<br>";
                   } else {
                         if ($_POST['u']==$_POST['p']) {
-                              $err_array[] = "Account Name and Password fields must differ.<br>";
+                              //$err_array[] = "Account Name and Password fields must differ.<br>";
                         }
                   }
             }
       }
-      if ($_POST['ask']<1) {
+      /*if ($_POST['ask']<1) {
             $err_array[] = "Invalid selected option on Password Hint field.<br>";
       } else {
             if (strlen($_POST['ans'])<1 OR strlen($_POST['ans'])>255) {
                   $err_array[] = "Invalid length on Answer field.<br>";
             }
-      }
+      }*/
 
       if (!$err_array[1]) {
             $_SESSION['CA_u'] = $_POST['u'];
@@ -604,10 +608,10 @@ if ($_POST['update']=="valcode" and $_POST['save']=="true") {
 		  }
       
                   // Ext 3 - make sure password is not username
-                  if($_POST['r_login'] == $_POST['r_pass']) {
-                        $notreturn = TRUE;
-			$err_array[] = "Password cannot be the same as username.";
-                  }
+                  //if($_POST['r_login'] == $_POST['r_pass']) {
+                  //      $notreturn = TRUE;
+			//$err_array[] = "Password cannot be the same as username.";
+                //  }
       
                   // Main add.
                   if ($notreturn === FALSE){

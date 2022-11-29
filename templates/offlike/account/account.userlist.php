@@ -58,7 +58,9 @@ echo $lang['access_denied'];
     </tr>
     <?php ##foreach($items as $item){
         ##if(isset($items) && is_array($items))
-        
+
+    if (is_array($items))
+    {
        foreach ($items as $item) {
             ?>
         
@@ -74,7 +76,28 @@ echo $lang['access_denied'];
       <td class="windowbg" align="left"><?php echo isset($item['registered']) ? $item['registered'] : ''; ?></td>
       <td class="windowbg2" width="35"><?php echo isset($item['forums_posts']) ? $item['forums_posts'] : ''; ?></td>
     </tr>
-    <?php  } ?>
+    <?php  }
+    }
+    else if ($items)
+        {
+            $item = $items;
+            ?>
+
+            <tr style="text-align: center;">
+                <td class="windowbg2">
+                    <a href="index.php?n=account&sub=pms&action=add&to=<?php echo $item['username']; ?>" title="<?php echo $lang['personal_message'];?>"><img src="<?php echo $currtmp; ?>/images/icons/email.gif" alt="<?php echo $lang['pers_mess'];?>" align="middle"></a>
+                </td>
+                <td class="windowbg" align="left"><a href="index.php?n=account&sub=view&action=find&name=<?php echo $item['username']; ?>" title="<?php echo $lang['view_profile'];?> <?php echo $item['username']; ?>"><?php echo $item['username']; ?></a></td>
+                <td class="windowbg2"><?php if($item['hideemail']!=1){ ?><a href="mailto:<?php echo $item['email']; ?>"><img src="./<?php echo $currtmp; ?>/images/icons/email_open.gif" alt="[Email]" title="Email" border="0" /></a><?php } ?></td>
+                <td class="windowbg"><?php if($item['homepage'] && $item['homepage']!='http://'){ ?><a href="<?php echo $item['homepage']; ?>" target="_blank"><img src="<?php echo $currtmp; ?>/images/icons2/www.gif" alt="WWW" border="0" /></a><?php } ?></td>
+                <td class="windowbg2"><?php echo isset($item['icq']) ? $item['icq'] : ''; ?></td>
+                <td class="windowbg2"><?php echo isset($item['msn']) ? $item['msn'] : ''; ?></td>
+                <td class="windowbg" align="left"><?php echo isset($item['registered']) ? $item['registered'] : ''; ?></td>
+                <td class="windowbg2" width="35"><?php echo isset($item['forums_posts']) ? $item['forums_posts'] : ''; ?></td>
+            </tr>
+            <?php
+        }
+    ?>
     <tr>
       <td class="titlebg" colspan="8"><?php echo $lang['post_pages'];?>: <?php echo $pages_str; ?> </td>
     </tr>

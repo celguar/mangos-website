@@ -300,6 +300,7 @@ $lang = array(
 "yellow" => "Yellow",
 /* Search */
 "all_items" => "All Items",
+"upgrades" => "Upgrades",
 "arena_teams" => "Arena Teams",
 "arena_team_profiles" => "Arena Team Profiles",
 "arena_team_search" => "Arena Team Search",
@@ -366,5 +367,12 @@ $lang = array(
 "wrong_old_pass" => "Wrong Old Password",
 "wrong_user_pass" => "Wrong username or password",
 "wotlk" => "WotLK",
+"textDropRate" => "Drop Rate:",
+"textDR0" => "None",
+"textDR1" => "Extremely Low (1% - 2%)",
+"textDR2" => "Very Low (3% - 14%)",
+"textDR3" => "Low (15% - 24%)",
+"textDR4" => "Medium (25% - 50%)",
+"textDR5" => "High (51% - 99%)",
 );
 ?>

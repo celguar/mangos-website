@@ -22,7 +22,7 @@ else
         }
         else
         {
-            $StatQuery = execute_query("char", "SELECT `guid`, `name`, `race`, `class`, `level`, `gender`, `health`, `power1`, `power2`, `power3`, `power4`, `power5`, `totalKills`, `totalHonorPoints` as `totalHonor` FROM `characters` WHERE `name` = '".$request."'".exclude_GMs()." LIMIT 1", 1);
+            $StatQuery = execute_query("char", "SELECT `guid`, `name`, `race`, `class`, `level`, `gender`, `health`, `power1`, `power2`, `power3`, `power4`, `power5`, `totalKills`, `totalHonorPoints` as `totalHonor`, `chosenTitle` as `title` FROM `characters` WHERE `name` = '".$request."'".exclude_GMs()." LIMIT 1", 1);
         }
 		if(!$StatQuery)
 			$error = "Character ".$request." does not exist on realm ".REALM_NAME;
@@ -45,10 +45,43 @@ else
 	//$stat = assign_stats($data);
     $stat = assign_stats_new($data);
 	// switchConnection("characters", REALM_NAME);
+    $achievementPoints = GetCharacterAchievementPoints($stat["guid"]);
 	$guildid = execute_query("char", "SELECT `guildid` FROM `guild_member` WHERE `guid` = ".$stat["guid"], 2);
 	$stat["guild"] = $guildid ? $guildid : 0;
 	$race = GetNameFromDB($stat["race"], "dbc_chrraces");
 	$class = GetNameFromDB($stat["class"], "dbc_chrclasses");
+	$topTalents = 0;
+	$topTalent = 0;
+    for($i = 0; $i < 3; $i ++)
+    {
+        $tempTalent = talentCounting($stat["guid"], getTabOrBuild($stat["class"], "tab", $i));
+        if ($tempTalent > $topTalents)
+        {
+            $topTalents = $tempTalent;
+            $topTalent = $i;
+        }
+    }
+    $stat["topTalent"] = $topTalent;
+    //echo "top talent".$topTalent;
+	if ($data["title"])
+    {
+        $loctemp = LANGUAGE;
+        if ($loctemp == "en_us")
+            $loctemp = "en_gb";
+
+        $titleinfo = array();
+
+        if ($data["gender"] == 0) // male
+            $titleinfo = execute_query("armory", "SELECT title_M_".$loctemp." as `name`, `place` FROM `armory_titles` WHERE `id` = ".$data["title"], 1);
+        else
+            $titleinfo = execute_query("armory", "SELECT title_F_".$loctemp." as `name`, `place` FROM `armory_titles` WHERE `id` = ".$data["title"], 1);
+
+        if (count($titleinfo))
+        {
+            $stat["title_name"] = $titleinfo["name"];
+            $stat["title_place"] = $titleinfo["place"] == "prefix" ? 0 : 1;
+        }
+    }
 	$PagesCharArray = array(
 	"sheet" => "character-sheet.php",
 	"reputation" => "character-reputation.php",
@@ -126,7 +159,7 @@ var theCharName = "<?php echo $stat["name"] ?>";
 </ul>
 </div>
 <?php
-	if(CLIENT > 1)
+	if(CLIENT < 10)
 	{
 ?>
 <div class="select<?php echo $requested_char_action == "achievements" ? 1 : 0 ?>">
@@ -202,6 +235,9 @@ if(CLIENT > 1)
 <a class="avatar-position"><img src="images/portraits/<?php echo GetCharacterPortrait($stat["level"], $stat["gender"], $stat["race"], $stat["class"]) ?>" onmouseover="showTip('<?php echo $race," ",$class ?>')" onmouseout="hideTip()" ></a>
 <p>
 <div class="level-noflash"><?php echo $stat["level"],"<em>",$stat["level"] ?></em></div>
+    <?php if ($achievementPoints) { ?>
+        <a style="text-decoration: none!important;" onmouseover="showTip('<?php echo $lang["achievements"]; ?>')" onmouseout="hideTip()" href="index.php?searchType=profile&charPage=achievements&character=<?php echo $stat["name"]."&realm=".REALM_NAME ?>"><div class="level-noflash" style="position:relative;top:-30px;left:420px;margin-top:20px;width:67px;margin-left:-15px;padding-bottom:50px;background:url('images/achievements/point_shield.png') center no-repeat;"><?php echo $achievementPoints;?><em style="padding:14px;margin-top:-15px;"><?php echo $achievementPoints;?></em></div></a>
+<?php } ?>
 </p>
 </div>
 </div>
@@ -212,9 +248,9 @@ if(CLIENT > 1)
 <tr>
 <td>
 <h1>
-<span style="font-size: 16px;"><?php if ($stat["rank"]){?><img style="height: 22px;margin-top:-5px;margin-right: 4px;" src="images/icons/pvpranks/rank<?php echo $stat["rank"]?>.gif"><span style="margin:2px;">Rank <?php echo $stat["rank"]; }?></span></span>
+<span style="font-size: 16px;"><?php if ($stat["rank"]){?><img style="height: 22px;margin-top:-5px;margin-right: 4px;" src="images/icons/pvpranks/rank<?php echo $stat["rank"]?>.gif"><span style="margin:2px;"><?php echo $stat["rank_name"]; }?></span></span>
 </h1>
-<h2><?php echo $stat["name"] ?><span style="font-size: 16px; font-weight: normal"><!--, Guardian of Cenarius--></span></h2>
+<h2><?php if($stat["title_name"] && !$stat["title_place"]){echo $stat["title_name"]; echo " ";} echo $stat["name"]; if($stat["title_name"] && $stat["title_place"]){echo " "; echo $stat["title_name"];}?><span style="font-size: 16px; font-weight: normal"><!--, Guardian of Cenarius--></span></h2>
 <?php
 	if($stat["guild"])
 	{
@@ -236,9 +272,9 @@ if(CLIENT > 1)
 <tr>
 <td>
 <h1>
-    <span style="font-size: 16px; color: #fff7d2; margin-left:22px;"><?php if ($stat["rank"]){?><span style="margin:5px;margin-bottom:15px;">Rank <?php echo $stat["rank"]; }?></span></span>
+    <span style="font-size: 16px; color: #fff7d2; margin-left:22px;"><?php if ($stat["rank"]){?><span style="margin:5px;margin-bottom:15px;"><?php echo $stat["rank_name"]; }?></span></span>
 </h1>
-<h2><?php echo $stat["name"] ?><span style="font-size: 16px; font-weight: normal;  color: #fff7d2"><!--, Guardian of Cenarius--></span>
+<h2><?php if($stat["title_name"] && !$stat["title_place"]){echo $stat["title_name"]; echo " ";} echo $stat["name"]; if($stat["title_name"] && $stat["title_place"]){echo " "; echo $stat["title_name"];} ?><span style="font-size: 16px; font-weight: normal;  color: #fff7d2"><!--, Guardian of Cenarius--></span>
 </h2>
 <h3>
 <?php

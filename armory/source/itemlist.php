@@ -137,14 +137,25 @@ else
 ?>
 <div class="profile-wrapper">
 <blockquote>
+    <?php if ($_GET["searchType"] == "items") { ?>
 <b class="iitems">
+<?php }
+if ($_GET["searchType"] == "upgrades") { ?>
+<b class="iupgrade">
+<?php } ?>
 <h4>
 <a href="index.php"><?php echo $lang["armory_search"] ?></a>
 </h4>
-<h3><?php echo $lang["all_items"] ?></h3>
+    <?php
+if ($_GET["searchType"] == "upgrades") { ?>
+<h3><?php echo $lang["upgrades"] ?></h3>
+<?php } ?>
+    <?php if ($_GET["searchType"] == "items") { ?>
+<h3><?php echo $lang["items"] ?></h3>
+    <?php } ?>
 </b>
 </blockquote>
-<body onLoad="showResult('?searchQuery=<?php echo urlencode($_GET["searchQuery"]) ?>&realm=<?php echo urlencode(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')">
+<body onLoad="showResult('?searchQuery=<?php echo urlencode($_GET["searchQuery"]); echo "&searchType=".urlencode($_GET["searchType"]); if (isset($_GET["specId"])) {echo "&specId=".urlencode($_GET["specId"]);} if (isset($_GET["level"])) {echo "&level=".urlencode($_GET["level"]);}?>&realm=<?php echo urlencode(REALM_NAME) ?>', 'source/ajax/ajax-items-getresults.php')">
 <div id="ajaxResult">
 <span class="csearch-results-info"><?php echo $lang["search_result"] ?></span>
 </div>

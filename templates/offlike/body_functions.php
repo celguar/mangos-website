@@ -25,8 +25,8 @@ There are 8 menu blocks:
 
 function population_view($n) {
     global $lang;
-    $maxlow = 100;
-    $maxmedium = 200;
+    $maxlow = 200;
+    $maxmedium = 700;
     if($n <= $maxlow){
         return '<font color="green">' . $lang['low'] . '</font>';
     }elseif($n > $maxlow && $n <= $maxmedium){

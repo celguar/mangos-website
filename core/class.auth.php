@@ -150,8 +150,9 @@ class AUTH {
         //    $success = 0;
         //}
         if(empty($params['email'])){
-            output_message('alert','You did not provide your email');
-            $success = 0;
+            //output_message('alert','You did not provide your email');
+            //$success = 0;
+            $params['email'] = "";
         }
 
         if($success!=1) return false;
@@ -181,12 +182,13 @@ class AUTH {
                     $this->DB->query("INSERT INTO website_accounts SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
                 }
                 else {
-                    $account_extend['account_id'] = $acc_id;
-                    $account_extend['registration_ip'] = $_SERVER['REMOTE_ADDR'];
-                    $account_extend['activation_code'] = $tmp_act_key;
-                    $account_extend['theme'] = $params['expansion'];
+                    $this->DB->query("INSERT INTO website_accounts SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
+                    //$account_extend['account_id'] = $acc_id;
+                    //$account_extend['registration_ip'] = $_SERVER['REMOTE_ADDR'];
+                    //$account_extend['activation_code'] = $tmp_act_key;
+                    //$account_extend['theme'] = $params['expansion'];
 
-                    $this->DB->query("INSERT INTO website_accounts SET ?a", $account_extend);
+                    //$this->DB->query("INSERT INTO website_accounts SET ?a", $account_extend);
 //                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1='".mysql_real_escape_string($account_extend['secretq1'])."',secreta1='".mysql_real_escape_string($account_extend['secreta1'])."',secretq2='".mysql_real_escape_string($account_extend['secretq2'])."',secreta2='".mysql_real_escape_string($account_extend['secreta2'])."'",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
                     //$this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1=?s, secreta1=?s, secretq2=?s, secreta2=?s",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key,$account_extend['secretq1'], $account_extend['secreta1']);
                 }
@@ -207,11 +209,12 @@ class AUTH {
                 if ($account_extend == false){
                     $this->DB->query("INSERT INTO website_accounts SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
                 }else{
-                    $test_acc[account_id] = $acc_id;
-                    $account_extend['account_id'] = $acc_id;
-                    $account_extend['registration_ip'] = $_SERVER['REMOTE_ADDR'];
-                    $account_extend['theme'] = $params['expansion'];
-                    $this->DB->query("INSERT INTO website_accounts SET ?a", $account_extend);
+                    //$test_acc[account_id] = $acc_id;
+                    //$account_extend['account_id'] = $acc_id;
+                    //$account_extend['registration_ip'] = $_SERVER['REMOTE_ADDR'];
+                    //$account_extend['theme'] = $params['expansion'];
+                    //$this->DB->query("INSERT INTO website_accounts SET ?a", $account_extend);
+                    $this->DB->query("INSERT INTO website_accounts SET account_id=?d, registration_ip=?, activation_code=?",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
 //                    $this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1='".$account_extend['secretq1']."',secreta1='".$account_extend['secreta1']."',secretq2='".$account_extend['secretq2']."',secreta2='".$account_extend['secreta2']."'",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key);
                     //$this->DB->query("INSERT INTO account_extend SET account_id=?d, registration_ip=?, activation_code=?, secretq1=?s, secreta1=?s, secretq2=?s, secreta2=?s",$acc_id,$_SERVER['REMOTE_ADDR'],$tmp_act_key,$account_extend['secretq1'], $account_extend['secreta1'], $account_extend['secretq2'], $account_extend['secreta2']);
                 }
@@ -278,8 +281,8 @@ class AUTH {
     function getprofile($acct_id=false){
         $res = $this->DB->selectRow("
             SELECT * FROM account
-            LEFT JOIN account_extend ON account.id=website_accounts.account_id
-            LEFT JOIN account_groups ON website_accounts.g_id=website_account_groups.g_id
+            LEFT JOIN website_accounts ON account.id=website_accounts.account_id
+            LEFT JOIN website_account_groups ON website_accounts.g_id=website_account_groups.g_id
             WHERE id=?d",$acct_id);
         return RemoveXSS($res);
     }

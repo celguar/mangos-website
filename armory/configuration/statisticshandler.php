@@ -217,6 +217,18 @@ function assign_stats_new($data)
     $stat["kills"] = $data['totalKills'];
     $stat["honor"] = $data['totalHonor'];
     $stat["rank"] = $data['rank'] ? ($data['rank'] - 4) : 0;
+    if ($stat["rank"])
+    {
+        $loctemp = LANGUAGE;
+        if ($loctemp == "en_us")
+            $loctemp = "en_gb";
+
+        if (isAlliance($data["race"]))
+            $stat["rank_name"] = execute_query("armory", "SELECT title_M_".$loctemp." FROM `armory_titles` WHERE `id` = ".$stat["rank"], 2);
+        else
+            $stat["rank_name"] = execute_query("armory", "SELECT title_F_".$loctemp." FROM `armory_titles` WHERE `id` = (".$stat["rank"]." + 14)", 2);
+
+    }
     //$stat["arenapoints"] = $statistic_data[$defines["ARENAPOINTS"][CLIENT]];
     $stat["arenapoints"] = $data['aremaPoints'];
     $stat["gender"] = $data["gender"];
@@ -289,38 +301,61 @@ function assign_stats_new($data)
 function talentCounting($guid, $tab)
 {
 	$pt = 0;
-	//switchConnection("characters", REALM_NAME);
-	$resSpell = execute_query("char", "SELECT `spell` FROM `character_spell` WHERE `guid` = ".$guid." AND `disabled` = 0");
-	if($resSpell)
-	{
-	    foreach ($resSpell as $getSpell)
-            $spells[] = $getSpell["spell"];
-		//while($getSpell = mysql_fetch_assoc($resSpell))
-		//	$spells[] = $getSpell["spell"];
-		//switchConnection("armory", REALM_NAME);
-		$resTal = execute_query("armory", "SELECT `rank1`, `rank2`, `rank3`, `rank4`, `rank5` FROM `dbc_talent` WHERE `ref_talenttab` = ".$tab);
-		foreach ($resTal as $row)
-            $ranks[] = $row;
-		//while($row = mysql_fetch_assoc($resTal))
-		//	$ranks[] = $row;
-		foreach($ranks as $key => $val)
-		{
-			foreach($spells as $k => $v)
-			{
-				if(in_array($v, $val))
-				{
-					switch(array_search($v, $val))
-					{
-						case "rank1": $pt += 1; break;
-						case "rank2": $pt += 2; break;
-						case "rank3": $pt += 3; break;
-						case "rank4": $pt += 4; break;
-						case "rank5": $pt += 5; break;
-					}
-				}
-			}
-		}
-	}
+	if (CLIENT < 2)
+    {
+        $resSpell = execute_query("char", "SELECT `spell` FROM `character_spell` WHERE `guid` = ".$guid." AND `disabled` = 0");
+        if($resSpell)
+        {
+            foreach ($resSpell as $getSpell)
+                $spells[] = $getSpell["spell"];
+            //while($getSpell = mysql_fetch_assoc($resSpell))
+            //	$spells[] = $getSpell["spell"];
+            //switchConnection("armory", REALM_NAME);
+            $resTal = execute_query("armory", "SELECT `rank1`, `rank2`, `rank3`, `rank4`, `rank5` FROM `dbc_talent` WHERE `ref_talenttab` = ".$tab);
+            foreach ($resTal as $row)
+                $ranks[] = $row;
+            //while($row = mysql_fetch_assoc($resTal))
+            //	$ranks[] = $row;
+            foreach($ranks as $key => $val)
+            {
+                foreach($spells as $k => $v)
+                {
+                    if(in_array($v, $val))
+                    {
+                        switch(array_search($v, $val))
+                        {
+                            case "rank1": $pt += 1; break;
+                            case "rank2": $pt += 2; break;
+                            case "rank3": $pt += 3; break;
+                            case "rank4": $pt += 4; break;
+                            case "rank5": $pt += 5; break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+	else
+    {
+        $char_talents = execute_query("char", "SELECT `talent_id`, `current_rank` FROM `character_talent` WHERE `guid` = ".$guid);
+        if ($char_talents)
+        {
+            $talents = array();
+            foreach ($char_talents as $talent)
+                $talents[$talent["talent_id"]] = $talent["current_rank"] + 1;
+
+            $resTal = execute_query("armory", "SELECT `id` FROM `dbc_talent` WHERE `ref_talenttab` = ".$tab);
+            foreach ($resTal as $row)
+                $talentTab[$row["id"]] = $tab;
+
+            foreach ($talents as $id => $rank)
+            {
+                if ($talentTab[$id] == $tab)
+                    $pt += $rank;
+            }
+        }
+    }
+
 	return $pt;
 }
 //get a tab from TalentTab

@@ -10,6 +10,7 @@ function printMid(subArray) {
 	var theString = '<tr';
 	if (subArray[5][0] == 0)
 		theString += ' class = "data3"';
+	theString += '><td><div><p></p></div></td>';
 	theString += '><td><div><p><img src="images/pixel.gif" width="1" height="1" /></p></div></td>';
 	theString += '<td width="65%"><q'+ globalColSelected[1] +'><a href="index.php?searchType=profile'+ subArray[0][0] +'"><strong>'+ subArray[1] +'</strong></a></q>';
 	theString += '</td><td align="center" width="60"><q'+ globalColSelected[2] +'>'+ subArray[2] +'</q></td>';

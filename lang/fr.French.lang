@@ -1,0 +1,826 @@
+|=|accediting :=: Gestion de compte
+|=|access_denied :=: ACCÈS REFUSÉ! Connectez-vous pour voir ces informations.
+|=|account :=: Compte
+|=|account_activate :=: Activer le compte
+|=|account_create :=: Nouveau compte
+|=|account_manage :=: Mon compte
+|=|accountmanage_important :=: Paramètres de mot de passe et de courrier électronique.
+|=|accountmanange_intro :=: Bienvenue dans la gestion des comptes. Ici, vous pouvez modifier tous vos paramètres. Vous pouvez modifier votre mot de passe, votre e-mail, vos questions secrètes et même changer les noms de vos personnages ! Pour les transferts de personnage, veuillez consulter un administrateur ou un MJ.
+|=|act_succ :=: Activation réussie, vous pouvez entrer maintenant.
+|=|activation :=: Activation
+|=|active_ban :=: Active/Ban
+|=|add :=: Ajouter
+|=|Addimage :=: Ajouter une image
+|=|admin_forum :=: Forum
+|=|admin_panel :=: Dashboard Admin
+|=|agility :=: Agilité
+|=|agree :=: Accepter
+|=|agreeement_detailschange :=: Vous reconnaissez être le propriétaire de ce compte.
+|=|ah_alliance :=: Enchères Alliance
+|=|ah_auctionhouse :=: Hôtel des ventes
+|=|ah_blackwater :=: Ventes aux enchères Blackwater
+|=|ah_buyer :=: Acheteur
+|=|ah_buyout :=: Prix de rachat
+|=|ah_currentbid :=: Enchère actuelle
+|=|ah_expired :=: Expiré
+|=|ah_horde :=: Enchères de la Horde
+|=|ah_hours :=: h
+|=|ah_itemclass :=: Type
+|=|ah_itemname :=: Item
+|=|ah_minutes :=: m
+|=|ah_quantity :=: Qté.
+|=|ah_reset :=: (reset)
+|=|ah_seconds :=: s
+|=|ah_seller :=: Vendeur
+|=|ah_sortbyquality :=: (trier par qualité)
+|=|ah_time :=: Temps
+|=|alchemy_recipe :=: Recette d'alchimie
+|=|all :=: Tout
+|=|Alliance :=: Alliance
+|=|allowed_attachs :=: Extensions de pièces jointes autorisées
+|=|allowed_ext :=: Extensions autorisées
+|=|ammo :=: Munitions
+|=|ammo_pouch :=: Pochette de munitions
+|=|ar1 :=: Privé
+|=|ar10 :=: Lieutenant-commandant
+|=|ar11 :=: Commandant
+|=|ar12 :=: Maréchal
+|=|ar13 :=: Maréchal
+|=|ar14 :=: Grand Maréchal
+|=|ar2 :=: Caporal
+|=|ar3 :=: Sergent
+|=|ar4 :=: Sergent-chef
+|=|ar5 :=: Sergent-major
+|=|ar6 :=: Chevalier
+|=|ar7 :=: Chevalier-lieutenant
+|=|ar8 :=: Chevalier-Capitaine
+|=|ar9 :=: Chevalier-Champion
+|=|arcane_dmg :=: Arcane
+|=|are_you_sure :=: Es-tu sûr?
+|=|areonline :=: Utilisateurs actifs sur le serveur Web
+|=|armor :=: Armure
+|=|armorsets :=: Ensembles d'armure
+|=|armorsets_desc :=: Cette page montre certains des ensembles d'armures de haut niveau que les joueurs peuvent obtenir dans les donjons ou en accomplissant des quêtes. Des ensembles nouveaux et existants seront ajoutés à cette page régulièrement, alors revenez souvent.
+|=|armorsets2 :=: Ensembles d'armure de haut niveau
+|=|armory :=: L'armurerie
+|=|arrows :=: Projectile - Flèches
+|=|artifact :=: Artefact
+|=|attachs_path :=: Chemin d'accès au répertoire des pièces jointes
+|=|author :=: Auteur
+|=|avatar :=: Avatar
+|=|avatar_path :=: Chemin vers le répertoire de l'avatar
+|=|axe_1h :=: Hache (une main)
+|=|axe_2h :=: Hache (à deux mains)
+|=|back :=: Arrière
+|=|backup :=: Sauvegarde
+|=|bad_act_key :=: Clé d'activation incorrecte.
+|=|bad_mail :=: Adresse e-mail incorrecte
+|=|bad_reg_key :=: Vous n'avez pas fourni de clé valide
+|=|bag :=: Sac
+|=|bandage :=: Bandage
+|=|banner_display :=: Bannière activée ou désactivée (0=désactivée, 1=activée)
+|=|bc :=: Croisade ardente
+|=|belt :=: Ceinture
+|=|block :=: Bloquer
+|=|Bloodelf :=: Elfe de sang
+|=|boe :=: Lié lorsqu'il est équipé
+|=|book :=: Livre
+|=|bop :=: Lié une fois ramassé
+|=|bou :=: Lié lorsqu'il est utilisé
+|=|bow :=: Arc
+|=|BS_plans :=: Plans de forge
+|=|buckler :=: Bouclier
+|=|bugs :=: Traqueur de bogues
+|=|bugtracker :=: Notification de bogues
+|=|bullets :=: Projectile - Balles
+|=|byj_1 :=: Connexion au serveur
+|=|byj_2 :=: FAQ.
+|=|CA_RATING :=: Coup critique
+|=|cata :=: Cataclysme
+|=|categories :=: Categories
+|=|change_email :=: Autoriser les utilisateurs à changer d'adresse e-mail
+|=|change_email_button :=: Changer l'adresse email
+|=|change_mail :=: Succès! Ton adresse e-mail a été mise à jour.
+|=|change_pass :=: Autoriser les utilisateurs à changer de mot de passe
+|=|change_pass_short :=: Le mot de passe est trop court.
+|=|change_pass_succ :=: Succès! Ton mot de passe a été mis à jour.
+|=|change_template :=: Autoriser les utilisateurs à changer de modèle (1-oui/0-non)
+|=|change_your_info :=: Modifier vos informations
+|=|changed_secretq :=: Tu as réussi à modifier tes questions secrètes. Merci de t'en souvenir au cas où tu perds ton mot de passe.
+|=|char_manage :=: Outils de personnage
+|=|characters :=: Personnages
+|=|charcreate :=: Copier le caractère
+|=|charcreate_cannotcreatemorechars :=: Tu ne peux plus créer de personnages !
+|=|charcreate_charcreated :=: Ton personnage a été créé. Tu peux maintenant te connecter et jouer dessus. Profites bien.
+|=|charcreate_invalidname :=: Erreur : Nom invalide (Tu dois choisir un nom pour ton personnage). Réessayer.
+|=|charcreate_loggedin :=: Erreur : Ton compte est déjà connecté. Merci de te déconnecter avant d'utiliser cette fonctionnalité.
+|=|charcreate_nameinuse :=: Erreur : Nom invalide (Nom déjà utilisé). Réessayer.
+|=|charcreate_nameissymbols :=: Le nom est composé de caractères non autorisés.
+|=|charcreate_tomanychars :=: Tu as trop de personnages sur ton compte, merci de te connecter et de supprimer un personnage pour pouvoir en créer un autre dans la gestion du compte.
+|=|charcreate_underconstruction :=: Cette classe et cette race sont actuellement en cours d'élaboration, attends-toi à ce qu'elles soient disponibles dès que possible
+|=|charges :=: Des charges)
+|=|charname :=: Le nom du personnage
+|=|chars :=: Personnages
+|=|chartransfer :=: Outils de personnage
+|=|chat :=: Chat
+|=|chat_adminpass :=: Chat Adminpassword
+|=|chat_disable :=: L'administrateur du site Web a désactivé cette fonctionnalité
+|=|chat_display :=: Chat activé ou désactivé (0=désactivé 1=activé)
+|=|chat_manage :=: Configurer la discussion
+|=|chest :=: Coffre
+|=|choose_faction :=: Choisissez votre faction
+|=|choose_lang :=: Choisissez une langue
+|=|choose_realm :=: Choisissez votre royaume
+|=|choose_realmfaction :=: Cliquez ici pour sélectionner votre royaume et votre faction
+|=|class :=: Classe
+|=|classic :=: Classic WoW
+|=|close :=: Fermer
+|=|closed :=: Fermé
+|=|cloth :=: Tissu
+|=|combat_effect :=: CombatEffet
+|=|comm_header1 :=: N'oubliez pas de respecter toutes les règles du serveur ! Voici une liste de liens utiles à utiliser:
+|=|comm_header2 :=: Si vous avez des questions ou des préoccupations, n'oubliez pas de consulter le <a href="./index.php?n=forum">Forum</a><br /> et/ou le <a href="./index.php?n=forum&sub=viewforum&fid=6">FAQ Site</a>. Si vous devez contacter l'administrateur du site Web, envoyez simplement un <br />PM en utilisant l'option "Liste d'utilisateurs" du menu de navigation vers le webadmin <br />ou tout autre administrateur.
+|=|commands :=: Commandes
+|=|commands_manage :=: Modifier les commandes
+|=|comment :=: Commenter
+|=|common :=: Commun
+|=|components_manage :=: Composants
+|=|congratulations :=: Toutes nos félicitations
+|=|consumable :=: Consommable
+|=|contact :=: Contacts
+|=|contact_info :=: Coordonnées
+|=|context_menu :=: Menu contextuel
+|=|cooking_recipe :=: Recette de cuisine
+|=|copy_instructions :=: Pour copier un personnage, trouvez simplement le personnage que vous souhaitez copier et cliquez sur le bouton rouge "Copier le personnage" à côté de ce personnage.
+|=|copy_page_desc :=: cette page vous permet de copier un personnage de World of Warcraft sur votre royaume de serveur.
+|=|cpass :=: Confirmez le mot de passe
+|=|create_char :=: Créer un caractère
+|=|crossbow :=: Arbalète
+|=|CS_RATING :=: Coup critique
+|=|dagger :=: Coup critique
+|=|damage :=: Dommage
+|=|date :=: Date
+|=|date_reg :=: Date d'enregistrement
+|=|Death_Knight :=: Chevalier de la mort
+|=|debuginfo :=: Afficher les messages de débogage (1-oui/0-non)
+|=|default_component :=: Composant par défaut (page d'accueil)
+|=|DEFENCE_RATING :=: La défense
+|=|delavatar :=: Effacer?
+|=|delete :=: Effacer
+|=|delete_marked :=: Supprimer marqué
+|=|desired_name :=: Nom désiré
+|=|devices :=: Dispositifs
+|=|dh_kills :=: Tueries déshonorantes
+|=|disagree :=: Être en désaccord
+|=|dochange :=: Changer
+|=|doclose :=: Proche
+|=|docreate :=: Créer
+|=|dodelete :=: Effacer
+|=|DODGE_RATING :=: Esquive
+|=|doedit :=: Éditer
+|=|donate :=: Faire un don
+|=|donation_dup_error :=: Erreur de don en double !
+|=|donation_not_face_value :=: Nous avons découvert que l'article que vous avez acheté coûte plus cher que ce que vous avez réellement payé. Nous ne pouvons pas vous donner l'article, cependant merci pour le don. Si vous pensez qu'il s'agit d'une erreur, veuillez contacter l'administrateur.
+|=|donation_num :=: Don #
+|=|donation_page_desc :=: Informations sur le don : Faites un don et obtenez vos articles recherchés. Consultez nos forfaits ci-dessous.
+|=|donation_pick_character :=: Quel personnage devrait obtenir cet ou ces objets?
+|=|donewcat :=: Créer une nouvelle catégorie
+|=|donewforum :=: Créer un nouveau forum
+|=|doopen :=: Ouvert
+|=|doreset :=: Réinitialiser
+|=|doretrieve_pass :=: Récupérer mot de passe
+|=|dostick :=: Coller
+|=|dounstick :=: Décoller
+|=|doupdate :=: Mettre à jour
+|=|down :=: Vers le bas
+|=|download :=: Télécharger
+|=|download_times :=: Téléchargements
+|=|downloads :=: Téléchargements
+|=|Dranei :=: Draeneï
+|=|Druid :=: Druide
+|=|Dwarf :=: Nain
+|=|edit :=: Éditer
+|=|editing :=: Édition
+|=|editor_align :=: Aligner
+|=|editor_align_center :=: Centre
+|=|editor_align_justify :=: Justifier
+|=|editor_align_left :=: Gauche
+|=|editor_align_right :=: Droite
+|=|editor_backtoedit :=: Retour à l'édition
+|=|editor_bold :=: Gras
+|=|editor_clear :=: Nettoyer
+|=|editor_code :=: Code
+|=|editor_color :=: Couleur de la police
+|=|editor_color_blue :=: Bleu
+|=|editor_color_custom :=: Personnalisé
+|=|editor_color_green :=: Vert
+|=|editor_color_red :=: rouge
+|=|editor_email :=: Email
+|=|editor_image :=: Image
+|=|editor_italic :=: Italique
+|=|editor_link :=: Relier
+|=|editor_pagebreak :=: Ligne horizontale
+|=|editor_preview :=: Aperçu
+|=|editor_quote :=: Citation
+|=|editor_send :=: Envoyer
+|=|editor_strikethrough :=: Barré
+|=|editor_underline :=: Souligner
+|=|editpost :=: Post édition
+|=|edittopic :=: Édition de sujet
+|=|email :=: Email
+|=|email_retrieve_pass :=: Voici votre nouveau mot de passe : %s | S'il vous plaît, ne l'oubliez pas à l'avenir (écrivez-le ou quelque chose).
+|=|email_sent_act :=: Un e-mail a été envoyé à l'adresse fournie contenant une clé d'activation.
+|=|email_sent_keys :=: %d de nouvelles clés d'invitation ont été envoyées à votre adresse e-mail.
+|=|email_support :=: Assistance par mail
+|=|emailtext_inv_keys :=: Voici vos clés d'invitation : %s Vous pouvez les utiliser pour enregistrer plus de comptes ou partager avec d'autres personnes.
+|=|ench_formula :=: Formule enchanteresse
+|=|enchanting :=: Enchanteur
+|=|ENG_Schematic :=: Schéma d'ingénierie
+|=|engineering :=: Ingénierie
+|=|enter_as :=: Vous entrez comme
+|=|enter_name_and_pass :=: Entrez votre nom de compte et votre mot de passe.
+|=|epic :=: Épique
+|=|ErrorFilename :=: Une image avec ce nom de fichier existe déjà. Veuillez renommer votre fichier !
+|=|exotic_1h :=: Exotique (Une main)
+|=|exotic_2h :=: Exotique (à deux mains)
+|=|exp_select :=: Veuillez sélectionner votre extension
+|=|exp_set :=: Votre nouvelle extension d'occasion est prête !
+|=|explosives :=: Explosifs
+|=|FA_manual :=: Manuel de premiers secours
+|=|faction :=: Faction
+|=|fail_change_secretq :=: Les questions secrètes n'ont pas été modifiées. Veuillez lire les informations sur la façon dont les réponses aux questions secrètes doivent être formées.
+|=|fail_restore_pass :=: Vos informations sur la restauration du mot de passe n'étaient pas correctes.
+|=|faq :=: FAQ
+|=|feet :=: Pieds
+|=|female :=: Féminin
+|=|file :=: Document
+|=|files :=: Documents
+|=|files_summary :=: Résumé des fichiers
+|=|Filesizes :=: La taille du fichier ne doit pas dépasser
+|=|Filesizew :=: La taille du fichier ne doit pas dépasser 4 Mo
+|=|Filetype :=: Ce n'est pas le bon type de fichier
+|=|finger :=: Doigt
+|=|fire_dmg :=: Feu
+|=|fishing_manual :=: Manuel de pêche
+|=|fishing_pole :=: Canne à pêche
+|=|fist_weapon :=: Arme de poing
+|=|flashmap :=: Atlas mondial interactif
+|=|forbiden :=: Interdit
+|=|forgetpass :=: Mot de passe oublié?
+|=|format :=: Format
+|=|forum_archive :=: Nouvelles archivées
+|=|forum_general :=: Discussion générale
+|=|forum_help :=: Forums d'assistance
+|=|forum_index :=: Indice
+|=|spp_forum :=: SPP Forum
+|=|forum_nav :=: Navigation dans les forums
+|=|forum_news :=: Actualités
+|=|forum_support :=: Assistance sur les forums
+|=|forums :=: Forum
+|=|forums_manage :=: Forums
+|=|forums_support :=: Forums d'assistance
+|=|from :=: de
+|=|frost_dmg :=: Gel
+|=|gadgetzan :=: L'heure de Gadgetzan
+|=|galleries :=: Galeries de captures d'écran
+|=|gallery :=: Art
+|=|GallScreen :=: Galerie de captures d'écran
+|=|GallWalp :=: Galerie de fonds d'écran
+|=|game_guide :=: Guide du jeu
+|=|gems :=: Gemmes
+|=|gender :=: Genre
+|=|general_info :=: Informations générales
+|=|gloves :=: Gants
+|=|gm_online :=: MJ en ligne
+|=|gmlevel :=: Niveau d'accès
+|=|gmlist :=: Assistance en jeu
+|=|Gnome :=: Gnome
+|=|Goblin :=: Goblin
+|=|guild :=: Guild
+|=|guildname :=: Nom de guilde
+|=|guilds :=: Guildes
+|=|h_kills :=: Tueries honorables
+|=|HA_RATING :=: Appuyez sur Éviter
+|=|HASTE_RATING :=: Hâte
+|=|have_secretq :=: Vos questions de récupération ont été prise en compte !
+|=|have_you_forgot_pass :=: Avez-vous oublié votre mot de passe?
+|=|head :=: Diriger
+|=|health :=: Tête
+|=|healthstone :=: Pierre de foyer
+|=|herbs :=: Herbes
+|=|hidden :=:  [caché]
+|=|hide :=: Cacher
+|=|hideemail :=: Cacher l'e-mail?
+|=|hideprofile :=: Masquer le profil?
+|=|high :=: Haute
+|=|HIT_RATING :=: Frappé
+|=|hits :=: Visites de sites Web
+|=|holy_dmg :=: Sacré
+|=|homepage :=: WWW
+|=|honor :=: Honneur
+|=|honor_fighters :=: Combattants pour chaque faction.
+|=|honor_ranking :=: Classements PvP des royaumes
+|=|honor_top :=: Ici vous voyez en haut
+|=|Horde :=: Horde
+|=|howtoplay :=: Comment jouer
+|=|hr1 :=: Scout
+|=|hr10 :=: Champion
+|=|hr11 :=: Lieutenant général
+|=|hr12 :=: Général
+|=|hr13 :=: Chef militaire
+|=|hr14 :=: Haut seigneur de guerre
+|=|hr2 :=: Grunt
+|=|hr3 :=: Sergent
+|=|hr4 :=: Sergent-Senior
+|=|hr5 :=: Sergent chef
+|=|hr6 :=: Garde de pierre
+|=|hr7 :=: Garde de sang
+|=|hr8 :=: Légionnaire
+|=|hr9 :=: Centurion
+|=|Human :=: Humain
+|=|Hunter :=: Chasseur
+|=|icq :=: ICQ
+|=|idol :=: Idole
+|=|imap :=: Carte de l'Outreterre
+|=|improves :=: Améliore
+|=|inbox :=: Boîte de réception
+|=|intellect :=: Intelligence
+|=|intro_account_restore :=: Vous avez oublié votre mot de passe !? Lorsque nous avons dit « Gardez-le secret, gardez-le en sécurité », nous ne voulions pas que vous alliez aussi loin. Pour référence future, oublier complètement votre mot de passe est juste un peu trop secret pour être pratique. Eh bien, pas de soucis. Nous essaierons de vous le récupérer. Commencez par entrer votre nom de compte dans la case ci-dessous. Si vous avez également oublié votre nom de compte, contactez-nous via les forums ou en MP. Veuillez noter que vous devez connaître vos 2 questions secrètes de compte.
+|=|inventory :=: Inventaire
+|=|isonline :=: Utilisateur actif sur le serveur Web
+|=|item_set :=: Ensemble d'articles
+|=|items :=: Articles
+|=|items_could_not_be_sent :=: Impossible d'envoyer des éléments par courrier, contactez l'administrateur.
+|=|items_sent :=: Vos objets ont été envoyés dans le jeu
+|=|JC_formula :=: Formule de joaillerie
+|=|key :=: Clé
+|=|keys :=: Clés
+|=|kills :=: Tuers
+|=|l_delkey :=: Supprimer la clé
+|=|l_delkey_id :=: Par identifiant
+|=|l_delkey_name :=: ou par clé
+|=|l_desc :=: Desc
+|=|l_name :=: Nom
+|=|l_newkeys :=: Entrez le nombre de clés souhaitées (1-300)
+|=|l_post1 :=: publier
+|=|l_post2 :=: publications
+|=|l_post3 :=: publications
+|=|l_subject :=: Nom du sujet
+|=|l_theme1 :=: sujet
+|=|l_theme2 :=: les sujets
+|=|l_theme3 :=: les sujets
+|=|l_theme4 :=: sujet
+|=|langs_manage :=: Langues
+|=|last_news :=: Dernières nouvelles
+|=|lastcomment :=: dernier commentaire
+|=|lastpost :=: Dernière réponse
+|=|lastpostby :=: par
+|=|lastreplyin :=: Dernière réponse dans
+|=|leather :=: Cuir
+|=|legendary :=: Légendaire
+|=|legs :=: Jambes
+|=|level :=: Niveau
+|=|level_cap :=: Limite de niveau
+|=|level_short :=: Niv
+|=|libram :=: Libram
+|=|lifetime_kills :=: Victimes à vie
+|=|list_users :=: Liste des utilisateurs
+|=|location :=: Emplacement
+|=|lockpick :=: Crochetage
+|=|login :=: Connexion
+|=|logon_message :=: Vous devez vous connecter pour utiliser cette fonction. Si vous n'avez pas encore de compte, vous pouvez aller sur [créer un lien] pour créer un compte. Cependant, si vous avez un compte, vous devez [lien de connexion]
+|=|logon_message_createlink_text :=: ici
+|=|logon_message_loginlink_text :=: se connecter
+|=|logout :=: Se déconnecter
+|=|low :=: Basse
+|=|lvl_req :=: Niveau requis
+|=|LW_pattern :=: Modèle de travail du cuir
+|=|mace_1h :=: Masse (une main)
+|=|mace_2h :=: Masse (à deux mains)
+|=|Mage :=: mage
+|=|mail :=: Courrier
+|=|main_hand :=: Main principale
+|=|mainpage :=: Principal
+|=|make_acct_classic :=: Cliquez sur ce bouton si vous n'utilisez aucune extension.
+|=|make_acct_tbc :=: Cliquez sur ce bouton si vous utilisez The Burning Crusade.
+|=|make_acct_wotlk :=: Cliquez sur ce bouton si vous utilisez Wrath of the Lich King.
+|=|male :=: Mâle
+|=|mana :=: Mana
+|=|mangos_manager :=: Gestionnaire de serveur / Outils GM
+|=|map :=: Carte
+|=|mark :=: Marque
+|=|markread :=: Marquer comme lu
+|=|max_accounts_per_ip :=: Nombre maximum de comptes par IP (0-illimité)
+|=|max_attachs_size :=: Espace pour les attaques par utilisateur
+|=|max_avatar_file :=: Taille maximale du fichier d'avatar (octets)
+|=|max_avatar_size :=: Résolution maximale de l'avatar (LxH px)
+|=|max_file_size :=: Taille maximale du fichier
+|=|maxavatarres :=: Taille maximale de l'image
+|=|maxavatarsize :=: Taille maximale du fichier
+|=|media :=: Media
+|=|medium :=: Moyen
+|=|MELEE_CA_RATING :=: Éviter mêlée critique
+|=|MELEE_CS_RATING :=: Mêlée critique
+|=|MELEE_HA_RATING :=: Eviter coup de mêlée
+|=|MELEE_HASTE_RATING :=: Hâte de mêlée
+|=|MELEE_HIT_RATING :=: Coup de mêlée
+|=|messages :=: Messages
+|=|mining :=: Exploitation minière
+|=|misc :=: Divers
+|=|misc_short :=: Divers
+|=|misc_weapon :=: Arme Divers
+|=|module_ah :=: Maison de vente aux enchères
+|=|more_info :=: Plus d'informations
+|=|msn :=: MSN
+|=|name :=: Nom
+|=|nature_dmg :=: Nature
+|=|neck :=: Cou
+|=|newcomers :=: Nouveau sur World Of Warcraft ?
+|=|newcomers2 :=: Utilisez les liens ci-dessous!
+|=|newemail :=: Nouveau courriel
+|=|newmessage :=: Nouveau
+|=|newmessages :=: [Nouveau]
+|=|newpass :=: Nouveau mot de passe
+|=|newpms :=: nouveaux messages
+|=|newpost :=: Nouveau poste
+|=|news :=: Nouvelles
+|=|news_add :=: Ajouter des nouvelles
+|=|news_archive :=: Nouvelles archives
+|=|news_archives :=: Archives des actualités
+|=|news_manage :=: Modifier les actualités
+|=|news_rss :=: Actualités au format RSS
+|=|newsubject :=: Nouveau sujet
+|=|newtopic :=: Nouveau sujet
+|=|next :=: Prochain
+|=|Nightelf :=: Elfe de nuit
+|=|no :=: Non
+|=|no_bind :=: Non contraignant
+|=|no_char_create :=: Il n'y a aucun caractère à copier. Veuillez définir « Copier les caractères » dans le fichier de configuration.
+|=|no_char_gal :=: Pour télécharger des images dans la galerie, vous devez d'abord sélectionner un personnage dans le menu des personnages !
+|=|no_donations_found_for :=: Aucun don d'article non livré trouvé pour le nom d'utilisateur
+|=|no_such_addr :=: Pas de tel destinataire
+|=|none :=: Rien
+|=|nonewpost :=: Il n'y a pas de nouveau post
+|=|not_copy_realm_choose_other :=: Veuillez choisir un autre domaine, ce domaine n'a pas la fonction Copier vers un autre domaine. Choisissez un domaine ci-dessous :
+|=|not_have_secretq :=: Vous n'avez pas défini vos questions secrètes, il est recommandé de le faire afin de pouvoir récupérer votre compte !
+|=|not_require_loggedin :=: Vous devez être déconnecté pour utiliser cette fonction.
+|=|not_support_inline_frames :=: Votre navigateur ne supporte pas les cadres en ligne.
+|=|notreadsubject :=: Sujet non lu
+|=|notselected :=: Non séléctionné
+|=|now_logged_in :=: Vous êtes maintenant connecté.
+|=|off_hand :=: Main libre
+|=|off_misc :=: Désactivé (Divers)
+|=|one_hand :=: Une main
+|=|online :=: sont en ligne
+|=|onlinelist_on :=: Activer la liste en ligne (1-oui/0-non)
+|=|open :=: Ouvert
+|=|Orc :=: Orque
+|=|order :=: ordre
+|=|other :=: Autre
+|=|other_info :=: Les autres informations
+|=|outbox :=: Boîte d'envoi
+|=|page :=: Page
+|=|pagegenerated :=: Page générée en
+|=|Paladin :=: Paladin
+|=|PARRY_RATING :=: Parer
+|=|parts :=: Les pièces
+|=|pass :=: Mot de passe
+|=|paste_to_message :=: Ajouter au message
+|=|permanent :=: Permanent
+|=|pers_mess :=: PM
+|=|personal_message :=: Message personnel
+|=|personal_messages :=: Messages personnels
+|=|physical_dmg :=: Physique
+|=|plate :=: Plaque
+|=|playermap :=: Carte des joueurs
+|=|players_all :=: Tous les joueurs
+|=|players_online :=: Joueurs en ligne
+|=|polearm :=: Arme d'hast
+|=|poor :=: Pauvres
+|=|post_all :=: Tout
+|=|post_editted_by :=: Article édité par
+|=|post_for :=: Pour
+|=|post_from :=: De
+|=|post_none :=: Vide
+|=|post_pages :=: pages
+|=|post_read :=: Lire
+|=|post_reply :=: Répondre
+|=|post_reply_to :=: Répondre à
+|=|post_subj :=: Sujet
+|=|post_view :=: Message de lecture
+|=|postclose :=: Clôture du forum
+|=|posted :=: Publié
+|=|posts_per_page :=: Messages par page (forum)
+|=|posts_per_star1 :=: Nombre minimum de messages pour le rang 1
+|=|posts_per_star2 :=: Nombre minimum de messages pour le rang 2
+|=|posts_per_star3 :=: Nombre minimum de messages pour le rang 3
+|=|posts_per_star4 :=: Nombre minimum de messages pour le rang 4
+|=|posts_per_star5 :=: Nombre minimum de messages pour le rang 5
+|=|potion :=: Potion
+|=|presents :=: Cadeaux
+|=|Priest :=: Prêtre
+|=|profile :=: Profil
+|=|projectile :=: Projectile
+|=|quest :=: Quête
+|=|quest_item :=: Objet de quête
+|=|quicklink1 :=: Création de compte
+|=|quicklink2 :=: Gestion de compte
+|=|quicklink3 :=: État du royaume
+|=|quicklink4 :=: Foire aux questions
+|=|quicklink6 :=: Arbre des talents
+|=|quicklink7 :=: Commandes en jeu
+|=|quicklink8 :=: Carte du joueur
+|=|quicklinks :=: Liens rapides
+|=|quiver :=: Quiver
+|=|quote :=: Citation
+|=|race :=: Race
+|=|random_screen :=: Capture d'écran aléatoire
+|=|ranged :=: à distance
+|=|RANGED_CA_RATING :=: Éviter les coups critiques à distance
+|=|RANGED_CS_RATING :=: Coup critique à distance
+|=|RANGED_HA_RATING :=: Éviter les coups à distance
+|=|RANGED_HASTE_RATING :=: Score de Hâte à distance
+|=|RANGED_HIT_RATING :=: Coup à distance
+|=|rank :=: Rang
+|=|rare :=: Rare
+|=|rating :=: Évaluation
+|=|rating_by :=: Évaluation par
+|=|readsubject :=: Sujet lu
+|=|reagent :=: Réactif
+|=|realm_name :=: Nom de domaine
+|=|realm_status :=: État du royaume
+|=|realm_status_forum :=: Forum sur l'état du royaume
+|=|realms_manage :=: Royaumes
+|=|realms_status :=: État du royaume
+|=|realmstatus_desc :=: Cette page répertorie tous les royaumes de World of Warcraft disponibles ainsi que le statut de chacun. Un royaume peut être répertorié comme [en ligne] ou [éteint]. Les messages liés à l'état du royaume et à la maintenance planifiée seront publiés dans le [forum_état_royaume]. Veuillez nous excuser à l'avance si votre royaume est répertorié comme étant en panne. Il est probable que nous travaillons avec diligence pour le remettre en ligne le plus rapidement possible.
+|=|recipe :=: Recette
+|=|recount :=: raconter des sujets/articles
+|=|redirecting_wait :=: Veuillez patienter pendant la redirection...
+|=|ref_fail :=: Échec de l'enregistrement
+|=|reg_acclimit :=: Vous ne pouvez plus enregistrer de comptes pour cette IP
+|=|reg_checkcpass :=: Les mots de passe ne correspondent pas
+|=|reg_checkemail :=: Entrez une adresse e-mail valide
+|=|reg_checkemailex :=: Cette adresse e-mail est utilisée par un autre compte
+|=|reg_checklogin :=: Saisissez un nom d'utilisateur entre %d et %d caractères (caractères et chiffres latins uniquement)
+|=|reg_checkloginex :=: Ce nom d'utilisateur a déjà été pris
+|=|reg_checkpass :=: Saisissez un mot de passe entre %d et %d caractères
+|=|reg_key :=: Clé d'enregistrement
+|=|reg_succ :=: Inscription réussie, vous pouvez entrer maintenant.
+|=|register :=: S'inscrire
+|=|regkeys_manage :=: Clés d'enregistrement
+|=|replies :=: Réponses
+|=|reply :=: répondre
+|=|req_reg_act :=: Require account activation through email (1-yes/0-no)
+|=|req_reg_invite :=: Switch on invitation system/inv keys per acc (like gmail) (0-disabled) | Requires "account activation"&amp;"key for register"
+|=|req_reg_key :=: Require key to register (1-yes/0-no)
+|=|require_loggedin :=: You need to be logged in to use this function.
+|=|res_arcane :=: Arcane Resistance
+|=|res_fire :=: Fire Resistance
+|=|res_frost :=: Frost Resistance
+|=|res_holy :=: Holy Resistance
+|=|res_nature :=: Nature Resistance
+|=|res_shadow :=: Résistance à l'ombre
+|=|reset :=: Réinitialiser
+|=|reset_succ_secretq :=: Vous venez de réinitialiser vos questions secrètes. Veuillez noter qu'il est recommandé de définir des questions secrètes pour votre compte.
+|=|RESILIENCE_RATING :=: Resistance
+|=|restore_pass_ok :=: Vos coordonnées ont été modifiées. Veuillez regarder ci-dessous pour voir votre nouveau mot de passe. Il est recommandé de changer le mot de passe rapidement!
+|=|retrieve_pass :=: Mot de passe
+|=|retrieve_pass_fail :=: Compte/adresse e-mail incorrect.
+|=|retrieve_pass_succ :=: Succès! Votre nouveau mot de passe a été envoyé à votre adresse e-mail.
+|=|reward_instant :=: Les récompenses sont envoyées à votre personnage instantanément. Vous n'avez pas encore reçu votre récompense ? Pas de soucis, déconnectez-vous simplement dans le jeu et reconnectez-vous.
+|=|rifle :=: Fusil
+|=|robe :=: Revêtir
+|=|rod :=: Bâguette d'enchanteur
+|=|Rogue :=: Voleur
+|=|rs_days :=: jours
+|=|rs_hours :=: h
+|=|rs_minutes :=: m
+|=|rs_seconds :=: s
+|=|rules :=: Règles du serveur
+|=|rules_agreement :=: Accord sur les règles
+|=|rules_desc :=: Ce sont les règles du serveur que vous acceptez de respecter lorsque vous jouez sur nos serveurs. Le non-respect de ces règles peut entraîner le bannissement de votre compte.
+|=|screen :=: Captures d'écran
+|=|screenshots :=: Captures d'écran
+|=|scroll :=: Faire défiler
+|=|search :=: Chercher
+|=|secretq :=: Question secrète
+|=|secretq_info :=: Conditions requises pour ajouter des questions secrètes
+|=|secretq_info_bothfields :=: Vous devez remplir les champs de réponse et de question
+|=|secretq_info_mincharacters :=: La réponse doit comporter au moins 4 caractères
+|=|secretq_info_nosymbols :=: La réponse ne doit pas contenir de symboles
+|=|select_name :=: Sélectionnez le nom
+|=|send_pm_to :=: Envoyez un MP à
+|=|server :=: Serveur
+|=|serverinfo :=: Informations sur le serveur
+|=|shadow_dmg :=: Ombre
+|=|Shaman :=: Chaman
+|=|shield :=: Protéger
+|=|SHIELD_BLOCK_RATING :=: Bloc de bouclier
+|=|shirt :=: La chemise
+|=|shoulder :=: Épaule
+|=|show :=: Spectacle
+|=|si_acc :=: Comptes
+|=|si_active_acc :=:  (%d Actif)
+|=|si_chars :=: Personnages
+|=|si_droprate :=: Taux de drop
+|=|si_droprate_items_artifact :=: Objets d'artefact
+|=|si_droprate_items_epic :=: Objets épiques
+|=|si_droprate_items_legendary :=: Objets légendaires
+|=|si_droprate_items_normal :=: Articles normaux
+|=|si_droprate_items_poor :=: Articles pauvres
+|=|si_droprate_items_rare :=: Objets rares
+|=|si_droprate_items_referenced :=: Articles référencés
+|=|si_droprate_items_uncommon :=: Articles peu communs
+|=|si_droprate_money :=: De l'argent
+|=|si_exprate :=: Taux d'expérience
+|=|si_exprate_explore :=: Explorer
+|=|si_exprate_kill :=: Tuer
+|=|si_exprate_quest :=: Quête
+|=|si_ip :=: IP du serveur
+|=|si_lang :=: Langue
+|=|si_name :=: Nom de domaine
+|=|si_on :=: En ligne
+|=|si_pop :=: Population
+|=|si_regrate :=: Taux de régénération
+|=|si_regrate_health :=: Santé
+|=|si_regrate_mana :=: Mana
+|=|si_restrate :=: Taux de repos
+|=|si_restrate_city :=: Ville ou Taverne
+|=|si_restrate_ingame :=: En jeu
+|=|si_restrate_wild :=: En pleine nature
+|=|si_skillvalue :=: Valeurs de compétences
+|=|si_skillvalue_green :=: vert
+|=|si_skillvalue_grey :=: Gris
+|=|si_skillvalue_orange :=: Orange
+|=|si_skillvalue_yellow :=: jaune
+|=|si_status :=: État du royaume
+|=|si_type :=: Type
+|=|signature :=: Signature
+|=|site_config :=: Paramètres du site
+|=|site_cookie :=: Nom des cookies du site
+|=|site_email :=: Adresse e-mail du site ("de")
+|=|site_encoding :=: Encodage du site
+|=|site_register :=: Enregistrement activé ou désactivé (0=désactivé, 1=activé)
+|=|site_title :=: Titre du site
+|=|size :=: Taille
+|=|size_summary :=: Résumé des tailles
+|=|slots :=: Emplacements
+|=|smiles_path :=: Chemin vers le répertoire de smile
+|=|smtgtosay :=:  Avez-vous quelque chose à dire?
+|=|smtp_adress :=: serveur smtp
+|=|smtp_password :=: serveur smtp - mot de passe
+|=|smtp_username :=: serveur smtp - connexion
+|=|socket_blue :=: Socket Bleue
+|=|socket_bonus :=: Bonus Socket
+|=|socket_meta :=: Méta Socket
+|=|socket_red :=: Rouge Socket
+|=|socket_yellow :=: Jaune Socket
+|=|soul_shards :=: Éclats d'âme
+|=|soul_stone :=: Pierre d'âme
+|=|spear :=: Lance
+|=|speed :=: La vitesse
+|=|SPELL_CA_RATING :=: Taux Critique des sorts
+|=|spell_coh :=: Chance au coup
+|=|SPELL_CS_RATING :=: Critique des sorts
+|=|spell_equip :=: Équiper
+|=|SPELL_HA_RATING :=: Éviter les sorts touchés
+|=|SPELL_HASTE_RATING :=: Hâte de sorts
+|=|SPELL_HIT_RATING :=: Sort de coup
+|=|spell_use :=: Utilisation
+|=|spirit :=: Esprit
+|=|ssotd :=: Capture d'écran du jour
+|=|staff :=: Personnel
+|=|stamina :=: Endurance
+|=|standing :=: Debout
+|=|static_docs :=: Documents statiques
+|=|statistic :=: Statistique
+|=|status :=: Statut
+|=|sticky :=: Collant
+|=|strength :=: Force
+|=|subject :=: Sujet
+|=|sure_q :=: Es-tu sûr?
+|=|sword_1h :=: Épée (Une Main)
+|=|sword_2h :=: Épée (à deux mains)
+|=|tabard :=: Tabard
+|=|tailoring_pattern :=: Patron de couture
+|=|talent_import :=: Importer depuis la calculatrice Blizzard
+|=|talent_index :=: Index de l'arbre des talents
+|=|talent_print :=: Version imprimable
+|=|talent_summary :=: Sommaire
+|=|talents :=: Talents
+|=|Tauren :=: Tauren
+|=|tbc :=: TBC
+|=|teamspeak :=: Teamspeak
+|=|spp_discord :=: SPP Discord
+|=|bots_discord :=: Mangosbot Discord
+|=|text :=: Text
+|=|theme :=: Thème
+|=|thrown :=: Jeté
+|=|time :=: Temps
+|=|title :=: Titre
+|=|today_at :=: Aujourd'hui à
+|=|tome :=: Tome
+|=|topic :=: Sujet
+|=|topic_created :=: Sujet créé
+|=|topics_per_page :=: Sujets par page (forum)
+|=|Totalingallery :=: Nombre total d'images dans les galeries
+|=|totem :=: Totem
+|=|trade_goods :=: Marchandises commerciales
+|=|transfer_nowork :=: Dans cette révision de MangosWeb, le transfert de caractères ne fonctionne pas
+|=|trinket :=: Bibelot
+|=|Troll :=: Troll
+|=|ts_display :=: Teamspeakstatus activé ou désactivé (0=désactivé, 1=activé)
+|=|ts_ip :=: Adresse IP Teamspeak
+|=|ts_port_udp :=: Port UDP Teamspeak
+|=|two_hand :=: Deux mains
+|=|type :=: Taper
+|=|uncommon :=: Rare
+|=|Undead :=: Mort-vivant
+|=|unique :=: Unique
+|=|up :=: Up
+|=|up_banned :=: Raison :Banni
+|=|up_notallowed :=: Vous n'êtes pas autorisé à télécharger des fichiers !
+|=|upload :=: Télécharger
+|=|uploadavatar :=: Télécharger l'avatar
+|=|uploaddblclk :=: Double-cliquez pour insérer
+|=|Uploaderror :=: Erreur de téléchargement de fichier
+|=|uptime :=: Temps de disponibilité
+|=|UScreen :=: Télécharger une capture d'écran
+|=|user_name :=: Nom d'utilisateur
+|=|userlist :=: Liste d'utilisateur
+|=|username :=: Nom d'utilisateur
+|=|useronhp :=: Utilisateurs sur la page d'accueil
+|=|users_manage :=: Utilisateurs
+|=|users_per_page :=: Utilisateurs par page
+|=|UWallp :=: Télécharger le papier peint
+|=|view_profile :=: Voir le profil
+|=|viewcharacter :=: Afficher le personnage
+|=|viewedit_profile :=: Afficher/Modifier le profil
+|=|viewlogs :=: Regardes les connexions
+|=|views :=: Vues
+|=|vote :=: Système de vote
+|=|vote_acct :=: Détails du compte du système de récompense de vote
+|=|vote_alreadyvoted :=: Vous avez déjà voté!
+|=|vote_apt :=: Points de compte aujourd'hui :
+|=|vote_balance :=: Solde actuel:
+|=|vote_change :=: Afin de changer votre personnage actuel, vous devez utiliser le 'Menu Personnage' en haut de la page et probablement besoin d'actualiser votre navigateur.
+|=|vote_curacct :=: Compte courant
+|=|vote_curchar :=: Caractère actuel
+|=|vote_desc :=: Veuillez voter quotidiennement pour gagner la réputation de notre serveur et nous aider à augmenter notre population!
+|=|vote_desc1 :=: Veuillez voter quotidiennement pour gagner la réputation de notre serveur et nous aider à augmenter notre population. Voter quotidiennement vous rapporte des points à dépenser en cadeaux dans le jeu!
+|=|vote_hack :=: Les joueurs qui tentent de tricher ou de pirater le système de récompense de vote seront bannis.
+|=|vote_image :=: Votez pour cette image
+|=|vote_keep :=: S'il vous plaît gardez en tête:
+|=|vote_links :=: Liens de vote
+|=|vote_loggedin :=: Assurez-vous d'être connecté au site Web principal avant de voter. Ne pas le faire pourrait entraîner une perte de points!!
+|=|vote_login1 :=: Connexion au système de vote
+|=|vote_login2 :=: Assurez-vous que vous êtes connecté au site principal!
+|=|vote_points :=: Points de vote
+|=|vote_reward :=: Si le panneau des récompenses ne s'affiche pas, assurez-vous d'avoir sélectionné un personnage.
+|=|vote_submit_reward :=: Après avoir soumis une récompense, regardez sous le personnage actuel : entre le tableau des sites de vote et le tableau des récompenses pour vérifier côté serveur que votre récompense a été envoyée à votre personnage.
+|=|vote_success :=: Vote réussi !
+|=|vote_system :=: Système de vote
+|=|wallp :=: Fonds d'écran
+|=|wand :=: Baguette magique
+|=|Warlock :=: Démoniste
+|=|warn_email :=: Sans une adresse e-mail valide, vous ne pouvez pas vous inscrire ! Un e-mail sera envoyé à l'adresse fournie contenant une clé d'activation.
+|=|Warrior :=: Guerrier
+|=|weapon :=: Arme
+|=|website_forum_support :=: Site Web Forum Assistance
+|=|when :=: Lorsque
+|=|where :=: Où
+|=|wherefrom :=: De
+|=|who :=: Qui
+|=|whoisonline :=: Qui est en ligne
+|=|wotlk :=: WOTLK
+|=|wrath :=: Colère du roi-liche
+|=|wrist :=: Poignet
+|=|write :=: Écrivez
+|=|yes :=: Oui
+|=|yesterday_at :=: Hier à
+|=|youhavenorights :=: Vous n'avez pas les droits suffisants pour afficher cette page !
+|=|choose_site :=: Choisissez un site pour voter
+|=|voting_sites :=: Sites de vote
+|=|voted :=: Voté
+|=|points :=: Points
+|=|points2 :=: points
+|=|choose :=: Choisir
+|=|onlinealt :=: En ligne
+|=|offline :=: Hors ligne
+|=|available_awards :=: Prix disponibles
+|=|mail_subject :=: Du système de vote
+|=|mail_message :=: Merci pour vos votes!
+|=|was_given :=: il a été donné
+|=|to :=: à
+|=|not_voted_yet :=: Vous n'avez pas encore voté
+|=|last_vote :=: Votre dernier vote était avant
+|=|voting_period :=: Vous pouvez voter une fois par
+|=|hours_per :=: heures par site
+|=|sites_reset_after :=: Les coches « Voté » seront définies sur « Non » dans
+|=|vote_limit_reached :=: Vous avez atteint la limite de vote quotidienne pour ce compte.
+|=|vote_tomorrow :=: Vous pouvez voter demain.
+|=|available_chars :=: Caractères disponibles
+|=|choose_char_for_reward :=: Choisissez un personnage pour récompenser
+|=|customize_desc1 :=: C'est là que vous avez la possibilité de re-personnaliser votre personnage. Comment cela fonctionne, à la prochaine connexion, vous serez invité à personnaliser votre personnage. Vous pouvez changer son sexe, son nom et son apparence.
+|=|customize_desc2 :=: Ne re-personnalisez qu'un seul caractère à la fois (par connexion). De multiples personnalisations verrouilleront votre compte !
+|=|rename_desc1 :=: Si le nom de votre personnage ne change pas tout de suite, mais que vous avez reçu un message de réussite, assurez-vous de <u>NE PAS</u> actualiser votre écran. Quittez la page et revenez.

@@ -527,7 +527,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "accountinfo" && $allow_reg ==
                                                     <!--PlainBox Top-->
                                                     <span>
 
-								<ul><li>May only contain alphanumeric characters, such as A-Z, 0-9.<li>Must be between three and sixteen characters in length.
+								<ul><li>May only contain alphanumeric characters, such as A-Z, 0-9.<li>Must be between two and sixteen characters in length.
 								</span>
                                                     <!--PlainBox Bottom-->
                                                 </td><td background = "<?php echo $currtmp; ?>/images/plainbox-right.gif"></td></tr><tr><td><img src = "<?php echo $currtmp; ?>/images/plainbox-bot-left.gif" width = "3" height = "3" border = "0"></td><td background = "<?php echo $currtmp; ?>/images/plainbox-bot.gif"></td><td><img src = "<?php echo $currtmp; ?>/images/plainbox-bot-right.gif" width = "3" height = "3" border = "0"></td></tr></table>
@@ -547,7 +547,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "accountinfo" && $allow_reg ==
                                         <table cellspacing = "0" cellpadding = "0" border = "0" width = "305"><tr><td><img src = "<?php echo $currtmp; ?>/images/plainbox-top-left.gif" width = "3" height = "3" border = "0"></td><td background = "<?php echo $currtmp; ?>/images/plainbox-top.gif"></td><td><img src = "<?php echo $currtmp; ?>/images/plainbox-top-right.gif" width = "3" height = "3" border = "0"></td></tr><tr><td background = "<?php echo $currtmp; ?>/images/plainbox-left.gif"></td><td bgcolor = "#CDB68E">
                                                     <!--PlainBox Top-->
                                                     <span>
-										<ul><li>Must be between six and sixteen characters in length.<li>May only contain alphanumeric characters and punctuation, such as A-Z, 0-9.</li><li>Must differ from your Account Name.
+										<ul><li>Must be between two and sixteen characters in length.<li>May only contain alphanumeric characters and punctuation, such as A-Z, 0-9.</li><li>Must differ from your Account Name.
 										</span>
                                                     <!--PlainBox Bottom-->
                                                 </td><td background = "<?php echo $currtmp; ?>/images/plainbox-right.gif"></td></tr><tr><td><img src = "<?php echo $currtmp; ?>/images/plainbox-bot-left.gif" width = "3" height = "3" border = "0"></td><td background = "<?php echo $currtmp; ?>/images/plainbox-bot.gif"></td><td><img src = "<?php echo $currtmp; ?>/images/plainbox-bot-right.gif" width = "3" height = "3" border = "0"></td></tr></table>
@@ -856,7 +856,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                                                         <tr>
                                                                             <td width=200 align=right>
                                                                                 <font face="arial,helvetica" size=-1><span><b>
-			      <font color="#FF0000">*</font> First Name:
+			      First Name:
 			      </span></b></font>
                                                                             </td>
                                                                             <td align=left><table border=0 cellspacing=0 cellpadding=0><tr><td><input name="fname" MaxLength="32" style = "Width:200" taborder=1 /></td><td valign = "top">
@@ -866,7 +866,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                                                         <tr>
                                                                             <td align=right>
                                                                                 <font face="arial,helvetica" size=-1><span><b>
-			      <font color="#FF0000">*</font> Last Name:
+			      Last Name:
 			      </span></b></font>
                                                                             </td>
 
@@ -877,7 +877,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                                                         <tr>
                                                                             <td align=right>
                                                                                 <font face="arial,helvetica" size=-1><span><b>
-			      <font color="#FF0000">*</font> City:
+			      City:
 			      </span></b></font>
                                                                             </td>
                                                                             <td align=left colspan = "2"><table border=0 cellspacing=0 cellpadding=0><tr><td><input name="city" MaxLength="32" style = "Width:150" taborder=5/ ></td><td valign = "top">
@@ -888,7 +888,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                                                             <td align=right>
                                                                                 <font face="arial,helvetica" size=-1><span><b>
 
-			      <font color="#FF0000">*</font> Country:
+			      Country:
 
 			      </span></b></font>
                                                                             </td>
@@ -944,7 +944,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                                                         <tr>
                                                                             <td width=200 align=right>
                                                                                 <font face="arial,helvetica" size=-1><span><b>
-			      <font color="#FF0000">*</font> Email:<br>
+			      Email:<br>
 			      </span></b></font>
                                                                             </td>
                                                                             <td align=left>
@@ -1464,9 +1464,9 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
 ?>
         <script type="text/javascript"> ////////////////AGREEMENT -1
             function ca_valid() {
-                document.createaccount.step.value="valcode";
+                document.createaccount.step.value="userinfo";
                 document.createaccount.update.value="";
-                document.createaccount.save.value="";
+                document.createaccount.save.value="true";
                 return true;
             }
         </script>
@@ -1511,7 +1511,7 @@ elseif(isset($_POST['step']) && $_POST['step'] == "userinfo" && $allow_reg === t
                                         </table>
                                         <p>
                                             <table align="center">
-                                                <input type="hidden" name="step" value="valcode"/>
+                                                <input type="hidden" name="step" value="accountinfo"/>
                                                 <input type="hidden" name="r_key" value="<?php echo $_POST['r_key'];?>"/>
                                                 <!-- I AGREE-->	<tr><td><input TYPE="image" SRC="<?php echo $currtmp; ?>/images/agree-button.gif" NAME="submit" alt="<?php echo $lang['agree']; ?>" class="button" ></td></tr>
                                                 <!-- I DISAGREE--><tr><td><a href = "index.php"><img src = "<?php echo $currtmp; ?>/images/disagree-button.gif" alt = "<?php echo $lang['disagree']; ?>" border = "0"></a></td></tr>

@@ -66,12 +66,12 @@ $defines = array(
 "MANA_REGEN"					=> array(1564,   39,   39,   39,   39),
 "MANA_REGEN_INTERRUPT"			=> array(1565,   46,   46,   46,   46),
 // Item Data
-"PERMANENT"						=> array(   0,   0,   0,   22,   22,   22),
+"PERMANENT"						=> array(   0,   0,   0,   22,   22,   0),
 //"TEMPORARY"					=> array(  25,   25,   25,   25,   25),
-"SOCKET_1"						=> array(   0,   28,   28,   28,   28,   28),
+"SOCKET_1"						=> array(   0,   6,   28,   28,   28,   6),
 //"SOCKET_2"					=> array(  31,   31,   31,   31,   31),
 //"SOCKET_3"					=> array(  34,   34,   34,   34,   34),
-"SOCKET_BONUS"					=> array(   0,   37,   37,   37,   37,   37),
+"SOCKET_BONUS"					=> array(   0,   15,   37,   37,   37,   37),
 "PRISMATIC_SOCKET"				=> array(   0,   40,   40,   40,   40), // WOTLK
 "RANDOM_1"						=> array(   3,   18,   27,   43,   43,   21), // RandomSuffix
 //"RANDOM_2"					=> array(  43,   46,   46,   46,   46), // RandomSuffix

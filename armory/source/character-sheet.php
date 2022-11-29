@@ -8,11 +8,15 @@ if(!defined("Armory"))
 /*<div class="parch-profile-banner" id="banner" style="margin-top: -2px!important;">
 <h1 style="padding-top: 12px!important;"><?php echo $lang["profile"] ?></h1>
 </div>*/
-?>
-<div class="parch-profile-banner" id="banner" style="position: absolute;margin-left: 450px!important;margin-top: -110px!important;">
-    <h1 style="padding-top: 12px!important;"><?php echo $lang["profile"] ?></h1>
-</div>
-<?php
+if (!$data["title"]) {
+    ?>
+    <div class="parch-profile-banner" id="banner"
+         style="position: absolute;margin-left: 450px!important;margin-top: -110px!important;">
+        <h1 style="padding-top: 12px!important;"><?php echo $lang["profile"] ?></h1>
+    </div>
+
+    <?php
+}
 //Professions and Defense Skill
 $char_primary_prof = array();
 $defense_skill = 0;
@@ -318,6 +322,130 @@ if(isset($myinventory[16]))
 	if(execute_query("world", "SELECT `entry` FROM `item_template` WHERE `entry` = ".$myinventory[16]["item_template"]." AND `class` = 2 LIMIT 1", 2))
 		$show_offhand = 1;
 }
+// Char Feed TODO
+if (CLIENT < 6)
+{
+    $feed_info = execute_query("char", "SELECT * FROM `character_armory_feed` WHERE `guid` = ".$stat["guid"]." ORDER BY `date` DESC LIMIT 10");
+    if ($feed_info)
+    {
+        ?>
+        <div class="feed-banner" id="feed-banner" style="position: absolute;margin-left: 630px!important;margin-top: -50px!important;">
+            <h1 style="padding-top: 28px!important;padding-right: 30px;">Character Feed</h1>
+        </div>
+        <div class="inner-cont" style="width:230px;position: absolute;margin-left: 635px!important;margin-top: 15px!important;">
+            <table>
+                <tbody><tr>
+                    <td class="il"></td><td class="ibg">
+                        <?php
+                        foreach ($feed_info as $feed)
+                        {
+                            ?>
+                            <div class="rep3">
+                                <?php if ($feed["type"] == 1 && CLIENT < 6)
+                                    {
+                                        $achi = execute_query("armory", "SELECT * FROM `dbc_achievement` WHERE `id` = ".$feed["data"]." LIMIT 1", 1);
+                                        if ($achi)
+                                            {
+                                                $info = "Earned ";
+                                                ?><span onMouseOut="hideTip()" onMouseOver="showTip('<?php echo addslashes(str_replace("\"","'",$achi["description"])) ?>');"><img class="ci" height="21" src="<?php echo GetIcon("spell", $achi["ref_spellicon"]) ?>" width="21">&nbsp;<?php echo $info?><a href="#"><?php echo $achi["name"] ?></a></span> <?php
+                                            }
+                                    }
+                                ?>
+                                <?php if ($feed["type"] == 2)
+                                {
+                                    $doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item_search` WHERE `item_id` = ".$feed["data"]." AND `mangosdbkey` = ".$realms[REALM_NAME][2], 1);
+                                    $TotalCachedItems = is_array($doquery_pls_gm);
+                                    $item_search_cache = array();
+                                    if ($TotalCachedItems)
+                                    {
+                                        $item_search_cache[$doquery_pls_gm["item_id"]] = $doquery_pls_gm;
+                                        $Items[] = array($doquery_pls_gm["item_id"], $doquery_pls_gm["item_name"], $doquery_pls_gm["item_level"], $doquery_pls_gm["item_source"], $doquery_pls_gm["item_relevance"]);
+                                    }
+                                    if($config["locales"])
+                                        $ItemsQuery = execute_query("world", "SELECT `name_loc".$config['locales']."` FROM `locales_item` WHERE `entry` =".$feed["data"], 1);
+                                    else
+                                        $ItemsQuery = execute_query("world", "SELECT * FROM `item_template` WHERE `entry` =".$feed["data"], 1);
+
+                                    if($ItemsQuery && !$TotalCachedItems)
+                                    {
+                                        if(!isset($item_search_cache[$feed["data"]]))
+                                        {
+                                            $item_search_cache[$ItemsQuery["entry"]] = cache_item_search($feed["data"]);
+                                        }
+                                    }
+
+                                    $doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item_tooltip` WHERE `item_id` = ".$feed["data"]." AND `mangosdbkey` = ".$realms[REALM_NAME][2], 1);
+                                    $item_tooltip_cache = array();
+                                    if ($doquery_pls_gm)
+                                        $item_tooltip_cache[$feed["data"]] = $doquery_pls_gm;
+
+                                    if(!isset($item_tooltip_cache[$feed["data"]]))
+                                        cache_item_tooltip($feed["data"]);
+
+                                    $doquery_pls_gm = execute_query("armory", "SELECT * FROM `cache_item` WHERE `item_id` = ".$feed["data"]." AND `mangosdbkey` = ".$realms[REALM_NAME][2], 1);
+                                    $item_cache = array();
+                                    if ($doquery_pls_gm)
+                                        $item_cache[$doquery_pls_gm["item_id"]] = $doquery_pls_gm;
+
+                                    if(!isset($item_cache[$feed["data"]]))
+                                        $item_cache[$feed["data"]] = cache_item($feed["data"]);
+
+                                    $item_quality = $item_cache[$feed["data"]]["item_quality"];
+                                    $item_icon = $item_cache[$feed["data"]]["item_icon"];
+
+                                    ?>
+                                    <span><img class="ci" height="21" onMouseOut="hideTip();" onmouseover="showTip('<?php echo $lang["loading"] ?>'); showTooltip(<?php echo $feed["data"],",",$realms[REALM_NAME][2] ?>)" src="<?php echo $item_icon ?>"> <a href="index.php?searchType=iteminfo&item=<?php echo $feed["data"],"&realm=",REALM_NAME ?>" onMouseOut="hideTip();" onmouseover="showTip('<?php echo $lang["loading"] ?>'); showTooltip(<?php echo $feed["data"],",",$realms[REALM_NAME][2] ?>)"><?php echo $item_cache[$feed["data"]]["item_name"]; ?></a></q></span>
+                                    <?php
+                                }
+                                if ($feed["type"] == 3)
+                                {
+                                    $loctemp = LANGUAGE;
+                                    if ($loctemp == "en_us")
+                                        $loctemp = "en_gb";
+
+                                    // check Boss table
+                                    if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$feed["data"]." OR `lootid_1`=".$feed["data"]." OR `lootid_2`=".$feed["data"]." OR `lootid_3`=".$feed["data"]." OR `lootid_4`=".$feed["data"]." OR `name_id`=".$feed["data"]." AND `type` = 'npc' LIMIT 1", 1))
+                                    {
+                                        $instanceId = $instance_loot["instance_id"];
+                                        $bossname = $instance_loot["name_$loctemp"];
+                                        $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
+                                        if ($instance_info)
+                                        {
+                                            $instance_name = $instance_info["name_$loctemp"];
+                                            $heroic = $instance_info["is_heroic"];
+                                            $instance_size = $instance_info["partySize"];
+                                            $expansion = $instance_info["expansion"];
+                                            $israid = $instance_info["raid"];
+                                            if ($expansion < 2 || !$israid)
+                                            {
+                                                $info = "Killed ";
+                                                ?><span onMouseOut="hideTip()" onMouseOver="showTip('<?php echo addslashes(str_replace("\"","'",$instance_name)) ?>');"><img class="ci" height="21" src="images/icons/64x64/inv_misc_head_dragon_red.png" width="21">&nbsp;<?php echo $info?><a href="#"><?php echo $bossname ?></a></span> <?php
+                                            }
+                                            else
+                                            {
+                                                $info = "Killed ";
+                                                ?><span onMouseOut="hideTip()" onMouseOver="showTip('<?php echo addslashes(str_replace("\"","'",$instance_name . ($heroic ? "H" : ""))) ?>');"><img class="ci" height="21" src="images/icons/64x64/inv_misc_head_dragon_red.png" width="21">&nbsp;<?php echo $info?><a href="#"><?php echo $bossname ?></a></span> <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                echo gmdate("d.m.y", $feed["date"]);
+                                ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </td><td class="ir"></td>
+                </tr>
+                <tr>
+                    <td class="ibl"></td><td class="ib"></td><td class="ibr"></td>
+                </tr>
+                </tbody></table>
+        </div>
+        </div>
+        <?php
+    }
+}
 ?>
 <script src="js/character/functions.js" type="text/javascript"></script><script type="text/javascript">
 
@@ -619,11 +747,14 @@ for($i = 0; $i <= 7; $i ++)
 {
 	echo "<li>";
 	if(isset($myinventory[$player_items_order[$i]]))
-		echo "<img id=\"slot",$player_items_order[$i],"x\" src=\"",$myinventory[$player_items_order[$i]]["icon"],"\"><a class=\"thisTip\" href=\"index.php?searchType=iteminfo&item=",$myinventory[$player_items_order[$i]]["item_template"],"&realm=",REALM_NAME,"\" id=\"slotOver",$player_items_order[$i],"x\" onMouseOut=\"hideTip();\" onmouseover=\"showTip(textLoading); showTooltip(",$myinventory[$player_items_order[$i]]["item"],", ",$realms[REALM_NAME][1],", 1)\"></a>";
-	echo "<div id=\"flyOver",$player_items_order[$i],"x\" onMouseOut=\"javascript: mouseOutArrow('",$player_items_order[$i],"');\" onMouseOver=\"javascript: mouseOverUpgradeBox('",$player_items_order[$i],"');\" style=\"visibility: hidden;\">
+    {
+        echo "<img id=\"slot",$player_items_order[$i],"x\" src=\"",$myinventory[$player_items_order[$i]]["icon"],"\"><a class=\"thisTip\" href=\"index.php?searchType=iteminfo&item=",$myinventory[$player_items_order[$i]]["item_template"],"&realm=",REALM_NAME,"\" id=\"slotOver",$player_items_order[$i],"x\" onMouseOut=\"hideTip();mouseOutArrow('",$player_items_order[$i],"');\" onmouseover=\"showTip(textLoading); showTooltip(",$myinventory[$player_items_order[$i]]["item"],", ",$realms[REALM_NAME][1],", 1)\"></a>";
+        echo "<div style=\"visibility: hidden;\"><div onMouseOut=\"javascript: mouseOutArrow('",$player_items_order[$i],"');\" id=\"flyOver",$player_items_order[$i],"x\" class=\"fly-horz\"><a onMouseOver=\"mouseOverUpgradeBox(",$player_items_order[$i],");\" target=\"_blank\" rel=\"noopener noreferrer\" href = \"\armory\index.php?searchQuery=",$myinventory[$player_items_order[$i]]["item_template"],"&specId=",GetPlayerSpecId($stat["class"],$stat["topTalent"]),"&level=",$stat["level"],"&searchType=upgrades&realm=",REALM_NAME,"\" class=\"upgrd\">Find Upgrade</a></div>
+	<a id='upgradeLink",$player_items_order[$i],"x' target=\"_blank\" rel=\"noopener noreferrer\" href = \"\armory\index.php?searchQuery=",$myinventory[$player_items_order[$i]]["item_template"],"&specId=",GetPlayerSpecId($stat["class"],$stat["topTalent"]),"&level=",$stat["level"],"&searchType=upgrades&realm=",REALM_NAME,"\" onMouseOver=\"mouseOverUpgradeBox(",$player_items_order[$i],");\" class='upgrd' style=\"padding:0 0 0 0px !important;margin-left: -10px!important;margin-top:-45px!important;opacity:100%;width:10px!important;visibility:visible;background:none!important;\"></a>
 	</div>
 	</li>";
-}
+    }
+} //onMouseOver=\"javascript: mouseOverUpgradeBox('",$player_items_order[$i],"');\"
 ?>
 </ul>
 </div>
@@ -670,10 +801,13 @@ for($i = 0; $i <= 7; $i ++)
 {
 	echo "<li>";
 	if(isset($myinventory[$player_items_order[$i]]))
-		echo "<img id=\"slot",$player_items_order[$i],"x\" src=\"",$myinventory[$player_items_order[$i]]["icon"],"\"><a class=\"thisTip\" href=\"index.php?searchType=iteminfo&item=",$myinventory[$player_items_order[$i]]["item_template"],"&realm=",REALM_NAME,"\" id=\"slotOver",$player_items_order[$i],"x\" onMouseOut=\"hideTip();\" onmouseover=\"showTip(textLoading); showTooltip(",$myinventory[$player_items_order[$i]]["item"],", ",$realms[REALM_NAME][1],", 1)\"></a>";
-	echo "<div id=\"flyOver",$player_items_order[$i],"x\" onMouseOut=\"javascript: mouseOutArrow('",$player_items_order[$i],"');\" onMouseOver=\"javascript: mouseOverUpgradeBox('",$player_items_order[$i],"');\" style=\"visibility: hidden;\">
+    {
+        echo "<img id=\"slot",$player_items_order[$i],"x\" src=\"",$myinventory[$player_items_order[$i]]["icon"],"\"><a class=\"thisTip\" href=\"index.php?searchType=iteminfo&item=",$myinventory[$player_items_order[$i]]["item_template"],"&realm=",REALM_NAME,"\" id=\"slotOver",$player_items_order[$i],"x\" onMouseOut=\"hideTip();mouseOutArrow('",$player_items_order[$i],"');\" onmouseover=\"showTip(textLoading); showTooltip(",$myinventory[$player_items_order[$i]]["item"],", ",$realms[REALM_NAME][1],", 1)\"></a>";
+        echo "<div style=\"visibility: hidden;\"><div onMouseOut=\"javascript: mouseOutArrow('",$player_items_order[$i],"');\" id=\"flyOver",$player_items_order[$i],"x\" class=\"fly-horz\"><a onMouseOver=\"mouseOverUpgradeBox(",$player_items_order[$i],");\" target=\"_blank\" rel=\"noopener noreferrer\" href = \"\armory\index.php?searchQuery=",$myinventory[$player_items_order[$i]]["item_template"],"&specId=",GetPlayerSpecId($stat["class"],$stat["topTalent"]),"&level=",$stat["level"],"&searchType=upgrades&realm=",REALM_NAME,"\" class=\"upgrd\">Find Upgrade</a></div>
+	<a id='upgradeLink",$player_items_order[$i],"x' target=\"_blank\" rel=\"noopener noreferrer\" href = \"\armory\index.php?searchQuery=",$myinventory[$player_items_order[$i]]["item_template"],"&specId=",GetPlayerSpecId($stat["class"],$stat["topTalent"]),"&level=",$stat["level"],"&searchType=upgrades&realm=",REALM_NAME,"\" onMouseOver=\"mouseOverUpgradeBox(",$player_items_order[$i],");\" class='upgrd' style=\"padding:0 0 0 0px !important;margin-left:60px!important;margin-top:-45px!important;opacity:100%;width:10px!important;visibility:visible;background:none!important;\"></a>
 	</div>
 	</li>";
+    }
 }
 ?>
 </ul>
@@ -696,7 +830,8 @@ for($i = 0; $i < 3; $i ++)
 {
 	if($i)
 		echo " / ";
-	echo talentCounting($stat["guid"], getTabOrBuild($stat["class"], "tab", $i));
+	$tempTalent = talentCounting($stat["guid"], getTabOrBuild($stat["class"], "tab", $i));
+	echo $tempTalent;
 }
 ?>
 </span>
@@ -945,6 +1080,18 @@ switch($stat["class"])
 <div class="character-stats">
 <div id="replaceStatsRight"></div>
 <script src="js/character/textObjects.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if (talentsTreeArray[0][0] == 1 && theClassId == 2)
+            changeStats('Right', replaceStringSpell, 'Spell', spellDisplay);
+        if (talentsTreeArray[0][0] == 2 && theClassId == 7)
+            changeStats('Right', replaceStringMelee, 'Melee', meleeDisplay);
+        if (talentsTreeArray[0][0] == 2 && theClassId == 11)
+            changeStats('Right', replaceStringMelee, 'Melee', meleeDisplay);
+        if (talentsTreeArray[0][0] == 3 && theClassId == 1)
+            changeStats('Right', replaceStringDefenses, 'Defenses', defensesDisplay);
+        if (talentsTreeArray[0][0] == 2 && theClassId == 2)
+            changeStats('Right', replaceStringDefenses, 'Defenses', defensesDisplay);
+    </script>
 </div>
 </div>
     <?php } else { ?>
@@ -995,10 +1142,13 @@ for($i = 0; $i <= 2; $i ++)
 {
 	echo "<li>";
 	if(isset($myinventory[$player_items_order[$i]]))
-		echo "<img id=\"slot",$player_items_order[$i],"x\" src=\"",$myinventory[$player_items_order[$i]]["icon"],"\"><a class=\"thisTip\" href=\"index.php?searchType=iteminfo&item=",$myinventory[$player_items_order[$i]]["item_template"],"&realm=",REALM_NAME,"\" id=\"slotOver",$player_items_order[$i],"x\" onMouseOut=\"hideTip();\" onmouseover=\"showTip(textLoading); showTooltip(",$myinventory[$player_items_order[$i]]["item"],", ",$realms[REALM_NAME][1],", 1)\"></a>";
-	echo "<div id=\"flyOver",$player_items_order[$i],"x\" onMouseOut=\"javascript: mouseOutArrow('",$player_items_order[$i],"');\" onMouseOver=\"javascript: mouseOverUpgradeBox('",$player_items_order[$i],"');\" style=\"visibility: hidden;\">
+    {
+        echo "<img id=\"slot",$player_items_order[$i],"x\" src=\"",$myinventory[$player_items_order[$i]]["icon"],"\"><a class=\"thisTip\" href=\"index.php?searchType=iteminfo&item=",$myinventory[$player_items_order[$i]]["item_template"],"&realm=",REALM_NAME,"\" id=\"slotOver",$player_items_order[$i],"x\" onMouseOut=\"hideTip();mouseOutArrow('",$player_items_order[$i],"')\" onmouseover=\"showTip(textLoading); showTooltip(",$myinventory[$player_items_order[$i]]["item"],", ",$realms[REALM_NAME][1],", 1)\"></a>";
+        echo "<div style=\"visibility: hidden;\"><div onMouseOut=\"javascript: mouseOutArrow('",$player_items_order[$i],"');\" id=\"flyOver",$player_items_order[$i],"x\" class=\"fly-horz\"><a onMouseOver=\"mouseOverUpgradeBox(",$player_items_order[$i],");\" target=\"_blank\" rel=\"noopener noreferrer\" href = \"\armory\index.php?searchQuery=",$myinventory[$player_items_order[$i]]["item_template"],"&specId=",GetPlayerSpecId($stat["class"],$stat["topTalent"]),"&level=",$stat["level"],"&searchType=upgrades&realm=",REALM_NAME,"\" class=\"upgrd\">Find Upgrade</a></div>
+	<a id='upgradeLink",$player_items_order[$i],"x' target=\"_blank\" rel=\"noopener noreferrer\" href = \"\armory\index.php?searchQuery=",$myinventory[$player_items_order[$i]]["item_template"],"&specId=",GetPlayerSpecId($stat["class"],$stat["topTalent"]),"&level=",$stat["level"],"&searchType=upgrades&realm=",REALM_NAME,"\" onMouseOver=\"mouseOverUpgradeBox(",$player_items_order[$i],");\" class='upgrd' style=\"padding:0 0 0 0px !important;margin-left:10px!important;margin-top:-5px!important;opacity:100%;width:40px!important;height:10px!important;visibility:visible;background:none!important;\"></a>
 	</div>
 	</li>";
+    }
 }
 ?>
 </ul>

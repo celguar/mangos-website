@@ -6,7 +6,7 @@ $oldInactiveTime = 3600*24*7;
 if($_GET['id'] > 0){
     if(!$_GET['action']){
         $profile = $auth->getprofile($_GET['id']);
-        $allgroups = $DB->selectCol("SELECT g_id AS ARRAY_KEY, g_title FROM account_groups");
+        $allgroups = $DB->selectCol("SELECT g_id AS ARRAY_KEY, g_title FROM website_account_groups");
 
         $pathway_info[] = array('title'=>$lang['users_manage'],'link'=>$com_links['sub_members']);
         $pathway_info[] = array('title'=>$profile['username'],'link'=>'');
@@ -44,7 +44,7 @@ if($_GET['id'] > 0){
 
     $items = $DB->select("
         SELECT * FROM account
-        LEFT JOIN account_extend ON account.id=account_extend.account_id
+        LEFT JOIN website_accounts ON account.id=website_accounts.account_id
         $filter
         ORDER BY username
         LIMIT $limit_start,$items_per_pages");

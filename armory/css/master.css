@@ -929,7 +929,7 @@ p.tabard-holder{background:url('../images/tabard-bg.jpg') no-repeat;display:bloc
 .guild-bg{width:100%;height:56px;background:url('../images/guild-bg.jpg') no-repeat 0 0;position:relative;left:-10px;top:-10px;clear:left;margin-bottom:-15px}
 .playerlist{width:55%;float:right}
 .playdata{width:25%;float:left}
-.level-noflash{position:relative;top:102px;left:57px;width:42px;text-align:center;font:28px/30px Georgia,"Times New Roman",Times,serif;color:black;height:50px;z-index:1}
+.level-noflash{position:relative;top:105px;left:57px;width:42px;text-align:center;font:28px/30px Georgia,"Times New Roman",Times,serif;color:black;height:50px;z-index:1}
 .level-noflash em{position:absolute;display:block;height:50px;top:-1px;left:-10px;width:56px;color:#ffd200;font-style:normal}
 .character-details table{height:100px;vertical-align:middle}
 .character-details td{vertical-align:middle !important}
@@ -1070,7 +1070,7 @@ a.battlegroup-icon{background:url('../images/icons/battlegroup.gif') no-repeat 5
 .spellCritWidth{width:130px}
 .lastModified{width:500px;margin:4px auto}
 .lastModified span{color:#69460f}
-.profile-master{margin:0px 0 -20px 0;background:url('../images/profile-bg.jpg') no-repeat 50% 0}
+.profile-master{margin:0px 0 -20px -110px;background:url('../images/profile-bg.jpg') no-repeat 50% 0}
 .profile-master ul{margin:0;padding:0;list-style:none}
 .profile-master li{width:60px;height:55px;margin:1px;position:relative}
 .items-right a,.items-left a,.items-bot a{cursor:pointer;z-index:999;display:block;position:absolute}
@@ -1106,7 +1106,7 @@ a.battlegroup-icon{background:url('../images/icons/battlegroup.gif') no-repeat 5
 .items-bot .fly-horz{top:60px;left:-20px}
 .fly-horz a,.fly-horz a:active,.fly-horz a:visited{color:#5c4500 !important;font-family:Arial,Helvetica,sans-serif !important}
 .fly-horz a:hover{color:black !important}
-a.upgrd{margin:0 !important;padding:0 0 0 25px !important;background:url('../images/icons/upgrade.gif') no-repeat !important;position:relative !important;top:6px !important;left:0 !important;height:30px !important;width:55px !important}
+a.upgrd{margin:0 !important;padding:0 0 0 25px !important;background:url('../images/icons/upgrade.gif') no-repeat !important;position:relative !important;top:6px !important;left:0 !important;height:30px !important;width:20px !important}
 .profile-master li p.broken{background:url('../images/icon-glass-broken.png') no-repeat -2px -4px}
 .profile-master li u.relic{margin:0;padding:0;width:60px;height:55px;background:url('../images/relic.jpg') no-repeat 2px -3px;position:absolute;top:0;left:0}
 .profile-master li u{margin:0;padding:0;width:60px;height:55px;background:none;position:absolute;top:0;left:0}
@@ -1115,7 +1115,7 @@ a.upgrd{margin:0 !important;padding:0 0 0 25px !important;background:url('../ima
 #slot0x, #slot1x, #slot2x, #slot3x, #slot4x, #slot18x, #slot8x {height:52px;width:52px;position:relative;left:3px}
 .items-left{position:absolute;width:60px;top:3px;left:-71px}
 .items-right{position:absolute;width:60px;top:3px;left:374px}
-.buffs{position:absolute;width:21px;top:3px;left:440px;z-index:-1}
+.buffs{position:absolute;width:21px;top:3px;left:-100px;z-index:-1;opacity: 50%;}
 .debuffs{position:absolute;width:21px;top:3px;left:465px;z-index:-1}
 .items-bot{position:absolute;width:200px;top:11px;left:74px}
 .ammo{position:absolute;width:54px;height:40px;right:67px;top:19px;background:url('../images/ammobg-arrow.jpg') no-repeat 0 0}
@@ -1225,6 +1225,7 @@ li.shadow{background:url('../images/res-shadow.gif') no-repeat 100% 0px}
 .achievements h2 a:link,.achievements h2 a:hover,.achievements h2 a:visited,.achievements h2 a:active{float:right;position:relative;color:#005ba1;font:11px 'Trebuchet MS',Arial,Helvetica,sans-serif;display:block;height:25px;line-height:25px;text-transform:none;background:url('../images/more-arrow.gif') 100% 50% no-repeat;padding-right:21px}
 .achievements h3{margin:0 0 3px 0;padding:0 0 0px 6px;text-transform:uppercase;color:#847240;font-size:12px;background:url('../images/achievetitle-bg.jpg') #f0da8d -250px 100% repeat-y;}
 .achievements h3 strong{color:#533A00}
+.character-achievement { float: right; line-height: 12px; padding:0 16px 0 0; background:url('../images/icons/user-menu-icons.gif') no-repeat 100% -18px; }
 ul.badges-reputations{margin:3px 0 0 0;padding:0}
 ul.badges-reputations li{float:left;width:75px;height:75px;margin:0 3px 3px 0;padding:0;background-position:11px 11px;background-repeat:no-repeat;list-style:none;position:relative}
 ul.badges-reputations li img{width:75px;height:75px}
@@ -2262,6 +2263,9 @@ h1.hbluebutton { line-height: 1px!important; font-size: 1px!important; margin: 0
 .parch-profile-banner{height:70px;width:400px;background:url('../images/banner.png') no-repeat;text-align:center; margin: -1px auto 2px; z-index: 10000;}
 .parch-profile-banner-old{height:109px;width:419px;background:url('../images/parch-title.jpg') no-repeat;text-align:center; margin: 5px auto 0;}
 .parch-profile-banner h1{padding:28px 0 0 0;color:#714b2d; font-size: 18px; font-weight: bold; font-style: italic; letter-spacing: 1px;}
+
+.feed-banner{height:90px;width:300px;background:url('../images/result-banner.png') no-repeat;text-align:center; margin: -1px auto 2px; z-index: 10000;}
+.feed-banner h1{padding:28px 0 0 0;color:#714b2d; font-size: 18px; font-weight: bold; font-style: italic; letter-spacing: 1px;}
 
 .guildheadertext {padding: 0 0 0 100px; position: absolute;}
 .guild-details table{height:108px;vertical-align:middle; }

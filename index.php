@@ -32,7 +32,7 @@ ini_set('error_reporting', E_ERROR ^ E_NOTICE ^ E_WARNING);
 error_reporting( E_ERROR | E_PARSE | E_WARNING ) ;
 ini_set('log_errors',TRUE);
 ini_set('html_errors',FALSE);
-//ini_set('error_log','core/logs/error_log.txt');
+ini_set('error_log','core/logs/error_log.txt');
 ini_set( 'display_errors', '0' ) ;
 // Define INCLUDED so that we can check other pages if they are included by this file
 define( 'INCLUDED', true ) ;
@@ -261,6 +261,7 @@ if ( $CHDB )
 	$CHDB->setErrorHandler( 'databaseErrorHandler' ) ;
 if ( $CHDB )
 	$CHDB->query( "SET NAMES " . $mangos['db_encoding'] ) ;
+
 
 //Load characters list
 if ( isset( $user['id'] ) && $user['id'] > 0 )

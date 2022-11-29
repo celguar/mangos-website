@@ -101,6 +101,7 @@ else
 .shadow-tip .setNameYellow	{ color: black; font-size:11px; }
 .shadow-tip .setItemYellow	{ color: black; }
 .shadow-tip .setItemGray	{ color: black; }
+.shadow-tip .tooltipContentSpecial	{ color: black; }
 .item-double .myTable, .shadow-tip .myTable		{ font-size: 13px; line-height: 23px; }
 </style>
 <blockquote>
@@ -390,14 +391,20 @@ foreach ($DisenchantLootQuery as $DisenchantLootDetail)
 			showerror("Disenchanting (DB error)", "Item <b>".$item_ID."</b> have RequiredDisenchantSkill <b>".$itemData["RequiredDisenchantSkill"]."</b> but DisenchantID  <b>0</b>, please <b>report to GM</b>");
 	}
 /******************************************************************************************************************************************************************/
+// Owned by players
+/******************************************************************************************************************************************************************/
 // Sold By
-	if(false)
+$invq = execute_query("char", "SELECT `guid` as `guid` FROM `character_inventory` WHERE `item_template` = ".$item_ID." LIMIT 100");
+	if($invq)
 	{
+        //$StatQuery = execute_query("char", "SELECT `guid`, `name`, `race`, `class`, `level`, `gender`, `health`, `power1`, `power2`, `power3`, `power4`, `power5`, `stored_honorable_kills` as `totalKills`, `stored_honor_rating` as `totalHonor`, `honor_highest_rank` as `rank` FROM `characters` WHERE `name` = '".$request."'".exclude_GMs()." LIMIT 1", 1);
 ?>
+</div>
+</div>
 <div class="scroll-padding"></div>
 <div class="rel-tab">
-<p class="rel-drop"></p>
-<h3>Sold by</h3>
+<p class="rel-provided"></p>
+<h3>Owned by <? echo count($invq) ?> players</h3>
 </div>
 <div class="data" style="clear: both;">
 <table class="data-table">
@@ -406,31 +413,95 @@ foreach ($DisenchantLootQuery as $DisenchantLootDetail)
 <div>
 <p></p>
 </div>
-</td><td><a class="noLink">Name</a></td><td align="center"><a class="noLink">Level</a></td><td><a class="noLink">Location</a></td><td align="right">
+</td>
+    <td width="30%"><a class="noLink"><?php echo $lang["char_name"] ?></a></td>
+    <td width="12%" align="center"><a class="noLink"><?php echo $lang["level"] ?></a></td>
+    <td width="8%" align="right"><a class="noLink"><?php echo $lang["race"] ?></a></td>
+    <td width="8%" align="left"><a class="noLink"><?php echo $lang["class"] ?></a></td>
+    <td width="12%" align="center"><a class="noLink"><?php echo $lang["faction"] ?></a></td>
+    <td width="30%"><a class="noLink"><?php echo $lang["guild"] ?></a></td>
+    <td>
 <div>
 <b></b>
 </div>
 </td>
 </tr>
-<tr>
-<td>
-<div>
-<p></p>
-</div>
-</td><td><q><span><i>Name</i></span></q></td><td align="center"><q>Level</q></td><td><q>Location</q></td><td align="right">
-<div>
-<b></b>
-</div>
-</td>
-</tr>
+    <?php
+    foreach ($invq as $charguid)
+    {
+    $char = execute_query("char", "SELECT `guid`, `level`, `gender`, `name`, `race`, `class` FROM `characters`
+WHERE `guid` = ".$charguid["guid"]." LIMIT 1", 1);
+    $char["guid"] = $charguid["guid"];
+    $gquery = execute_query("char", "SELECT `guildid` FROM `guild_member` WHERE `guid` = ".$char["guid"]." LIMIT 1", 1);
+    $char["guildid"] = $gquery ? $gquery["guildid"] : 0;
+    $char["faction"] = GetFaction($char["race"]);
+    ?>
+        <tr>
+            <td>
+                <div>
+                    <p></p>
+                </div>
+            </td><td><q><a style="text-align: center;" href="index.php?searchType=profile&character=<?php echo $char["name"]."&realm=".REALM_NAME ?>" onmouseover="showTip('<?php echo $lang["char_link"] ?>')" onmouseout="hideTip()"><strong><?php echo $char["name"] ?></strong></a></q></td>
+            <td><q><?php echo guild_tooltip($char["guildid"]) ?></q></td>
+            <td align="center"><q><i><span class="veryplain"><?php echo $char["level"] ?></span></i></q></td>
+            <td align="center"><img class="ci" onmouseout="hideTip()" onMouseOver="showTip('<?php echo GetNameFromDB($char["race"], "dbc_chrraces") ?>')" src="images/icons/race/<?php echo $char["race"],"-",$char["gender"] ?>.gif"><img src="shared/wow-com/images/layout/pixel.gif" width="2">
+                <img class="ci" onmouseout="hideTip()" onMouseOver="showTip('<?php echo GetNameFromDB($char["class"], "dbc_chrclasses") ?>')" src="images/icons/class/<?php echo $char["class"] ?>.gif"></td>
+            <td align="center"><q><img width="20" height="20" src="images/icon-<?php echo $char["faction"] ?>.gif" onMouseOver="showTip('<?php echo $lang[$char["faction"]] ?>')" onmouseout="hideTip()"></q></td>
+            <td><q><?php echo guild_tooltip($char["guildid"]) ?></q></td>
+            <td>
+                <div>
+                    <b></b>
+                </div>
+            </td>
+        </tr>
+    <?php
+}
+    ?>
 </table>
 </div>
-<?php
+        <?php
 	}
 /******************************************************************************************************************************************************************/
+// Sold By
+if(false)
+{
 ?>
-</div>
-</div>
+        <div class="scroll-padding"></div>
+        <div class="rel-tab">
+            <p class="rel-provided"></p>
+            <h3>Owned by</h3>
+        </div>
+        <div id="big-results" style="clear: both;">
+            <div class="data" style="clear: both;">
+                <table class="data-table">
+                    <tr class="masthead">
+                        <td>
+                            <div>
+                                <p></p>
+                            </div>
+                        </td><td><a class="noLink">Name</a></td><td align="center"><a class="noLink">Level</a></td><td><a class="noLink">Location</a></td><td align="right">
+                            <div>
+                                <b></b>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <p></p>
+                            </div>
+                        </td><td><q><span><i>Name</i></span></q></td><td align="center"><q>Level</q></td><td><q>Location</q></td><td align="right">
+                            <div>
+                                <b></b>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <?php
+            }
+            /******************************************************************************************************************************************************************/
+?>
 </div>
 <?php
 	endcontenttable();

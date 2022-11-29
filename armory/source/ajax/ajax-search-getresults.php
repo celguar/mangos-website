@@ -37,13 +37,14 @@ if($do_query)
             $gquery = execute_query("char", "SELECT `guildid` FROM `guild_member` WHERE `guid` = ".$sresults["guid"]." LIMIT 1", 2);
             $theGuildId = $gquery ? $gquery : 0;
             $theFaction = GetFaction($theRace);
-            $characters[] = array($theGuid, $theName, $theLevel, $theRace, $theGender, $theClass, $theGuildId, $theFaction);
+            $thePoints = GetCharacterAchievementPoints($theGuid);
+            $characters[] = array($theGuid, $theName, $theLevel, $theRace, $theGender, $theClass, $theGuildId, $theFaction, $thePoints);
         }
 	}
 	if($totalResults > 0)
 	{
 		// Now output character data //
-		$orders = array("name", "level", "guild", "race", "class", "faction");
+		$orders = array("name", "level", "guild", "race", "class", "faction", "achiev");
 		$orderOppositeSort = array();
 		$orderSymbol = array();
 		$orderClassSuffix = array();
@@ -58,7 +59,7 @@ if($do_query)
 			// client is using an order by //
 			$orderBy = addslashes($_GET["orderBy"]);
 			$orderSort = addslashes($_GET["orderSort"]);
-			if($orderBy == "name" || $orderBy == "level" || $orderBy == "guild" || $orderBy == "race" || $orderBy == "class" || $orderBy == "faction")
+			if($orderBy == "name" || $orderBy == "level" || $orderBy == "guild" || $orderBy == "race" || $orderBy == "class" || $orderBy == "faction" || $orderBy == "achiev")
 			{
 				if($orderSort == "ASC")
 				{
@@ -90,12 +91,15 @@ if($do_query)
 <div>
 <p></p>
 </div>
-</td><td width="30%"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=name&orderSort=",$orderOppositeSort["name"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["char_name"]," ",$orderSymbol["name"] ?></a></td>
+</td>
+<td width="20%"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=name&orderSort=",$orderOppositeSort["name"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["char_name"]," ",$orderSymbol["name"] ?></a></td>
 <td width="12%" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=level&orderSort=",$orderOppositeSort["level"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["level"]," ",$orderSymbol["level"] ?></a></td>
 <td width="8%" align="right"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=race&orderSort=",$orderOppositeSort["race"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["race"]," ",$orderSymbol["race"] ?></a></td>
 <td width="8%" align="left"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=class&orderSort=",$orderOppositeSort["class"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["class"]," ",$orderSymbol["class"] ?></a></td>
 <td width="12%" align="center"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=faction&orderSort=",$orderOppositeSort["faction"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["faction"]," ",$orderSymbol["faction"] ?></a></td>
-<td width="30%"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=guild&orderSort=",$orderOppositeSort["guild"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["guild"]," ",$orderSymbol["guild"] ?></a></td><td align="right">
+<td width="30%"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=guild&orderSort=",$orderOppositeSort["guild"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["guild"]," ",$orderSymbol["guild"] ?></a></td>
+<td width="10%"><a href="#" onclick="showResult('?searchQuery=<?php echo $SearchQuery,"&page=",$pageNo,"&orderBy=achiev&orderSort=",$orderOppositeSort["achiev"],"&realm=",addslashes(REALM_NAME) ?>','source/ajax/ajax-search-getresults.php')"><?php echo $lang["achievements"]," ",$orderSymbol["achiev"] ?></a></td>
+<td align="right">
 <div>
 <b></b>
 </div>
@@ -138,6 +142,7 @@ if($do_query)
 <td align="left" class="<?php echo $orderClassSuffix["class"] ?>"><q><img src="images/icons/class/<?php echo $data[5] ?>.gif" onmouseover="showTip('<?php echo GetNameFromDB($data[5], "dbc_chrclasses") ?>')" onmouseout="hideTip()"></q></td>
 <td align="center" class="<?php echo $orderClassSuffix["faction"] ?>"><q><img src="images/icon-<?php echo $data[7] ?>.gif" width="20" height="20" onmouseover="showTip('<?php echo $lang[$data[7]] ?>')" onmouseout="hideTip()"></q></td>
 <td class="<?php echo $orderClassSuffix["guild"] ?>"><q><?php echo guild_tooltip($data[6]) ?></q></td>
+<td align="center" class="<?php echo $orderClassSuffix["achiev"] ?>"><q><span class="character-achievement"><a onmouseover="showTip('<?php echo $lang["achievements"]; ?>')" onmouseout="hideTip()" href="index.php?searchType=profile&charPage=achievements&character=<?php echo $data[1]."&realm=".REALM_NAME ?>"><?php echo $data[8] ?></a></span></q></td>
 <td align="right">
 <div>
 <b></b>

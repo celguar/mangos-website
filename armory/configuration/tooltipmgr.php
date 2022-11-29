@@ -258,7 +258,6 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 			WHERE `ref_spellitemenchantment_1` = ".$enchantmentsData[$FirstEnchant]." AND `ref_spellitemenchantment_2` = ".$enchantmentsData[$FirstEnchant+3]." AND `ref_spellitemenchantment_3` = ".$enchantmentsData[$FirstEnchant+6]." LIMIT 1", 1);
 		$ItemRandomName = $ItemRandomData["name"];
 	}
-	// TODO FIX ENCHANT
 	/* Item Quality */
 	switch($itemdata["Quality"])
 	{
@@ -273,6 +272,12 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 	}
 	$tooltipText .= tooltip_addsinglerow("<span class=\"item-quality-".$itemQuality."\">".$itemdata["name"]." ".$ItemRandomName."</span>", "item-text-name");
 	$itemtable .= "<span class=\"my".ucfirst($itemQuality)." myBold myItemName\"><span class=\"\">".$itemdata["name"]."</span><span class=\"\"> </span></span>";
+	/* Item Level */
+    if (CLIENT > 1)
+    {
+        $tooltipText .= tooltip_addsinglerow($lang["item_level"] . " " . $itemdata["ItemLevel"],"item-set-name");
+        $itemtable .= "<br /><span class=\"myYellow\">".$lang["item_level"] . " " . $itemdata["ItemLevel"] . "</span>";
+    }
 	/* Item Binding */
 	switch($itemdata["bonding"])
 	{
@@ -509,11 +514,11 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
                         $socket_offset = $defines["SOCKET_1"][CLIENT]+($i-1)*3;
                         if($enchantmentsData[$socket_offset])
                         {
-                            switchConnection("armory", REALM_NAME);
-                            $GemInfo = mysql_fetch_assoc(execute_query("SELECT `name`, `gemid` FROM `dbc_spellitemenchantment` WHERE `id` = ".$enchantmentsData[$socket_offset]." LIMIT 1"));
+                            //switchConnection("armory", REALM_NAME);
+                            $GemInfo = execute_query("armory","SELECT `name`, `gemid` FROM `dbc_spellitemenchantment` WHERE `id` = ".$enchantmentsData[$socket_offset], 1);
                             $socketName = $GemInfo["name"];
-                            switchConnection("mangos", REALM_NAME);
-                            $socketIcon = GetIcon("item", mysql_result(execute_query("SELECT `displayid` FROM `item_template` WHERE `entry` = ".$GemInfo["gemid"]." LIMIT 1"), 0));
+                            //switchConnection("mangos", REALM_NAME);
+                            $socketIcon = GetIcon("item", execute_query("world", "SELECT `displayid` FROM `item_template` WHERE `entry` = ".$GemInfo["gemid"], 2));
                             $socketColor = "setItemYellow";
                         }
                     }

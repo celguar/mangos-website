@@ -49,10 +49,10 @@ foreach($items as $i => $result)
     }
 
     // Important! This assigns a connection to the spesific connection we have.. NOT remove this!
-    $WSDB_EXTRA = DbSimple_Generic::connect("".$mangosALL['db_type']."://".$mangosALL['db_username'].":".$mangosALL['db_password']."@".$mangosALL['db_host'].":".$mangosALL['db_port']."/".$mangosALL['db_name']."");
+    /*$WSDB_EXTRA = DbSimple_Generic::connect("".$mangosALL['db_type']."://".$mangosALL['db_username'].":".$mangosALL['db_password']."@".$mangosALL['db_host'].":".$mangosALL['db_port']."/".$mangosALL['db_name']."");
     if($WSDB_EXTRA)$WSDB_EXTRA->query("SET NAMES ".$mangosALL['db_encoding']);
     $CHDB_EXTRA = DbSimple_Generic::connect("".$mangosALL['db_type']."://".$mangosALL['db_username'].":".$mangosALL['db_password']."@".$mangosALL['db_host'].":".$mangosALL['db_port']."/".$mangosALL['db_char']."");
-    if($CHDB_EXTRA)$CHDB_EXTRA->query("SET NAMES ".$mangosALL['db_encoding']);
+    if($CHDB_EXTRA)$CHDB_EXTRA->query("SET NAMES ".$mangosALL['db_encoding']);*/
 
     $population=0;
     if($res_color==1)$res_color=2;else$res_color=1;
@@ -61,10 +61,8 @@ foreach($items as $i => $result)
     if(check_port_status($result['address'], $result['port'])===true)
     {
         $res_img = './templates/WotLK/images/uparrow2.gif';
-        if($WSDB_EXTRA&&$CHDB_EXTRA) {
-            $population = $CHDB_EXTRA->selectCell("SELECT count(*) FROM `characters` WHERE online=1");
-            $uptime = time () - $DB->selectCell("SELECT starttime FROM uptime WHERE `realmid`='$realm_num' ORDER BY `starttime` DESC LIMIT 1");
-        }
+        $population = $CHDB->selectCell("SELECT count(*) FROM `characters` WHERE online=1");
+        $uptime = time () - $DB->selectCell("SELECT starttime FROM uptime WHERE `realmid`='$realm_num' ORDER BY `starttime` DESC LIMIT 1");
     }
     else
     {

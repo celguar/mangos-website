@@ -118,6 +118,10 @@ function mouseOutArrow(whichSlot) {
 	document.getElementById('flyOver'+ whichSlot +'x').style.visibility = 'hidden';
 }
 
+function goToUpgrade(itemId, specId) {
+
+}
+
 function baseStatsObject() {
 	this.strength = new strengthObject();
 	this.agility = new agilityObject();

@@ -12,10 +12,10 @@
     <generic>
         <expansion>0</expansion>
         <template>offlike</template>                   <!-- DONT CHANGE THIS! -->
-		<default_template>tbc</default_template>     <!-- Website default template [NOTE] you should list this template first under <templates> -->
+		<default_template>vanilla</default_template>     <!-- Website default template [NOTE] you should list this template first under <templates> -->
         <default_lang>en</default_lang>                <!--Default lang .Don't change -->
         <lang>en</lang>                                <!--Site Default lang -->
-        <available_languages>cz,de,en,fr,id,nl,no,ro,ru,sp</available_languages>
+        <available_languages>cz,de,en,fr,id,nl,no,ro,ru,sp,it,ko</available_languages>
         <copyright>All Images and Logos are copyright 2010 Blizzard Entertainment</copyright>  <!-- Copyright Information for the footer of page -->
         <display_banner_flash>0</display_banner_flash>                       <!--Do you want to display Flash Banners?  |  1=yes 0=Show normal picture  -->
         <use_archaeic_dbinfo_format>0</use_archaeic_dbinfo_format>           <!--Leave this as 0 unless you are converting from Modded MaNGOS Web -->
@@ -143,13 +143,13 @@
 
             <!-- Do you want to use external FAQ site? ( example forum topic) -->
             <faqsite_external_use>0</faqsite_external_use>
-            <faqsite_external_link>0</faqsite_external_link>       
+            <faqsite_external_link>0</faqsite_external_link>
 			<!-- Url of external FAQ site - leave blank for internal forum -->
         </forum>
 
         <account_registrer>
             <enable_image_verfication>1</enable_image_verfication>  <!--  1 = Enable , 0 = Disable. .. Image activation, ( User must answer an image that gets created !/core/cache/randimg/ must have write permessions!!)-->
-            <secret_questions_input>1</secret_questions_input>  <!-- Do you want to let the user have secret questions? -->
+            <secret_questions_input>0</secret_questions_input>  <!-- Do you want to let the user have secret questions? -->
         </account_registrer>
     </generic_values>
 	
@@ -224,7 +224,7 @@
             <Honor>1</Honor>
             <Playermap>1</Playermap>                     <!--Enable or disable playermap page  -->
             <Characters>1</Characters>
-            <Userlist>0</Userlist>
+            <Userlist>1</Userlist>
             <Statistic>1</Statistic>
             <ah_system>0</ah_system>                     <!--Auction House page  -->
             <talents>1</talents>
