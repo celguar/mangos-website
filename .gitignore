@@ -1,3 +1,4 @@
 .idea
 *.spp
 
+core/logs/error_log.txt
