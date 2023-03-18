@@ -159,7 +159,7 @@ var theCharName = "<?php echo $stat["name"] ?>";
 </ul>
 </div>
 <?php
-	if(CLIENT < 10)
+	if(CLIENT > 1)
 	{
 ?>
 <div class="select<?php echo $requested_char_action == "achievements" ? 1 : 0 ?>">

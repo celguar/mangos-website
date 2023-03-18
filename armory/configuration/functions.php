@@ -12,6 +12,9 @@ function GetCharacterPortrait($CharacterLevel, $CharacterGender, $CharacterRace,
 }
 function GetCharacterAchievementPoints($charGuid)
 {
+    if (CLIENT < 2)
+        return 0;
+
     $points = 0;
     $achievIds = "";
     $query = execute_query("char", "SELECT * FROM `character_achievement` WHERE `guid` = ".$charGuid." ORDER BY `date` DESC", 0);
