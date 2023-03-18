@@ -31,6 +31,10 @@ foreach ($multirealms as $realmnow_arr){
         //$realm_data_explode = explode(';', $data['dbinfo']);
         $realm_data = $DB->selectRow( "SELECT * FROM `website_realm_settings` WHERE id_realm=?d", $realmnow_arr['id'] ) ;
 
+        // skip nonexistent realms
+        if (!$realm_data)
+            continue;
+
         $mangosALL = array();
         if((int)$MW->getConfig->generic->use_archaeic_dbinfo_format){
             //alternate config - for users upgrading from Modded MaNGOS Web
