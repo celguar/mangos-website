@@ -686,21 +686,21 @@ elseif(isset($_POST['step']) && $_POST['step'] == "accountinfo" && $allow_reg ==
             <td align=right NOWRAP><span><b>Expansion:</b></span></td>
 
             <td align=left NOWRAP>
-                <table border=0 cellspacing=0 cellpadding=0><tr><td><lable for='upgtbc2'><input type=radio value='0' id="upgtbc2" name="uptbc" selected> World of Warcraft</label></td><td valign = "top">
+                <table border=0 cellspacing=0 cellpadding=0><tr><td><lable for='upgtbc2'><input type=radio value='0' id="upgtbc2" name="uptbc" CHECKED> World of Warcraft</label></td><td valign = "top">
                         </td></tr></table></td>
         </tr>
         <?php
-        if ((int)$MW->getConfig->generic->expansion > 0) { ?>
+        if ((int)$GLOBALS['expansion'] > 0) { ?>
         <tr>
             <td align=right NOWRAP><span><b>Expansion:</b></span></td>
 
             <td align=left NOWRAP>
-                <table border=0 cellspacing=0 cellpadding=0><tr><td><lable for='upgtbc1'><input type=radio value='1' id="upgtbc1" name="uptbc"  > The Burning Crudades</label></td><td valign = "top">
+                <table border=0 cellspacing=0 cellpadding=0><tr><td><lable for='upgtbc1'><input type=radio value='1' id="upgtbc1" name="uptbc" CHECKED> The Burning Crudades</label></td><td valign = "top">
                         </td></tr></table></td>
         </tr>
         <?php } ?>
         <?php
-        if ((int)$MW->getConfig->generic->expansion > 1) { ?>
+        if ((int)$GLOBALS['expansion'] > 1) { ?>
         <tr>
             <td align=right NOWRAP><span><b>Expansion:</b></span></td>
 

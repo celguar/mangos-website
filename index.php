@@ -73,6 +73,11 @@ $GLOBALS['redirect'] = '' ;
 $GLOBALS['sidebarmessages'] = '' ;
 $GLOBALS['context_menu'] = array() ;
 $GLOBALS['user_cur_lang'] = ( string )$MW->getConfig->generic->default_lang ;
+$GLOBALS['expansion'] = (int)$MW->getConfig->generic->expansion;
+if (file_exists("tbc.spp"))
+	$GLOBALS['expansion'] = 1;
+if (file_exists("wotlk.spp"))
+	$GLOBALS['expansion'] = 2;
 
 // Inzizalize Cache class
 $cache = new gCache ;
