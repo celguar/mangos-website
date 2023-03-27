@@ -123,7 +123,14 @@ li.bc { display: block; float: left; background: url('../images/toggle-bc0.gif')
 .gborder ul li div.a ul li div.b ul li div.c { padding: 20px 0 45px 0; text-align: left; }
 .gborder ul li div.a ul li div.b ul li div.c ul { margin: 0; background: none; }
 .gborder ul li div.a ul li div.b ul li div.c ul li { padding: 9px 0 0 15px; background: url('../images/square.gif') no-repeat 0 8px; }
-  
+    
+/*\ Command List \*/
+/*_________________________________________________________________________*/
+a.server { border-style: solid; border-width: 0px 1px 1px 0px; border-color: #D8BF95; font-weight: bold; }
+#commandSearch { font-family: Arial, Helvetica, sans-serif; font-size: 11px; }
+td.serverStatus { font-size: 0.8em; border-style: solid; border-width: 0px 1px 1px 0px; border-color: #D8BF95; }
+th.rankingHeader { color: #C7C7C7; font-size: 10pt; font-family: arial,helvetica,sans-serif; font-weight: bold; background-color: #2E2D2B; border-style: solid; border-width: 1px; border-color: #5D5D5D #5D5D5D #1E1D1C #1E1D1C; padding: 3px;}
+
   
 /*\ Forum Lists \*/
 /*_________________________________________________________________________*/
