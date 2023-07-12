@@ -248,7 +248,7 @@ $mainnav_links = array (
       ),
       array (
           0 => 'bots_discord',
-          1 => 'https://discord.gg/867uD7nKCS',
+          1 => 'https://discord.gg/s4JGKG2BUW',
           2 => '',
       ),
   ),	 	   
