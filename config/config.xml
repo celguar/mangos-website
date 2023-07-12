@@ -226,7 +226,7 @@
             <Characters>1</Characters>
             <Userlist>1</Userlist>
             <Statistic>1</Statistic>
-            <ah_system>0</ah_system>                     <!--Auction House page  -->
+            <ah_system>1</ah_system>                     <!--Auction House page  -->
             <talents>1</talents>
             <Armory>1</Armory>
             <Interactive_world_atlas>0</Interactive_world_atlas>	<!-- Display link to Interactive Atlas -->

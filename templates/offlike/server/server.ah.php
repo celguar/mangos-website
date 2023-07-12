@@ -40,7 +40,7 @@ font.expired {font-weight:bold; font-size: 0.96em;color: rgb(170, 20, 20);}
 
 <?php 
 global $use_itemsite_url;
-$use_itemsite_url = "http://www.wowhead.com/?item=";
+$use_itemsite_url = "http://wowhead.com/$wowhead_domain/item=";
 
 global $current_time;
 $current_time = time();
@@ -262,10 +262,10 @@ if ($numofpgs > 1) { ?>
           <td class='rankingHeader' align='center' nowrap='nowrap'><a href="<?php echo AHsortlink('currentbid'); ?>"><?php echo $lang['ah_currentbid']; ?></a></td>
           <td class='rankingHeader' align='center' nowrap='nowrap'><a href="<?php echo AHsortlink('buyout'); ?>"><?php echo $lang['ah_buyout']; ?></a></td>
         </tr>
-        <?php foreach($ah_entry as $row){ ?>
+        <?php if (empty($ah_entry)){echo "ahbot failed to load!";} foreach($ah_entry as $row){ ?>
         <tr class="ahrow">
           <td><?php echo item_manage_class($row['class']);?></td>
-          <td><a class="iqual<?php echo $row['quality'];?>" href="<?php echo $use_itemsite_url; echo $row['item_entry'] ; ?>"target="_blank"><?php echo $row['itemname']; ?></a></td>
+          <td><a data-wowhead="domain=<?php echo $wowhead_domain;?>" class="iqual<?php echo $row['quality'];?>" href="<?php echo $use_itemsite_url; echo $row['item_entry'] ; ?>"target="_blank"><?php echo $row['itemname']; ?></a></td>
           <td align='right'><?php echo $row['quantity']; ?></td>
           <td><?php echo $row['seller']; ?></td>
           <td align='right'><?php ah_time_left($row['time']); ?></td>
