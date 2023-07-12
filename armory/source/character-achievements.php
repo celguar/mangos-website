@@ -47,7 +47,7 @@ foreach ($getcharachi as $char_achi)
         <h1 style="padding-top: 12px!important;"><?php echo $lang["achievements"] ?></h1>
     </div>
     <?php
-    if (CLIENT == 2)
+    if (CLIENT >= 2)
     {
         $achi["icon"] = GetIcon("spell", $achi["ref_spellicon"]);
         $temp_out[$achi["ref_achievement_category"]][0] .="<tr>
@@ -56,7 +56,7 @@ foreach ($getcharachi as $char_achi)
 <td width=\"10%\" align=\"center\" style=\"border-bottom:1px solid #222b3a;\">".date("d/m/Y", $char_achi["date"])."</td>
 <td width=\"10%\" align=\"center\" style=\"background:url('images/achievements/point_shield.png') center no-repeat; border-bottom:1px solid #222b3a\">".$achi["points"]."</td>
 </tr>";
-        $temp_out[$achi["Category"]][1] = 1;
+        $temp_out[$achi["ref_achievement_category"]][1] = 1;
     }
     else
     {

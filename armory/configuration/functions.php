@@ -12,7 +12,7 @@ function GetCharacterPortrait($CharacterLevel, $CharacterGender, $CharacterRace,
 }
 function GetCharacterAchievementPoints($charGuid)
 {
-    if (CLIENT < 2)
+    if (CLIENT == 1) // todo tbc achiev
         return 0;
 
     $points = 0;
@@ -29,8 +29,14 @@ function GetCharacterAchievementPoints($charGuid)
         $achievIds = implode(",", $achievements);
         //echo $achievIds;
         //print $achievements[0];
-        if (ClIENT == 0) // TODO add tbc
+        if (CLIENT < 2) // TODO add tbc
+        {
             $points = execute_query("world", "SELECT SUM(`Points`) FROM `achievement_dbc` WHERE `ID` IN (".$achievIds.")", 2);
+        }
+        else
+        {
+            $points = execute_query("armory", "SELECT SUM(`points`) FROM `dbc_achievement` WHERE `id` IN (".$achievIds.")", 2);
+        }
     }
 
     return $points;
