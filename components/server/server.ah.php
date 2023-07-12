@@ -6,8 +6,8 @@ $pathway_info[] = array('title'=>$lang['module_ah'],'link'=>'');
 global $CHDB;
 
 if (isset($_GET['filter'])){
-	if ($_GET['filter'] == "ally") {$ah_where = " WHERE `houseid` = 2";}
-	elseif ($_GET['filter'] == "horde") {$ah_where = " WHERE `houseid` = 6";}
+	if ($_GET['filter'] == "ally") {$ah_where = " WHERE `houseid` IN (1,2,3)";}
+	elseif ($_GET['filter'] == "horde") {$ah_where = " WHERE `houseid` IN (4,5,6)";}
 	elseif ($_GET['filter'] == "black") {$ah_where = " WHERE `houseid` = 7";}
 }
 else {$ah_where = "";}

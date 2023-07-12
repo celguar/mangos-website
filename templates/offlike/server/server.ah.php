@@ -197,20 +197,20 @@ function tableAH($ah_entry) {
           <a href="<?php echo AHsortlink('quality'); ?>"><?php echo $lang['ah_sortbyquality']; ?></a></td></tr>
 		 <tr><td class="rankingHeader" align="center" colspan="8" nowrap="nowrap">
 <?php
-//if (isset($_GET['filter'])){
-//$rmvthis = '&filter='.$_GET["filter"];
-//$finalurl = str_replace ($rmvthis, "", $_SERVER['REQUEST_URI']);
-//if ($_GET['filter'] == "ally") {echo '['.$lang["ah_alliance"].']&nbsp;&nbsp;-&nbsp;&nbsp;';} else {echo '<a href="'.$finalurl.'&filter=ally">'.$lang["ah_alliance"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';}
-//if ($_GET['filter'] == "horde") {echo '['.$lang["ah_horde"].']&nbsp;&nbsp;-&nbsp;&nbsp;';} else {echo '<a href="'.$finalurl.'&filter=horde">'.$lang["ah_horde"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';}
-//if ($_GET['filter'] == "black") {echo '['.$lang["ah_blackwater"].']&nbsp;&nbsp;-&nbsp;&nbsp;';} else {echo '<a href="'.$finalurl.'&filter=black">'.$lang["ah_blackwater"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';}
-//echo '<a href="'.$finalurl.'">'.$lang["all"].'</a>';
-//}
-//else {
-//echo '<a href="'.$_SERVER['REQUEST_URI'].'&filter=ally">'.$lang["ah_alliance"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';
-//echo '<a href="'.$_SERVER['REQUEST_URI'].'&filter=horde">'.$lang["ah_horde"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';
-//echo '<a href="'.$_SERVER['REQUEST_URI'].'&filter=black">'.$lang["ah_blackwater"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';
-//echo '['.$lang["all"].']';
-//}
+if (isset($_GET['filter'])){
+$rmvthis = '&filter='.$_GET["filter"];
+$finalurl = str_replace ($rmvthis, "", $_SERVER['REQUEST_URI']);
+if ($_GET['filter'] == "ally") {echo '['.$lang["ah_alliance"].']&nbsp;&nbsp;-&nbsp;&nbsp;';} else {echo '<a href="'.$finalurl.'&filter=ally">'.$lang["ah_alliance"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';}
+if ($_GET['filter'] == "horde") {echo '['.$lang["ah_horde"].']&nbsp;&nbsp;-&nbsp;&nbsp;';} else {echo '<a href="'.$finalurl.'&filter=horde">'.$lang["ah_horde"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';}
+if ($_GET['filter'] == "black") {echo '['.$lang["ah_blackwater"].']&nbsp;&nbsp;-&nbsp;&nbsp;';} else {echo '<a href="'.$finalurl.'&filter=black">'.$lang["ah_blackwater"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';}
+echo '<a href="'.$finalurl.'">'.$lang["all"].'</a>';
+}
+else {
+echo '<a href="'.$_SERVER['REQUEST_URI'].'&filter=ally">'.$lang["ah_alliance"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';
+echo '<a href="'.$_SERVER['REQUEST_URI'].'&filter=horde">'.$lang["ah_horde"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';
+echo '<a href="'.$_SERVER['REQUEST_URI'].'&filter=black">'.$lang["ah_blackwater"].'</a>&nbsp;&nbsp;-&nbsp;&nbsp;';
+echo '['.$lang["all"].']';
+}
 //
 //?>
 </td></tr>
