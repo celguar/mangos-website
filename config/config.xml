@@ -132,14 +132,14 @@
             <ql4_forum_id>6</ql4_forum_id>               <!-- forum id for FAQ Forum/Quicklink4 in right menu -->
 
             <!-- If you want to use external forums ( example Phpbb , you must configure these values)  -->
-            <externalforum>1</externalforum>              <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
+            <externalforum>0</externalforum>              <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
             <frame_forum>0</frame_forum>                <!-- 1 = Use Frame to external forum     |    0 = Redirect to external forum    -->
             <forum_external_link>https://singleplayerproject.com/viewtopic.php?f=4&amp;t=373</forum_external_link>        <!-- Url of external forum -->
 
             <!-- If you want to use external bugs tracker ( example sourceforge.net , you must configure these values)  -->
             <externalbugstracker>1</externalbugstracker>       <!-- 1 = Use external forum     |    0 = Dont use external Bugs Tracker   -->
             <frame_bugstracker>0</frame_bugstracker>         <!-- 1 = Use Frame to external forum     |    0 = Redirect to external Bugs Tracker -->
-            <bugstracker_external_link>https://github.com/celguar/mangosbot-bots/issues</bugstracker_external_link> <!-- Url of external Bugs Tracker   -->
+            <bugstracker_external_link>https://github.com/celguar/spp-classics-cmangos/issues</bugstracker_external_link> <!-- Url of external Bugs Tracker   -->
 
             <!-- Do you want to use external FAQ site? ( example forum topic) -->
             <faqsite_external_use>0</faqsite_external_use>
@@ -255,6 +255,7 @@
             <Activate_account>0</Activate_account>
             <Character_copy>0</Character_copy>         <!-- This requires extra install of SQL and more config.  See the own config file Character copy system  -->
             <retrieve_pass>0</retrieve_pass>           <!-- Where users fill in secret questions to retrieve their pass. -->
+            <Character_tools>0</Character_tools>
         </left_section>
 
     </components>
