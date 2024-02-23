@@ -4,9 +4,9 @@
 //error_reporting(E_ALL);
 $realms = array(
 // "Realm name" => array(realmd_DB, characters_DB, mangos_DB, armory_DB, playerbots_DB)
-"Vanilla Realm" => array(1, 1, 1, 1, 1),
-"Burning Crusade Realm" => array(2, 2, 2, 2, 2),
-"Wrath of the Lich King" => array(3, 3, 3, 3, 3),
+"Vanilla Realm" => array(1, 1, 1, 1),
+"Burning Crusade Realm" => array(2, 2, 2, 2),
+"Wrath of the Lich King" => array(3, 3, 3, 3),
 );
 // Default Realm Name (use one chosen upper in $realms)
 //define("DefaultRealmName", "Vanilla Realm");
@@ -52,12 +52,6 @@ $armory_DB = array(
 2 => array("127.0.0.1:3310", "root", "123456", "tbcarmory"),
 3 => array("127.0.0.1:3310", "root", "123456", "wotlkarmory"),
 );
-$playerbot_DB = array(
-// Connection to bots DBs
-1 => array("127.0.0.1:3310", "root", "123456", "classicplayerbots"),
-2 => array("127.0.0.1:3310", "root", "123456", "tbcplayerbots"),
-3 => array("127.0.0.1:3310", "root", "123456", "wotlkplayerbots"),
-);
 /* Don't touch anything beyond this point. */
 set_time_limit(0);
 ini_set("default_charset", "UTF-8");
@@ -76,8 +70,6 @@ function execute_query($db_name, $query, $method = 0, $error = "")
             $query_result = $CHDB->query($query);
         elseif($db_name == "world")
             $query_result = $WSDB->query($query);
-        elseif($db_name == "bots")
-            $query_result = $PBDB->query($query);
     }
     elseif ($method == 1) // row (single associated array)
     {
@@ -89,8 +81,6 @@ function execute_query($db_name, $query, $method = 0, $error = "")
             $query_result = $CHDB->selectRow($query);
         elseif($db_name == "world")
             $query_result = $WSDB->selectRow($query);
-        elseif($db_name == "bots")
-            $query_result = $PBDB->selectRow($query);
     }
     elseif ($method == 2) // cell (no array)
     {
@@ -102,8 +92,6 @@ function execute_query($db_name, $query, $method = 0, $error = "")
             $query_result = $CHDB->selectCell($query);
         elseif($db_name == "world")
             $query_result = $WSDB->selectCell($query);
-        elseif($db_name == "bots")
-            $query_result = $PBDB->selectCell($query);
     }
     if (!$db_name)
         die($error."Database not chosen");
