@@ -25,12 +25,12 @@ if($do_query)
         $itemScores = array();
         $specId = $_GET["specId"];
         $maxLevel = $_GET["level"];
-        $itemInfo = execute_query("bots", "SELECT `slot`, `scale_".$specId."` as `statvalue` FROM `ai_playerbot_item_info_cache` WHERE `id` = '".$SearchQuery."'", 1);
+        $itemInfo = execute_query("char", "SELECT `slot`, `scale_".$specId."` as `statvalue` FROM `ai_playerbot_item_info_cache` WHERE `id` = '".$SearchQuery."'", 1);
         if ($itemInfo)
         {
             //echo $itemInfo["slot"];
             //echo $itemInfo["statvalue"];
-            $itemUpgrades = execute_query("bots", "SELECT `id`, `scale_".$specId."` as `statvalue` FROM `ai_playerbot_item_info_cache` WHERE `scale_".$specId."` > ".$itemInfo["statvalue"]." AND `slot` = '".$itemInfo["slot"]."' AND `minlevel` <= '".$maxLevel."' AND `minlevel` >= '".($maxLevel - round(5 + (80 - $maxLevel) / 10))."' ORDER by `scale_".$specId."` ASC");
+            $itemUpgrades = execute_query("char", "SELECT `id`, `scale_".$specId."` as `statvalue` FROM `ai_playerbot_item_info_cache` WHERE `scale_".$specId."` > ".$itemInfo["statvalue"]." AND `slot` = '".$itemInfo["slot"]."' AND `minlevel` <= '".$maxLevel."' AND `minlevel` >= '".($maxLevel - round(5 + (80 - $maxLevel) / 10))."' ORDER by `scale_".$specId."` ASC");
             $itemUpgrades = array_slice($itemUpgrades, 0, 99);
             //echo count($itemUpgrades);
             //print $itemUpgrades;

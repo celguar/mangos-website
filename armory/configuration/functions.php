@@ -468,7 +468,7 @@ function GetArenaTeamEmblem($teamId = 0) {
 }
 function initialize_realm($realm_force = 0)
 {
-	global $realms, $realmd_DB, $mangosd_DB, $characters_DB, $armory_DB, $playerbot_DB, $DB, $WSDB, $CHDB, $ARDB, $PBDB;
+	global $realms, $realmd_DB, $mangosd_DB, $characters_DB, $armory_DB, $DB, $WSDB, $CHDB, $ARDB, $PBDB;
 	//if(isset($_SESSION["realm"]))
 	//	define("REALM_NAME", $_SESSION["realm"]);
 	if(isset($_GET["realm"]) && isset($realms[$realm_name = stripslashes($_GET["realm"])]))
@@ -519,16 +519,6 @@ function initialize_realm($realm_force = 0)
         $ARDB->setErrorHandler( 'databaseErrorHandler' ) ;
     if ( $ARDB )
         $ARDB->query( "SET NAMES UTF8;" ) ;
-
-    unset($needed_db);
-    $needed_db = $playerbot_DB[$realms[REALM_NAME][4]];
-    $PBDB = dbsimple_Generic::connect( "mysql://" . $needed_db[1] .
-        ":" . $needed_db[2] . "@" . $needed_db[0] .
-        "/" . $needed_db[3] . "" ) ;
-    if ( $PBDB )
-        $PBDB->setErrorHandler( 'databaseErrorHandler' ) ;
-    if ( $PBDB )
-        $PBDB->query( "SET NAMES UTF8;" ) ;
 
     define("CLIENT", $ARDB->selectCell("SELECT `value` FROM `conf_client` LIMIT 1"));
     define("LANGUAGE", $ARDB->selectCell("SELECT `value` FROM `conf_lang` LIMIT 1"));
