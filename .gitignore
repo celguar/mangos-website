@@ -1,4 +1,21 @@
-.idea
+# IDE / Editor configs
+.idea/
+
+# Local project files
+.github
 *.spp
 
+# Logs
 core/logs/error_log.txt
+
+# Private configs (use config.example.xml instead)
+config/config.xml
+
+# System files
+*.bak
+*.tmp
+*.swp
+
+# Cache
+/core/cache/*
+/armory/images/models
