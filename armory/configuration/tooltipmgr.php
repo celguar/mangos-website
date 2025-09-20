@@ -593,7 +593,7 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
         }
 
 		/* Durability */
-		if($itemdata["MaxDurability"])
+		if($itemguid && $itemdata["MaxDurability"])
 		{
 			if($itemguid)
 				$tooltipText .= tooltip_addsinglerow($lang["durability"].":&nbsp;".$item_durability."&nbsp;/&nbsp;".$itemdata["MaxDurability"]);
