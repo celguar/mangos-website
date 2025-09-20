@@ -934,9 +934,17 @@ function get_realm_byid($id){
 }
 
 function check_port_status($ip, $port){
+    global $DB;
+    $realmstatus = $DB->selectRow("SELECT `realmflags` FROM `realmlist` WHERE `port`=?d", $port);
+    if ($realmstatus && $realmstatus['realmflags'] != 1 && $realmstatus['realmflags'] != 2)
+        return true;
+    else
+        return false;
+
+
     $ERROR_NO = null;
     $ERROR_STR = null;
-    if($fp1=fsockopen($ip, $port, $ERROR_NO, $ERROR_STR,(float)1.0)){
+    if($fp1=fsockopen($ip, $port, $ERROR_NO, $ERROR_STR,(float)0.1)){
         fclose($fp1);return true;
     }else{
         return false;

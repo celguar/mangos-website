@@ -27,13 +27,16 @@ function population_view($n) {
     global $lang;
     $maxlow = 200;
     $maxmedium = 700;
+    $maxhigh = 1000;
     if($n <= $maxlow){
         return '<font color="green">' . $lang['low'] . '</font>';
     }elseif($n > $maxlow && $n <= $maxmedium){
         return '<font color="orange">' . $lang['medium'] . '</font>';
-    }else{
+    }elseif($n > $maxmedium && $n <= $maxhigh){
         return '<font color="red">' . $lang['high'] . '</font>';
     }
+    else
+        return '<font color="red">' . $lang['full'] . '</font>';
 }
 
 function build_menu_items($links_arr){

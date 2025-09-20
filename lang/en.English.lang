@@ -313,6 +313,7 @@
 |=|hideemail :=: Hide e-mail?
 |=|hideprofile :=: Hide profile?
 |=|high :=: High
+|=|full :=: Full
 |=|HIT_RATING :=: Hit
 |=|hits :=: Website Hits
 |=|holy_dmg :=: Holy

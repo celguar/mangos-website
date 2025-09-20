@@ -80,11 +80,11 @@ echo $desc;
         <tr>
             <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><img src="<?php echo $item['img']; ?>" height='18' width='18' alt=""/></td>
             <td width="168" class="serverStatus<?php echo $item['res_color'] ?>"><div align="center">
-                <?php if($item['uptime'] != 0) { print_time(parse_time($item['uptime'])); } ?>
+                <?php if($item['uptime'] > 1) { print_time(parse_time($item['uptime'])); } ?>
             </div></td>
             <td width="802" class="serverStatus<?php echo $item['res_color'] ?>"><b style='color: rgb(35, 67, 3);'><?php echo $item['name']; ?></b></td>
             <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><b style='color: rgb(102, 13, 2);'><?php echo $item['type']; ?></b></td>
-            <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><b style='color: rgb(35, 67, 3);'><?php if($item['uptime'] != 0) {echo $item['pop']." (".population_view($item['pop']).")";} ?></b></td>
+            <td class="serverStatus<?php echo $item['res_color'] ?>" align="center"><b style='color: rgb(35, 67, 3);'><?php if($item['uptime'] != 0) { if ((($item['pop']) % 100) > 0) {echo $item['pop']." (".population_view($item['pop']).")";} else { echo population_view($item['pop']); }} ?></b></td>
         </tr>
 <?php endforeach; ?>
         </tbody>

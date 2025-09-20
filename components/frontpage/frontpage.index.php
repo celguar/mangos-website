@@ -78,7 +78,7 @@ foreach ($multirealms as $realmnow_arr){
         $server['name'] = $data['name'];
         if((int)$MW->getConfig->components->server_information->realm_status){
             $checkaddress = (int)$MW->getConfig->generic->use_local_ip_port_test ? '127.0.0.1' : $data['address'];
-            $server['realm_status'] = (check_port_status($checkaddress, $data['port']) === true) ? true : false;
+            $server['realm_status'] = check_port_status($checkaddress, $data['port']);
         }
         $changerealmtoparam = array("changerealm_to" => $realmnow_arr['id']);
         if((int)$MW->getConfig->components->server_information->online){
