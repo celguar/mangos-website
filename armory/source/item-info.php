@@ -162,6 +162,9 @@ else
         <img onMouseOut="javascript: hideTip();" onMouseOver="javascript: showTip('<?php echo $lang["requires"] ?> <strong><?php echo $itemData["RequiredDisenchantSkill"] ?></strong> <?php echo $lang["enchanting_to_disenchant"] ?>');" src="images/icons/icon-disenchant-sm.gif"><strong onMouseOut="javascript: hideTip();" onMouseOver="javascript: showTip('<?php echo $lang["requires"] ?> <strong><?php echo $itemData["RequiredDisenchantSkill"] ?></strong> <?php echo $lang["enchanting_to_disenchant"] ?>');"><?php echo $itemData["RequiredDisenchantSkill"] ?></strong>
         <?php
 	    }
+        ?>
+    </div>
+    <?php
 	}
 ?>
 
