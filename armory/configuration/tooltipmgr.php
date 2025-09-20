@@ -332,8 +332,16 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 		}
 		else if($config["ShowError"] && !$count)
 		{
-			$tooltipText .= tooltip_addsinglerow("<span class=\"error\">".$lang["error"].": ".$lang["unknown"]." Flags ".$itemdata["Flags"].", ".$lang["report_to_gm"]."</span>");
-			$itemtable .= "<br /><span class=\"error\">".$lang["error"].": ".$lang["unknown"]." Flags ".$itemdata["Flags"].", ".$lang["report_to_gm"]."</span>";
+            if ($itemdata["Flags"] == 16)
+            {
+                $tooltipText .= tooltip_addsinglerow("<span class=\"error\">Deprecated</span>");
+                $itemtable .= "<br /><span class=\"error\">Deprecated</span>";
+            }
+            else
+            {
+                $tooltipText .= tooltip_addsinglerow("<span class=\"error\">".$lang["error"].": ".$lang["unknown"]." Flags ".$itemdata["Flags"].", ".$lang["report_to_gm"]."</span>");
+                $itemtable .= "<br /><span class=\"error\">".$lang["error"].": ".$lang["unknown"]." Flags ".$itemdata["Flags"].", ".$lang["report_to_gm"]."</span>";
+            }
 		}
 	}
     // unique is set not in flags
