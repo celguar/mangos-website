@@ -22,6 +22,7 @@ $PagesArray = array(
 "idx" => "main.php",
 "characters" => "charlist.php",
 "profile" => "character.php",
+"creature" => "npc.php",
 "guilds" => "guildlist.php",
 "guildinfo" => "guild-info.php",
 "items" => "itemlist.php",

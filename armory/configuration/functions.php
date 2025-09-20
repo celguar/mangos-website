@@ -544,4 +544,159 @@ function databaseErrorHandler($message, $info)
     echo "SQL Error: $message<br><pre>"; print_r($info); echo "</pre>";
     exit();
 }
+
+function GetCreatureInfo($data)
+{
+    $stat = array();
+    $stat["name"] = $data["Name"];
+    $stat["level"] = $data["MinLevel"];
+    $stat["model1"] = $data["DisplayId1"];
+    $stat["model2"] = $data["DisplayId2"];
+    $stat["model3"] = $data["DisplayId3"];
+    $stat["model4"] = $data["DisplayId4"];
+    $stat["subname"] = $data["SubName"];
+    $stat["equip_template"] = $data["EquipmentTemplateId"];
+
+    for ($i = 1; $i < 5; $i++) {
+        $model_info = array();
+
+        //echo $i;
+        //echo $stat["model".$i];
+        $model_extra_id = execute_query("armory", "SELECT `ExtendedDisplayInfoID` FROM `dbc_creaturedisplayinfo` WHERE `ID`=".$stat["model".$i]." LIMIT 1", 2);
+        if ($model_extra_id)
+        {
+            $model_info_raw = execute_query("armory", "SELECT * FROM `dbc_creaturedisplayinfoextra` WHERE `ID`=".$model_extra_id." LIMIT 1", 1);
+            if ($model_info_raw)
+            {
+                //echo $stat["model1"];
+                //echo " ";
+                //echo $model_extra_id;
+                //print_r($model_info_raw);
+                for ($j = 1; $j < 11; $j++) {
+                    if (!CLIENT)
+                    {
+                        if ($j == 10)
+                            $model_info["item" . $j] = $model_info_raw["Flags"];
+                        else
+                            $model_info["item" . $j] = $model_info_raw["NPCItemDisplayID_" . $j];
+                    }
+                    else
+                    {
+                        if ($j == 1)
+                            $model_info["item" . $j] = $model_info_raw["FacialHairID"];
+                        else
+                            $model_info["item" . $j] = $model_info_raw["Equipment_" . ($j - 1)];
+                    }
+                    $model_info["icon".$j] = GetIcon("item", $model_info["item".$j]);
+                    $possible_items = execute_query("world", "SELECT `entry` FROM `item_template` WHERE `displayid`=".$model_info["item".$j], 0);
+
+                    $items_with_display = array();
+                    if ($possible_items)
+                    {
+                        foreach ($possible_items as $item)
+                        {
+                            $items_with_display[] = $item["entry"];
+                        }
+                    }
+                    $model_info["items_with_display"][$j] = $items_with_display;
+
+                    // display IDs with same texture
+                    $itemDisplayInfo = execute_query("armory", "SELECT * FROM `dbc_itemdisplayinfo_full` WHERE `ID`=".$model_info["item".$j]." LIMIT 1", 1);
+                    if ($itemDisplayInfo)
+                    {
+                        $item_display = array();
+                        $item_display["model_name1"] = $itemDisplayInfo["ModelName1"];
+                        $item_display["model_name2"] = $itemDisplayInfo["ModelName2"];
+                        $item_display["model_texture1"] = $itemDisplayInfo["ModelTexture1"];
+                        $item_display["model_texture2"] = $itemDisplayInfo["ModelTexture2"];
+                        for ($k = 1; $k < 9; $k++) {
+                            $item_display["texture".$k] = $itemDisplayInfo["Texture".$k];
+                        }
+
+                        $should_search = !empty($item_display["model_name1"]) || !empty($item_display["model_name2"]) || !empty($item_display["model_texture1"]) || !empty($item_display["model_texture2"]);
+                        if (!$should_search) {
+                            for ($k = 1; $k < 9; $k++) {
+                                if (!empty($item_display["texture".$k]))
+                                    $should_search = true;
+                            }
+                        }
+
+                        $search_same = execute_query("armory", "SELECT `ID` FROM `dbc_itemdisplayinfo_full` WHERE `ID` <> ".$model_info["item".$j]." AND `ModelName1`='".$item_display["model_name1"]."' AND `ModelName2`='".$item_display["model_name2"]."' AND `ModelTexture1`='".$item_display["model_texture1"]."' AND `ModelTexture2`='".$item_display["model_texture2"]."' AND `Texture7` = '".$item_display["texture7"]."' AND `Texture8` = '".$item_display["texture8"]."'AND `Texture1` = '".$item_display["texture1"]."' AND `Texture2` = '".$item_display["texture2"]."' AND `Texture3` = '".$item_display["texture3"]."' AND `Texture4` = '".$item_display["texture4"]."' AND `Texture5` = '".$item_display["texture5"]."' AND `Texture6` = '".$item_display["texture6"]."'", 0);
+                        if ($should_search && $search_same)
+                        {
+                            $same_display_ids = array();
+//                            echo "</br> Same Display IDs found as ";
+//                            echo $model_info["item".$j];
+//                            echo " :";
+//                            echo sizeof($search_same);
+//                            echo "</br> ";
+                            foreach ($search_same as $item)
+                            {
+//                                echo " ";
+//                                echo $item["ID"];
+                                $same_display_ids[] = $item["ID"];
+                            }
+                            $model_info["same_display_ids"][$j] = $same_display_ids;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for ($j = 1; $j < 10; $j++) {
+                    $model_info["item".$j] = 0;
+                    $model_info["icon".$j] = GetIcon("item", 0);
+                }
+            }
+        }
+        else
+        {
+            for ($j = 1; $j < 10; $j++) {
+                $model_info["item".$j] = 0;
+                $model_info["icon".$j] = GetIcon("item", 0);
+            }
+        }
+
+        $stat["model".$i."_info"] = $model_info;
+    }
+
+    if ($stat["equip_template"])
+    {
+        $equip_data = execute_query("world", "SELECT * FROM `creature_equip_template` WHERE `entry`=".$stat["equip_template"], 1);
+        if ($equip_data)
+        {
+            $stat["equip1"] = $equip_data["equipentry1"];
+            $stat["equip2"] = $equip_data["equipentry2"];
+            $stat["equip3"] = $equip_data["equipentry3"];
+
+            if ($stat["equip1"]) $stat["equip1_display"] = execute_query("world", "SELECT `displayid` FROM `item_template` WHERE `entry`=".$stat["equip1"], 2);
+            if ($stat["equip2"]) $stat["equip2_display"] = execute_query("world", "SELECT `displayid` FROM `item_template` WHERE `entry`=".$stat["equip2"], 2);
+            if ($stat["equip3"]) $stat["equip3_display"] = execute_query("world", "SELECT `displayid` FROM `item_template` WHERE `entry`=".$stat["equip3"], 2);
+
+            if ($stat["equip1_display"]) $stat["equip1_icon"] = GetIcon("item", $stat["equip1_display"]);
+            if ($stat["equip2_display"]) $stat["equip2_icon"] = GetIcon("item", $stat["equip2_display"]);
+            if ($stat["equip3_display"]) $stat["equip3_icon"] = GetIcon("item", $stat["equip3_display"]);
+        }
+    }
+
+    return $stat;
+}
+
+function GetCreatureItemSlotName($slotId)
+{
+    switch ($slotId)
+    {
+        case 1: return "Head";
+        case 2: return "Shoulders";
+        case 3: return "Body";
+        case 4: return "Chest";
+        case 5: return "Waist";
+        case 6: return "Legs";
+        case 7: return "Feet";
+        case 8: return "Wrist";
+        case 9: return "Hands";
+        case 10: return "Tabard";
+        default: return "Unk";
+    }
+}
 ?>
