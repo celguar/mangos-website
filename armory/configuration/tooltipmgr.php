@@ -694,6 +694,7 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 	}
 	if($showspelldata)
 	{
+        $hiddenSpellIds = array();
 		for($i = 1; $i <= 5; $i ++)
 		{
 			if($itemdata["spellid_".$i])
@@ -706,14 +707,39 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 					default: $spellTrigger = $lang["unknown_trigger"]." ".$itemdata["spelltrigger_".$i];
 				}
 				//switchConnection("armory", REALM_NAME);
-				$spellDescription = spell_parsedata(execute_query("armory", "SELECT * FROM `dbc_spell` WHERE `id` = ".$itemdata["spellid_".$i]." LIMIT 1", 1));
-				if($spellDescription)
-				{
-					$tooltipText .= tooltip_addsinglerow("<span class=\"item-greenstat\">".$spellTrigger.": ".$spellDescription."</span>");
-					$itemtable .= "<br /><span class=\"bonusGreen\">".$spellTrigger.": ".$spellDescription."</span>";
-				}
+                $spellData = execute_query("armory", "SELECT * FROM `dbc_spell` WHERE `id` = ".$itemdata["spellid_".$i]." LIMIT 1", 1);
+                if ($spellData)
+                {
+                    $spellDescription = spell_parsedata($spellData, false);
+                    if($spellDescription)
+                    {
+                        $tooltipText .= tooltip_addsinglerow("<span class=\"item-greenstat\">".$spellTrigger.": ".$spellDescription."</span>");
+                        $itemtable .= "<br /><span class=\"bonusGreen\">".$spellTrigger.": ".$spellDescription."</span>";
+                    }
+                    else
+                    {
+                        $hiddenSpellIds[] = $i;
+                    }
+                }
 			}
 		}
+        if (count($hiddenSpellIds))
+        {
+            foreach ($hiddenSpellIds as $key => $val)
+            {
+                switch($itemdata["spelltrigger_".$val])
+                {
+                    case 0: $spellTrigger = $lang["use"]; break;
+                    case 1: $spellTrigger = $lang["equip"]; break;
+                    case 2: $spellTrigger = $lang["hit_chance"]; break;
+                    default: $spellTrigger = $lang["unknown_trigger"]." ".$itemdata["spelltrigger_".$val];
+                }
+                //switchConnection("armory", REALM_NAME);
+                $spellData = execute_query("armory", "SELECT * FROM `dbc_spell` WHERE `id` = ".$itemdata["spellid_".$val]." LIMIT 1", 1);
+                $tooltipText .= tooltip_addsinglerow("<span class=\"bonusGray\">(Hidden) ".$spellTrigger.": ".$spellData["name"]."</span>");
+                $itemtable .= "<br /><span class=\"item-quality-gray\">(Hidden) ".$spellTrigger.": ".$spellData["name"]."</span>";
+            }
+        }
 	}
 	/* Item Set Data */
 	if($itemdata["itemset"])
