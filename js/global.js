@@ -256,3 +256,108 @@ function setColor(color,tofield)
 	document.getElementById('cp').style.visibility = "hidden";
 	document.getElementById('cp').style.display    = "none";
 }
+
+function RemoveParameterFromUrl(url, parameter) {
+	return url
+		.replace(new RegExp('[?&]' + parameter + '=[^&#]*(#.*)?$'), '$1')
+		.replace(new RegExp('([?&])' + parameter + '=[^&]*&'), '$1');
+}
+
+function askrace() {
+	let text;
+	let race = prompt("Choose races to show:\n Human - 1\n Orc - 2\n Dwarf - 3\n Night Elf - 4\n Undead - 5\n Tauren - 6\n Gnome - 7\n Troll - 8", "1,2,3,4,5,6,7,8");
+	if (race == null || race === "") {
+		text = "User cancelled the prompt.";
+	} else {
+		text = "Hello " + race + "! How are you today?";
+		let url = document.getElementById("sort_race").href;
+		url = RemoveParameterFromUrl(url, "race");
+		url += "&race=";
+		url += race;
+		document.getElementById("sort_race").href = url;
+	}
+}
+
+function askclass() {
+	let text;
+	let _class = prompt("Choose classes to show:\n Warrior - 1\n Paladin - 2\n Hunter - 3\n Rogue - 4\n Priest - 5\n Shaman - 7\n Mage - 8\n Warlock - 9\n Druid - 11", "1,2,3,4,5,7,8,9,11");
+	if (_class == null || _class === "") {
+		text = "User cancelled the prompt.";
+	} else {
+		text = "Hello " + _class + "! How are you today?";
+		let url = document.getElementById("sort_class").href;
+		url = RemoveParameterFromUrl(url, "class");
+		url += "&class=";
+		url += _class;
+		document.getElementById("sort_class").href = url;
+	}
+}
+
+function askname() {
+	let text;
+	let name = prompt("Choose name or part of name", "");
+	if (name == null || name === "") {
+		text = "User cancelled the prompt.";
+	} else {
+		text = "Hello " + name + "! How are you today?";
+		let url = document.getElementById("sort_name").href;
+		url = RemoveParameterFromUrl(url, "char");
+		url += "&char=";
+		url += name;
+		document.getElementById("sort_name").href = url;
+	}
+}
+
+function askrafname() {
+	let text;
+	let name = prompt("Please enter the name of the friend you recruited", "");
+	if (name == null || name === "") {
+		text = "Name not entered!";
+	} else {
+		text = "Hello " + name + "! How are you today?";
+		let url = document.getElementById("raflink").href;
+		url = RemoveParameterFromUrl(url, "raf");
+		url += "&rafname=";
+		url += name;
+		document.getElementById("raflink").href = url;
+		document.getElementById("raflink").click();
+	}
+}
+
+function asklevel() {
+	let text;
+	let level = prompt("Choose level or level range, e.g. 10-20", "1-80");
+	if (level == null || level === "") {
+		text = "User cancelled the prompt.";
+	} else {
+		text = "Hello " + level + "! How are you today?";
+		let url = document.getElementById("sort_level").href;
+		let lvlsort = level.split('-');
+
+		// rane given
+		if (lvlsort[1] !== undefined)
+		{
+			let minlvl = lvlsort[0];
+			let maxlvl = lvlsort[1];
+			url = RemoveParameterFromUrl(url, "lvl");
+			url = RemoveParameterFromUrl(url, "minlvl");
+			url = RemoveParameterFromUrl(url, "maxlvl");
+			url += "&minlvl=";
+			url += minlvl;
+			url += "&maxlvl=";
+			url += maxlvl;
+		}
+		else
+		{
+			if (lvlsort[0] !== undefined)
+			{
+				url = RemoveParameterFromUrl(url, "lvl");
+				url = RemoveParameterFromUrl(url, "minlvl");
+				url = RemoveParameterFromUrl(url, "maxlvl");
+				url += "&lvl=";
+				url += lvlsort[0];
+			}
+		}
+		document.getElementById("sort_level").href = url;
+	}
+}

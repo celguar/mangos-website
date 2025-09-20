@@ -20,10 +20,10 @@
     </tr>
     <tr>
       <td class="rankingHeader" align="center" nowrap="nowrap">#</td>
-      <td class="rankingHeader" align="center" nowrap="nowrap"><?php echo $lang['name'];?>&nbsp;</td>
-      <td class="rankingHeader" align="center" nowrap="nowrap"><?php echo $lang['race'];?>&nbsp;</td>
-      <td class="rankingHeader" align="center" nowrap="nowrap"><?php echo $lang['class'];?>&nbsp;</td>
-      <td class="rankingHeader" align="center" nowrap="nowrap"><?php echo $lang['level_short'];?>&nbsp;</td>
+      <td class="rankingHeader" align="center" nowrap="nowrap"><a style="color: #C7C7C7;" id="sort_name" onclick="askname();" href="<?php echo $_SERVER['REQUEST_URI'];?>"><?php echo $lang['name'];?></a></td>
+      <td class="rankingHeader" align="center" nowrap="nowrap"><a style="color: #C7C7C7;" id="sort_race" onclick="askrace();" href="<?php echo $_SERVER['REQUEST_URI'];?>"><?php echo $lang['race'];?></a></td>
+      <td class="rankingHeader" align="center" nowrap="nowrap"><a style="color: #C7C7C7;" id="sort_class" onclick="askclass();" href="<?php echo $_SERVER['REQUEST_URI'];?>"><?php echo $lang['class'];?></a></td>
+      <td class="rankingHeader" align="center" nowrap="nowrap"><a style="color: #C7C7C7; text-decoration: none" href="<?php if (!$_GET['sort']) { echo $_SERVER['REQUEST_URI']."&sort=lvldesc"; ?>">&#8679; <?php } else if ($_GET['sort'] == "lvlasc") { echo $_SERVER['REQUEST_URI']."&sort=lvldesc";; ?>">&#8679; <?php } else { echo $_SERVER['REQUEST_URI']."&sort=lvlasc";;?>">&#8681; <?php } ?></a><a style="color: #C7C7C7;" id="sort_level" onclick="asklevel();" href="<?php echo $_SERVER['REQUEST_URI'];?>"><?php echo $lang['level_short'];?></a></td>
       <td class="rankingHeader" align="center" nowrap="nowrap"><?php echo $lang['location'];?>&nbsp;</td>
     </tr>
 <?php foreach($item_res as $item): ?>
