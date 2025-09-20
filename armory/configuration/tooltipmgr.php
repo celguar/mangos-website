@@ -358,8 +358,17 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 		else
 		{
 			$itemClassLeft = $inventorytype[$itemdata["InventoryType"]];
-			$tooltipText .= tooltip_adddoublerow($itemClassLeft,$itemClassRight);
-			$itemtable .= "<br /><span class=\"tooltipRight\">".$itemClassRight."</span>".$itemClassLeft;
+            // rings/trinkets don't show Miscenalleous in game
+            if ($itemdata["class"] == 4 && $itemdata["subclass"] == 0)
+            {
+                $tooltipText .= tooltip_addsinglerow($itemClassLeft);
+                $itemtable .= "<br />".$itemClassLeft;
+            }
+            else
+            {
+                $tooltipText .= tooltip_adddoublerow($itemClassLeft,$itemClassRight);
+                $itemtable .= "<br /><span class=\"tooltipRight\">".$itemClassRight."</span>".$itemClassLeft;
+            }
 		}
 		/* Damage */
 		$itemIsWeapon = 0;
