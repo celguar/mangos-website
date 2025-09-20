@@ -10,6 +10,28 @@ function tooltip_adddoublerow($text1, $text2, $classname1 = "item-text-standard"
 //Spell data
 function spell_parsedata($spellinfo, $buff = 0)
 {
+    $toggle = true;
+    $spellText = "";
+
+    if ($toggle)
+    {
+        if ($buff)
+        {
+            $spellinfo["description"] = $spellinfo["description_buff"];
+        }
+
+        return build_tooltip_desc($spellinfo);
+    }
+
+    if($buff)
+    {
+        $spellText = $spellinfo["description_buff"];
+        $spellText = str_replace("\n", "<br />", $spellText);
+        $spellText = str_replace("\r", "", $spellText);
+    }
+    else
+        $spellText = $spellinfo["description"];
+
 	if($buff)
 	{
 		$spellText = $spellinfo["description_buff"];
