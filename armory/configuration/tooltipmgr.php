@@ -401,15 +401,24 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 					default: $itemDamageType .= $lang["unknown"].": ".$itemdata["dmg_type".$i];
 				}
 				$itemDamageType .= "&nbsp;";
+
 				if($i == 1)
 				{
-					$tooltipText .= tooltip_addsinglerow($minDamage."-".$maxDamage.$itemDamageType.$lang["dmg"]);
-					$itemtable .= "<br /><span class=\"\">".$minDamage."-".$maxDamage."</span><span class=\"\">".$itemDamageType."</span><span class=\"\">".$lang["dmg"]."</span>";
+                    /* Convert delay to string to get .0 if it's not there */
+                    $thisDelayCopy = $thisDelay;
+                    $thisDelayString = explode(".", $thisDelayCopy);
+                    if(count($thisDelayString) == 1)
+                        $thisDelayCopy = $thisDelayString[0].".00";
+                    else if(count($thisDelayString) == 2 and strlen($thisDelayString[1]) == 1)
+                        $thisDelayCopy."0";
+
+					$tooltipText .= tooltip_adddoublerow($minDamage."-".$maxDamage.$itemDamageType.$lang["damage"], $lang["speed"]." ".$thisDelayCopy);
+					$itemtable .= "<br /><span class=\"tooltipRight\">".$lang["speed"]." ".$thisDelayCopy."</span><span class=\"\">".$minDamage." - ".$maxDamage."</span><span class=\"\">".$itemDamageType."</span><span class=\"\">".$lang["damage"]."</span>";
 				}
 				else
 				{
 					$tooltipText .= tooltip_addsinglerow("+".$minDamage."-".$maxDamage.$itemDamageType.$lang["damage"]);
-					$itemtable .= "<br /><span class=\"\">+".$minDamage."-".$maxDamage."</span><span class=\"\">".$itemDamageType."</span><span class=\"\">".$lang["damage"]."</span>";
+					$itemtable .= "<br /><span class=\"\">+".$minDamage." - ".$maxDamage."</span><span class=\"\">".$itemDamageType."</span><span class=\"\">".$lang["damage"]."</span>";
 				}
 			}
 		}
@@ -428,8 +437,8 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 			$itemDPSString = explode(".", $itemDamagePerSecond);
 			if(count($itemDPSString) == 1)
 				$itemDamagePerSecond .= ".0";
-			$tooltipText .= tooltip_adddoublerow("(".$itemDamagePerSecond." ".$lang["damage_per_sec"].")", $lang["speed"]." ".$thisDelay);
-			$itemtable .= "<br /><span class=\"tooltipRight\">".$lang["speed"]." ".$thisDelay."</span>(<span class=\"\">".$itemDamagePerSecond."&nbsp;</span><span class=\"\">".$lang["damage_per_sec"]."</span>)";
+			$tooltipText .= tooltip_addsinglerow("(".$itemDamagePerSecond." ".$lang["damage_per_sec"].")");
+			$itemtable .= "<br />(<span class=\"\">".$itemDamagePerSecond."&nbsp;</span><span class=\"\">".$lang["damage_per_sec"]."</span>)";
 		}
 		/* Armor Value */
 		if($itemdata["armor"])
