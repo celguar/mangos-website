@@ -87,7 +87,7 @@ else
 	"reputation" => "character-reputation.php",
 	"skills" => "character-skills.php",
 	"arenateams" => "character-arenateams.php",
-	//"talents" => "character-talents.php",
+	"talents" => "character-talents.php",
 	"achievements" => "character-achievements.php",
 	//"calendar" => "character-calendar.php",
 	);
@@ -149,11 +149,11 @@ var theCharName = "<?php echo $stat["name"] ?>";
 </ul>
 </div>
 <?php } ?>
-<div class="select<?php echo $requested_char_action == "talents" ? 1 : 0 ?>" onMouseOut="hideTip();" onMouseOver="showTip('Not yet implemented :(');">
+<div class="select<?php echo $requested_char_action == "talents" ? 1 : 0 ?>" onMouseOut="hideTip();" onMouseOver="showTip('Newly implemented');">
 <ul>
 <li class="tab-left"></li>
 <li class="tab-content">
-<a class="active" <?php //echo "href=\"index.php?searchType=profile&charPage=talents&character=",$stat["name"],"&realm=",REALM_NAME,"\"" ?>><?php echo $lang["talents"] ?></a>
+<a class="active" <?php echo "href=\"index.php?searchType=profile&charPage=talents&character=",$stat["name"],"&realm=",REALM_NAME,"\"" ?>><?php echo $lang["talents"] ?></a>
 </li>
 <li class="tab-right"></li>
 </ul>

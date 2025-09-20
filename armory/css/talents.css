@@ -1,0 +1,179 @@
+
+:root {
+  --talent-head-h: 40px; /* header height */
+}
+
+/* ===== container for all trees ===== */
+.talent-trees {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ===== each tree column box ===== */
+.talent-tree {
+  position: relative;
+  flex: 1 0 256px;
+  min-height: auto;
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 12px;
+  background-color: #0b0c10; /* black frame */
+  padding: calc(var(--talent-head-h) + 10px) 10px 12px;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.85),
+              0 6px 16px rgba(0,0,0,.45);
+}
+
+/* ===== header pill ===== */
+.talent-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--talent-head-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 0 44px;
+  border-radius: 8px;
+  background: #151515;
+  box-shadow: 0 1px 0 rgba(255,255,255,.05),
+              inset 0 0 0 1px rgba(0,0,0,.65);
+  z-index: 2;
+}
+
+.talent-head-ico {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.7),
+              0 0 6px rgba(0,0,0,.5) inset;
+}
+
+.talent-head-title {
+  font: 700 20px/1 "Trebuchet MS", Arial, sans-serif;
+  color: #d8e0ea;
+  text-shadow: 0 1px 0 #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.talent-head-pts {
+  font: 700 20px/1 "Trebuchet MS", Arial, sans-serif;
+  color: #c9d4df;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ===== 4-column grid ===== */
+.talent-flex {
+  --cell: 48px;
+  --gap: 10px;
+  position: relative;
+  margin: 0 auto;
+  width: calc(var(--cell) * 4 + var(--gap) * 3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  justify-content: center;
+}
+
+/* ===== talent cells ===== */
+.talent-cell {
+  position: relative;
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 6px;
+  background: #2a2a2a;
+  background-image: var(--icon);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font: 12px/1.2 "Trebuchet MS", Arial, sans-serif;
+  color: #ddd;
+}
+
+.talent-cell.placeholder {
+  visibility: hidden;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* ===== rank badge ===== */
+.talent-rank {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  padding: 0 6px;
+  border-radius: 8px;
+  background: #000;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1;
+  color: #999;
+}
+
+/* ===== states ===== */
+.talent-cell.empty {
+  filter: grayscale(100%) brightness(.8);
+  box-shadow: inset 0 0 0 1px #555;
+}
+.talent-cell.empty .talent-rank { color: #999; }
+
+.talent-cell.learned {
+  filter: none;
+  box-shadow: inset 0 0 0 2px #00ff00;
+}
+.talent-cell.learned .talent-rank { color: #00ff00; }
+
+.talent-cell.maxed {
+  filter: none;
+  box-shadow: inset 0 0 0 2px #ffd700;
+}
+.talent-cell.maxed .talent-rank { color: #ffd700; }
+
+/* ===== hover flair ===== */
+.talent-cell:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 0 8px 2px rgba(255,255,200,.7),
+              inset 0 0 0 2px #fff;
+}
+.talent-cell.learned:hover {
+  box-shadow: 0 0 8px 2px rgba(0,255,0,.7),
+              inset 0 0 0 2px #00ff00;
+}
+.talent-cell.maxed:hover {
+  box-shadow: 0 0 8px 2px rgba(255,215,0,.8),
+              inset 0 0 0 2px #ffd700;
+}
+/* ===== tooltip (top-right anchored) ===== */
+		.talent-tt{
+		  position:fixed; z-index:9999; min-width:180px; max-width:280px;
+		  padding:14px; background:rgba(16,24,48,.78);
+		  border:1px solid rgba(200,220,255,.18); border-radius:10px;
+		  box-shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+		  color:#e9eefb; font:14px/1.45 "Trebuchet MS", Arial, sans-serif;
+		  pointer-events:none; backdrop-filter:blur(2px);
+		}
+		.talent-tt::before, .talent-tt::after{ content:none !important; }
+		.talent-tt h5{ margin:0 0 8px; font-size:22px; font-weight:800; letter-spacing:.2px; color:#f1f6ff; }
+		.talent-tt p{ margin:0; white-space:normal; color:#f3e0b3; text-shadow:0 1px 0 rgba(0,0,0,.25); }
+
+

@@ -819,8 +819,7 @@ for($i = 0; $i <= 7; $i ++)
 <div style="position:absolute; left:15px;">
 <img id="talentSpecImage"></div>
 <h4>
-<!--<a href="character-talents.php?character=--><?php //echo $stat["name"]; ?><!--">-->
-<a href="#">
+<a <?php echo "href=\"index.php?searchType=profile&charPage=talents&character=",$stat["name"],"&realm=",REALM_NAME,"\"" ?><!--">
 <div id="replaceTalentSpecText"></div>
 </a>
 </h4>
