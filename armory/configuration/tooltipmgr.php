@@ -336,6 +336,13 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 			$itemtable .= "<br /><span class=\"error\">".$lang["error"].": ".$lang["unknown"]." Flags ".$itemdata["Flags"].", ".$lang["report_to_gm"]."</span>";
 		}
 	}
+    // unique is set not in flags
+    if ($itemdata["maxcount"] == 1)
+    {
+        $UniqueString = $ItemFlags[32];
+        $tooltipText .= tooltip_addsinglerow($UniqueString);
+        $itemtable .= "<br />".$UniqueString;
+    }
 	$greenStats = array();
 	/* Item Type */
 	if($itemdata["InventoryType"])
