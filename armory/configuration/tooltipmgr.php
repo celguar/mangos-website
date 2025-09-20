@@ -144,10 +144,7 @@ function getStatType($statType, $statVal)
 	global $stattype_description, $lang;
 	if($statType >= 0 && $statType <= 7 && $statType != 2)
 	{
-		if($statType == 0 || $statType == 1)
-			$isGreenStat = 1;
-		else
-			$isGreenStat = 0;
+        // vanilla - hp & mp bonuese exist on 2 items only and are white
 		$statName = $stattype_description[$statType];
 	}
 	else
@@ -434,7 +431,7 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 		$isGreenStat = 0;
 		for($i = 1; $i <= 10; $i ++)
 		{
-			if($itemdata["stat_type".$i])
+			if($itemdata["stat_value".$i])
 			{
 				/* Confirmed stat */
 				$statType = $itemdata["stat_type".$i];
