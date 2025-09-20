@@ -603,8 +603,11 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 		}
 	}
 	//Requires Class
+    $POSSIBLE_CLASSES = 1503;
+    if (CLIENT)
+        $POSSIBLE_CLASSES = 1535;
 	$allowclass=$itemdata["AllowableClass"];
-	if($allowclass <> -1 && ($allowclass & 1535) <> 1535)
+	if($allowclass <> -1 && ($allowclass & $POSSIBLE_CLASSES) <> $POSSIBLE_CLASSES)
 	{
 		$ClassesString = ShowAllowable($allowclass, "dbc_chrclasses");
 		if($ClassesString)
@@ -619,8 +622,11 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 		}
 	}
 	//Requires Race
+    $POSSIBLE_RACES = 255;
+    if (CLIENT)
+        $POSSIBLE_RACES = 1791;
 	$allowrace=$itemdata["AllowableRace"];
-	if($allowrace <> -1 && ($allowrace & 1791) <> 1791)
+	if($allowrace <> -1 && ($allowrace & $POSSIBLE_RACES) <> $POSSIBLE_RACES)
 	{
 		$RacesString = ShowAllowable($allowrace, "dbc_chrraces");
 		if($RacesString)
