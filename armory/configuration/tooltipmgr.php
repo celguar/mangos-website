@@ -641,7 +641,7 @@ function outputTooltip($itemid, $itemguid = 0, $itemlist = array())
 		}
 	}
 	// Requires Level
-	if($itemdata["RequiredLevel"])
+	if($itemdata["RequiredLevel"] > 1)
 	{
 		$tooltipText .= tooltip_addsinglerow($lang["requires_level"]."&nbsp;".$itemdata["RequiredLevel"]);
 		$itemtable .= "<br />".$lang["requires_level"]."&nbsp;".$itemdata["RequiredLevel"];
