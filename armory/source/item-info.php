@@ -48,6 +48,46 @@ else
 		echo "&nbsp;</strong>
 		</p>";
 	}
+    // check if display image exists
+    if (!file_exists("images/models/".$itemData["displayid"].".webp"))
+    {
+        // try find equivalent
+        $itemDisplayInfo = execute_query("armory", "SELECT * FROM `dbc_itemdisplayinfo_full` WHERE `ID`=".$itemData["displayid"]." LIMIT 1", 1);
+        if ($itemDisplayInfo)
+        {
+            $item_display = array();
+            $item_display["model_name1"] = $itemDisplayInfo["ModelName1"];
+            $item_display["model_name2"] = $itemDisplayInfo["ModelName2"];
+            $item_display["model_texture1"] = $itemDisplayInfo["ModelTexture1"];
+            $item_display["model_texture2"] = $itemDisplayInfo["ModelTexture2"];
+            for ($k = 1; $k < 9; $k++) {
+                $item_display["texture".$k] = $itemDisplayInfo["Texture".$k];
+            }
+
+            $should_search = !empty($item_display["model_name1"]) || !empty($item_display["model_name2"]) || !empty($item_display["model_texture1"]) || !empty($item_display["model_texture2"]);
+            if (!$should_search) {
+                for ($k = 1; $k < 9; $k++) {
+                    if (!empty($item_display["texture".$k]))
+                        $should_search = true;
+                }
+            }
+
+            $search_same = execute_query("armory", "SELECT `ID` FROM `dbc_itemdisplayinfo_full` WHERE `ID` <> ".$itemData["displayid"]." AND `ModelName1`='".$item_display["model_name1"]."' AND `ModelName2`='".$item_display["model_name2"]."' AND `ModelTexture1`='".$item_display["model_texture1"]."' AND `ModelTexture2`='".$item_display["model_texture2"]."' AND `Texture7` = '".$item_display["texture7"]."' AND `Texture8` = '".$item_display["texture8"]."'AND `Texture1` = '".$item_display["texture1"]."' AND `Texture2` = '".$item_display["texture2"]."' AND `Texture3` = '".$item_display["texture3"]."' AND `Texture4` = '".$item_display["texture4"]."' AND `Texture5` = '".$item_display["texture5"]."' AND `Texture6` = '".$item_display["texture6"]."'", 0);
+            if ($should_search && $search_same)
+            {
+                foreach ($search_same as $item)
+                {
+                    if (file_exists("images/models/".$item["ID"].".webp"))
+                    {
+                        $itemData["displayid"] = $item["ID"];
+                        break;
+                    }
+                    $itemData["displayid"] = $item["ID"];
+                }
+                //$model_info["same_display_ids"][$j] = $same_display_ids;
+            }
+        }
+    }
 	// END Functions
 	//switchConnection("armory", REALM_NAME);
     $item_info = execute_query("armory", "SELECT `item_icon`, `item_quality` FROM `cache_item` WHERE `item_id` = ".$item_ID." AND `mangosdbkey` = ".$realms[REALM_NAME][2]." LIMIT 1", 1);
