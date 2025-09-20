@@ -14,7 +14,7 @@
 -->
 <meta http-equiv="content-type" content="text/html; charset=<?php echo (string)$MW->getConfig->generic->site_encoding;?>"/>
 <link rel="shortcut icon" href="<?php echo $currtmp; ?>/images/favicon.ico"/>
-<script src="http://www.wowhead.com/widgets/power.js"></script>
+    <script type="text/javascript" src="https://classicdb.ch/templates/wowhead/js/power.js"></script>
 <?php
 $this_rss_url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $this_rss_url = explode('/index.php',$this_rss_url);
