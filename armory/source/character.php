@@ -138,7 +138,7 @@ var theCharName = "<?php echo $stat["name"] ?>";
 <li class="tab-right"></li>
 </ul>
 </div>
-<?php if (CLIENT/* && $stat["level"] >= 70*/) { ?>
+<?php if (CLIENT && $stat["level"] >= 70) { ?>
 <div class="select<?php echo $requested_char_action == "arenateams" ? 1 : 0 ?>">
 <ul>
 <li class="tab-left"></li>
@@ -158,10 +158,6 @@ var theCharName = "<?php echo $stat["name"] ?>";
 <li class="tab-right"></li>
 </ul>
 </div>
-<?php
-	if(CLIENT > 1)
-	{
-?>
 <div class="select<?php echo $requested_char_action == "achievements" ? 1 : 0 ?>">
 <ul>
 <li class="tab-left"></li>
@@ -171,9 +167,6 @@ var theCharName = "<?php echo $stat["name"] ?>";
 <li class="tab-right"></li>
 </ul>
 </div>
-<?php
-	}
-?>
 <?php
 if(CLIENT > 1)
 {
