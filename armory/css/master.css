@@ -464,6 +464,7 @@ a.rarity6:hover{font-size:10pt;color:#e5cc80 !important}/*gold*/
 .socketImg{width:14px;height:14px;vertical-align:-20%;margin:0 7px 0 0;padding:0}
 .tooltipRight{position:relative;float:right;clear:right;margin: 0 0 0 4px}
 .bonusGreen{color:#00FF00}
+.bonusGray{color:#787880}
 .setNameYellow{color:#ffd517;font-size:11px}
 .setItemIndent {display:inline;}
 .setItemIndent span{margin-left:9px;}
@@ -2282,3 +2283,29 @@ h1.hbluebutton { line-height: 1px!important; font-size: 1px!important; margin: 0
 
 .group-coliseumtitle{height:13px; margin:15px 0 0;}
 
+.image-container-zoom {
+    width: 100px;
+    height: 100px;
+    overflow: visible;
+    transition: transform 0.5s ease;
+    position:relative;
+    z-index: 1!important;
+}
+
+.zoom-image, .zoom-image-weapon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+.image-container-zoom:hover .zoom-image {
+    transform: scale(2.2);
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.image-container-zoom:hover .zoom-image-weapon {
+    transform: scale(2.2) rotate(90deg);
+    filter: drop-shadow(15px 0px 15px rgba(0, 0, 0, 0.5));
+}

@@ -13,12 +13,12 @@ else
 	//switchConnection("mangos", REALM_NAME);
     if (CLIENT)
     {
-        $itemData = execute_query("world", "SELECT `ItemLevel`, `BuyPrice`, `SellPrice`, `RequiredDisenchantSkill`, `RandomProperty`, `RandomSuffix`, `ItemLevel`, `InventoryType`, `DisenchantID`
+        $itemData = execute_query("world", "SELECT `ItemLevel`, `BuyPrice`, `SellPrice`, `displayid`, `Class`, `SubClass`, `RequiredDisenchantSkill`, `RandomProperty`, `RandomSuffix`, `ItemLevel`, `InventoryType`, `DisenchantID`
 FROM `item_template` WHERE `entry` = ".$item_ID." LIMIT 1", 1);
     }
     else
     {
-        $itemData = execute_query("world", "SELECT `ItemLevel`, `BuyPrice`, `SellPrice`, `RandomProperty`, `ItemLevel`, `InventoryType`, `DisenchantID`
+        $itemData = execute_query("world", "SELECT `ItemLevel`, `BuyPrice`, `SellPrice`, `displayid`, `Class`, `SubClass`, `RandomProperty`, `ItemLevel`, `InventoryType`, `DisenchantID`
 FROM `item_template` WHERE `entry` = ".$item_ID." LIMIT 1", 1);
     }
 	if(!$itemData)
@@ -169,7 +169,21 @@ else
 </p>
 </div>
 </div>
+    <?php if ($itemData["displayid"] && file_exists("images/models/".$itemData["displayid"].".webp")) {?>
+    <div class="alt-stats">
+        <div class="as-top">
+            <div class="as-bot">
+                <em style="background: none;!important;"></em>
+                <div class="image-container-zoom">
+                    <?php if ($itemData["Class"] == 2 && $itemData["SubClass"] != 3 && $itemData["SubClass"] != 18 && $itemData["SubClass"] != 16) { ?>
+                <img class="zoom-image-weapon" src="<?php echo "images/models/".$itemData["displayid"]?>.webp">
+                    <?php } else { ?>
+                    <img class="zoom-image" src="<?php echo "images/models/".$itemData["displayid"]?>.webp"> <?php }?>
+                </div>
+            </div>
+        </div>
 </div>
+    <?php } ?>
 <div class="item-info">
 <div class="item-bound">
 <div class="item-double">
