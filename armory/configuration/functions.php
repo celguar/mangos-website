@@ -135,111 +135,321 @@ function PrintItemDropChance($chance)
 function GetItemSource($item_id, $pvpreward = 0)
 {
 	global $lang;
+    $isForQuest = false;
 	//switchConnection("mangos", REALM_NAME);
 	if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `quest_template` WHERE `SrcItemId` = ".$item_id." LIMIT 1", 1))
-		return $lang["quest_item"];
-	else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `npc_vendor` WHERE `item` = ".$item_id." LIMIT 1", 1))
-		return $pvpreward ? $lang["pvp_reward"]." (".$lang["vendor"].")" : $lang["vendor"];
-    else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `npc_vendor_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
-        return $pvpreward ? $lang["pvp_reward"]." (".$lang["vendor"].")" : $lang["vendor"];
-	else if($object = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `gameobject_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 2))
     {
-        // check Boss Loot
-        if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$object." OR `lootid_1`=".$object." OR `lootid_2`=".$object." OR `lootid_3`=".$object." OR `lootid_4`=".$object." OR `name_id`=".$object." AND `type` = 'object' LIMIT 1", 1))
-        {
-            $instanceId = $instance_loot["instance_id"];
-            $bossname = $instance_loot["name_en_gb"];
-            $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
-            if ($instance_info)
-            {
-                $instance_name = $instance_info["name_en_gb"];
-                $heroic = $instance_info["is_heroic"];
-                $instance_size = $instance_info["partySize"];
-                $expansion = $instance_info["expansion"];
-                $israid = $instance_info["raid"];
-                if ($expansion < 2 || !$israid)
-                    return $bossname . " -" . $instance_name . "";
-                //return $instance_name;
-                return $bossname . " - " . $instance_name . ($heroic ? " (H)" : "");
-            }
-        }
-        return $lang["chest_drop"];
+        $isForQuest = true; //return $lang["quest_item"];
     }
-	else if($creature = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 2))
+	if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `npc_vendor` WHERE `item` = ".$item_id." LIMIT 1", 1))
+		return $pvpreward ? $lang["pvp_reward"]." (".$lang["vendor"].")" : $lang["vendor"];
+    if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `npc_vendor_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
+        return $pvpreward ? $lang["pvp_reward"]." (".$lang["vendor"].")" : $lang["vendor"];
+
+    // check of multiple
+    $object_count = execute_query("world", "SELECT SQL_NO_CACHE COUNT(*) FROM `gameobject_loot_template` WHERE `item` = ".$item_id, 2);
+    $creature_count = execute_query("world", "SELECT SQL_NO_CACHE COUNT(*) FROM `creature_loot_template` WHERE `item` = ".$item_id, 2);
+
+    if($object = execute_query("world", "SELECT SQL_NO_CACHE * FROM `gameobject_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
     {
+        $go_entry = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `gameobject_template` WHERE `data1` = ".$object["entry"]." LIMIT 1", 2);
         // check Boss Loot
-        if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$creature." OR `lootid_1`=".$creature." OR `lootid_2`=".$creature." OR `lootid_3`=".$creature." OR `lootid_4`=".$creature." OR `name_id`=".$creature." AND `type` = 'npc' LIMIT 1", 1))
+        if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$go_entry." OR `lootid_1`=".$go_entry." OR `lootid_2`=".$go_entry." OR `lootid_3`=".$go_entry." OR `lootid_4`=".$go_entry." OR `name_id`=".$go_entry." AND `type` = 'object' LIMIT 1", 1))
         {
             $instanceId = $instance_loot["instance_id"];
             $bossname = $instance_loot["name_en_gb"];
             $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
             if ($instance_info)
             {
+                $dropChance = $object["ChanceOrQuestChance"];
+                $drop_info = execute_query("world", "SELECT SQL_NO_CACHE * FROM `gameobject_loot_template` WHERE `entry` = " . $object["entry"]);
+                $groupchance = array();
+                $groupzero = array();
+                if ($drop_info) {
+                    foreach ($drop_info as $item) {
+                        if ($item["mincountOrRef"] >= 0) {
+                            $gid = $item['groupid'];
+                            if (!isset($groupchance[$gid])) $groupchance[$gid] = 0;
+                            if (!isset($groupzero[$gid])) $groupzero[$gid] = 0;
+                            if ($item['ChanceOrQuestChance'] == 0)
+                                $groupzero[$gid]++;
+                            else
+                                $groupchance[$gid] += abs($item['ChanceOrQuestChance']);
+                        }
+
+                    }
+                    $maxgroup = 0;
+                    $groupnum = array();
+                    foreach ($groupchance as $id => $group) {
+                        if ($id)
+                            $groupnum[$id] = ++$maxgroup;
+                        else
+                            $groupnum[$id] = "";
+                    }
+                    foreach ($drop_info as $item) {
+                        if ($item['mincountOrRef'] > 0) {
+                            $dropChance = $item['ChanceOrQuestChance'];
+                            if ($dropChance == 0) {
+                                $dropChance = (100 - $groupchance[$item['groupid']]) / $groupzero[$item['groupid']];
+                                if ($dropChance < 0) $dropChance = 0;
+                                if ($dropChance > 100) $dropChance = 100;
+                            }
+                        }
+                    }
+                }
                 $instance_name = $instance_info["name_en_gb"];
                 $heroic = $instance_info["is_heroic"];
                 $instance_size = $instance_info["partySize"];
                 $expansion = $instance_info["expansion"];
                 $israid = $instance_info["raid"];
                 if ($expansion < 2 || !$israid)
-                    return $bossname . " - " . $instance_name . "";
+                    return $bossname . "<span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $instance_name . "</span></span>" . ($dropChance ? " <span class='tooltipContentSpecial'>" . $lang["textDropRate"] . " <span class='myWhite'>" . PrintItemDropChance($dropChance) . "</span></span>" : "");
                 //return $instance_name;
-                return $bossname . " - " . $instance_name . ($heroic ? " (H)" : "". "");
+                return $bossname . "<span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $instance_name . "</span></span>" . ($heroic ? " (H)" : "") . ($dropChance ? " <span class='tooltipContentSpecial'>" . $lang["textDropRate"] . " <span class='myWhite'>" . PrintItemDropChance($dropChance) . "</span></span>" : "");
             }
         }
-//        else if ($creature_name = execute_query("world", "SELECT `Name` FROM `creature_template` WHERE `entry`=".$creature))
-//        {
-//            if (count($creature_name) == 1)
-//                return $creature_name[0]["Name"];
-//        }
-        return $lang["drop"];
+        if ($object_count > 2 || $creature_count > 2)
+        {
+            return "World Drop";
+        }
+        $go_zone = execute_query("armory", "SELECT `Name` FROM `go_consistent_zones` WHERE `id`=".$go_entry, 2);
+        return $lang["chest_drop"]. ($go_zone ? " <span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $go_zone . "</span></span>" : "");
+    }
+	else if($creature = execute_query("world", "SELECT SQL_NO_CACHE * FROM `creature_loot_template` WHERE `item` = ".$item_id." LIMIT 1", 1))
+    {
+        // check Boss Loot
+        $dropChance = $creature["ChanceOrQuestChance"];
+        $drop_info = execute_query("world", "SELECT SQL_NO_CACHE * FROM `creature_loot_template` WHERE `entry` = " . $creature["entry"]);
+        $groupchance = array();
+        $groupzero = array();
+        if ($drop_info) {
+            foreach ($drop_info as $item) {
+                if ($item["mincountOrRef"] >= 0) {
+                    $gid = $item['groupid'];
+                    if (!isset($groupchance[$gid])) $groupchance[$gid] = 0;
+                    if (!isset($groupzero[$gid])) $groupzero[$gid] = 0;
+                    if ($item['ChanceOrQuestChance'] == 0)
+                        $groupzero[$gid]++;
+                    else
+                        $groupchance[$gid] += abs($item['ChanceOrQuestChance']);
+                }
+
+            }
+            $maxgroup = 0;
+            $groupnum = array();
+            foreach ($groupchance as $id => $group) {
+                if ($id)
+                    $groupnum[$id] = ++$maxgroup;
+                else
+                    $groupnum[$id] = "";
+            }
+            foreach ($drop_info as $item) {
+                if ($item['mincountOrRef'] > 0) {
+                    $dropChance = $item['ChanceOrQuestChance'];
+                    if ($dropChance == 0) {
+                        $dropChance = (100 - $groupchance[$item['groupid']]) / $groupzero[$item['groupid']];
+                        if ($dropChance < 0) $dropChance = 0;
+                        if ($dropChance > 100) $dropChance = 100;
+                    }
+                }
+            }
+        }
+        if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$creature["entry"]." OR `lootid_1`=".$creature["entry"]." OR `lootid_2`=".$creature["entry"]." OR `lootid_3`=".$creature["entry"]." OR `lootid_4`=".$creature["entry"]." OR `name_id`=".$creature["entry"]." AND `type` = 'npc' LIMIT 1", 1)) {
+            $instanceId = $instance_loot["instance_id"];
+            $bossname = $instance_loot["name_en_gb"];
+            $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=" . $instanceId . " LIMIT 1", 1);
+            if ($instance_info) {
+                $instance_name = $instance_info["name_en_gb"];
+                $heroic = $instance_info["is_heroic"];
+                $instance_size = $instance_info["partySize"];
+                $expansion = $instance_info["expansion"];
+                $israid = $instance_info["raid"];
+                if ($expansion < 2 || !$israid)
+                    return $bossname . "<span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $instance_name . "</span></span>" . ($dropChance ? " <span class='tooltipContentSpecial'>" . $lang["textDropRate"] . " <span class='myWhite'>" . PrintItemDropChance($dropChance) . "</span></span>" : "");
+                //return $instance_name;
+                return $bossname . "<span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $instance_name . "</span></span>" . ($heroic ? " (H)" : "" . "") . ($dropChance ? " <span class='tooltipContentSpecial'>" . $lang["textDropRate"] . " <span class='myWhite'>" . PrintItemDropChance($dropChance) . "</span></span>" : "");
+            }
+        }
+        if ($object_count > 2 || $creature_count > 2)
+        {
+            $creature_list = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `item` = ".$item_id);
+            // check if same zone
+            $isSameZone = true;
+            $zoneId = 0;
+            $zoneName = "";
+            foreach ($creature_list as $loot_creature)
+            {
+                $creature_zone = execute_query("armory", "SELECT `Name`, `ZoneId` FROM `creature_consistent_zones` WHERE `id`=".$loot_creature["entry"], 1);
+                if ($creature_zone)
+                {
+                    $c_zoneId = $creature_zone["ZoneId"];
+                    if ($zoneId > 0 && $c_zoneId != $zoneId)
+                    {
+                        $isSameZone = false;
+                        $zoneId = 0;
+                        $zoneName = "";
+                        break;
+                    }
+                    $zoneId = $c_zoneId;
+                    $zoneName = $creature_zone["Name"];
+                }
+            }
+
+            return ($isSameZone ? $lang["drop"] : "World Drop ") . (($isSameZone && $zoneId) ? "<span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $zoneName . "</span></span>" : "") . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+        }
+        $bossname = "";
+        if ($creature_count == 1 && !$object_count)
+        {
+            $bossname = execute_query("world", "SELECT `Name` FROM `creature_template` WHERE `entry`=".$creature["entry"], 2);
+        }
+
+        $creature_zone = execute_query("armory", "SELECT `Name` FROM `creature_consistent_zones` WHERE `id`=".$creature["entry"], 2);
+        return ($bossname ? $bossname : $lang["drop"]) . ($creature_zone ? " <span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $creature_zone . "</span></span>" : "") . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
     }
     else if($refLoot = execute_query("world", "SELECT SQL_NO_CACHE `entry`, `groupid` FROM `reference_loot_template` WHERE `item` = ".$item_id))
     {
-        $refLootList = execute_query("world", "SELECT COUNT(*) SQL_NO_CACHE FROM `reference_loot_template` WHERE `entry` = ".$refLoot[0]["entry"]." AND `groupid` = ".$refLoot[0]["groupid"], 2);
-        $dropChance = round(100 / $refLootList);
-        if (count($refLoot) > 1)
+        $refLootDesc = "";
+        $refLootInstanceList = array();
+        $refLootCount = 0;
+        for ($i = 0; $i < count($refLoot); $i++)
         {
-            return "World Drop " . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
-        }
-        $bossId = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `mincountOrRef` = -".$refLoot[0]["entry"]);
-        if ($bossId && (count($bossId) == 1 || count($bossId) == 2))
-        {
-            $creature = $bossId[0]["entry"];
-            if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=".$creature." OR `lootid_1`=".$creature." OR `lootid_2`=".$creature." OR `lootid_3`=".$creature." OR `lootid_4`=".$creature." OR `name_id`=".$creature." AND `type` = 'npc' LIMIT 1", 1))
+            $isGO = false;
+            $refLootList = execute_query("world", "SELECT COUNT(*) SQL_NO_CACHE FROM `reference_loot_template` WHERE `entry` = ".$refLoot[$i]["entry"]." AND `groupid` = ".$refLoot[$i]["groupid"], 2);
+            $dropChance = round(100 / $refLootList);
+            $bossId = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `mincountOrRef` = -".$refLoot[$i]["entry"]);
+            if (!$bossId)
             {
-                $instanceId = $instance_loot["instance_id"];
-                $bossname = $instance_loot["name_en_gb"];
-                $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=".$instanceId." LIMIT 1", 1);
-                if ($instance_info)
+                $bossId = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `gameobject_loot_template` WHERE `mincountOrRef` = -" . $refLoot[$i]["entry"]);
+                if ($bossId)
+                    $isGO = true;
+            }
+            if (!$bossId)
+            {
+                continue;
+                //$bossId = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `creature_loot_template` WHERE `mincountOrRef` = -" . $refLoot[$i]["entry"]);
+            }
+            $refLootCount += count($bossId);
+            if (count($bossId) < 100)
+            {
+                for ($j = 0; $j < count($bossId); $j++)
                 {
-                    $instance_name = $instance_info["name_en_gb"];
-                    $heroic = $instance_info["is_heroic"];
-                    $instance_size = $instance_info["partySize"];
-                    $expansion = $instance_info["expansion"];
-                    $israid = $instance_info["raid"];
-                    if ($expansion < 2 || !$israid)
-                        return /*"bossID: " . $creature . ", refId:" . $refLoot["entry"] . " " . */$bossname . " - " . $instance_name . ($dropChance ? " <span id ='dropRate' class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
-                    //return $instance_name;
-                    return $bossname . " - " . $instance_name . ($heroic ? " (H)" : "") . ($dropChance ? " <span id ='dropRate' class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+                    $creature = $bossId[$j]["entry"];
+                    if ($isGO)
+                        $creature = execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `gameobject_template` WHERE `data1` = ".$bossId[$j]["entry"]." LIMIT 1", 2);
+                    if ($instance_loot = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_data` WHERE `id`=" . $creature . " OR `lootid_1`=" . $creature . " OR `lootid_2`=" . $creature . " OR `lootid_3`=" . $creature . " OR `lootid_4`=" . $creature . " OR `name_id`=" . $creature . " AND `type` = '". ($isGO ? "object" : "npc") ."' LIMIT 1", 1)) {
+                        $instanceId = $instance_loot["instance_id"];
+                        $bossname = $instance_loot["name_en_gb"];
+                        $instance_info = execute_query("armory", "SELECT SQL_NO_CACHE * FROM `armory_instance_template` WHERE `id`=" . $instanceId . " LIMIT 1", 1);
+                        if ($instance_info) {
+                            $instance_name = $instance_info["name_en_gb"];
+                            $heroic = $instance_info["is_heroic"];
+                            $instance_size = $instance_info["partySize"];
+                            $expansion = $instance_info["expansion"];
+                            $israid = $instance_info["raid"];
+                            if (!isset($refLootInstanceList[$instanceId]))
+                                $refLootInstanceList[$instanceId] = $instance_info;
+
+                            $instance_loot["chance"] = $dropChance;
+                            $refLootInstanceList[$instanceId]["loot_list"][] = $instance_loot;
+                        }
+                    }
+                    else
+                    {
+                        if ($isGO)
+                        {
+                            $instance_loot = array();
+                            $instance_loot["chance"] = $dropChance;
+                            $instance_loot["name_en_gb"] = execute_query("world", "SELECT `Name` FROM `gameobject_template` WHERE `entry`=".$creature, 2);
+                            $instance_loot["id"] = $creature;
+                            $instance_info = array();
+                            $instance_info["name_en_gb"] = execute_query("armory", "SELECT `Name` FROM `go_consistent_zones` WHERE `id`=".$creature, 2);
+                            $instance_info["is_heroic"] = false;
+                        }
+                        else
+                        {
+                            $instance_loot = array();
+                            $instance_loot["chance"] = $dropChance;
+                            $instance_loot["name_en_gb"] = execute_query("world", "SELECT `Name` FROM `creature_template` WHERE `entry`=".$creature, 2);
+                            $instance_loot["id"] = $creature;
+                            $instance_info = array();
+                            $instance_info["name_en_gb"] = execute_query("armory", "SELECT `Name` FROM `creature_consistent_zones` WHERE `id`=".$creature, 2);
+                            $instance_info["is_heroic"] = false;
+                        }
+
+                        if (!isset($refLootInstanceList[0]))
+                            $refLootInstanceList[0] = $instance_info;
+                        $refLootInstanceList[0]["loot_list"][] = $instance_loot;
+                    }
                 }
             }
-            else if ($creature_name = execute_query("world", "SELECT `Name` FROM `creature_template` WHERE `entry`=".$creature, 2))
+        }
+        if ($refLootCount >= 10 || count($refLootInstanceList) > 2)
+        {
+            // check if same zone
+            $isSameZone = true;
+            $zoneId = 0;
+            $zoneName = "";
+            foreach ($refLootInstanceList[0]["loot_list"] as $refLootBoss)
             {
-                return $creature_name;
+                $creature_zone = execute_query("armory", "SELECT `Name`, `ZoneId` FROM `creature_consistent_zones` WHERE `id`=".$refLootBoss["id"], 1);
+                if ($creature_zone)
+                {
+                    $c_zoneId = $creature_zone["ZoneId"];
+                    if ($zoneId > 0 && $c_zoneId != $zoneId)
+                    {
+                        $isSameZone = false;
+                        $zoneId = 0;
+                        $zoneName = "";
+                        break;
+                    }
+                    $zoneId = $c_zoneId;
+                    $zoneName = $creature_zone["Name"];
+                }
+            }
+
+            return ($isSameZone ? $lang["drop"] : "World Drop ") . (($isSameZone && $zoneId) ? "<span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $zoneName . "</span></span>" : "") . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+        }
+
+        foreach ($refLootInstanceList as $refLootInstance)
+        {
+            usort($refLootInstance, function($a, $b) {
+                return $a['chance'] - $b['chance'];
+            });
+        }
+
+        // single boss
+        if (count($refLootInstanceList) == 1)
+        {
+            foreach ($refLootInstanceList as $refLootInstance)
+            {
+                $refLootDesc .= $refLootInstance["loot_list"][0]["name_en_gb"];
+                $refLootDesc .= " <span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $refLootInstance["name_en_gb"] . "</span></span>" . ($refLootInstance["loot_list"][0]["chance"] ? "<span id ='dropRate' class='tooltipContentSpecial'>" . $lang["textDropRate"] . " <span class='myWhite'>" . PrintItemDropChance($refLootInstance["loot_list"][0]["chance"]) . "</span></span>" : "");
+                return $refLootDesc;
             }
         }
-        else if ($bossId && count($bossId) > 2)
+
+        foreach ($refLootInstanceList as $refLootInstance)
         {
-            return "World Drop " . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+            $refLootDesc .= $refLootInstance["name_en_gb"] . ($refLootInstance["is_heroic"] ? " (H)" : " ");
         }
-        // TODO CHEST NAMES
-        else
-            return "World Drop " . ($dropChance ? " <span class='tooltipContentSpecial'>".$lang["textDropRate"]." <span class='myWhite'>".PrintItemDropChance($dropChance)."</span></span>": "");
+
+        foreach ($refLootInstanceList as $refLootInstance)
+        {
+            foreach ($refLootInstance["loot_list"] as $refLootBoss)
+            {
+                $refLootDesc .= $refLootBoss["name_en_gb"] . ($refLootBoss["chance"] ? "</br> <span id ='dropRate' class='tooltipContentSpecial'>" . $lang["textDropRate"] . " <span class='myWhite'>" . PrintItemDropChance($refLootBoss["chance"]) . "</span></span>" : "");
+            }
+        }
+
+        return $refLootDesc;
     }
-	else if(execute_query("world", "SELECT SQL_NO_CACHE `entry` FROM `quest_template` WHERE `RewChoiceItemId1` = ".$item_id." OR `RewChoiceItemId2` = ".$item_id."
+	else if($quest_reward = execute_query("world", "SELECT SQL_NO_CACHE `entry`, `ZoneOrSort` FROM `quest_template` WHERE `RewChoiceItemId1` = ".$item_id." OR `RewChoiceItemId2` = ".$item_id."
 	OR `RewChoiceItemId3` = ".$item_id." OR `RewChoiceItemId4` = ".$item_id." OR `RewChoiceItemId5` = ".$item_id." OR `RewChoiceItemId6` = ".$item_id."
 	OR `RewItemId1` = ".$item_id." OR `RewItemId2` = ".$item_id." OR `RewItemId3` = ".$item_id." OR `RewItemId4` = ".$item_id." LIMIT 1", 1))
-		return $lang["quest_reward"];
+    {
+        $quest_zone = execute_query("armory", "SELECT `Name` FROM `creature_consistent_zones` WHERE `zoneId`=".$quest_reward["ZoneOrSort"], 2);
+        return $lang["quest_reward"] . ($quest_zone ? " <span class='tooltipContentSpecial'>Area: <span class='myWhite'>" . $quest_zone . "</span></span>" : "");
+    }
 	else
 		return $lang["created"];
 }
@@ -323,7 +533,7 @@ function InsertCache($db_fields, $db)
 {
 	// Insert
 	//switchConnection("armory", REALM_NAME);
-	$querystring = "INSERT INTO `".$db."` (";
+	$querystring = "REPLACE INTO `".$db."` (";
 	foreach($db_fields as $field => $value)
 		$querystring .= "`".$field."`,";
 	// Chop the end of $querystring off
