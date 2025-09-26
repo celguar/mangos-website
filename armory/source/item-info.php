@@ -56,12 +56,25 @@ else
         if ($itemDisplayInfo)
         {
             $item_display = array();
-            $item_display["model_name1"] = $itemDisplayInfo["ModelName1"];
-            $item_display["model_name2"] = $itemDisplayInfo["ModelName2"];
-            $item_display["model_texture1"] = $itemDisplayInfo["ModelTexture1"];
-            $item_display["model_texture2"] = $itemDisplayInfo["ModelTexture2"];
-            for ($k = 1; $k < 9; $k++) {
-                $item_display["texture".$k] = $itemDisplayInfo["Texture".$k];
+            if (CLIENT > 1)
+            {
+                $item_display["model_name1"] = $itemDisplayInfo["ModelName_1"];
+                $item_display["model_name2"] = $itemDisplayInfo["ModelName_2"];
+                $item_display["model_texture1"] = $itemDisplayInfo["ModelTexture_1"];
+                $item_display["model_texture2"] = $itemDisplayInfo["ModelTexture_2"];
+                for ($k = 1; $k < 9; $k++) {
+                    $item_display["texture".$k] = $itemDisplayInfo["Texture_".$k];
+                }
+            }
+            else
+            {
+                $item_display["model_name1"] = $itemDisplayInfo["ModelName1"];
+                $item_display["model_name2"] = $itemDisplayInfo["ModelName2"];
+                $item_display["model_texture1"] = $itemDisplayInfo["ModelTexture1"];
+                $item_display["model_texture2"] = $itemDisplayInfo["ModelTexture2"];
+                for ($k = 1; $k < 9; $k++) {
+                    $item_display["texture".$k] = $itemDisplayInfo["Texture".$k];
+                }
             }
 
             $should_search = !empty($item_display["model_name1"]) || !empty($item_display["model_name2"]) || !empty($item_display["model_texture1"]) || !empty($item_display["model_texture2"]);
@@ -72,7 +85,14 @@ else
                 }
             }
 
-            $search_same = execute_query("armory", "SELECT `ID` FROM `dbc_itemdisplayinfo_full` WHERE `ID` <> ".$itemData["displayid"]." AND `ModelName1`='".$item_display["model_name1"]."' AND `ModelName2`='".$item_display["model_name2"]."' AND `ModelTexture1`='".$item_display["model_texture1"]."' AND `ModelTexture2`='".$item_display["model_texture2"]."' AND `Texture7` = '".$item_display["texture7"]."' AND `Texture8` = '".$item_display["texture8"]."'AND `Texture1` = '".$item_display["texture1"]."' AND `Texture2` = '".$item_display["texture2"]."' AND `Texture3` = '".$item_display["texture3"]."' AND `Texture4` = '".$item_display["texture4"]."' AND `Texture5` = '".$item_display["texture5"]."' AND `Texture6` = '".$item_display["texture6"]."'", 0);
+            if (CLIENT > 1)
+            {
+                $search_same = execute_query("armory", "SELECT `ID` FROM `dbc_itemdisplayinfo_full` WHERE `ID` <> ".$itemData["displayid"]." AND `ModelName_1`='".$item_display["model_name1"]."' AND `ModelName_2`='".$item_display["model_name2"]."' AND `ModelTexture_1`='".$item_display["model_texture1"]."' AND `ModelTexture_2`='".$item_display["model_texture2"]."' AND `Texture_7` = '".$item_display["texture7"]."' AND `Texture_8` = '".$item_display["texture8"]."'AND `Texture_1` = '".$item_display["texture1"]."' AND `Texture_2` = '".$item_display["texture2"]."' AND `Texture_3` = '".$item_display["texture3"]."' AND `Texture_4` = '".$item_display["texture4"]."' AND `Texture_5` = '".$item_display["texture5"]."' AND `Texture_6` = '".$item_display["texture6"]."'", 0);
+            }
+            else
+            {
+                $search_same = execute_query("armory", "SELECT `ID` FROM `dbc_itemdisplayinfo_full` WHERE `ID` <> ".$itemData["displayid"]." AND `ModelName1`='".$item_display["model_name1"]."' AND `ModelName2`='".$item_display["model_name2"]."' AND `ModelTexture1`='".$item_display["model_texture1"]."' AND `ModelTexture2`='".$item_display["model_texture2"]."' AND `Texture7` = '".$item_display["texture7"]."' AND `Texture8` = '".$item_display["texture8"]."'AND `Texture1` = '".$item_display["texture1"]."' AND `Texture2` = '".$item_display["texture2"]."' AND `Texture3` = '".$item_display["texture3"]."' AND `Texture4` = '".$item_display["texture4"]."' AND `Texture5` = '".$item_display["texture5"]."' AND `Texture6` = '".$item_display["texture6"]."'", 0);
+            }
             if ($should_search && $search_same)
             {
                 foreach ($search_same as $item)
