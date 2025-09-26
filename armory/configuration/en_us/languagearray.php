@@ -10,6 +10,7 @@ $ItemFlags = array(
 512 => "", // Ribboned Wrapping Paper
 1024 => "", // Gifts
 2048 => "", // Quests Item
+4096 => "", // Refundable
 8192 => "Unique", // Charter
 32768 => "Unique", // PvP Reward Item
 524288 => "Unique-Equipped",
