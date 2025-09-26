@@ -125,7 +125,7 @@ function PrintItemDropChance($chance)
         $dropChance .= $lang["textDR3"];
     else if ($chance < 51)
         $dropChance .= $lang["textDR4"];
-    else if (chance > 50)
+    else if ($chance > 50)
         $dropChance .= $lang["textDR5"];
     else
         $dropChance = "";
