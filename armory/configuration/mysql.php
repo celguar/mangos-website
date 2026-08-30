@@ -9,7 +9,7 @@ $realms = array(
 "Wrath of the Lich King" => array(3, 3, 3, 3),
 );
 // Default Realm Name (use one chosen upper in $realms)
-//define("DefaultRealmName", "Vanilla Realm");
+define("DefaultRealmName", "Vanilla Realm");
 if (file_exists("../vanilla.spp"))
 {
     define("DefaultRealmName", "Vanilla Realm");
@@ -30,27 +30,27 @@ if (file_exists("../wotlk.spp"))
 }
 $realmd_DB = array(
 // Connection to realmd DBs
-1 => array("127.0.0.1:3310", "root", "123456", "classicrealmd"),
-2 => array("127.0.0.1:3310", "root", "123456", "tbcrealmd"),
-3 => array("127.0.0.1:3310", "root", "123456", "wotlkrealmd"),
+1 => array("mysql:3306", "root", "root", "realmd"),
+//2 => array("mysql:3306", "root", "123456", "tbcrealmd"),
+//3 => array("mysql:3306", "root", "123456", "wotlkrealmd"),
 );
 $characters_DB = array(
 // Connection to characters DBs
-1 => array("127.0.0.1:3310", "root", "123456", "classiccharacters"),
-2 => array("127.0.0.1:3310", "root", "123456", "tbccharacters"),
-3 => array("127.0.0.1:3310", "root", "123456", "wotlkcharacters"),
+1 => array("mysql:3306", "root", "root", "characters"),
+//2 => array("mysql:3306", "root", "123456", "tbccharacters"),
+//3 => array("mysql:3306", "root", "123456", "wotlkcharacters"),
 );
 $mangosd_DB = array(
 // Connection to mangos DBs
-1 => array("127.0.0.1:3310", "root", "123456", "classicmangos"),
-2 => array("127.0.0.1:3310", "root", "123456", "tbcmangos"),
-3 => array("127.0.0.1:3310", "root", "123456", "wotlkmangos"),
+1 => array("mysql:3306", "root", "root", "classicmangos"),
+//2 => array("mysql:3306", "root", "123456", "tbcmangos"),
+//3 => array("mysql:3306", "root", "123456", "wotlkmangos"),
 );
 $armory_DB = array(
 // Connection to armory DBs
-1 => array("127.0.0.1:3310", "root", "123456", "classicarmory"),
-2 => array("127.0.0.1:3310", "root", "123456", "tbcarmory"),
-3 => array("127.0.0.1:3310", "root", "123456", "wotlkarmory"),
+1 => array("mysql:3306", "root", "root", "classicarmory"),
+//2 => array("mysql:3306", "root", "123456", "tbcarmory"),
+//3 => array("mysql:3306", "root", "123456", "wotlkarmory"),
 );
 /* Don't touch anything beyond this point. */
 set_time_limit(0);

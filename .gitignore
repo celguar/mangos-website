@@ -19,3 +19,8 @@ config/config.xml
 # Cache
 /core/cache/*
 /armory/images/models
+
+# Docker
+.env*
+!.env*.dist
+compose.override.yaml
