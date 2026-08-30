@@ -1,0 +1,11 @@
+services:
+  mw:
+    build:
+      dockerfile: Dockerfile
+      target: php-prod
+      context: .
+    env_file:
+      - path: .env.mw
+        required: true
+    ports:
+      - "80:80"

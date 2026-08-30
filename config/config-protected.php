@@ -1,12 +1,12 @@
 <?php
 $realmd = array(
 'db_type'         => 'mysql',
-'db_host'         => '127.0.0.1',
-'db_port'         => '3310',
-'db_username'     => 'root',
-'db_password'     => '123456',
-'db_name'         => 'classicrealmd',
-'db_encoding'     => 'utf8',
+'db_host'         => getenv('DB_HOST'),
+'db_port'         => getenv('DB_PORT'),
+'db_username'     => getenv('DB_USERNAME'),
+'db_password'     => getenv('DB_PASSWORD'),
+'db_name'         => getenv('DB_NAME'),
+'db_encoding'     => getenv('DB_ENCODING'),
 );
 if (file_exists("tbc.spp"))
     $realmd["db_name"] = 'tbcrealmd';

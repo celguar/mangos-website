@@ -1,0 +1,41 @@
+services:
+  mysql:
+    build:
+      dockerfile: Dockerfile
+      target: mariadb-dev
+      context: .
+    volumes:
+      - ./docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+      - setup_mysql:/usr/local/share/mysql:rw
+      - data_mysql:/var/lib/mysql
+    env_file:
+      - path: .env.mysql
+        required: true
+    ports:
+      - "3306:10336"
+
+  mw:
+    env_file:
+      - path: .env.mw
+        required: true
+    build:
+      dockerfile: Dockerfile
+      target: php-dev
+      context: .
+    volumes:
+      - .:/var/www/html:ro
+      - ./docker/mw/usr/local/bin/initialize.sh:/usr/local/bin/initialize.sh:ro
+      - ./docker/mw/usr/local/bin/entrypoint.sh:/usr/local/bin/entrypoint.sh:ro
+      - ./docker/mw/www/config/config-protected.php:/var/www/html/config/config-protected.php:rw
+    ports:
+      - "80:80"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  setup_mysql:
+    # Contains database dump file. Required for mw.
+    # After setup is done, all data could be wiped, e.g. `find /usr/local/share/ -type f -delete`
+  data_mysql:
+    # Let database data live outside the container.
